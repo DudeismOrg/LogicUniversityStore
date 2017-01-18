@@ -32,6 +32,7 @@ obj/*
 bld/
 [Bb]in/
 [Oo]bj/
+.vs/
 
 # Visual Studio 2015 cache/options directory
 .vs/
