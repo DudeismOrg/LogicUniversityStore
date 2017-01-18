@@ -98,6 +98,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="View\Department\Employee\EmpMain.aspx" />
+    <Content Include="View\Department\Employee\RequisitionForm.aspx" />
     <Content Include="View\Main.Master" />
     <Content Include="View\Resources\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="View\Resources\bootstrap\css\bootstrap-theme.min.css.map" />
@@ -137,6 +139,7 @@
     <Content Include="View\Resources\plugins\datatables\extensions\TableTools\Readme.md" />
     <Content Include="View\Resources\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="View\Resources\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="View\Department\Employee\Employee.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1023,11 +1026,7 @@
     <Content Include="View\Resources\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="View\Resources\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="View\Resources\plugins\timepicker\bootstrap-timepicker.min.js" />
-    <Content Include="View\Department\Employee\EmpMain.aspx" />
-    <Content Include="View\Department\Hod\HodMain.aspx" />
     <Content Include="View\Login.aspx" />
-    <Content Include="View\Store\Clerk\ClerkMain.aspx" />
-    <Content Include="View\Store\Supervisor\SupervisorMain.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1035,6 +1034,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Department\Employee\Employee.master.cs">
+      <DependentUpon>Employee.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Employee\Employee.master.designer.cs">
+      <DependentUpon>Employee.master</DependentUpon>
+    </Compile>
     <Compile Include="View\Department\Employee\EmpMain.aspx.cs">
       <DependentUpon>EmpMain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1042,12 +1048,12 @@
     <Compile Include="View\Department\Employee\EmpMain.aspx.designer.cs">
       <DependentUpon>EmpMain.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Department\Hod\HodMain.aspx.cs">
-      <DependentUpon>HodMain.aspx</DependentUpon>
+    <Compile Include="View\Department\Employee\RequisitionForm.aspx.cs">
+      <DependentUpon>RequisitionForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Department\Hod\HodMain.aspx.designer.cs">
-      <DependentUpon>HodMain.aspx</DependentUpon>
+    <Compile Include="View\Department\Employee\RequisitionForm.aspx.designer.cs">
+      <DependentUpon>RequisitionForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -1063,28 +1069,17 @@
     <Compile Include="View\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Clerk\ClerkMain.aspx.cs">
-      <DependentUpon>ClerkMain.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Store\Clerk\ClerkMain.aspx.designer.cs">
-      <DependentUpon>ClerkMain.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.cs">
-      <DependentUpon>SupervisorMain.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.designer.cs">
-      <DependentUpon>SupervisorMain.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controller\" />
     <Folder Include="Dao\" />
     <Folder Include="Model\" />
+    <Folder Include="View\Department\Hod\" />
     <Folder Include="View\Resources\css\" />
     <Folder Include="View\Resources\js\" />
+    <Folder Include="View\Store\Clerk\" />
+    <Folder Include="View\Store\Supervisor\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
