@@ -1065,9 +1065,8 @@
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\SupplierItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
+
     <Compile Include="Util\RequisitionStatus.cs" />
-=======
     <Compile Include="View\Department\Employee\Employee.master.cs">
       <DependentUpon>Employee.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1075,7 +1074,7 @@
     <Compile Include="View\Department\Employee\Employee.master.designer.cs">
       <DependentUpon>Employee.master</DependentUpon>
     </Compile>
->>>>>>> akhil
+
     <Compile Include="View\Department\Employee\EmpMain.aspx.cs">
       <DependentUpon>EmpMain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1107,8 +1106,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-<<<<<<< HEAD
-=======
     <Folder Include="Controller\" />
     <Folder Include="Dao\" />
     <Folder Include="Model\" />
@@ -1117,7 +1114,6 @@
     <Folder Include="View\Resources\js\" />
     <Folder Include="View\Store\Clerk\" />
     <Folder Include="View\Store\Supervisor\" />
->>>>>>> akhil
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
