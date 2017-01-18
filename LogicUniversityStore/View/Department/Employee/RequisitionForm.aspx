@@ -44,7 +44,7 @@
                                                 <label>Select Category</label>
                                             </div>
                                             <div class="col-md-8">
-                                                <select class="form-control select2" style="width: 100%;">
+                                               <%-- <select class="form-control select2" style="width: 100%;">
                                                     <option>--Select Category--</option>
                                                     <option>Clip</option>
                                                     <option>Envelop</option>
@@ -52,7 +52,9 @@
                                                     <option>Pen</option>
                                                     <option>Pad</option>
                                                     <option>Pencil</option>
-                                                </select>
+                                                </select>--%>
+                                                <asp:DropDownList ID="DdlCategories" runat="server" AutoPostBack="true" CssClass="form-control select2"></asp:DropDownList>
+
                                             </div>
                                         </div>
                                         <div class="col-md-12" style="height: 10px"></div>
@@ -61,7 +63,7 @@
                                                 <label>Select Item</label>
                                             </div>
                                             <div class="col-md-8">
-                                                <select class="form-control select2" style="width: 100%;">
+                                               <%-- <select class="form-control select2" style="width: 100%;">
                                                     <option>--Select Item--</option>
                                                     <option>Item 1</option>
                                                     <option>Item 2</option>
@@ -69,7 +71,8 @@
                                                     <option>Item 4</option>
                                                     <option>Item 5</option>
                                                     <option>Item 6</option>
-                                                </select>
+                                                </select>--%>
+                                                <asp:DropDownList ID="DdlItems" runat="server" CssClass="form-control select2"></asp:DropDownList>
                                             </div>
                                         </div>
                                         <div class="col-md-12" style="height: 10px"></div>
