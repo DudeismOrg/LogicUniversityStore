@@ -62,4 +62,5 @@
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="jsBlock" runat="server">
+    <asp:ContentPlaceHolder ID="empMainJs" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>

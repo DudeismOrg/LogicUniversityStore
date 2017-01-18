@@ -29,5 +29,14 @@ namespace LogicUniversityStore.View.Department.Employee {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder empMainContentBlock;
+        
+        /// <summary>
+        /// empMainJs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder empMainJs;
     }
 }
