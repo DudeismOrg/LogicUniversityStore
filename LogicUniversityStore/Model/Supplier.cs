@@ -21,20 +21,23 @@ namespace LogicUniversityStore.Model
         [StringLength(10)]
         public string SupplierCode { get; set; }
 
-        [StringLength(20)]
+        [StringLength(30)]
         public string SupplierName { get; set; }
 
-        [StringLength(15)]
+        [StringLength(30)]
         public string SupplierContact { get; set; }
 
-        [StringLength(10)]
+        [StringLength(20)]
         public string SupplierPhone { get; set; }
 
-        [StringLength(10)]
+        [StringLength(20)]
         public string SupplierFax { get; set; }
 
-        [StringLength(40)]
+        [StringLength(100)]
         public string SupplierAddress { get; set; }
+
+        [StringLength(20)]
+        public string GSTRegistrationNumber { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PurchaseOrder> PurchaseOrders { get; set; }

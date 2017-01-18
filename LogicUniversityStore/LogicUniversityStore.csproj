@@ -127,6 +127,7 @@
   <ItemGroup>
     <Compile Include="Controller\ProcessReqController.cs" />
     <Compile Include="Dao\RequisitionDao.cs" />
+    <Compile Include="Dao\StockCardDao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -136,6 +137,7 @@
     <Compile Include="Model\Disbursement.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\LogicUniStoreModel.cs" />
+    <Compile Include="Model\LUUser.cs" />
     <Compile Include="Model\PurchaseOrder.cs" />
     <Compile Include="Model\PurchaseOrderItem.cs" />
     <Compile Include="Model\Requisition.cs" />
@@ -147,7 +149,6 @@
     <Compile Include="Model\StockCard.cs" />
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\SupplierItem.cs" />
-    <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\RequisitionStatus.cs" />
     <Compile Include="View\Department\Employee\EmpMain.aspx.cs">

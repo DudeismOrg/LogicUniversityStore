@@ -17,6 +17,7 @@ namespace LogicUniversityStore.Model
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Disbursement> Disbursements { get; set; }
         public virtual DbSet<Item> Items { get; set; }
+        public virtual DbSet<LUUser> LUUsers { get; set; }
         public virtual DbSet<PurchaseOrder> PurchaseOrders { get; set; }
         public virtual DbSet<Requisition> Requisitions { get; set; }
         public virtual DbSet<Retrieval> Retrievals { get; set; }
@@ -26,7 +27,6 @@ namespace LogicUniversityStore.Model
         public virtual DbSet<StockCard> StockCards { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<SupplierItem> SupplierItems { get; set; }
-        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<PurchaseOrderItem> PurchaseOrderItems { get; set; }
         public virtual DbSet<RequisitionItem> RequisitionItems { get; set; }
 
@@ -49,7 +49,7 @@ namespace LogicUniversityStore.Model
                 .IsFixedLength();
 
             modelBuilder.Entity<Department>()
-                .Property(e => e.DeparmentCode)
+                .Property(e => e.DepartmentCode)
                 .IsFixedLength();
 
             modelBuilder.Entity<Department>()
@@ -79,15 +79,15 @@ namespace LogicUniversityStore.Model
                 .IsFixedLength();
 
             modelBuilder.Entity<Item>()
-                .Property(e => e.BaseItemCode)
+                .Property(e => e.ItemCode)
                 .IsFixedLength();
 
             modelBuilder.Entity<Item>()
-                .Property(e => e.BaseItemName)
+                .Property(e => e.ItemName)
                 .IsFixedLength();
 
             modelBuilder.Entity<Item>()
-                .Property(e => e.Description)
+                .Property(e => e.ItemDesc)
                 .IsFixedLength();
 
             modelBuilder.Entity<Item>()
@@ -102,6 +102,30 @@ namespace LogicUniversityStore.Model
                 .HasMany(e => e.SupplierItems)
                 .WithRequired(e => e.Item)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<LUUser>()
+                .Property(e => e.UserName)
+                .IsFixedLength();
+
+            modelBuilder.Entity<LUUser>()
+                .Property(e => e.FirstName)
+                .IsFixedLength();
+
+            modelBuilder.Entity<LUUser>()
+                .Property(e => e.LastName)
+                .IsFixedLength();
+
+            modelBuilder.Entity<LUUser>()
+                .Property(e => e.Password)
+                .IsFixedLength();
+
+            modelBuilder.Entity<LUUser>()
+                .Property(e => e.Email)
+                .IsFixedLength();
+
+            modelBuilder.Entity<LUUser>()
+                .Property(e => e.Address)
+                .IsFixedLength();
 
             modelBuilder.Entity<PurchaseOrder>()
                 .Property(e => e.PuchaseOrderNo)
@@ -154,7 +178,7 @@ namespace LogicUniversityStore.Model
                 .IsFixedLength();
 
             modelBuilder.Entity<Role>()
-                .HasMany(e => e.Users)
+                .HasMany(e => e.LUUsers)
                 .WithRequired(e => e.Role)
                 .WillCascadeOnDelete(false);
 
@@ -216,52 +240,36 @@ namespace LogicUniversityStore.Model
                 .IsFixedLength();
 
             modelBuilder.Entity<Supplier>()
+                .Property(e => e.GSTRegistrationNumber)
+                .IsFixedLength();
+
+            modelBuilder.Entity<Supplier>()
                 .HasMany(e => e.SupplierItems)
                 .WithRequired(e => e.Supplier)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SupplierItem>()
-                .Property(e => e.Price)
-                .IsFixedLength();
+                .HasMany(e => e.StockAdjustmentItems)
+                .WithOptional(e => e.SupplierItem)
+                .HasForeignKey(e => e.ItemID);
 
             modelBuilder.Entity<SupplierItem>()
                 .HasMany(e => e.StockCards)
                 .WithRequired(e => e.SupplierItem)
+                .HasForeignKey(e => e.ItemID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SupplierItem>()
                 .HasMany(e => e.PurchaseOrderItems)
                 .WithRequired(e => e.SupplierItem)
+                .HasForeignKey(e => e.ItemID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SupplierItem>()
                 .HasMany(e => e.RequisitionItems)
                 .WithRequired(e => e.SupplierItem)
+                .HasForeignKey(e => e.ItemID)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.UserName)
-                .IsFixedLength();
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.FirstName)
-                .IsFixedLength();
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.LastName)
-                .IsFixedLength();
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.Password)
-                .IsFixedLength();
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.Email)
-                .IsFixedLength();
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.Address)
-                .IsFixedLength();
         }
     }
 }

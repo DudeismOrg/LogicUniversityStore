@@ -26,7 +26,7 @@ namespace LogicUniversityStore.Controller
                 int? unfullfilledItem = 0;
                 foreach(RequisitionItem rItem in requisition.RequisitionItems)
                 {
-                    unfullfilledItem = unfullfilledItem + ((rItem.NeededQuantity - StockCardDao.GetProductCountInStock(rItem.SupplierItem.BaseItemID)) > 0 ? 1 : 0);
+                    unfullfilledItem = unfullfilledItem + ((rItem.NeededQuantity - StockCardDao.GetProductCountInStock(rItem.SupplierItem.Item.ItemID)) > 0 ? 1 : 0);
                 }
                 if(unfullfilledItem.Value == 0)
                 {

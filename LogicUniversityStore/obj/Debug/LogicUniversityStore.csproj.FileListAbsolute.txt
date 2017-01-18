@@ -31,3 +31,4 @@ c:\users\akhiljayan\documents\visual studio 2015\Projects\LogicUniversityStore\L
 c:\users\akhiljayan\documents\visual studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
 c:\users\akhiljayan\documents\visual studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 c:\users\akhiljayan\documents\visual studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache

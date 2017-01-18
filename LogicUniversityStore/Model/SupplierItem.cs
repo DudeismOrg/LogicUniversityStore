@@ -18,15 +18,13 @@ namespace LogicUniversityStore.Model
             RequisitionItems = new HashSet<RequisitionItem>();
         }
 
-        [Key]
-        public int ItemId { get; set; }
+        public int SupplierItemId { get; set; }
 
-        public int BaseItemID { get; set; }
+        public int ItemID { get; set; }
 
         public int SupplierID { get; set; }
 
-        [StringLength(10)]
-        public string Price { get; set; }
+        public double? Price { get; set; }
 
         public bool? ActiveSupplier { get; set; }
 

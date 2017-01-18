@@ -13,16 +13,15 @@ namespace LogicUniversityStore.Model
         public Department()
         {
             Requisitions = new HashSet<Requisition>();
-            Users = new HashSet<User>();
+            LUUsers = new HashSet<LUUser>();
         }
 
         public int DepartmentID { get; set; }
 
         [Required]
         [StringLength(10)]
-        public string DeparmentCode { get; set; }
+        public string DepartmentCode { get; set; }
 
-        [Required]
         [StringLength(20)]
         public string DepartmentName { get; set; }
 
@@ -47,6 +46,6 @@ namespace LogicUniversityStore.Model
         public virtual ICollection<Requisition> Requisitions { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<LUUser> LUUsers { get; set; }
     }
 }
