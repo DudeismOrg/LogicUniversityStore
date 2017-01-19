@@ -110,6 +110,8 @@
     </Content>
     <Content Include="View\Department\Employee\EmpMain.aspx" />
     <Content Include="View\Department\Employee\RequisitionForm.aspx" />
+    <Content Include="View\Department\Hod\HodMain.aspx" />
+    <Content Include="View\Department\Hod\ApproveReject.aspx" />
     <Content Include="View\Main.Master" />
     <Content Include="View\Resources\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="View\Resources\bootstrap\css\bootstrap-theme.min.css.map" />
@@ -151,6 +153,7 @@
     <Content Include="View\Resources\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="View\Department\Employee\Employee.master" />
     <Content Include="View\Store\Clerk\Clerk.master" />
+    <Content Include="View\Department\Hod\Hod.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1096,6 +1099,27 @@
     <Compile Include="View\Department\Employee\RequisitionForm.aspx.designer.cs">
       <DependentUpon>RequisitionForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Department\Hod\Hod.master.cs">
+      <DependentUpon>Hod.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Hod\Hod.master.designer.cs">
+      <DependentUpon>Hod.master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Hod\HodMain.aspx.cs">
+      <DependentUpon>HodMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Hod\HodMain.aspx.designer.cs">
+      <DependentUpon>HodMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Hod\ApproveReject.aspx.cs">
+      <DependentUpon>ApproveReject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Hod\ApproveReject.aspx.designer.cs">
+      <DependentUpon>ApproveReject.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1134,7 +1158,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="View\Department\Hod\" />
     <Folder Include="View\Resources\css\" />
     <Folder Include="View\Resources\js\" />
     <Folder Include="View\Store\Supervisor\" />
