@@ -11,7 +11,7 @@ namespace LogicUniversityStore.Dao
     {
         public LogicUniStoreModel db = new LogicUniStoreModel();
 
-        public List<Requisition> getApprovedRequisitionList()
+        public List<Requisition> GetApprovedRequisitionList()
         {
           return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
         }

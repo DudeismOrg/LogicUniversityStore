@@ -28,7 +28,6 @@ c:\users\akhiljayan\documents\visual studio 2015\Projects\LogicUniversityStore\L
 c:\users\akhiljayan\documents\visual studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.xml
 c:\users\akhiljayan\documents\visual studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.xml
 c:\users\akhiljayan\documents\visual studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-c:\users\akhiljayan\documents\visual studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
 c:\users\akhiljayan\documents\visual studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 c:\users\akhiljayan\documents\visual studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
 C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
@@ -72,3 +71,4 @@ C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\L
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.xml
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.xml
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache

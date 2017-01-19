@@ -7,36 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicUniversityStore.View.Department.Employee {
+namespace LogicUniversityStore.View.Store.Clerk {
     
     
-    public partial class RequisitionForm {
+    public partial class ProcessRequest {
         
         /// <summary>
-        /// requestForm control.
+        /// lvSearchResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm requestForm;
+        protected global::System.Web.UI.WebControls.ListView lvSearchResults;
         
         /// <summary>
-        /// DdlCategories control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlCategories;
-        
-        /// <summary>
-        /// DdlItems control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlItems;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
     }
 }

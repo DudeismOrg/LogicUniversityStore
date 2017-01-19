@@ -21,7 +21,7 @@ namespace LogicUniversityStore.Controller
         public List<Tuple<int, Requisition>> GetMainProcessReqList()
         {
             List<Tuple<int, Requisition>> mainList = new List<Tuple<int, Requisition>>();
-            foreach (var requisition in RequisitionDao.getApprovedRequisitionList())
+            foreach (var requisition in RequisitionDao.GetApprovedRequisitionList())
             {
                 int? unfullfilledItem = 0;
                 foreach(RequisitionItem rItem in requisition.RequisitionItems)

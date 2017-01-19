@@ -7,36 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicUniversityStore.View.Department.Employee {
+namespace LogicUniversityStore.View.Store.Clerk {
     
     
-    public partial class RequisitionForm {
+    public partial class Clerk {
         
         /// <summary>
-        /// requestForm control.
+        /// clrkCssBlock control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm requestForm;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder clrkCssBlock;
         
         /// <summary>
-        /// DdlCategories control.
+        /// clrkMainHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlCategories;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder clrkMainHeader;
         
         /// <summary>
-        /// DdlItems control.
+        /// clrkMainContentBlock control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlItems;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder clrkMainContentBlock;
+        
+        /// <summary>
+        /// clrkMainJs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder clrkMainJs;
     }
 }

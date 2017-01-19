@@ -150,6 +150,7 @@
     <Content Include="View\Resources\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="View\Resources\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="View\Department\Employee\Employee.master" />
+    <Content Include="View\Store\Clerk\Clerk.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1037,10 +1038,14 @@
     <Content Include="View\Resources\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="View\Resources\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="View\Login.aspx" />
+    <Content Include="View\Store\Clerk\ClrkMain.aspx" />
+    <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ApplyReqController.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
+    <Compile Include="Dao\CategoryDao.cs" />
     <Compile Include="Dao\RequisitionDao.cs" />
     <Compile Include="Dao\StockCardDao.cs" />
     <Compile Include="Global.asax.cs">
@@ -1065,7 +1070,6 @@
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\SupplierItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="Util\RequisitionStatus.cs" />
     <Compile Include="View\Department\Employee\Employee.master.cs">
       <DependentUpon>Employee.master</DependentUpon>
@@ -1074,7 +1078,6 @@
     <Compile Include="View\Department\Employee\Employee.master.designer.cs">
       <DependentUpon>Employee.master</DependentUpon>
     </Compile>
-
     <Compile Include="View\Department\Employee\EmpMain.aspx.cs">
       <DependentUpon>EmpMain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1103,16 +1106,33 @@
     <Compile Include="View\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+    <Compile Include="View\Store\Clerk\Clerk.master.cs">
+      <DependentUpon>Clerk.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\Clerk.master.designer.cs">
+      <DependentUpon>Clerk.master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\ClrkMain.aspx.cs">
+      <DependentUpon>ClrkMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\ClrkMain.aspx.designer.cs">
+      <DependentUpon>ClrkMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\ProcessRequest.aspx.cs">
+      <DependentUpon>ProcessRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\ProcessRequest.aspx.designer.cs">
+      <DependentUpon>ProcessRequest.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controller\" />
-    <Folder Include="Dao\" />
-    <Folder Include="Model\" />
     <Folder Include="View\Department\Hod\" />
     <Folder Include="View\Resources\css\" />
     <Folder Include="View\Resources\js\" />
-    <Folder Include="View\Store\Clerk\" />
     <Folder Include="View\Store\Supervisor\" />
   </ItemGroup>
   <PropertyGroup>
