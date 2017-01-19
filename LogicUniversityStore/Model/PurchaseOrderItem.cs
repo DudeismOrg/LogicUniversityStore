@@ -7,21 +7,15 @@ namespace LogicUniversityStore.Model
     using System.Data.Entity.Spatial;
 
     [Table("PurchaseOrderItem")]
+    [Serializable]
+
     public partial class PurchaseOrderItem
     {
         [Key]
-        [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PurchaeOrderItemID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItemID { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PurchaseOrderID { get; set; }
 
         public int? RequestedQuantity { get; set; }

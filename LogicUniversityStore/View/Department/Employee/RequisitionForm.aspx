@@ -82,14 +82,16 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="input-group">
-                                                    <input class="form-control" type="text" placeholder="Enter Quntity">
+                                                   <%-- <input class="form-control" type="text" placeholder="Enter Quntity">--%>
+                                                    <asp:TextBox ID="tbAmount" runat="server" CssClass="form-control" ></asp:TextBox>
                                                     <span class="input-group-addon">Unit(As per selected Item)</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="panel-footer" style="height: 50px">
-                                        <a class="pull-right btn btn-success">Add Item</a>
+                                    <%--    <a class="pull-right btn btn-success">Add Item</a>--%>
+                                        <asp:Button ID="btnAddItem"  runat="server" Text="Add Item" CssClass="pull-right btn btn-success" OnClick="btnAddItem_Click"/>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +103,7 @@
                                     </div>
                                     <!-- /.box-header -->
                                     <div class="box-body no-padding">
-                                        <table class="table table-condensed">
+                                        <%--<table class="table table-condensed">
                                             <tbody>
                                                 <tr>
                                                     <th style="width: 10px">#</th>
@@ -162,7 +164,18 @@
                                                     </td>
                                                 </tr>
                                             </tbody>
-                                        </table>
+                                        </table>--%>
+                      
+                
+
+                                        <asp:GridView ID="gvReqItems" runat="server" AutoGenerateColumns="False">
+                                            <Columns>
+                                                <asp:BoundField DataField="Category" HeaderText="Category" />
+                                                <asp:BoundField DataField="SupplierItem" HeaderText="Description" />
+                                                <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
+                                                
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
                                     <!-- /.box-body -->
                                 </div>
@@ -180,8 +193,10 @@
                         <!-- /.box-body -->
 
                         <div class="box-footer">
-                            <button type="submit" class="pull-right btn btn-danger" style="margin-left: 5px">Cancel</button>
-                            <button type="submit" class="pull-right btn btn-primary" style="margin-right: 5px">Put Request</button>
+                            <asp:Button ID="btnCancel" runat="server" Text="Cancell" CssClass="pull-right btn btn-danger" />
+                            <%--<button type="submit" class="pull-right btn btn-danger" style="margin-left: 5px">Cancel</button>--%>
+                           <%-- <button type="submit" class="pull-right btn btn-primary" style="margin-right: 5px">Put Request</button>--%>
+                            <asp:Button ID="btnSubmit" runat="server" Text="Place Request" CssClass="pull-right btn btn-primary" OnClick="btnSubmit_Click" />
                         </div>
 
                 </div>

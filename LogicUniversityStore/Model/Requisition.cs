@@ -7,6 +7,8 @@ namespace LogicUniversityStore.Model
     using System.Data.Entity.Spatial;
 
     [Table("Requisition")]
+    [Serializable]
+
     public partial class Requisition
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

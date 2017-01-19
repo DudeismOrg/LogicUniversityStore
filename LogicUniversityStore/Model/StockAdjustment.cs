@@ -7,6 +7,8 @@ namespace LogicUniversityStore.Model
     using System.Data.Entity.Spatial;
 
     [Table("StockAdjustment")]
+    [Serializable]
+
     public partial class StockAdjustment
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

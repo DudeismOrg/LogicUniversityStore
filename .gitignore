@@ -13,6 +13,13 @@ obj/*
 /obj/Debug/*
 *.cache
 
+.vs/LogicUniversityStore/v14/.suo
+LogicUniversityStore/bin/LogicUniversityStore.dll
+LogicUniversityStore/bin/LogicUniversityStore.pdb
+LogicUniversityStore/obj/Debug/LogicUniversityStore.dll
+LogicUniversityStore/obj/Debug/LogicUniversityStore.pdb
+
+
 
 
 ## Ignore Visual Studio temporary files, build results, and
