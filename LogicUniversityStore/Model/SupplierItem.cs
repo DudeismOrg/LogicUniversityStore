@@ -7,15 +7,17 @@ namespace LogicUniversityStore.Model
     using System.Data.Entity.Spatial;
 
     [Table("SupplierItem")]
+    [Serializable]
+
     public partial class SupplierItem
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SupplierItem()
         {
-            StockAdjustmentItems = new HashSet<StockAdjustmentItem>();
-            StockCards = new HashSet<StockCard>();
             PurchaseOrderItems = new HashSet<PurchaseOrderItem>();
             RequisitionItems = new HashSet<RequisitionItem>();
+            StockAdjustmentItems = new HashSet<StockAdjustmentItem>();
+            StockCards = new HashSet<StockCard>();
         }
 
         public int SupplierItemId { get; set; }
@@ -33,6 +35,12 @@ namespace LogicUniversityStore.Model
         public virtual Item Item { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PurchaseOrderItem> PurchaseOrderItems { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RequisitionItem> RequisitionItems { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StockAdjustmentItem> StockAdjustmentItems { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -40,10 +48,10 @@ namespace LogicUniversityStore.Model
 
         public virtual Supplier Supplier { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PurchaseOrderItem> PurchaseOrderItems { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RequisitionItem> RequisitionItems { get; set; }
+        public override string ToString()
+        {
+            return this.Item.ItemName;
+        }
     }
 }

@@ -7,6 +7,8 @@ namespace LogicUniversityStore.Model
     using System.Data.Entity.Spatial;
 
     [Table("StockCard")]
+    [Serializable]
+
     public partial class StockCard
     {
         public int ItemID { get; set; }

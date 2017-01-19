@@ -18,8 +18,11 @@ namespace LogicUniversityStore.Model
         public virtual DbSet<Disbursement> Disbursements { get; set; }
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<LUUser> LUUsers { get; set; }
+        public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<PurchaseOrder> PurchaseOrders { get; set; }
+        public virtual DbSet<PurchaseOrderItem> PurchaseOrderItems { get; set; }
         public virtual DbSet<Requisition> Requisitions { get; set; }
+        public virtual DbSet<RequisitionItem> RequisitionItems { get; set; }
         public virtual DbSet<Retrieval> Retrievals { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<StockAdjustment> StockAdjustments { get; set; }
@@ -27,8 +30,6 @@ namespace LogicUniversityStore.Model
         public virtual DbSet<StockCard> StockCards { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<SupplierItem> SupplierItems { get; set; }
-        public virtual DbSet<PurchaseOrderItem> PurchaseOrderItems { get; set; }
-        public virtual DbSet<RequisitionItem> RequisitionItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -125,6 +126,28 @@ namespace LogicUniversityStore.Model
 
             modelBuilder.Entity<LUUser>()
                 .Property(e => e.Address)
+                .IsFixedLength();
+
+            modelBuilder.Entity<LUUser>()
+                .HasMany(e => e.Notifications)
+                .WithOptional(e => e.LUUser)
+                .HasForeignKey(e => e.SenderUserID);
+
+            modelBuilder.Entity<LUUser>()
+                .HasMany(e => e.Notifications1)
+                .WithOptional(e => e.LUUser1)
+                .HasForeignKey(e => e.ReciverUserID);
+
+            modelBuilder.Entity<Notification>()
+                .Property(e => e.Type)
+                .IsFixedLength();
+
+            modelBuilder.Entity<Notification>()
+                .Property(e => e.Description)
+                .IsFixedLength();
+
+            modelBuilder.Entity<Notification>()
+                .Property(e => e.status)
                 .IsFixedLength();
 
             modelBuilder.Entity<PurchaseOrder>()
@@ -249,17 +272,6 @@ namespace LogicUniversityStore.Model
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SupplierItem>()
-                .HasMany(e => e.StockAdjustmentItems)
-                .WithOptional(e => e.SupplierItem)
-                .HasForeignKey(e => e.ItemID);
-
-            modelBuilder.Entity<SupplierItem>()
-                .HasMany(e => e.StockCards)
-                .WithRequired(e => e.SupplierItem)
-                .HasForeignKey(e => e.ItemID)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<SupplierItem>()
                 .HasMany(e => e.PurchaseOrderItems)
                 .WithRequired(e => e.SupplierItem)
                 .HasForeignKey(e => e.ItemID)
@@ -267,6 +279,18 @@ namespace LogicUniversityStore.Model
 
             modelBuilder.Entity<SupplierItem>()
                 .HasMany(e => e.RequisitionItems)
+                .WithRequired(e => e.SupplierItem)
+                .HasForeignKey(e => e.ItemID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<SupplierItem>()
+                .HasMany(e => e.StockAdjustmentItems)
+                .WithRequired(e => e.SupplierItem)
+                .HasForeignKey(e => e.ItemID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<SupplierItem>()
+                .HasMany(e => e.StockCards)
                 .WithRequired(e => e.SupplierItem)
                 .HasForeignKey(e => e.ItemID)
                 .WillCascadeOnDelete(false);

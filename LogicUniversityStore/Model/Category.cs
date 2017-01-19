@@ -7,6 +7,7 @@ namespace LogicUniversityStore.Model
     using System.Data.Entity.Spatial;
 
     [Table("Category")]
+    [Serializable]
     public partial class Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -29,7 +30,6 @@ namespace LogicUniversityStore.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Item> Items { get; set; }
-
         public override string ToString()
         {
             return this.CategoryCode;

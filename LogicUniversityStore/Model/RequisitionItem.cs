@@ -7,21 +7,15 @@ namespace LogicUniversityStore.Model
     using System.Data.Entity.Spatial;
 
     [Table("RequisitionItem")]
+    [Serializable]
+
     public partial class RequisitionItem
     {
         [Key]
-        [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ReqItemID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ReqID { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItemID { get; set; }
 
         public int? NeededQuantity { get; set; }
@@ -40,8 +34,8 @@ namespace LogicUniversityStore.Model
 
         public virtual Requisition Requisition { get; set; }
 
-        public virtual Retrieval Retrieval { get; set; }
-
         public virtual SupplierItem SupplierItem { get; set; }
+
+        public virtual Retrieval Retrieval { get; set; }
     }
 }

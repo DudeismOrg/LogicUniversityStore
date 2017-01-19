@@ -7,6 +7,8 @@ namespace LogicUniversityStore.Model
     using System.Data.Entity.Spatial;
 
     [Table("Item")]
+    [Serializable]
+
     public partial class Item
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -45,10 +47,16 @@ namespace LogicUniversityStore.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SupplierItem> SupplierItems { get; set; }
-
         public override string ToString()
         {
             return this.ItemName;
+        }
+
+        public SupplierItem GetSupplierItem()
+        {
+            List<SupplierItem> sList = new List<SupplierItem>(this.SupplierItems);
+            SupplierItem item = sList.Find(i => i.ActiveSupplier == true && i.SupplierPriority == 1);
+            return item;
         }
     }
 }
