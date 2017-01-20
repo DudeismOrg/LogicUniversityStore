@@ -1047,6 +1047,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ApplyReqController.cs" />
+    <Compile Include="Controller\ApproveRejectReqController.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
     <Compile Include="Dao\RequisitionItemDao.cs" />
