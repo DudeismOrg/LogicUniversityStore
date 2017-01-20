@@ -37,8 +37,8 @@
                                 <!-- /.box-header -->
 
                                 <div>
-                                <asp:GridView ID="gvRequestedRequisition" runat="server" AutoGenerateSelectButton="True"></asp:GridView>
-                                        
+                                <asp:GridView ID="gvRequestedRequisition" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvRequestedRequisition_SelectedIndexChanged"  ></asp:GridView>
+                                    
 
                                 <!-- /.box-body -->
 
@@ -59,6 +59,14 @@
                                                                 
 
                                             </div>
+        
+        </form>
+
+
+
+
+
+            
 
                                             <!-- /.box-body -->
 
@@ -68,7 +76,7 @@
 
                        
         
-    </form>
+    
 </asp:Content>
 
 

@@ -1,4 +1,5 @@
 ﻿using LogicUniversityStore.Controller;
+using LogicUniversityStore.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,12 @@ namespace LogicUniversityStore.View.Department.Hod
                 gvRequestedRequisition.DataSource = reqController.getRequestedRequisition();
                 gvRequestedRequisition.DataBind();
             }
+        }
+
+        protected void gvRequestedRequisition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            Response.Redirect("ApproveRejectRequisitionItems.aspx");
         }
     }
 }

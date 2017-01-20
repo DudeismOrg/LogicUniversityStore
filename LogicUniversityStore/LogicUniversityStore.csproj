@@ -112,6 +112,7 @@
     <Content Include="View\Department\Employee\RequisitionForm.aspx" />
     <Content Include="View\Department\Hod\HodMain.aspx" />
     <Content Include="View\Department\Hod\ApproveReject.aspx" />
+    <Content Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx" />
     <Content Include="View\Main.Master" />
     <Content Include="View\Resources\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="View\Resources\bootstrap\css\bootstrap-theme.min.css.map" />
@@ -1120,6 +1121,13 @@
     </Compile>
     <Compile Include="View\Department\Hod\ApproveReject.aspx.designer.cs">
       <DependentUpon>ApproveReject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx.cs">
+      <DependentUpon>ApproveRejectRequisitionItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx.designer.cs">
+      <DependentUpon>ApproveRejectRequisitionItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
