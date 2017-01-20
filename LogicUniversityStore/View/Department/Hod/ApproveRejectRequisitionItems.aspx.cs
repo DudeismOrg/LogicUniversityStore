@@ -1,6 +1,8 @@
 ﻿using LogicUniversityStore.Controller;
+using LogicUniversityStore.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,12 +18,29 @@ namespace LogicUniversityStore.View.Department.Hod
         {
             if (!IsPostBack)
             {
+                //reqId = Convert.ToInt32(Request.QueryString["id"]);
+                //gvRequisitionDetails.DataSource=reqController.getRequisitionItemList(reqId);
+                //gvRequisitionDetails.DataBind();
+
                 reqId = Convert.ToInt32(Request.QueryString["id"]);
-                gvRequisitionDetails.DataSource=reqController.getRequisitionItemList(reqId);
+                List<RequisitionItem> items = reqController.getRequisitionItemList(reqId);
+
+                DataTable dt = new DataTable();
+                dt.Columns.AddRange(new DataColumn[2] { new DataColumn("ItemName"), new DataColumn("NeededQuantity")});
+                foreach(RequisitionItem i in items)
+                {
+                    DataRow r = dt.NewRow();
+                    r["ItemName"] = i.SupplierItem.Item.ItemName;
+                    r["NeededQuantity"] = i.NeededQuantity;
+                    dt.Rows.Add(r);
+                }
+                gvRequisitionDetails.DataSource = dt;
                 gvRequisitionDetails.DataBind();
             }
 
         }
+
+        
 
         protected void btnApprove_Click(object sender, EventArgs e)
         {

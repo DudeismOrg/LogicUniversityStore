@@ -57,7 +57,7 @@
 
                                             <div class="box-body no-padding">
 
-                                                <asp:GridView ID="gvRequisitionDetails" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="953px">
+                                                <asp:GridView ID="gvRequisitionDetails" AutoGenerateColumns="false"  runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="643px">
                                                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                                     <EditRowStyle BackColor="#999999" />
                                                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -69,7 +69,10 @@
                                                     <SortedAscendingHeaderStyle BackColor="#506C8C" />
                                                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                                                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-
+                                                    <Columns>
+                                                       <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Width="150" />
+                                                       <asp:BoundField DataField="NeededQuantity" HeaderText="Quantity" ItemStyle-Width="150" />
+                                                    </Columns>
                                                 </asp:GridView>
                                             </div>
 
