@@ -47,5 +47,29 @@ namespace LogicUniversityStore.Dao
             }
             return false;
         }
+
+        public void approveRequisition(int reqId)
+        {
+            Requisition requisition = db.Requisitions.Find(reqId);
+            
+                requisition.Status = RequisitionStatus.Approved.ToString();
+                db.Requisitions.Attach(requisition);
+                var entry = db.Entry(requisition);
+                entry.Property(e => e.Status).IsModified = true;
+                db.SaveChanges();
+            
+        }
+
+        public void rejectRequisition(int reqId)
+        {
+            Requisition requisition = db.Requisitions.Find(reqId);
+
+            requisition.Status = RequisitionStatus.Rejected.ToString();
+            db.Requisitions.Attach(requisition);
+            var entry = db.Entry(requisition);
+            entry.Property(e => e.Status).IsModified = true;
+            db.SaveChanges();
+
+        }
     }
 }

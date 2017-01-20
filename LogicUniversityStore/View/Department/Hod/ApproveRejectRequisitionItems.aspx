@@ -57,7 +57,20 @@
 
                                             <div class="box-body no-padding">
 
-                                                <asp:GridView ID="gvRequisitionDetails" runat="server"></asp:GridView>
+                                                <asp:GridView ID="gvRequisitionDetails" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="953px">
+                                                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                                    <EditRowStyle BackColor="#999999" />
+                                                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+
+                                                </asp:GridView>
                                             </div>
 
                                             <!-- /.box-body -->
@@ -67,11 +80,14 @@
                                     </div>
                                     <div class="modal-footer">
 
-                                <button type="button" class="btn btn-success">Approve</button>
+                                <%--<button type="button" class="btn btn-success">Approve</button>--%>
 
-                                <button type="button" class="btn btn-danger">Reject</button>
+                                <%--<button type="button" class="btn btn-danger">Reject</button>--%>
 
-                                <button type="button" class="btn btn-default">Close</button>
+                                <%--<button type="button" class="btn btn-default">Close</button>--%>
+                                        <asp:Button ID="btnApprove" CssClass="btn btn-success" runat="server" Text="Approve" OnClick="btnApprove_Click" />
+                                        <asp:Button ID="btnReject" CssClass="btn btn-danger" runat="server" Text="Reject" OnClick="btnReject_Click" />
+                                        <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back" OnClick="btnClose_Click" />
 
                             </div>
 
