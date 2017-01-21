@@ -26,12 +26,12 @@
      <!-- /.box-header -->
                                
      <div>
-     <asp:GridView ID="gvRequestedRequisition" runat="server" OnRowDataBound = "OnRowDataBound" AutoGenerateColumns="False"   OnSelectedIndexChanged="gvRequestedRequisition_SelectedIndexChanged" CellPadding="20" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="100px" Width="661px"  >
+     <asp:GridView ID="gvRequestedRequisition" runat="server" OnRowDataBound = "OnRowDataBound" AutoGenerateColumns="False"   OnSelectedIndexChanged="gvRequestedRequisition_SelectedIndexChanged" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="75px" Width="661px"  >
      <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
        <Columns>
        <asp:BoundField DataField="ReqID" HeaderText="RequisitionID" />
        <asp:BoundField DataField="ReqNumber" HeaderText="RequisitionNumber" />
-       <asp:BoundField DataField="ReqDate" HeaderText="Requisition Date" />
+       <asp:BoundField DataField="ReqDate" HeaderText="Requisition Date" DataFormatString="{0:D}" />
        </Columns>
      <EditRowStyle BackColor="#999999" BorderStyle="None" />
      <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
