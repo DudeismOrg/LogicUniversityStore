@@ -22,12 +22,24 @@ namespace LogicUniversityStore.View.Department.Hod
             }
         }
 
+        protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvRequestedRequisition, "Select$" + e.Row.RowIndex);
+                e.Row.ToolTip = "Click to select this row.";
+            }
+        }
+
         protected void gvRequestedRequisition_SelectedIndexChanged(object sender, EventArgs e)
         {
          
-            int reqId=Convert.ToInt32(gvRequestedRequisition.SelectedRow.Cells[1].Text);
+            int reqId=Convert.ToInt32(gvRequestedRequisition.SelectedRow.Cells[0].Text);
+
             
             Response.Redirect("ApproveRejectRequisitionItems.aspx?id="+reqId+"");
         }
+
+        
     }
 }
