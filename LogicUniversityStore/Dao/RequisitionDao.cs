@@ -21,6 +21,16 @@ namespace LogicUniversityStore.Dao
             return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString())).ToList();
         }
 
+        public List<Requisition> GetRejectedRequisitionList()
+        {
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Rejected.ToString())).ToList();
+        }
+
+        public List<Requisition> GetApprovedRejectedRequisitionList()
+        {
+            return db.Requisitions.Where(r => (r.Status.Equals(RequisitionStatus.Approved.ToString())) || (r.Status.Equals(RequisitionStatus.Rejected.ToString()))).ToList();
+        }
+
         public List<Requisition> GetRequisitionList()
         {
             return db.Requisitions.ToList();

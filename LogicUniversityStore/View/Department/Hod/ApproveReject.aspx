@@ -1,10 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Department/Hod/Hod.master" AutoEventWireup="true" CodeBehind="ApproveReject.aspx.cs" Inherits="LogicUniversityStore.View.Department.Hod.WebForm2" EnableEventValidation = "false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="empMainHeader" runat="server">
+    
+    <section class="content-header">
     <h1>Approve/Reject Requests</h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-        <li class="active">Request Form</li>
+        <li class="active">Approve/Reject Requests</li>
     </ol>
+        </section>
+       
 </asp:Content>
 
 
