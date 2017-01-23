@@ -53,7 +53,7 @@
                                         <!-- /.box-header -->
 
                                         <div class="box-body no-padding">
-                                            <asp:GridView ID="gvRequisitionDetails" runat="server" AutoGenerateColumns="False" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Width="611px" Height="75px">
+                                            <asp:GridView ID="gvRequisitionDetails" runat="server" AutoGenerateColumns="False" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Width="665px" Height="100px">
                                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                                 <Columns>
                                                     <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Width="150" >
