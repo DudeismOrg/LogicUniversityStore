@@ -30,7 +30,7 @@
      <!-- /.box-header -->
                                
      <div>
-     <asp:GridView ID="gvRequestedRequisition" runat="server" OnRowDataBound = "OnRowDataBound" AutoGenerateColumns="False"   OnSelectedIndexChanged="gvRequestedRequisition_SelectedIndexChanged" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="75px" Width="661px"  >
+     <asp:GridView ID="gvRequestedRequisition" runat="server" OnRowDataBound = "OnRowDataBound" AutoGenerateColumns="False"   OnSelectedIndexChanged="gvRequestedRequisition_SelectedIndexChanged" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="100px" Width="665px"  >
      <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
        <Columns>
        <asp:BoundField DataField="ReqID" HeaderText="RequisitionID" />

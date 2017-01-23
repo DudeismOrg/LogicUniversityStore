@@ -10,15 +10,45 @@ namespace LogicUniversityStore.Controller
     public class CancelUpdateUnallocatedController
     {
         public RequisitionDao RequisitionDao { get; set; }
-
-        public CancelUpdateUnallocatedController()
+        public ItemDao iDao { get; set; }
+        public RequisitionItemDao riDao {get; set;}
+    public CancelUpdateUnallocatedController()
         {
             RequisitionDao = new RequisitionDao();
+            riDao = new RequisitionItemDao();
+            iDao = new ItemDao();
         }
 
         public List<Requisition> GetApprovedRejectedRequisition()
         {
             return RequisitionDao.GetApprovedRejectedRequisitionList();
+        }
+
+        public List<RequisitionItem> getRequisitionItemList(int requisitionId)
+        {
+            return RequisitionDao.GetRequisitionItemList(requisitionId);
+        }
+
+        public void approveRequisition(int requisitionId)
+        {
+            RequisitionDao.approveRequisition(requisitionId);
+        }
+
+        
+
+        public Item GetItem(String itemName)
+        {
+            return iDao.GetItem(itemName);
+        }
+
+        public void deleteRequisitionItem(int reqId, int itemId)
+        {
+            riDao.deleteRequisitionItem(reqId,itemId);
+        }
+
+        public void updateRequisitionItem(int reqId, int itemId,int qty)
+        {
+            riDao.updateRequisitionItem(reqId,itemId,qty);
         }
 
     }

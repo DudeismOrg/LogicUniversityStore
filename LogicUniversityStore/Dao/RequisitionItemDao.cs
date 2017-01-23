@@ -15,5 +15,34 @@ namespace LogicUniversityStore.Dao
             
             return true;
         }
+
+        public void deleteRequisitionItem(int reqId,int itemId)
+        {
+            RequisitionItem item = db.RequisitionItems.Where(s => s.ReqID == reqId && s.ItemID==itemId).First();
+
+
+            if (item!=null)
+            {
+                db.RequisitionItems.Remove(item);
+            }
+            db.SaveChanges();
+
+
+        }
+
+        public void updateRequisitionItem(int reqId,int itemId,int qty)
+        {
+            RequisitionItem item = db.RequisitionItems.Where(s => s.ReqID == reqId && s.ItemID == itemId).First();
+            if (item != null)
+            {
+                item.NeededQuantity = qty;
+                db.RequisitionItems.Attach(item);
+                var entry = db.Entry(item);
+                entry.Property(e => e.NeededQuantity).IsModified = true;
+                db.SaveChanges();
+            }
+        }
+
+
     }
 }
