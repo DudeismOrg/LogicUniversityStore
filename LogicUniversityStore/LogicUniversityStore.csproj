@@ -112,6 +112,11 @@
     <Content Include="View\Department\Employee\RequisitionForm.aspx" />
     <Content Include="View\Department\Hod\HodMain.aspx" />
     <Content Include="View\Department\Hod\ApproveReject.aspx" />
+    <Content Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx" />
+    <Content Include="View\Department\Hod\RequestHistory.aspx" />
+    <Content Include="View\Department\Hod\RequestHistoryDetails.aspx" />
+    <Content Include="View\Department\Hod\CancelUpdateUnallocated.aspx" />
+    <Content Include="View\Department\Hod\CancelUpdateUnallocatedDetails.aspx" />
     <Content Include="View\Main.Master" />
     <Content Include="View\Resources\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="View\Resources\bootstrap\css\bootstrap-theme.min.css.map" />
@@ -1048,7 +1053,9 @@
   <ItemGroup>
     <Compile Include="Controller\ApplyReqController.cs" />
     <Compile Include="Controller\ApproveRejectReqController.cs" />
+    <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
+    <Compile Include="Controller\RequestHistoryController.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
     <Compile Include="Dao\RequisitionItemDao.cs" />
     <Compile Include="Dao\ItemDao.cs" />
@@ -1121,6 +1128,41 @@
     </Compile>
     <Compile Include="View\Department\Hod\ApproveReject.aspx.designer.cs">
       <DependentUpon>ApproveReject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx.cs">
+      <DependentUpon>ApproveRejectRequisitionItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx.designer.cs">
+      <DependentUpon>ApproveRejectRequisitionItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Hod\RequestHistory.aspx.cs">
+      <DependentUpon>RequestHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Hod\RequestHistory.aspx.designer.cs">
+      <DependentUpon>RequestHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Hod\RequestHistoryDetails.aspx.cs">
+      <DependentUpon>RequestHistoryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Hod\RequestHistoryDetails.aspx.designer.cs">
+      <DependentUpon>RequestHistoryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Hod\CancelUpdateUnallocated.aspx.cs">
+      <DependentUpon>CancelUpdateUnallocated.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Hod\CancelUpdateUnallocated.aspx.designer.cs">
+      <DependentUpon>CancelUpdateUnallocated.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Hod\CancelUpdateUnallocatedDetails.aspx.cs">
+      <DependentUpon>CancelUpdateUnallocatedDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Hod\CancelUpdateUnallocatedDetails.aspx.designer.cs">
+      <DependentUpon>CancelUpdateUnallocatedDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

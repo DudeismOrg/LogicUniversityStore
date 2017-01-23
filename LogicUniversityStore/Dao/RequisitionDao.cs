@@ -21,6 +21,16 @@ namespace LogicUniversityStore.Dao
             return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString())).ToList();
         }
 
+        public List<Requisition> GetRejectedRequisitionList()
+        {
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Rejected.ToString())).ToList();
+        }
+
+        public List<Requisition> GetApprovedRejectedRequisitionList()
+        {
+            return db.Requisitions.Where(r => (r.Status.Equals(RequisitionStatus.Approved.ToString())) || (r.Status.Equals(RequisitionStatus.Rejected.ToString()))).ToList();
+        }
+
         public List<Requisition> GetRequisitionList()
         {
             return db.Requisitions.ToList();
@@ -46,6 +56,30 @@ namespace LogicUniversityStore.Dao
                 return true;
             }
             return false;
+        }
+
+        public void approveRequisition(int reqId)
+        {
+            Requisition requisition = db.Requisitions.Find(reqId);
+            
+                requisition.Status = RequisitionStatus.Approved.ToString();
+                db.Requisitions.Attach(requisition);
+                var entry = db.Entry(requisition);
+                entry.Property(e => e.Status).IsModified = true;
+                db.SaveChanges();
+            
+        }
+
+        public void rejectRequisition(int reqId)
+        {
+            Requisition requisition = db.Requisitions.Find(reqId);
+
+            requisition.Status = RequisitionStatus.Rejected.ToString();
+            db.Requisitions.Attach(requisition);
+            var entry = db.Entry(requisition);
+            entry.Property(e => e.Status).IsModified = true;
+            db.SaveChanges();
+
         }
     }
 }

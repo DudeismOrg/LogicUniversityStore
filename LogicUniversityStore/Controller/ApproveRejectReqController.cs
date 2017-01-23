@@ -20,5 +20,20 @@ namespace LogicUniversityStore.Controller
         {
             return RequisitionDao.GetRequestedRequisitionList();
         }
+
+        public List<RequisitionItem> getRequisitionItemList(int requisitionId)
+        {
+            return RequisitionDao.GetRequisitionItemList(requisitionId);
+        }
+
+        public void approveRequisition(int requisitionId)
+        {
+            RequisitionDao.approveRequisition(requisitionId);
+        }
+
+        public void rejectRequisition(int requisitionId)
+        {
+            RequisitionDao.rejectRequisition(requisitionId);
+        }
     }
 }
