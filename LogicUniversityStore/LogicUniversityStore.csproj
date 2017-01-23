@@ -1047,6 +1047,7 @@
     <Content Include="View\Resources\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\Store\Clerk\ClrkMain.aspx" />
+    <Content Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx" />
     <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -1191,6 +1192,13 @@
     </Compile>
     <Compile Include="View\Store\Clerk\ClrkMain.aspx.designer.cs">
       <DependentUpon>ClrkMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx.cs">
+      <DependentUpon>RequestFormAlterItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx.designer.cs">
+      <DependentUpon>RequestFormAlterItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Store\Clerk\ProcessRequest.aspx.cs">
       <DependentUpon>ProcessRequest.aspx</DependentUpon>

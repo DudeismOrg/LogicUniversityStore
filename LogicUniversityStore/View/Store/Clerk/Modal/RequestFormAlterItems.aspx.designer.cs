@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicUniversityStore.View.Store.Clerk {
+namespace LogicUniversityStore.View.Store.Clerk.Modal {
     
     
-    public partial class ProcessRequest {
+    public partial class RequestFormAlterItems {
         
         /// <summary>
-        /// lvSearchResults control.
+        /// lvItemsInReq control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvSearchResults;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.ListView lvItemsInReq;
     }
 }

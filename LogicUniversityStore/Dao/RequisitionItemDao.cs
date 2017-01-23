@@ -9,6 +9,11 @@ namespace LogicUniversityStore.Dao
     public class RequisitionItemDao
     {
         public LogicUniStoreModel db = new LogicUniStoreModel();
-
+        
+        public Boolean InitialApprovedQuantity(RequisitionItem reqItem)
+        {
+            
+            return true;
+        }
     }
 }

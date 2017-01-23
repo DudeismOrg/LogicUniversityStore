@@ -18,26 +18,57 @@ namespace LogicUniversityStore.Controller
             StockCardDao = new StockCardDao();
         }
 
-        public List<Tuple<int, Requisition>> GetMainProcessReqList()
+        public List<Tuple<double, Requisition>> GetMainProcessReqList()
         {
-            List<Tuple<int, Requisition>> mainList = new List<Tuple<int, Requisition>>();
+            List<Tuple<double, Requisition>> mainList = new List<Tuple<double, Requisition>>();
             foreach (var requisition in RequisitionDao.GetApprovedRequisitionList())
             {
                 int? unfullfilledItem = 0;
-                foreach(RequisitionItem rItem in requisition.RequisitionItems)
+                double percentage = 100;
+                int countReqItem = requisition.RequisitionItems.Count();
+
+
+
+                foreach (RequisitionItem rItem in requisition.RequisitionItems)
                 {
-                    unfullfilledItem = unfullfilledItem + ((rItem.NeededQuantity - StockCardDao.GetProductCountInStock(rItem.SupplierItem.Item.ItemID)) > 0 ? 1 : 0);
+                    unfullfilledItem = unfullfilledItem + ((rItem.NeededQuantity - (StockCardDao.GetProductCountInStock(rItem.SupplierItem.ItemID) - StockCardDao.GetLockedProductCountInStock(rItem.SupplierItem.Item.ItemID))) >= 0 ? 1 : 0);
                 }
-                if(unfullfilledItem.Value == 0)
+                if (unfullfilledItem.Value == 0)
                 {
                     requisition.Status = RequisitionStatus.Allocated.ToString();
+                    percentage = 100;
                 }
-                mainList.Add(new Tuple<int,Requisition>(unfullfilledItem.Value, requisition));
+                else
+                {
+                    double value = (1 / Convert.ToDouble(unfullfilledItem));
+                    percentage = value * 100;
+                }
+
+                mainList.Add(new Tuple<double, Requisition>((double)unfullfilledItem, requisition));
             }
 
             return mainList;
-            
+
         }
-        
+
+        public List<StockCard> GetAllStockCard()
+        {
+            return StockCardDao.GetAllInStock();
+        }
+
+        public List<RequisitionItem> GetRequisitionItems(int requisitionID)
+        {
+            return RequisitionDao.GetRequisitionItemList(requisitionID);
+        }
+
+        public Boolean InitialInsertToApprovedQuantity(int reqId)
+        {
+            List<RequisitionItem> items = this.GetRequisitionItems(reqId);
+            foreach (RequisitionItem item in items)
+            {
+
+            }
+            return true;
+        }
     }
 }

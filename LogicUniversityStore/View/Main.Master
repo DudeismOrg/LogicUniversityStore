@@ -32,6 +32,7 @@
     <link rel="stylesheet" href='<%= Page.ResolveUrl("~/View/Resources/plugins/jvectormap/jquery-jvectormap-1.2.2.css") %>'>
     <link rel="stylesheet" href='<%= Page.ResolveUrl("~/View/Resources/dist/css/AdminLTE.min.css") %>'>
     <link rel="stylesheet" href='<%= Page.ResolveUrl("~/View/Resources/dist/css/skins/_all-skins.min.css") %>'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <asp:ContentPlaceHolder ID="cssBlock" runat="server"></asp:ContentPlaceHolder>
 </head>
 
@@ -879,6 +880,7 @@
     </div>
     <link rel="stylesheet" href='<%= Page.ResolveUrl("~/View/Resources/dist/css/skins/_all-skins.min.css") %>'>
     <script src='<%= Page.ResolveUrl("~/View/Resources/plugins/jQuery/jquery-2.2.3.min.js") %>'></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src='<%= Page.ResolveUrl("~/View/Resources/bootstrap/js/bootstrap.min.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/View/Resources/plugins/fastclick/fastclick.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/View/Resources/dist/js/app.min.js") %>'></script>
@@ -887,9 +889,9 @@
     <script src='<%= Page.ResolveUrl("~/View/Resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/View/Resources/plugins/slimScroll/jquery.slimscroll.min.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/View/Resources/plugins/chartjs/Chart.min.js") %>'></script>
-    <script src='<%= Page.ResolveUrl("~/View/Resources/dist/js/pages/dashboard2.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/View/Resources/dist/js/demo.js") %>'></script>
     <asp:ContentPlaceHolder ID="jsBlock" runat="server"></asp:ContentPlaceHolder>
+    <script src='<%= Page.ResolveUrl("~/View/Resources/dist/js/pages/dashboard2.js") %>'></script>
 </body>
 </html>
 
