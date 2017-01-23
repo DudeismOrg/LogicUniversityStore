@@ -1065,6 +1065,7 @@
     <Compile Include="Model\LogicUniStoreModel.cs" />
     <Compile Include="Model\LUUser.cs" />
     <Compile Include="Model\Notification.cs" />
+    <Compile Include="Model\POBatch.cs" />
     <Compile Include="Model\PurchaseOrder.cs" />
     <Compile Include="Model\PurchaseOrderItem.cs" />
     <Compile Include="Model\Requisition.cs" />

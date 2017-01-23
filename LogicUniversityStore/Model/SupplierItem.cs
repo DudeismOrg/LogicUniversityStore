@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("SupplierItem")]
     [Serializable]
-
     public partial class SupplierItem
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -47,8 +46,6 @@ namespace LogicUniversityStore.Model
         public virtual ICollection<StockCard> StockCards { get; set; }
 
         public virtual Supplier Supplier { get; set; }
-
-
         public override string ToString()
         {
             return this.Item.ItemName;

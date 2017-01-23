@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("StockCard")]
     [Serializable]
-
     public partial class StockCard
     {
         public int ItemID { get; set; }

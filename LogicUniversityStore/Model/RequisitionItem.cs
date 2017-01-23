@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("RequisitionItem")]
     [Serializable]
-
     public partial class RequisitionItem
     {
         [Key]
