@@ -37,5 +37,6 @@ namespace LogicUniversityStore.Model
         public virtual SupplierItem SupplierItem { get; set; }
 
         public virtual Retrieval Retrieval { get; set; }
+        public bool? IsLocked { get; set; }
     }
 }

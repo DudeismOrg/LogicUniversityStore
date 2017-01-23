@@ -99,7 +99,7 @@ namespace LogicUniversityStore.View.Department.Employee
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            ViewState["items"] = null;
+            ViewState["items"] = new List<RequisitionItem>();
             gvReqItems.DataSource = null;
             gvReqItems.DataBind();
         }
