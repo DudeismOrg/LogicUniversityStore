@@ -19,6 +19,7 @@ namespace LogicUniversityStore.Model
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<LUUser> LUUsers { get; set; }
         public virtual DbSet<Notification> Notifications { get; set; }
+        public virtual DbSet<POBatch> POBatches { get; set; }
         public virtual DbSet<PurchaseOrder> PurchaseOrders { get; set; }
         public virtual DbSet<PurchaseOrderItem> PurchaseOrderItems { get; set; }
         public virtual DbSet<Requisition> Requisitions { get; set; }
@@ -184,6 +185,10 @@ namespace LogicUniversityStore.Model
                 .IsFixedLength();
 
             modelBuilder.Entity<Requisition>()
+                .Property(e => e.Remark)
+                .IsFixedLength();
+
+            modelBuilder.Entity<Requisition>()
                 .HasMany(e => e.RequisitionItems)
                 .WithRequired(e => e.Requisition)
                 .WillCascadeOnDelete(false);
@@ -210,17 +215,17 @@ namespace LogicUniversityStore.Model
                 .IsFixedLength();
 
             modelBuilder.Entity<StockAdjustment>()
-                .HasMany(e => e.StockAdjustmentItems)
-                .WithRequired(e => e.StockAdjustment)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<StockAdjustmentItem>()
                 .Property(e => e.Status)
                 .IsFixedLength();
 
-            modelBuilder.Entity<StockAdjustmentItem>()
-                .Property(e => e.AdjustType)
+            modelBuilder.Entity<StockAdjustment>()
+                .Property(e => e.Type)
                 .IsFixedLength();
+
+            modelBuilder.Entity<StockAdjustment>()
+                .HasMany(e => e.StockAdjustmentItems)
+                .WithRequired(e => e.StockAdjustment)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<StockAdjustmentItem>()
                 .Property(e => e.CountPerson)

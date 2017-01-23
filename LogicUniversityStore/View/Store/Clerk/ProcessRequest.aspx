@@ -60,7 +60,7 @@
                                             <input value="<%# Eval("ReqID") %>" type="checkbox"></td>
                                         <td><%# Eval("ReqID") %>.</td>
                                         <td><%# Eval("ReqNumber") %></td>
-                                        <td><%# Eval("DepartmentName") %></td>
+                                        <td><%# Eval("DepartmentName") %>: <%# Eval("Item1") %></td>
                                         <td>
                                             <div class="progress progress-xs progress-striped active">
                                                 <div class="progress-bar progress-bar-success" style="width: <%# Eval("Item1") %>%"></div>
@@ -69,8 +69,10 @@
                                         <td>
                                             <%# Eval("ReqDate") %>
                                         </td>
-                                        <td>
-                                            <a href="#" data-id="<%# Eval("ReqID") %>" class="btn btn-sm btn-primary set-item-values">View/Edit</a>
+                                        <td> 
+                                            <a href="#" data-id="<%# Eval("ReqID") %>" class="btn btn-sm 
+                                                <%# string.Format(Eval("Item1").Equals(100) ? "btn-danger" : "btn-primary") %>           
+                                                set-item-values">View/Edit</a>
                                             <a href="#" class="btn btn-sm btn-warning">Send Note to Department</a>
                                         </td>
                                     </tr>

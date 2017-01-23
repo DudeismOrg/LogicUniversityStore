@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("Disbursement")]
     [Serializable]
-
     public partial class Disbursement
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

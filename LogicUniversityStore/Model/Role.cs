@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("Role")]
     [Serializable]
-
     public partial class Role
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

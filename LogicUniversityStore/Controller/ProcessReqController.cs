@@ -26,9 +26,12 @@ namespace LogicUniversityStore.Controller
                 int? unfullfilledItem = 0;
                 double percentage = 100;
                 int countReqItem = requisition.RequisitionItems.Count();
+
+
+
                 foreach (RequisitionItem rItem in requisition.RequisitionItems)
                 {
-                    unfullfilledItem = unfullfilledItem + ((rItem.NeededQuantity - StockCardDao.GetProductCountInStock(rItem.SupplierItem.Item.ItemID)) > 0 ? 1 : 0);
+                    unfullfilledItem = unfullfilledItem + ((rItem.NeededQuantity - (StockCardDao.GetProductCountInStock(rItem.SupplierItem.ItemID) - StockCardDao.GetLockedProductCountInStock(rItem.SupplierItem.Item.ItemID))) >= 0 ? 1 : 0);
                 }
                 if (unfullfilledItem.Value == 0)
                 {
@@ -40,7 +43,8 @@ namespace LogicUniversityStore.Controller
                     double value = (1 / Convert.ToDouble(unfullfilledItem));
                     percentage = value * 100;
                 }
-                mainList.Add(new Tuple<double, Requisition>(percentage, requisition));
+
+                mainList.Add(new Tuple<double, Requisition>((double)unfullfilledItem, requisition));
             }
 
             return mainList;

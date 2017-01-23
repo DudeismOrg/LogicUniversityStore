@@ -13,8 +13,23 @@ namespace LogicUniversityStore.Dao
 
         public List<Requisition> GetApprovedRequisitionList()
         {
-            //return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
+            return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
+            //return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString())).ToList();
+        }
+
+        public List<Requisition> GetRequestedRequisitionList()
+        {
             return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString())).ToList();
+        }
+
+        public List<Requisition> GetRejectedRequisitionList()
+        {
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Rejected.ToString())).ToList();
+        }
+
+        public List<Requisition> GetApprovedRejectedRequisitionList()
+        {
+            return db.Requisitions.Where(r => (r.Status.Equals(RequisitionStatus.Approved.ToString())) || (r.Status.Equals(RequisitionStatus.Rejected.ToString()))).ToList();
         }
 
         public List<Requisition> GetRequisitionList()
@@ -47,6 +62,30 @@ namespace LogicUniversityStore.Dao
                 return true;
             }
             return false;
+        }
+
+        public void approveRequisition(int reqId)
+        {
+            Requisition requisition = db.Requisitions.Find(reqId);
+            
+                requisition.Status = RequisitionStatus.Approved.ToString();
+                db.Requisitions.Attach(requisition);
+                var entry = db.Entry(requisition);
+                entry.Property(e => e.Status).IsModified = true;
+                db.SaveChanges();
+            
+        }
+
+        public void rejectRequisition(int reqId)
+        {
+            Requisition requisition = db.Requisitions.Find(reqId);
+
+            requisition.Status = RequisitionStatus.Rejected.ToString();
+            db.Requisitions.Attach(requisition);
+            var entry = db.Entry(requisition);
+            entry.Property(e => e.Status).IsModified = true;
+            db.SaveChanges();
+
         }
     }
 }

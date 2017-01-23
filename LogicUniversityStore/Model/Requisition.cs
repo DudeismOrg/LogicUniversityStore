@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("Requisition")]
     [Serializable]
-
     public partial class Requisition
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -32,11 +31,14 @@ namespace LogicUniversityStore.Model
         [StringLength(10)]
         public string Status { get; set; }
 
-        public int? ApprovedRejectedByID { get; set; }
+        public int ApprovedRejectedByID { get; set; }
 
         public int? RecieveByID { get; set; }
 
         public int DapartmentID { get; set; }
+
+        [StringLength(120)]
+        public string Remark { get; set; }
 
         public virtual Department Department { get; set; }
 
