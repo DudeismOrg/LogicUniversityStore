@@ -57,19 +57,20 @@
                                 <ItemTemplate>
                                     <tr>
                                         <td>
-                                            <input type="checkbox"></td>
-                                        <td>1.</td>
-                                        <td>#DD/343/F01</td>
-                                        <td><%# Eval("CategoryCode") %></td>
+                                            <input value="<%# Eval("ReqID") %>" type="checkbox"></td>
+                                        <td><%# Eval("ReqID") %>.</td>
+                                        <td><%# Eval("ReqNumber") %></td>
+                                        <td><%# Eval("DepartmentName") %></td>
                                         <td>
                                             <div class="progress progress-xs progress-striped active">
-                                                <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                                                <div class="progress-bar progress-bar-success" style="width: <%# Eval("Item1") %>%"></div>
                                             </div>
                                         </td>
-                                        <td>01-02-2017
+                                        <td>
+                                            <%# Eval("ReqDate") %>
                                         </td>
                                         <td>
-                                            <a href="#" data-toggle="modal" data-target="#details-modal" class="btn btn-sm btn-primary">View/Edit</a>
+                                            <a href="#" data-id="<%# Eval("ReqID") %>" class="btn btn-sm btn-primary set-item-values">View/Edit</a>
                                             <a href="#" class="btn btn-sm btn-warning">Send Note to Department</a>
                                         </td>
                                     </tr>
@@ -89,19 +90,86 @@
     </div>
 
 
+    <div class="modal fade" id="details-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Requested Items</h4>
+                    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                </div>
+                <div class="modal-body" id="main-modal-id">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-default">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-
-
-    <form runat="server" id="form1">
-        <%--<asp:ListView ID="lvSearchResults" runat="server">
-            <ItemTemplate>
-                <span class="price">$<%# Eval("CategoryCode") %></span><br />
-            </ItemTemplate>
-        </asp:ListView>--%>
-    </form>
+    <div class="modal fade" id="retrievel-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="retrievel-modalLabel">Generate Retrieval Form</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="box">
+                            <!-- /.box-header -->
+                            <div class="box-body no-padding">
+                                <table class="table table-condensed">
+                                    <tbody>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Request Number</th>
+                                            <th>Department</th>
+                                            <th>Status</th>
+                                            <th>Detail</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success">Generate Retrieval Form</button>
+                    <button type="button" class="btn btn-default">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divStudentFullRecord" style="min-height: 92px;max-height: none;height: 378px; width:0px" title="Basic dialog">
+        
+    </div>
 </asp:Content>
 
 
 <asp:Content ID="Content4" ContentPlaceHolderID="clrkMainJs" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".set-item-values").click(function () {
+                var id = $(this).data("id");
+                $("#divStudentFullRecord").html("Please wait content is Loading...");
+                $("#divStudentFullRecord")
+                    .load("/View/Store/Clerk/Modal/RequestFormAlterItems.aspx", { Id: id })
+                    .dialog({
+                        autoOpen: false,
+                        show: "blind",
+                        hide: "explode",
+                        modal: true,
+                        width: 673,
+                        title: "Requested Items"
+                    });
+                $("#divStudentFullRecord").dialog("open");
+                return false;
+            });
+        });
+    </script>
 </asp:Content>

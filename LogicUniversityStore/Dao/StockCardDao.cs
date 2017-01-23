@@ -15,6 +15,11 @@ namespace LogicUniversityStore.Dao
             
         }
 
+        public List<StockCard> GetAllInStock()
+        {
+            return db.StockCards.ToList();
+        }
+
         public int GetProductCountInStock(int itemID)
         {
             StockCard card = db.StockCards.Where(s => s.ItemID == itemID).FirstOrDefault();
