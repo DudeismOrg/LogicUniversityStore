@@ -19,6 +19,7 @@ namespace LogicUniversityStore.Model
 
         public int? NeededQuantity { get; set; }
 
+        public int? ApprovedQuantity { get; set; }
         public int? RetirevedQuantity { get; set; }
 
         public int? DisbursedQuantity { get; set; }
