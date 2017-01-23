@@ -13,7 +13,8 @@ namespace LogicUniversityStore.Dao
 
         public List<Requisition> GetApprovedRequisitionList()
         {
-          return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
+            return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
+            //return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString())).ToList();
         }
 
         public List<Requisition> GetRequestedRequisitionList()
@@ -38,7 +39,12 @@ namespace LogicUniversityStore.Dao
 
         public List<RequisitionItem> GetRequisitionItemList(int requisitionID)
         {
-           return db.Requisitions.Find(requisitionID).RequisitionItems.ToList();
+            Requisition req = db.Requisitions.Find(requisitionID);
+            if (req != null)
+            {
+                return req.RequisitionItems.ToList();
+            }
+            return null;
         }
 
         public void Create(Requisition requistion)
@@ -50,7 +56,7 @@ namespace LogicUniversityStore.Dao
         public bool Remove(int reqID)
         {
             Requisition requisition = db.Requisitions.Find(reqID);
-            if(requisition != null)
+            if (requisition != null)
             {
                 db.Requisitions.Remove(requisition);
                 return true;

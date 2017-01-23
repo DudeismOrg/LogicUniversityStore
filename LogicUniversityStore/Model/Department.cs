@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("Department")]
     [Serializable]
-
     public partial class Department
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

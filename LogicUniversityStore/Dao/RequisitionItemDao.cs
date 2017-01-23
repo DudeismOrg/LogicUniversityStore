@@ -10,6 +10,7 @@ namespace LogicUniversityStore.Dao
     {
         public LogicUniStoreModel db = new LogicUniStoreModel();
         
+
         public void deleteRequisitionItem(int reqId,int itemId)
         {
             RequisitionItem item = db.RequisitionItems.Where(s => s.ReqID == reqId && s.ItemID==itemId).First();
@@ -35,6 +36,12 @@ namespace LogicUniversityStore.Dao
                 entry.Property(e => e.NeededQuantity).IsModified = true;
                 db.SaveChanges();
             }
+        }
+
+        public Boolean InitialApprovedQuantity(RequisitionItem reqItem)
+        {
+            
+            return true;
         }
 
     }

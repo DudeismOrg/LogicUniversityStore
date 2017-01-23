@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("Item")]
     [Serializable]
-
     public partial class Item
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -58,5 +57,6 @@ namespace LogicUniversityStore.Model
             SupplierItem item = sList.Find(i => i.ActiveSupplier == true && i.SupplierPriority == 1);
             return item;
         }
+
     }
 }

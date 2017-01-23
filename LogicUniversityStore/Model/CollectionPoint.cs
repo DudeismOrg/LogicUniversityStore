@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("CollectionPoint")]
     [Serializable]
-
     public partial class CollectionPoint
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

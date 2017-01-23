@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("PurchaseOrderItem")]
     [Serializable]
-
     public partial class PurchaseOrderItem
     {
         [Key]

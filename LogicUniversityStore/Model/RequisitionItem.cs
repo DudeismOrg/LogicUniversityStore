@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("RequisitionItem")]
     [Serializable]
-
     public partial class RequisitionItem
     {
         [Key]
@@ -20,6 +19,7 @@ namespace LogicUniversityStore.Model
 
         public int? NeededQuantity { get; set; }
 
+        public int? ApprovedQuantity { get; set; }
         public int? RetirevedQuantity { get; set; }
 
         public int? DisbursedQuantity { get; set; }
@@ -37,5 +37,6 @@ namespace LogicUniversityStore.Model
         public virtual SupplierItem SupplierItem { get; set; }
 
         public virtual Retrieval Retrieval { get; set; }
+        public bool? IsLocked { get; set; }
     }
 }
