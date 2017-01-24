@@ -18,9 +18,28 @@ namespace LogicUniversityStore.View.Store.Clerk
         public ApplyReqController reqController { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+           /* if (Application["processReq"] == null)
+            {
+                Application["processReq"] = new ProcessReqController();
+            }
+
+            processReq = (ProcessReqController)Application["processReq"]; //in future will think about it. 
+            */
             processReq = new ProcessReqController();
-            var listRequests = (from r in processReq.GetMainProcessReqList() select new { r.Item1 , r.Item2.ReqNumber, r.Item2.Department.DepartmentName, r.Item2.ReqDate, r.Item2.ReqID }).ToList();
-            lvSearchResults.DataSource = listRequests.ToList();
+
+            Dictionary<Requisition, double> listRequests;
+            if (ViewState["prItems"] == null)
+            {
+                ViewState["prItems"] = processReq.GetMainProcessReqList();
+            }
+
+            if( ((Dictionary<Requisition,double>)ViewState["prItems"]).Count < this.processReq.GetApprovedRequistionCount())
+            {
+                ViewState["prItems"] = processReq.GetMainProcessReqList();
+            }
+            listRequests = (Dictionary<Requisition, double>)ViewState["prItems"];
+            // var listRequests = (from r in processReq.GetMainProcessReqList() select new { r.Item1 , r.Item2.ReqNumber, r.Item2.Department.DepartmentName, r.Item2.ReqDate, r.Item2.ReqID }).ToList();
+            lvSearchResults.DataSource = listRequests;
             lvSearchResults.DataBind();
         }
 

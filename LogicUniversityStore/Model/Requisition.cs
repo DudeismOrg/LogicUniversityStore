@@ -8,7 +8,7 @@ namespace LogicUniversityStore.Model
 
     [Table("Requisition")]
     [Serializable]
-    public partial class Requisition
+    public partial class Requisition :IEquatable<Requisition>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Requisition()
@@ -44,5 +44,15 @@ namespace LogicUniversityStore.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RequisitionItem> RequisitionItems { get; set; }
+
+        public bool Equals(Requisition other)
+        {
+            return this.ReqID.Equals(other.ReqID);
+        }
+
+        public override int GetHashCode()
+        {
+            return ReqID;
+        }
     }
 }

@@ -29,6 +29,7 @@ namespace LogicUniversityStore.Controller
         public void approveRequisition(int requisitionId)
         {
             RequisitionDao.approveRequisition(requisitionId);
+           
         }
 
         public void rejectRequisition(int requisitionId)

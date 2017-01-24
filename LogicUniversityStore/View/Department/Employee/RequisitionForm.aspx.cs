@@ -90,7 +90,7 @@ namespace LogicUniversityStore.View.Department.Employee
                     dao.db.RequisitionItems.Add(item);
                 }
                 dao.db.SaveChanges();
-                ViewState["items"] = new List<RequisitionItem>();
+                ViewState["items"] = new List<CartItem>();
                 gvReqItems.DataSource = null;
                 gvReqItems.DataBind();
             }

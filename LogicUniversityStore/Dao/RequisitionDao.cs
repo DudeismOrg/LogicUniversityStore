@@ -10,6 +10,7 @@ namespace LogicUniversityStore.Dao
     public class RequisitionDao
     {
         public LogicUniStoreModel db = new LogicUniStoreModel();
+        public StockCardDao StockCardDao = new StockCardDao();
 
         public List<Requisition> GetApprovedRequisitionList()
         {
@@ -73,7 +74,6 @@ namespace LogicUniversityStore.Dao
                 var entry = db.Entry(requisition);
                 entry.Property(e => e.Status).IsModified = true;
                 db.SaveChanges();
-            
         }
 
         public void rejectRequisition(int reqId)
@@ -88,6 +88,9 @@ namespace LogicUniversityStore.Dao
 
         }
 
-       
+        public int GetApprovedRequisitionCount()
+        {
+          return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).Count();
+        }
     }
 }
