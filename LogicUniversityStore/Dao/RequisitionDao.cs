@@ -64,26 +64,30 @@ namespace LogicUniversityStore.Dao
             return false;
         }
 
-        public void approveRequisition(int reqId)
+        public void approveRequisition(int reqId,String remark)
         {
             Requisition requisition = db.Requisitions.Find(reqId);
             
                 requisition.Status = RequisitionStatus.Approved.ToString();
+                requisition.Remark = remark;
                 db.Requisitions.Attach(requisition);
                 var entry = db.Entry(requisition);
                 entry.Property(e => e.Status).IsModified = true;
+                entry.Property(e => e.Remark).IsModified = true;            
                 db.SaveChanges();
             
         }
 
-        public void rejectRequisition(int reqId)
+        public void rejectRequisition(int reqId,String remark)
         {
             Requisition requisition = db.Requisitions.Find(reqId);
 
             requisition.Status = RequisitionStatus.Rejected.ToString();
+            requisition.Remark = remark;
             db.Requisitions.Attach(requisition);
             var entry = db.Entry(requisition);
             entry.Property(e => e.Status).IsModified = true;
+            entry.Property(e => e.Remark).IsModified = true;
             db.SaveChanges();
 
         }

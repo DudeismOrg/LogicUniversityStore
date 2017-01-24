@@ -72,6 +72,7 @@ namespace LogicUniversityStore.View.Department.Hod
         protected void btnApprove_Click(object sender, EventArgs e)
         {
             int reqId = Convert.ToInt32(Request.QueryString["id"]);
+            String remark = txtRemark.Text;
             int rowNum = gvRequisitionDetails.Rows.Count;
             for (int i = 0; i < rowNum; i++)
             {
@@ -83,7 +84,7 @@ namespace LogicUniversityStore.View.Department.Hod
                 reqController.updateRequisitionItem(reqId, itemId, qty);
                
             }
-            reqController.approveRequisition(reqId);
+            reqController.approveRequisition(reqId,remark);
             Response.Redirect("CancelUpdateUnallocated.aspx");
 
             
@@ -93,8 +94,9 @@ namespace LogicUniversityStore.View.Department.Hod
         protected void btnReject_Click(object sender, EventArgs e)
         {
            int reqId = Convert.ToInt32(Request.QueryString["id"]);
-           reqController.rejectRequisition(reqId);
-           Response.Redirect("CancelUpdateUnallocated.aspx");
+            String remark = txtRemark.Text;
+            reqController.rejectRequisition(reqId,remark);
+            Response.Redirect("CancelUpdateUnallocated.aspx");
         }
 
         protected void btnClose_Click(object sender, EventArgs e)

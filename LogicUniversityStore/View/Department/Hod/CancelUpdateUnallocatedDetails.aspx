@@ -79,12 +79,17 @@
                                                     </Columns>
                                                 </asp:GridView>
                                             </div>
+                                            <div>
+                                                <b>Remark</b><br />
+                                                <asp:TextBox ID="txtRemark" TextMode="MultiLine" CssClass="box-body pad"  runat="server" Height="123px" Width="656px"></asp:TextBox>
+                                            </div>
 
                                             <!-- /.box-body -->
 
                                         </div>
 
                                     </div>
+                                    
                                     <div class="modal-footer">
 
                                 <%--<button type="button" class="btn btn-success">Approve</button>--%>

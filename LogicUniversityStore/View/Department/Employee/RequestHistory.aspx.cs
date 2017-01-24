@@ -23,7 +23,7 @@ namespace LogicUniversityStore.View.Department.Employee
                 List<Requisition> items = reqController.getRequisitionList();
 
                 DataTable dt = new DataTable();
-                dt.Columns.AddRange(new DataColumn[4] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"), new DataColumn("Status") });
+                dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"), new DataColumn("Status"), new DataColumn("Remark") });
                 foreach (Requisition i in items)
                 {
                     DataRow r = dt.NewRow();
@@ -31,6 +31,7 @@ namespace LogicUniversityStore.View.Department.Employee
                     r["ReqNumber"] = i.ReqNumber;
                     r["ReqDate"] = i.ReqDate.ToLongDateString();
                     r["Status"] = i.Status;
+                    r["Remark"] = i.Remark;
                     dt.Rows.Add(r);
 
                 }
