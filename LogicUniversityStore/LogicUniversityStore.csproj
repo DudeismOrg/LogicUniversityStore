@@ -108,8 +108,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="View\Department\Hod\EmpMain.aspx" />
+    <Content Include="View\Department\Employee\EmpMain.aspx" />
     <Content Include="View\Department\Employee\RequisitionForm.aspx" />
+    <Content Include="View\Department\Employee\RequestHistory.aspx" />
+    <Content Include="View\Department\Employee\RequestHistoryDetails.aspx" />
     <Content Include="View\Department\Hod\HodMain.aspx" />
     <Content Include="View\Department\Hod\ApproveReject.aspx" />
     <Content Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx" />
@@ -1095,11 +1097,11 @@
     <Compile Include="View\Department\Employee\Employee.master.designer.cs">
       <DependentUpon>Employee.master</DependentUpon>
     </Compile>
-    <Compile Include="View\Department\Hod\EmpMain.aspx.cs">
+    <Compile Include="View\Department\Employee\EmpMain.aspx.cs">
       <DependentUpon>EmpMain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Department\Hod\EmpMain.aspx.designer.cs">
+    <Compile Include="View\Department\Employee\EmpMain.aspx.designer.cs">
       <DependentUpon>EmpMain.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Department\Employee\RequisitionForm.aspx.cs">
@@ -1108,6 +1110,20 @@
     </Compile>
     <Compile Include="View\Department\Employee\RequisitionForm.aspx.designer.cs">
       <DependentUpon>RequisitionForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Employee\RequestHistory.aspx.cs">
+      <DependentUpon>RequestHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Employee\RequestHistory.aspx.designer.cs">
+      <DependentUpon>RequestHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Employee\RequestHistoryDetails.aspx.cs">
+      <DependentUpon>RequestHistoryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Employee\RequestHistoryDetails.aspx.designer.cs">
+      <DependentUpon>RequestHistoryDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Department\Hod\Hod.master.cs">
       <DependentUpon>Hod.master</DependentUpon>

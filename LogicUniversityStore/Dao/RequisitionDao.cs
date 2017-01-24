@@ -14,7 +14,7 @@ namespace LogicUniversityStore.Dao
         public List<Requisition> GetApprovedRequisitionList()
         {
             return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
-            //return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString())).ToList();
+            
         }
 
         public List<Requisition> GetRequestedRequisitionList()

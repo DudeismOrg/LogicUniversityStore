@@ -146,9 +146,7 @@
                                                 </tr>
                                             </tbody>
                                         </table>--%>
-                      
-                
-
+                                     
                                         <asp:GridView ID="gvReqItems" runat="server" AutoGenerateColumns="False">
                                             <Columns>
                                                 <asp:BoundField DataField="Category" HeaderText="Category" />

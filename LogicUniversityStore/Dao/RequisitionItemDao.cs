@@ -9,12 +9,9 @@ namespace LogicUniversityStore.Dao
     public class RequisitionItemDao
     {
         public LogicUniStoreModel db = new LogicUniStoreModel();
-        
-        public Boolean InitialApprovedQuantity(RequisitionItem reqItem)
-        {
-            
-            return true;
-        }
+ 
+      
+
 
         public void deleteRequisitionItem(int reqId,int itemId)
         {
@@ -41,6 +38,13 @@ namespace LogicUniversityStore.Dao
                 entry.Property(e => e.NeededQuantity).IsModified = true;
                 db.SaveChanges();
             }
+        }
+
+
+        public Boolean InitialApprovedQuantity(RequisitionItem reqItem)
+        {
+            
+            return true;
         }
 
 
