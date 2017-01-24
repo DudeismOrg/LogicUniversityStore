@@ -93,10 +93,10 @@
 
                                 <%--<button type="button" class="btn btn-default">Close</button>--%>
                                         <asp:Button ID="btnApprove" CssClass="btn btn-success" runat="server" Text="Approve" OnClick="btnApprove_Click" />
-                                        <asp:Button ID="btnReject" CssClass="btn btn-danger" runat="server" Text="Reject" />
-                                        <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back"/>
+                                        <asp:Button ID="btnReject" CssClass="btn btn-danger" runat="server" Text="Reject" OnClick="btnReject_Click" />
+                                        <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back" OnClick="btnClose_Click"/>
                                         
-                                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                        
 
                             </div>
 

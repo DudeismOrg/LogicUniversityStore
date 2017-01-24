@@ -89,5 +89,17 @@ namespace LogicUniversityStore.View.Department.Hod
             
 
         }
+
+        protected void btnReject_Click(object sender, EventArgs e)
+        {
+           int reqId = Convert.ToInt32(Request.QueryString["id"]);
+           reqController.rejectRequisition(reqId);
+           Response.Redirect("CancelUpdateUnallocated.aspx");
+        }
+
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CancelUpdateUnallocated.aspx");
+        }
     }
 }

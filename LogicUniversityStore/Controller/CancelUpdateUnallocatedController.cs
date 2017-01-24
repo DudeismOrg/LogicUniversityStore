@@ -34,7 +34,11 @@ namespace LogicUniversityStore.Controller
             RequisitionDao.approveRequisition(requisitionId);
         }
 
-        
+        public void rejectRequisition(int requisitionId)
+        {
+            RequisitionDao.rejectRequisition(requisitionId);
+        }
+
 
         public Item GetItem(String itemName)
         {
