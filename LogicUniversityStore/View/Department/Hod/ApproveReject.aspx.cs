@@ -27,7 +27,7 @@ namespace LogicUniversityStore.View.Department.Hod
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvRequestedRequisition, "Select$" + e.Row.RowIndex);
-                e.Row.ToolTip = "Click to select this row.";
+                e.Row.ToolTip = "Click this row to view details.";
             }
         }
 

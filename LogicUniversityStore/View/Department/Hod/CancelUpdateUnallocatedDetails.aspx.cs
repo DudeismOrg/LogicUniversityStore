@@ -20,11 +20,7 @@ namespace LogicUniversityStore.View.Department.Hod
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {
-                //reqId = Convert.ToInt32(Request.QueryString["id"]);
-                //gvRequisitionDetails.DataSource=reqController.getRequisitionItemList(reqId);
-                //gvRequisitionDetails.DataBind();
-
+            {                
                 int reqId = Convert.ToInt32(Request.QueryString["id"]);
                 List<RequisitionItem> items = reqController.getRequisitionItemList(reqId);
 

@@ -9,10 +9,6 @@ namespace LogicUniversityStore.Dao
     public class RequisitionItemDao
     {
         public LogicUniStoreModel db = new LogicUniStoreModel();
- 
-      
-
-
         public void deleteRequisitionItem(int reqId,int itemId)
         {
             RequisitionItem item = db.RequisitionItems.Where(s => s.ReqID == reqId && s.ItemID==itemId).First();
@@ -25,6 +21,19 @@ namespace LogicUniversityStore.Dao
             db.SaveChanges();
 
 
+        }
+
+        public void deleteRequisitionItem(int reqId)
+        {
+            List<RequisitionItem> items = db.RequisitionItems.Where(s => s.ReqID == reqId).ToList();
+            if(items!=null)
+            {
+                foreach(RequisitionItem i in items)
+                {
+                    db.RequisitionItems.Remove(i);
+                }
+            }
+            db.SaveChanges();
         }
 
         public void updateRequisitionItem(int reqId,int itemId,int qty)

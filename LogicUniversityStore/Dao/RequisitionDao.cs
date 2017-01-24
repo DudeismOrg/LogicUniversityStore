@@ -59,6 +59,7 @@ namespace LogicUniversityStore.Dao
             if (requisition != null)
             {
                 db.Requisitions.Remove(requisition);
+                db.SaveChanges();
                 return true;
             }
             return false;

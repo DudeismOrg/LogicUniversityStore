@@ -18,8 +18,7 @@ namespace LogicUniversityStore.View.Department.Employee
         {
             if (!IsPostBack)
             {
-                //gvRequestHistory.DataSource = reqController.getRequisitionList();
-                //gvRequestHistory.DataBind();
+                
                 List<Requisition> items = reqController.getRequisitionList();
 
                 DataTable dt = new DataTable();
