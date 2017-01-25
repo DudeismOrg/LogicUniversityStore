@@ -15,5 +15,10 @@ namespace LogicUniversityStore.Dao
         {
             return db.Items.Find(id);
         }
+
+        public Item GetItem(String itemName)
+        {
+            return db.Items.Where(x => x.ItemName.Equals(itemName)).FirstOrDefault();
+        }
     }
 }

@@ -20,24 +20,39 @@ namespace LogicUniversityStore.Dao
             return db.StockCards.ToList();
         }
 
-        public int GetProductCountInStock(int itemID)
+        public int GetProductCountInStock(int supplierItemId)
         {
-            StockCard card = db.StockCards.Where(s => s.ItemID == itemID).FirstOrDefault();
-            if(card != null)
-            {
+            StockCard card = db.StockCards.Where(s => s.ItemID == supplierItemId).FirstOrDefault();
+            if (card == null) throw new ArgumentException("supplierItemID is not Valid");
+
                 return card.OnHandQuantity.Value;
-            }
-            return -1;
+          
         }
 
-        public int GetLockedProductCountInStock(int itemID)
+        public int GetLockedProductCountInStock(int supplierItemId)
         {
-            StockCard card = db.StockCards.Where(s => s.ItemID == itemID).FirstOrDefault();
-            if (card != null)
+            StockCard card = db.StockCards.Where(s => s.ItemID == supplierItemId).FirstOrDefault();
+            if (card == null) throw new ArgumentException("supplierItemID is not Valid");
+            if (card.LockedQuantity == null)
             {
-                return card.LockedQuantity.Value;
+                card.LockedQuantity = 0;
+                db.SaveChanges();
             }
-            return 0;
+                return card.LockedQuantity.Value;
+           
+        }
+
+        public void AddLockedQuantityToStock(int  supplierItemID,int quantity)
+        {
+            StockCard card = db.StockCards.Find(supplierItemID);
+            if (card == null) throw new ArgumentException("supplierItemID is not Valid");
+            if (card.LockedQuantity == null) card.LockedQuantity = 0;
+            if(card.LockedQuantity <= card.OnHandQuantity)
+            {
+                card.LockedQuantity = +quantity;
+            }
+
+            db.SaveChanges();
         }
 
         public StockCard GetStockCardByItemId(int ItemId)

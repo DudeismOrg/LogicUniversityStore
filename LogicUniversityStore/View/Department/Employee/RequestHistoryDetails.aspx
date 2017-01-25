@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Department/Hod/Hod.master" AutoEventWireup="true" CodeBehind="RequestHistoryDetails.aspx.cs" Inherits="LogicUniversityStore.View.Department.Hod.WebForm5" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Department/Employee/Employee.master" AutoEventWireup="true" CodeBehind="RequestHistoryDetails.aspx.cs" Inherits="LogicUniversityStore.View.Department.Employee.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="empMainHeader" runat="server">
     <h1>Requisition Details</h1>
 </asp:Content>
@@ -90,7 +90,6 @@
                                     <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Close" OnClick="btnClose_Click" />                                
                                 </div>
     </form>
-                            
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
 </asp:Content>

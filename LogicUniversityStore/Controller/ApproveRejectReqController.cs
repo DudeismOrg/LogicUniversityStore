@@ -31,6 +31,7 @@ namespace LogicUniversityStore.Controller
         public void approveRequisition(int requisitionId)
         {
             RequisitionDao.approveRequisition(requisitionId);
+           
         }
 
         public void rejectRequisition(int requisitionId)
@@ -38,10 +39,6 @@ namespace LogicUniversityStore.Controller
             RequisitionDao.rejectRequisition(requisitionId);
         }
 
-        public void ubdateLockedQuantityInStockCard(int itemId, RequisitionItem reqItem)
-        {
-            StockCard card = StockCardDao.GetStockCardByItemId(itemId);
-            RequisitionDao.updateLockedInStockCard(card, reqItem);
-        }
+       
     }
 }

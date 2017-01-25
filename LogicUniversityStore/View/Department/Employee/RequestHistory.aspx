@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Department/Hod/Hod.master" AutoEventWireup="true" CodeBehind="RequestHistory.aspx.cs" Inherits="LogicUniversityStore.View.Department.Hod.WebForm4" EnableEventValidation = "false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Department/Employee/Employee.master" AutoEventWireup="true" CodeBehind="RequestHistory.aspx.cs" Inherits="LogicUniversityStore.View.Department.Employee.WebForm1" EnableEventValidation = "false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="empMainHeader" runat="server">
     <h1>Request History</h1>
     <ol class="breadcrumb">
@@ -6,8 +6,8 @@
         <li class="active">Request History</li>
     </ol>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
+
     <form id="requestHistory" runat="server">
     <div class="row">
 

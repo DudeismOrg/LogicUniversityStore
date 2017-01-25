@@ -60,7 +60,7 @@
                                     </div>
                                     </div>
                                 <div class="box-body no-padding">
-                                    <asp:GridView ID="gvRequisition" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="gvRequisition_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" Width="665px">
+                                    <asp:GridView ID="gvRequisition" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="gvRequisition_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" Width="665px" Height="100px" >
                                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
 
                                         <Columns>

@@ -11,40 +11,70 @@ namespace LogicUniversityStore.Controller
     public class ProcessReqController
     {
         public RequisitionDao RequisitionDao { get; set; }
+        public RequisitionItemDao RequisitionItemDao { get; set; }
         public StockCardDao StockCardDao { get; set; }
+
+        public Dictionary<int, int> lockedItemsCountForProcess; // will hold SupplierItemID and Count
+        public Dictionary<Requisition, double> mainList;  // will hold requisition and unfullfilItemNumbers
+
         public ProcessReqController()
         {
             RequisitionDao = new RequisitionDao();
             StockCardDao = new StockCardDao();
+            RequisitionItemDao = new RequisitionItemDao();
+            lockedItemsCountForProcess = new Dictionary<int, int>();
+            mainList = new Dictionary<Requisition, double>();
         }
 
-        public List<Tuple<double, Requisition>> GetMainProcessReqList()
+        public Dictionary<Requisition, double> GetMainProcessReqList()
         {
-            List<Tuple<double, Requisition>> mainList = new List<Tuple<double, Requisition>>();
             foreach (var requisition in RequisitionDao.GetApprovedRequisitionList())
             {
+
+                if (mainList.ContainsKey(requisition))
+                {
+                    continue;
+                }
+
                 int? unfullfilledItem = 0;
                 double percentage = 100;
-                int countReqItem = requisition.RequisitionItems.Count();
+                //  int countReqItem = requisition.RequisitionItems.Count();
 
 
-
-                foreach (RequisitionItem rItem in requisition.RequisitionItems)
+                foreach (RequisitionItem item in requisition.RequisitionItems)
                 {
-                    unfullfilledItem = unfullfilledItem + ((rItem.NeededQuantity - (StockCardDao.GetProductCountInStock(rItem.SupplierItem.ItemID) - StockCardDao.GetLockedProductCountInStock(rItem.SupplierItem.Item.ItemID))) >= 0 ? 1 : 0);
+                    RequisitionItem rItem = RequisitionItemDao.db.RequisitionItems.Find(item.ReqItemID);
+
+                    if (!lockedItemsCountForProcess.ContainsKey(rItem.ItemID))
+                    {
+                        lockedItemsCountForProcess.Add(rItem.ItemID, 0);
+                    }
+                    int actualQuantityInStock = (StockCardDao.GetProductCountInStock(rItem.SupplierItem.ItemID) - lockedItemsCountForProcess[rItem.ItemID]);
+
+                    if ((actualQuantityInStock - rItem.NeededQuantity) >= 0)
+                    {
+                        lockedItemsCountForProcess[rItem.ItemID] += rItem.NeededQuantity.Value;
+                        rItem.ApprovedQuantity = rItem.NeededQuantity;
+                    }
+                    else
+                    {
+                        lockedItemsCountForProcess[rItem.ItemID] += actualQuantityInStock;
+                        rItem.ApprovedQuantity = actualQuantityInStock;
+                        unfullfilledItem += 1;
+                    }
+                    RequisitionItemDao.db.SaveChanges();
                 }
+
                 if (unfullfilledItem.Value == 0)
                 {
-                    requisition.Status = RequisitionStatus.Allocated.ToString();
                     percentage = 100;
                 }
                 else
                 {
-                    double value = (1 / Convert.ToDouble(unfullfilledItem));
+                    double value = (requisition.RequisitionItems.Count - Convert.ToDouble(unfullfilledItem)) / requisition.RequisitionItems.Count;
                     percentage = value * 100;
                 }
-
-                mainList.Add(new Tuple<double, Requisition>((double)unfullfilledItem, requisition));
+                mainList.Add(requisition, percentage);
             }
 
             return mainList;
@@ -69,6 +99,11 @@ namespace LogicUniversityStore.Controller
 
             }
             return true;
+        }
+
+        public int GetApprovedRequistionCount()
+        {
+            return RequisitionDao.GetApprovedRequisitionCount();
         }
     }
 }

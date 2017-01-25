@@ -57,21 +57,21 @@
                                 <ItemTemplate>
                                     <tr>
                                         <td>
-                                            <input value="<%# Eval("ReqID") %>" type="checkbox"></td>
-                                        <td><%# Eval("ReqID") %>.</td>
-                                        <td><%# Eval("ReqNumber") %></td>
-                                        <td><%# Eval("DepartmentName") %>: <%# Eval("Item1") %></td>
+                                        <input value="<%# Eval("key.ReqID") %>" type="checkbox"></td>
+                                        <td><%# Eval("key.ReqID") %>.</td>
+                                        <td><%# Eval("key.ReqNumber") %></td>
+                                        <td><%# Eval("key.Department.DepartmentName") %></td>
                                         <td>
                                             <div class="progress progress-xs progress-striped active">
-                                                <div class="progress-bar progress-bar-success" style="width: <%# Eval("Item1") %>%"></div>
+                                                <div class="progress-bar progress-bar-success" style="width: <%# Eval("value") %>%"></div>
                                             </div>
                                         </td>
                                         <td>
-                                            <%# Eval("ReqDate") %>
+                                            <%# Eval("key.ReqDate") %>
                                         </td>
                                         <td> 
-                                            <a href="#" data-id="<%# Eval("ReqID") %>" class="btn btn-sm 
-                                                <%# string.Format(Eval("Item1").Equals(100) ? "btn-danger" : "btn-primary") %>           
+                                            <a href="#" data-id="<%# Eval("key.ReqID") %>" class="btn btn-sm 
+                                                <%# string.Format(Eval("value").Equals(100) ? "btn-danger" : "btn-primary") %>           
                                                 set-item-values">View/Edit</a>
                                             <a href="#" class="btn btn-sm btn-warning">Send Note to Department</a>
                                         </td>

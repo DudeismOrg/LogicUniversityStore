@@ -10,12 +10,12 @@ namespace LogicUniversityStore.Dao
     public class RequisitionDao
     {
         public LogicUniStoreModel db = new LogicUniStoreModel();
-        public StockCardDao StockCardDao { get; set; }
+        public StockCardDao StockCardDao = new StockCardDao();
 
         public List<Requisition> GetApprovedRequisitionList()
         {
-            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
-            //return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString())).ToList();
+            return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
+            
         }
 
         public List<Requisition> GetRequestedRequisitionList()
@@ -68,13 +68,12 @@ namespace LogicUniversityStore.Dao
         public void approveRequisition(int reqId)
         {
             Requisition requisition = db.Requisitions.Find(reqId);
-
-            requisition.Status = RequisitionStatus.Approved.ToString();
-            db.Requisitions.Attach(requisition);
-            var entry = db.Entry(requisition);
-            entry.Property(e => e.Status).IsModified = true;
-            db.SaveChanges();
-
+            
+                requisition.Status = RequisitionStatus.Approved.ToString();
+                db.Requisitions.Attach(requisition);
+                var entry = db.Entry(requisition);
+                entry.Property(e => e.Status).IsModified = true;
+                db.SaveChanges();
         }
 
         public void rejectRequisition(int reqId)
@@ -89,10 +88,9 @@ namespace LogicUniversityStore.Dao
 
         }
 
-        public void updateLockedInStockCard(StockCard card, RequisitionItem reqItem)
+        public int GetApprovedRequisitionCount()
         {
-            card.LockedQuantity = card.OnHandQuantity - reqItem.NeededQuantity;
-            db.SaveChanges();
+          return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).Count();
         }
     }
 }

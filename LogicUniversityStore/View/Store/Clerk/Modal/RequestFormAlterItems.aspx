@@ -31,7 +31,7 @@
                                         </td>
                                         <td><%# Eval("OnHandQuantity") %> Units</td>
                                         <td>
-                                            <input type="text" data-id="<%# Eval("ReqItemID") %>" class="form-control" />
+                                            <input type="text" data-id="<%# Eval("ReqItemID") %>" value="<%# Eval("ApprovedQuantity") %>" class="form-control" />
                                         </td>
                                     </tr>
                                 </ItemTemplate>

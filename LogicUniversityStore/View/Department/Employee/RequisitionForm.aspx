@@ -146,9 +146,7 @@
                                                 </tr>
                                             </tbody>
                                         </table>--%>
-                      
-                
-
+                                     
                                         <asp:GridView ID="gvReqItems" runat="server" AutoGenerateColumns="False">
                                             <Columns>
                                                 <asp:BoundField DataField="Category" HeaderText="Category" />
@@ -173,7 +171,7 @@
                         <!-- /.box-body -->
 
                         <div class="box-footer">
-                            <asp:Button ID="btnCancel" runat="server" Text="Cancell" CssClass="pull-right btn btn-danger" />
+                            <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="pull-right btn btn-danger" OnClick="btnCancel_Click" />
                             <%--<button type="submit" class="pull-right btn btn-danger" style="margin-left: 5px">Cancel</button>--%>
                            <%-- <button type="submit" class="pull-right btn btn-primary" style="margin-right: 5px">Put Request</button>--%>
                             <asp:Button ID="btnSubmit" runat="server" Text="Place Request" CssClass="pull-right btn btn-primary" OnClick="btnSubmit_Click" />

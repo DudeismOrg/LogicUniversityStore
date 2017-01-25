@@ -31,7 +31,8 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
                                             i.NeededQuantity,
                                             s.StockCardID,
                                             i.SupplierItem.Item.ItemName,
-                                            s.OnHandQuantity
+                                            s.OnHandQuantity,
+                                            i.ApprovedQuantity
                                         }).ToList();
 
                 lvItemsInReq.DataSource = listRequestItems.ToList();
