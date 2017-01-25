@@ -9,4 +9,19 @@ namespace LogicUniversityStore.Util
     {
         Requested,Submitted,Cancelled,Approved,Rejected,Allocated,Shipped,Delivered
     }
+
+    public enum AdjustmentType
+    {
+        Positive, Negative
+    }
+
+    public enum StockCheckType
+    {
+        OnSpot, Monthly
+    }
+
+    public enum AdjustmentStatus
+    {
+        Created, Approved, Rejected
+    }
 }
