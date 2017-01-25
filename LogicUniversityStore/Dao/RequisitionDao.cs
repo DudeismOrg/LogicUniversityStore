@@ -93,6 +93,22 @@ namespace LogicUniversityStore.Dao
 
         }
 
-       
+        public void reapplyRequisition(int reqId, String remark,DateTime reqDate)
+        {
+            Requisition requisition = db.Requisitions.Find(reqId);
+
+            requisition.Status = RequisitionStatus.Requested.ToString();
+            requisition.ReqDate = reqDate;
+            requisition.Remark = remark;
+            db.Requisitions.Attach(requisition);
+            var entry = db.Entry(requisition);
+            entry.Property(e => e.Status).IsModified = true;
+            entry.Property(e => e.Remark).IsModified = true;
+            entry.Property(e => e.ReqDate).IsModified = true;
+            db.SaveChanges();
+
+        }
+
+
     }
 }

@@ -54,7 +54,7 @@
 
                                             <div class="box-body no-padding">
 
-                                                <asp:GridView ID="gvRequisitionDetails" AutoGenerateColumns="false"  runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" CellSpacing="5" Height="300px" Width="665px">
+                                                <asp:GridView ID="gvRequisitionDetails" AutoGenerateColumns="false"  runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" CellSpacing="5" Height="300px" Width="665px" OnRowDeleting="gvRequisitionDetails_RowDeleting">
                                                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                                     <EditRowStyle BackColor="#999999" />
                                                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -97,9 +97,9 @@
                                 <%--<button type="button" class="btn btn-danger">Reject</button>--%>
 
                                 <%--<button type="button" class="btn btn-default">Close</button>--%>
-                                        <asp:Button ID="btnReapply" CssClass="btn btn-success" runat="server" Text="Reapply" />
+                                        <asp:Button ID="btnReapply" CssClass="btn btn-success" runat="server" Text="Reapply" OnClick="btnReapply_Click" />
                                         
-                                        <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back"/>
+                                        <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back" OnClick="btnClose_Click"/>
                                         
                                         
 

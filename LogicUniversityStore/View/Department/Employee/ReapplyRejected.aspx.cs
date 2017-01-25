@@ -52,14 +52,7 @@ namespace LogicUniversityStore.View.Department.Employee
             gvRejectedRequests.DataBind();
         }
 
-        protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvRejectedRequests, "Select$" + e.Row.RowIndex);
-                e.Row.ToolTip = "Click this row to view details.";
-            }
-        }
+        
 
         protected void gvRejectedRequisition_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -70,6 +63,6 @@ namespace LogicUniversityStore.View.Department.Employee
             Response.Redirect("ReapplyRejectedDetails.aspx?id=" + reqId + "");
         }
 
-
+        
     }
 }
