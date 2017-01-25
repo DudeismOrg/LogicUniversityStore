@@ -9,11 +9,13 @@ namespace LogicUniversityStore.Controller
 {
     public class ApproveRejectReqController
     {
-       public RequisitionDao RequisitionDao { get; set; }
+        public RequisitionDao RequisitionDao { get; set; }
+        public StockCardDao StockCardDao { get; set; }
 
-       public ApproveRejectReqController()
+        public ApproveRejectReqController()
         {
             RequisitionDao = new RequisitionDao();
+            StockCardDao = new StockCardDao();
         }
 
         public List<Requisition> getRequestedRequisition()
@@ -34,6 +36,12 @@ namespace LogicUniversityStore.Controller
         public void rejectRequisition(int requisitionId)
         {
             RequisitionDao.rejectRequisition(requisitionId);
+        }
+
+        public void ubdateLockedQuantityInStockCard(int itemId, RequisitionItem reqItem)
+        {
+            StockCard card = StockCardDao.GetStockCardByItemId(itemId);
+            RequisitionDao.updateLockedInStockCard(card, reqItem);
         }
     }
 }

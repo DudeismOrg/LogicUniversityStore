@@ -10,10 +10,11 @@ namespace LogicUniversityStore.Dao
     public class RequisitionDao
     {
         public LogicUniStoreModel db = new LogicUniStoreModel();
+        public StockCardDao StockCardDao { get; set; }
 
         public List<Requisition> GetApprovedRequisitionList()
         {
-            return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
             //return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString())).ToList();
         }
 
@@ -67,13 +68,13 @@ namespace LogicUniversityStore.Dao
         public void approveRequisition(int reqId)
         {
             Requisition requisition = db.Requisitions.Find(reqId);
-            
-                requisition.Status = RequisitionStatus.Approved.ToString();
-                db.Requisitions.Attach(requisition);
-                var entry = db.Entry(requisition);
-                entry.Property(e => e.Status).IsModified = true;
-                db.SaveChanges();
-            
+
+            requisition.Status = RequisitionStatus.Approved.ToString();
+            db.Requisitions.Attach(requisition);
+            var entry = db.Entry(requisition);
+            entry.Property(e => e.Status).IsModified = true;
+            db.SaveChanges();
+
         }
 
         public void rejectRequisition(int reqId)
@@ -86,6 +87,12 @@ namespace LogicUniversityStore.Dao
             entry.Property(e => e.Status).IsModified = true;
             db.SaveChanges();
 
+        }
+
+        public void updateLockedInStockCard(StockCard card, RequisitionItem reqItem)
+        {
+            card.LockedQuantity = card.OnHandQuantity - reqItem.NeededQuantity;
+            db.SaveChanges();
         }
     }
 }

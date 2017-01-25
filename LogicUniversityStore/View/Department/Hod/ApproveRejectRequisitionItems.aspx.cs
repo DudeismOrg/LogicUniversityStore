@@ -1,4 +1,4 @@
-﻿using LogicUniversityStore.Controller;
+﻿ using LogicUniversityStore.Controller;
 using LogicUniversityStore.Model;
 using System;
 using System.Collections.Generic;
@@ -18,9 +18,6 @@ namespace LogicUniversityStore.View.Department.Hod
         {
             if (!IsPostBack)
             {
-                //reqId = Convert.ToInt32(Request.QueryString["id"]);
-                //gvRequisitionDetails.DataSource=reqController.getRequisitionItemList(reqId);
-                //gvRequisitionDetails.DataBind();
 
                 reqId = Convert.ToInt32(Request.QueryString["id"]);
                 List<RequisitionItem> items = reqController.getRequisitionItemList(reqId);
@@ -46,6 +43,12 @@ namespace LogicUniversityStore.View.Department.Hod
         protected void btnApprove_Click(object sender, EventArgs e)
         {
             reqId= Convert.ToInt32(Request.QueryString["id"]);
+            //List<RequisitionItem> items = reqController.getRequisitionItemList(reqId);
+            //foreach (RequisitionItem i in items)
+            //{
+            //    reqController.ubdateLockedQuantityInStockCard(i.SupplierItem.ItemID, i);
+            //}
+
             reqController.approveRequisition(reqId);
             Response.Redirect("ApproveReject.aspx");
         }

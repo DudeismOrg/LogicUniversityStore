@@ -11,8 +11,7 @@ namespace LogicUniversityStore.Dao
         public LogicUniStoreModel db = new LogicUniStoreModel();
         
         public Boolean InitialApprovedQuantity(RequisitionItem reqItem)
-        {
-            
+        { 
             return true;
         }
     }

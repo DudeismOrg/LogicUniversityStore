@@ -40,6 +40,12 @@ namespace LogicUniversityStore.Dao
             return 0;
         }
 
+        public StockCard GetStockCardByItemId(int ItemId)
+        {
+            StockCard card = db.StockCards.Where(s => s.ItemID == ItemId).FirstOrDefault();
+            return card;
+        }
+
 
     }
 }
