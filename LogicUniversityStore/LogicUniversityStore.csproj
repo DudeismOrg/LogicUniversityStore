@@ -112,6 +112,8 @@
     <Content Include="View\Department\Employee\RequisitionForm.aspx" />
     <Content Include="View\Department\Employee\RequestHistory.aspx" />
     <Content Include="View\Department\Employee\RequestHistoryDetails.aspx" />
+    <Content Include="View\Department\Employee\ReapplyRejected.aspx" />
+    <Content Include="View\Department\Employee\ReapplyRejectedDetails.aspx" />
     <Content Include="View\Department\Hod\HodMain.aspx" />
     <Content Include="View\Department\Hod\ApproveReject.aspx" />
     <Content Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx" />
@@ -1058,6 +1060,7 @@
     <Compile Include="Controller\ApproveRejectReqController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
+    <Compile Include="Controller\ReapplyRejectedController.cs" />
     <Compile Include="Controller\RequestHistoryController.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
     <Compile Include="Dao\RequisitionItemDao.cs" />
@@ -1125,6 +1128,20 @@
     </Compile>
     <Compile Include="View\Department\Employee\RequestHistoryDetails.aspx.designer.cs">
       <DependentUpon>RequestHistoryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Employee\ReapplyRejected.aspx.cs">
+      <DependentUpon>ReapplyRejected.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Employee\ReapplyRejected.aspx.designer.cs">
+      <DependentUpon>ReapplyRejected.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Employee\ReapplyRejectedDetails.aspx.cs">
+      <DependentUpon>ReapplyRejectedDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Employee\ReapplyRejectedDetails.aspx.designer.cs">
+      <DependentUpon>ReapplyRejectedDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Department\Hod\Hod.master.cs">
       <DependentUpon>Hod.master</DependentUpon>

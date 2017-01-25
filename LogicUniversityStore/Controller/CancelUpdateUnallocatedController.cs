@@ -29,12 +29,16 @@ namespace LogicUniversityStore.Controller
             return RequisitionDao.GetRequisitionItemList(requisitionId);
         }
 
-        public void approveRequisition(int requisitionId)
+        public void approveRequisition(int requisitionId,String remark)
         {
-            RequisitionDao.approveRequisition(requisitionId);
+            RequisitionDao.approveRequisition(requisitionId,remark);
         }
 
-        
+        public void rejectRequisition(int requisitionId, String remark)
+        {
+            RequisitionDao.rejectRequisition(requisitionId,remark);
+        }
+
 
         public Item GetItem(String itemName)
         {

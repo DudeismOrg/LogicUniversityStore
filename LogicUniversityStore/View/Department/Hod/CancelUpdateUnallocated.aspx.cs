@@ -23,7 +23,7 @@ namespace LogicUniversityStore.View.Department.Hod
                 List<Requisition> req = new List<Requisition>();
                 req = reqController.GetApprovedRejectedRequisition();
                 DataTable dt = new DataTable();
-                dt.Columns.AddRange(new DataColumn[4] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"),new DataColumn("Status") });
+                dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"),new DataColumn("Status"), new DataColumn("Remark") });
                 foreach (Requisition i in req)
                 {
                     DataRow r = dt.NewRow();
@@ -31,6 +31,7 @@ namespace LogicUniversityStore.View.Department.Hod
                     r["ReqNumber"] = i.ReqNumber;
                     r["ReqDate"] = i.ReqDate.ToLongDateString();
                     r["Status"] = i.Status;
+                    r["Remark"] = i.Remark;
                     dt.Rows.Add(r);
                 }
                 gvRequisition.DataSource = dt;

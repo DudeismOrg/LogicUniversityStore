@@ -20,11 +20,7 @@ namespace LogicUniversityStore.View.Department.Hod
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {
-                //reqId = Convert.ToInt32(Request.QueryString["id"]);
-                //gvRequisitionDetails.DataSource=reqController.getRequisitionItemList(reqId);
-                //gvRequisitionDetails.DataBind();
-
+            {                
                 int reqId = Convert.ToInt32(Request.QueryString["id"]);
                 List<RequisitionItem> items = reqController.getRequisitionItemList(reqId);
 
@@ -72,6 +68,7 @@ namespace LogicUniversityStore.View.Department.Hod
         protected void btnApprove_Click(object sender, EventArgs e)
         {
             int reqId = Convert.ToInt32(Request.QueryString["id"]);
+            String remark = txtRemark.Text;
             int rowNum = gvRequisitionDetails.Rows.Count;
             for (int i = 0; i < rowNum; i++)
             {
@@ -83,11 +80,24 @@ namespace LogicUniversityStore.View.Department.Hod
                 reqController.updateRequisitionItem(reqId, itemId, qty);
                
             }
-            reqController.approveRequisition(reqId);
+            reqController.approveRequisition(reqId,remark);
             Response.Redirect("CancelUpdateUnallocated.aspx");
 
             
 
+        }
+
+        protected void btnReject_Click(object sender, EventArgs e)
+        {
+           int reqId = Convert.ToInt32(Request.QueryString["id"]);
+            String remark = txtRemark.Text;
+            reqController.rejectRequisition(reqId,remark);
+            Response.Redirect("CancelUpdateUnallocated.aspx");
+        }
+
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CancelUpdateUnallocated.aspx");
         }
     }
 }

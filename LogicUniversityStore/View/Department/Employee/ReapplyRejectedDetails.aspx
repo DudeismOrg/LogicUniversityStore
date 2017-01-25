@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Department/Hod/Hod.master" AutoEventWireup="true" CodeBehind="CancelUpdateUnallocatedDetails.aspx.cs" Inherits="LogicUniversityStore.View.Department.Hod.WebForm7" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Department/Employee/Employee.master" AutoEventWireup="true" CodeBehind="ReapplyRejectedDetails.aspx.cs" Inherits="LogicUniversityStore.View.Department.Employee.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="empMainHeader" runat="server">
     <h1>Requisition Details</h1>
 </asp:Content>
@@ -54,7 +54,7 @@
 
                                             <div class="box-body no-padding">
 
-                                                <asp:GridView ID="gvRequisitionDetails" AutoGenerateColumns="false"  runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" CellSpacing="5" Height="300px" Width="665px" OnRowDeleting="gvRequisitionDetails_RowDeleting">
+                                                <asp:GridView ID="gvRequisitionDetails" AutoGenerateColumns="false"  runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" CellSpacing="5" Height="300px" Width="665px">
                                                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                                     <EditRowStyle BackColor="#999999" />
                                                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -97,9 +97,9 @@
                                 <%--<button type="button" class="btn btn-danger">Reject</button>--%>
 
                                 <%--<button type="button" class="btn btn-default">Close</button>--%>
-                                        <asp:Button ID="btnApprove" CssClass="btn btn-success" runat="server" Text="Approve" OnClick="btnApprove_Click" />
-                                        <asp:Button ID="btnReject" CssClass="btn btn-danger" runat="server" Text="Reject" OnClick="btnReject_Click" />
-                                        <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back" OnClick="btnClose_Click"/>
+                                        <asp:Button ID="btnReapply" CssClass="btn btn-success" runat="server" Text="Reapply" />
+                                        
+                                        <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back"/>
                                         
                                         
 

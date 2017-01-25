@@ -58,7 +58,7 @@ namespace LogicUniversityStore.View.Department.Employee
             rItem.SupplierItem = item.GetSupplierItem();
             rItem.Quantity = Convert.ToInt32(tbAmount.Text);
             rItem.Category = item.Category;
-            items = (List<CartItem>) ViewState["items"];
+            items = (ViewState["items"] == null ? new List<CartItem>() :  (List<CartItem>) ViewState["items"]);
             items.Add(rItem);
             ViewState["items"] = items;
             gvReqItems.DataSource = items;

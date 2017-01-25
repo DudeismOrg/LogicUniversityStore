@@ -9,13 +9,11 @@ namespace LogicUniversityStore.Controller
 {
     public class ApproveRejectReqController
     {
-        public RequisitionDao RequisitionDao { get; set; }
-        public StockCardDao StockCardDao { get; set; }
+       public RequisitionDao RequisitionDao { get; set; }
 
-        public ApproveRejectReqController()
+       public ApproveRejectReqController()
         {
             RequisitionDao = new RequisitionDao();
-            StockCardDao = new StockCardDao();
         }
 
         public List<Requisition> getRequestedRequisition()
@@ -28,17 +26,14 @@ namespace LogicUniversityStore.Controller
             return RequisitionDao.GetRequisitionItemList(requisitionId);
         }
 
-        public void approveRequisition(int requisitionId)
+        public void approveRequisition(int requisitionId,String remark)
         {
-            RequisitionDao.approveRequisition(requisitionId);
-           
+            RequisitionDao.approveRequisition(requisitionId,remark);
         }
 
-        public void rejectRequisition(int requisitionId)
+        public void rejectRequisition(int requisitionId,String remark)
         {
-            RequisitionDao.rejectRequisition(requisitionId);
+            RequisitionDao.rejectRequisition(requisitionId,remark);
         }
-
-       
     }
 }
