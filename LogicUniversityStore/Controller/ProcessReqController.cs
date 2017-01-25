@@ -39,6 +39,7 @@ namespace LogicUniversityStore.Controller
                 int? unfullfilledItem = 0;
                 double percentage = 100;
                 //  int countReqItem = requisition.RequisitionItems.Count();
+                double progrssMeter = 0.0;
 
 
                 foreach (RequisitionItem item in requisition.RequisitionItems)
@@ -55,26 +56,30 @@ namespace LogicUniversityStore.Controller
                     {
                         lockedItemsCountForProcess[rItem.ItemID] += rItem.NeededQuantity.Value;
                         rItem.ApprovedQuantity = rItem.NeededQuantity;
+                        progrssMeter += 1;
                     }
                     else
                     {
                         lockedItemsCountForProcess[rItem.ItemID] += actualQuantityInStock;
                         rItem.ApprovedQuantity = actualQuantityInStock;
                         unfullfilledItem += 1;
+                        progrssMeter += (double)rItem.ApprovedQuantity / (double)rItem.NeededQuantity; 
                     }
                     RequisitionItemDao.db.SaveChanges();
                 }
 
-                if (unfullfilledItem.Value == 0)
-                {
-                    percentage = 100;
-                }
-                else
-                {
-                    double value = (requisition.RequisitionItems.Count - Convert.ToDouble(unfullfilledItem)) / requisition.RequisitionItems.Count;
-                    percentage = value * 100;
-                }
-                mainList.Add(requisition, percentage);
+                //if (unfullfilledItem.Value == 0)
+                //{
+                //    percentage = 100;
+                //}
+                //else
+                //{
+                //    double value = (requisition.RequisitionItems.Count - Convert.ToDouble(unfullfilledItem)) / requisition.RequisitionItems.Count;
+                //    percentage = value * 100;
+                //}
+
+                //   mainList.Add(requisition, percentage);
+                mainList.Add(requisition, (progrssMeter / requisition.RequisitionItems.Count) * 100);
             }
 
             return mainList;

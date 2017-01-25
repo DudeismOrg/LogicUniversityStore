@@ -29,32 +29,9 @@ namespace LogicUniversityStore.Dao
           
         }
 
-        public int GetLockedProductCountInStock(int supplierItemId)
-        {
-            StockCard card = db.StockCards.Where(s => s.ItemID == supplierItemId).FirstOrDefault();
-            if (card == null) throw new ArgumentException("supplierItemID is not Valid");
-            if (card.LockedQuantity == null)
-            {
-                card.LockedQuantity = 0;
-                db.SaveChanges();
-            }
-                return card.LockedQuantity.Value;
-           
-        }
+      
 
-        public void AddLockedQuantityToStock(int  supplierItemID,int quantity)
-        {
-            StockCard card = db.StockCards.Find(supplierItemID);
-            if (card == null) throw new ArgumentException("supplierItemID is not Valid");
-            if (card.LockedQuantity == null) card.LockedQuantity = 0;
-            if(card.LockedQuantity <= card.OnHandQuantity)
-            {
-                card.LockedQuantity = +quantity;
-            }
-
-            db.SaveChanges();
-        }
-
+      
         public StockCard GetStockCardByItemId(int ItemId)
         {
             StockCard card = db.StockCards.Where(s => s.ItemID == ItemId).FirstOrDefault();
