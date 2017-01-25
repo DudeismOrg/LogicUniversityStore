@@ -5,20 +5,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace LogicUniversityStore.Controller
+namespace LogicUniversityStore.Util
 {
-    public class ApplyReqController
+    public class Common
     {
         public CategoryDao CategoryDao { get; set; }
 
-        public ApplyReqController()
+        public Common()
         {
             CategoryDao = new CategoryDao();
         }
 
         public List<Category> GetCategories()
         {
-           return CategoryDao.GetCategories();
+            return CategoryDao.GetCategories();
         }
 
         public List<Item> GetItemsByCategoryId(int categoryId)
