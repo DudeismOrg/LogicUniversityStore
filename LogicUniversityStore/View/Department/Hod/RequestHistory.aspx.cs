@@ -17,8 +17,9 @@ namespace LogicUniversityStore.View.Department.Hod
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {               
-                List<Requisition> items = reqController.getRequisitionList();
+            {
+                int depId = 1;//todo while login               
+                List<Requisition> items = reqController.getRequisitionList(depId);
                 DataTable dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ReqID"), new DataColumn("ReqNumber"),new DataColumn("ReqDate"),new DataColumn("Status"), new DataColumn("Remark") });
                 foreach (Requisition i in items)

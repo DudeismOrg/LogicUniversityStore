@@ -53,7 +53,7 @@
                                                 <label>Select Item</label>
                                             </div>
                                             <div class="col-md-8">
-                                                <asp:DropDownList ID="DdlItems" runat="server" CssClass="form-control select2"></asp:DropDownList>
+                                                <asp:DropDownList ID="DdlItems" runat="server" CssClass="form-control select2" ></asp:DropDownList>
                                             </div>
                                         </div>
                                         <div class="col-md-12" style="height: 10px"></div>
@@ -65,7 +65,9 @@
                                                 <div class="input-group">
                                                    <%-- <input class="form-control" type="text" placeholder="Enter Quntity">--%>
                                                     <asp:TextBox ID="tbAmount" runat="server" CssClass="form-control" ></asp:TextBox>
-                                                    <span class="input-group-addon">Unit(As per selected Item)</span>
+                                                    <span class="input-group-addon"> 
+                                                       
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>

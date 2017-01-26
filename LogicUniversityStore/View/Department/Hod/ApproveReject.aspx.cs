@@ -16,7 +16,8 @@ namespace LogicUniversityStore.View.Department.Hod
         {
            if(!IsPostBack)
             {
-                gvRequestedRequisition.DataSource = reqController.getRequestedRequisition();
+                int depId = 1;//todo while login
+                gvRequestedRequisition.DataSource = reqController.getRequestedRequisition(depId);
                 gvRequestedRequisition.DataBind();
                 
             }

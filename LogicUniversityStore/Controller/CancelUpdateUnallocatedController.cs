@@ -19,9 +19,9 @@ namespace LogicUniversityStore.Controller
             iDao = new ItemDao();
         }
 
-        public List<Requisition> GetApprovedRejectedRequisition()
+        public List<Requisition> GetApprovedRejectedRequisition(int depId)
         {
-            return RequisitionDao.GetApprovedRejectedRequisitionList();
+            return RequisitionDao.GetApprovedRejectedRequisitionList(depId);
         }
 
         public List<RequisitionItem> getRequisitionItemList(int requisitionId)

@@ -20,9 +20,9 @@ namespace LogicUniversityStore.Controller
             ItemDao = new ItemDao();
         }
 
-        public List<Requisition> getRequestedRequisition()
+        public List<Requisition> getRequestedRequisition(int depId)
         {
-            return RequisitionDao.GetRequestedRequisitionList();
+            return RequisitionDao.GetRequestedRequisitionList(depId);
         }
 
         public void removeRequisitionItems(int reqId)

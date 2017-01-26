@@ -20,8 +20,9 @@ namespace LogicUniversityStore.View.Department.Hod
             
             if(!IsPostBack)
             {
+                int depId = 1;//todo while login
                 List<Requisition> req = new List<Requisition>();
-                req = reqController.GetApprovedRejectedRequisition();
+                req = reqController.GetApprovedRejectedRequisition(depId);
                 DataTable dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"),new DataColumn("Status"), new DataColumn("Remark") });
                 foreach (Requisition i in req)

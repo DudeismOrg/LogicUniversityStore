@@ -26,9 +26,9 @@ namespace LogicUniversityStore.Controller
             ItemDao = new ItemDao();
         }
 
-        public List<Requisition> getRejectedRequisition()
+        public List<Requisition> getRejectedRequisition(int requesterId)
         {
-            return RequisitionDao.GetRejectedRequisitionList();
+            return RequisitionDao.GetRejectedRequisitionList(requesterId);
         }
 
         public bool removeRequisition(int reqId)
