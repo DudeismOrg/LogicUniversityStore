@@ -41,34 +41,6 @@ namespace LogicUniversityStore.View.Department.Employee
             }
         }
 
-        protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-
-                if (e.Row.Cells[3].Text == RequisitionStatus.Requested.ToString())
-                {
-                    e.Row.Cells[3].BackColor = System.Drawing.Color.Brown;
-                    e.Row.Cells[3].ForeColor = System.Drawing.Color.White;
-                }
-                else if (e.Row.Cells[3].Text == RequisitionStatus.Approved.ToString())
-                {
-                    e.Row.Cells[3].BackColor = System.Drawing.Color.Blue;
-                    e.Row.Cells[3].ForeColor = System.Drawing.Color.White;
-                }
-                else if (e.Row.Cells[3].Text == RequisitionStatus.Rejected.ToString())
-                {
-                    e.Row.Cells[3].BackColor = System.Drawing.Color.Red;
-                    e.Row.Cells[3].ForeColor = System.Drawing.Color.White;
-                }
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvRequestHistory, "Select$" + e.Row.RowIndex);
-                e.Row.ToolTip = "Click to select this row.";
-            }
-
-
-
-        }
-
         protected void gvRequestHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
             int reqId = Convert.ToInt32(gvRequestHistory.SelectedRow.Cells[0].Text);

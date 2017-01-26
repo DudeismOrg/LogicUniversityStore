@@ -12,33 +12,8 @@
 
                         <div class="col-xs-12">
 
-                            <div class="box">
-
-                                <div class="box-header">
-
-
-
-                                    <div class="input-group input-group-sm pull-left" style="width: 150px;">
-
-                                        <input type="text" name="table_search" class="form-control pull-left" placeholder="Search">
-
-
-
-                                        <div class="input-group-btn">
-
-                                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-
-                                        </div>
-
-                                    </div>                                    
-
-                                </div>
-
-                                <!-- /.box-header -->
-
-                                <div>
-
-                                    
+                            <div class="box">                                  
+                                <div>                                   
                                         <asp:GridView ID="gvRejectedRequests" runat="server"  OnSelectedIndexChanged="gvRejectedRequisition_SelectedIndexChanged" AutoGenerateColumns="False"  CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="100px" Width="961px" OnRowDeleting="gvRejectedRequests_RowDeleting"  >
                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                             <Columns>

@@ -99,7 +99,7 @@
                                 <%--<button type="button" class="btn btn-default">Close</button>--%>
                                         <asp:Button ID="btnUpdate" CssClass="btn btn-success" runat="server" Text="Update" OnClick="btnUpdate_Click" />
                                         
-                                        <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back"/>
+                                        <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back" OnClick="btnClose_Click"/>
                                         
                                         
 

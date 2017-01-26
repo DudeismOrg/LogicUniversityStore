@@ -41,21 +41,9 @@ namespace LogicUniversityStore.View.Department.Hod
             }
         }
 
-        protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvRequisition, "Select$" + e.Row.RowIndex);
-                e.Row.ToolTip = "Click to select this row.";
-            }
-        }
-
         protected void gvRequisition_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             int reqId = Convert.ToInt32(gvRequisition.SelectedRow.Cells[0].Text);
-
-
             Response.Redirect("CancelUpdateUnallocatedDetails.aspx?id=" + reqId + "");
         }
 

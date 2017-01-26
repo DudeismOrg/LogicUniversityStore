@@ -20,16 +20,7 @@ namespace LogicUniversityStore.View.Department.Hod
                 gvRequestedRequisition.DataBind();
                 
             }
-        }
-
-        protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvRequestedRequisition, "Select$" + e.Row.RowIndex);
-                e.Row.ToolTip = "Click this row to view details.";
-            }
-        }
+        }       
 
         protected void gvRequestedRequisition_SelectedIndexChanged(object sender, EventArgs e)
         {
