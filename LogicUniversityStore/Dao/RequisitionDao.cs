@@ -79,6 +79,16 @@ namespace LogicUniversityStore.Dao
                 db.SaveChanges();
         }
 
+        public void updateRemark(int reqId,String remark)
+        {
+            Requisition requisition = db.Requisitions.Find(reqId);
+            requisition.Remark = remark;
+            db.Requisitions.Attach(requisition);
+            var entry = db.Entry(requisition);
+            entry.Property(e => e.Remark).IsModified = true;
+            db.SaveChanges();
+        }
+
         public void rejectRequisition(int reqId,String remark)
         {
             Requisition requisition = db.Requisitions.Find(reqId);
