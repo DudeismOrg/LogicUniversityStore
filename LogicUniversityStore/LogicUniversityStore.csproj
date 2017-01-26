@@ -1052,6 +1052,7 @@
     <Content Include="View\Login.aspx" />
     <Content Include="View\Store\Clerk\ClrkMain.aspx" />
     <Content Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx" />
+    <Content Include="View\Store\Clerk\Modal\RetrievalForm.aspx" />
     <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
     <Content Include="Web.config" />
@@ -1239,6 +1240,13 @@
     </Compile>
     <Compile Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx.designer.cs">
       <DependentUpon>RequestFormAlterItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\Modal\RetrievalForm.aspx.cs">
+      <DependentUpon>RetrievalForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\Modal\RetrievalForm.aspx.designer.cs">
+      <DependentUpon>RetrievalForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Store\Clerk\ProcessRequest.aspx.cs">
       <DependentUpon>ProcessRequest.aspx</DependentUpon>

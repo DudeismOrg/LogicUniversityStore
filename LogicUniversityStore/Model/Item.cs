@@ -57,6 +57,5 @@ namespace LogicUniversityStore.Model
             SupplierItem item = sList.Find(i => i.ActiveSupplier == true && i.SupplierPriority == 1);
             return item;
         }
-
     }
 }
