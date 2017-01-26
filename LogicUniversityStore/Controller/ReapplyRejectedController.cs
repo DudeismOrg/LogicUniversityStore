@@ -12,6 +12,8 @@ namespace LogicUniversityStore.Controller
         public RequisitionDao RequisitionDao { get; set; }
         public RequisitionItemDao RequisitionItemDao { get; set; }
 
+        public ItemDao ItemDao { get; set; }
+
         public List<RequisitionItem> getRequisitionItemList(int requisitionId)
         {
             return RequisitionDao.GetRequisitionItemList(requisitionId);
@@ -21,6 +23,7 @@ namespace LogicUniversityStore.Controller
         {
             RequisitionDao = new RequisitionDao();
             RequisitionItemDao = new RequisitionItemDao();
+            ItemDao = new ItemDao();
         }
 
         public List<Requisition> getRejectedRequisition()
@@ -37,6 +40,22 @@ namespace LogicUniversityStore.Controller
         {
             RequisitionItemDao.deleteRequisitionItem(reqId);
         }
+
+        public void reapplyRequisition(int reqId, String remark, DateTime reqDate)
+        {
+            RequisitionDao.reapplyRequisition(reqId, remark, reqDate);
+        }
+
+        public Item GetItem(String itemName)
+        {
+            return ItemDao.GetItem(itemName);
+        }
+
+        public void addRequisitionItem(RequisitionItem item)
+        {
+            RequisitionItemDao.addRequisitionItem(item);
+        }
+
     }
 
 }

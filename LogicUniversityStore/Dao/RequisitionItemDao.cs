@@ -55,6 +55,12 @@ namespace LogicUniversityStore.Dao
             return true;
         }
 
+        public void addRequisitionItem(RequisitionItem item)
+        {
+            db.RequisitionItems.Add(item);
+            db.SaveChanges();
+        }
+
 
     }
 }
