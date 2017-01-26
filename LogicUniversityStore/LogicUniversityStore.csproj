@@ -114,6 +114,8 @@
     <Content Include="View\Department\Employee\RequestHistoryDetails.aspx" />
     <Content Include="View\Department\Employee\ReapplyRejected.aspx" />
     <Content Include="View\Department\Employee\ReapplyRejectedDetails.aspx" />
+    <Content Include="View\Department\Employee\CancelUpdatePendingApproval.aspx" />
+    <Content Include="View\Department\Employee\CancelUpdatePendingDetails.aspx" />
     <Content Include="View\Department\Hod\HodMain.aspx" />
     <Content Include="View\Department\Hod\ApproveReject.aspx" />
     <Content Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx" />
@@ -1058,6 +1060,7 @@
   <ItemGroup>
     <Compile Include="Controller\ApplyReqController.cs" />
     <Compile Include="Controller\ApproveRejectReqController.cs" />
+    <Compile Include="Controller\CancelUpdatePendingApprovalController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
     <Compile Include="Controller\ReapplyRejectedController.cs" />
@@ -1141,6 +1144,20 @@
     </Compile>
     <Compile Include="View\Department\Employee\ReapplyRejectedDetails.aspx.designer.cs">
       <DependentUpon>ReapplyRejectedDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Employee\CancelUpdatePendingApproval.aspx.cs">
+      <DependentUpon>CancelUpdatePendingApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Employee\CancelUpdatePendingApproval.aspx.designer.cs">
+      <DependentUpon>CancelUpdatePendingApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Employee\CancelUpdatePendingDetails.aspx.cs">
+      <DependentUpon>CancelUpdatePendingDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Employee\CancelUpdatePendingDetails.aspx.designer.cs">
+      <DependentUpon>CancelUpdatePendingDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Department\Hod\Hod.master.cs">
       <DependentUpon>Hod.master</DependentUpon>
