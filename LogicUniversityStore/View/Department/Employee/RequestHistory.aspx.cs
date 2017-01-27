@@ -18,8 +18,8 @@ namespace LogicUniversityStore.View.Department.Employee
         {
             if (!IsPostBack)
             {
-                int depId = 1;//todo while login
-                List<Requisition> items = reqController.getRequisitionList(depId);
+                int requestorId = 2;//todo while login
+                List<Requisition> items = reqController.getRequisitionList(requestorId);
 
                 DataTable dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"), new DataColumn("Status"), new DataColumn("Remark") });

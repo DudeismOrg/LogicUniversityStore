@@ -17,7 +17,7 @@ namespace LogicUniversityStore.View.Department.Employee
         {
             if (!IsPostBack)
             {
-                int requesterId = 1;//todo while login
+                int requesterId = 2;//todo while login
                 List<Requisition> items = reqController.getRejectedRequisition(requesterId);
 
                 DataTable dt = new DataTable();
