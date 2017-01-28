@@ -86,6 +86,12 @@ namespace LogicUniversityStore.Controller
 
         }
 
+        internal Requisition GetRequisition(int requisitonID)
+        {
+            return RequisitionDao.Find(requisitonID);
+           // throw new NotImplementedException();
+        }
+
         public List<StockCard> GetAllStockCard()
         {
             return StockCardDao.GetAllInStock();

@@ -105,7 +105,6 @@ C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Micro
 C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.xml
 C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
 C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\bin\ApplicationInsights.config
@@ -145,3 +144,5 @@ C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUnive
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\AjaxControlToolkit.dll

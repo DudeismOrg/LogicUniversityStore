@@ -1,11 +1,34 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Store/Clerk/Clerk.master" AutoEventWireup="true" CodeBehind="RetrievalForm.aspx.cs" Inherits="LogicUniversityStore.View.Store.Clerk.Modal.RetrievalForm" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="clrkCssBlock" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="clrkMainHeader" runat="server">
-    <h1>Retrieval Form</h1>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="clrkMainContentBlock" runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RetrievalForm.aspx.cs" Inherits="LogicUniversityStore.View.Store.Clerk.Modal.RetrievalForm" %>
 
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="clrkMainJs" runat="server">
-</asp:Content>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:GridView ID="gvRetrieval" runat="server"  AutoGenerateColumns="false">
+            <Columns>
+
+                                <asp:BoundField DataField="key.SupplierItem.Item.ItemName" HeaderText="Request ID" />
+
+
+                                <asp:BoundField DataField="value.Pair.Needed" HeaderText="Needed Quantity" />
+                                <asp:BoundField DataField="value.Pair.Approved" HeaderText="Approve Quantity" />
+
+
+                               <%-- <asp:TemplateField HeaderText="Fullfillment Status">
+                                    <ItemTemplate>
+                                        
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                --%>
+
+                            </Columns>
+        </asp:GridView>
+    </div>
+    </form>
+</body>
+</html>

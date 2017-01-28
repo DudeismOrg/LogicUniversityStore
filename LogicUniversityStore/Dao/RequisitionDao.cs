@@ -114,7 +114,11 @@ namespace LogicUniversityStore.Dao
 
         }
 
-
-
+        internal Requisition Find(int requisitonID)
+        {
+            Requisition r = db.Requisitions.Find(requisitonID);
+            if (r == null) throw new ArgumentException("Requistion ID not Valid");
+            return r;
+        }
     }
 }

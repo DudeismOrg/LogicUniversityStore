@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=16.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.16.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -1055,6 +1059,7 @@
     <Content Include="View\Store\Clerk\ClrkMain.aspx" />
     <Content Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx" />
     <Content Include="View\Store\Clerk\Modal\RetrievalForm.aspx" />
+    <Content Include="View\Store\Clerk\Modal\WebForm1.aspx" />
     <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
     <Content Include="Web.config" />
@@ -1065,14 +1070,17 @@
     <Compile Include="Controller\ApproveRejectReqController.cs" />
     <Compile Include="Controller\CancelUpdatePendingApprovalController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
+    <Compile Include="Util\DepartmentNotFoundException.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
     <Compile Include="Controller\ReapplyRejectedController.cs" />
     <Compile Include="Controller\RequestHistoryController.cs" />
+    <Compile Include="Controller\RetreiveReqController.cs" />
     <Compile Include="Dao\AdjustmentDao.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
     <Compile Include="Dao\RequisitionItemDao.cs" />
     <Compile Include="Dao\ItemDao.cs" />
     <Compile Include="Dao\RequisitionDao.cs" />
+    <Compile Include="Dao\RetrievalDao.cs" />
     <Compile Include="Dao\StockCardDao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1104,6 +1112,7 @@
     <Compile Include="Util\LockedFullException.cs" />
     <Compile Include="Util\Common.cs" />
     <Compile Include="Util\Enumeration.cs" />
+    <Compile Include="Util\Popup.cs" />
     <Compile Include="View\Department\Employee\Employee.master.cs">
       <DependentUpon>Employee.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1264,6 +1273,13 @@
     </Compile>
     <Compile Include="View\Store\Clerk\Modal\RetrievalForm.aspx.designer.cs">
       <DependentUpon>RetrievalForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\Modal\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\Modal\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Store\Clerk\ProcessRequest.aspx.cs">
       <DependentUpon>ProcessRequest.aspx</DependentUpon>

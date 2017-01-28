@@ -8,7 +8,7 @@ namespace LogicUniversityStore.Model
 
     [Table("Department")]
     [Serializable]
-    public partial class Department
+    public partial class Department : IEquatable<Department>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Department()
@@ -48,5 +48,20 @@ namespace LogicUniversityStore.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LUUser> LUUsers { get; set; }
+
+        public bool Equals(Department other)
+        {
+            return this.DepartmentID == other.DepartmentID;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.DepartmentID;
+        }
+
+        public override string ToString()
+        {
+            return this.DepartmentName;
+        }
     }
 }
