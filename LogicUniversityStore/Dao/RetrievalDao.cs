@@ -21,5 +21,17 @@ namespace LogicUniversityStore.Dao
                db.Retrievals.Add(ret);
             db.SaveChanges();
         }
+
+        public List<Requisition> GetAllRequistion(Retrieval ret)
+        {
+           return  ret.RequisitionItems.Where(item => item.RetrievalID == ret.RetrievalID).Select(item => item.Requisition).Distinct().ToList();
+        }
+
+        internal Retrieval Find(int index)
+        {
+            Retrieval r = db.Retrievals.Find(index);
+            if (r == null) throw new Exception("Retrieval Id not valid");
+            return r;
+        }
     }
 }

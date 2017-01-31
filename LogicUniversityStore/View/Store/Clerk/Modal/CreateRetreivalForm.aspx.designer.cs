@@ -10,7 +10,7 @@
 namespace LogicUniversityStore.View.Store.Clerk.Modal {
     
     
-    public partial class WebForm1 {
+    public partial class RetrievalForm {
         
         /// <summary>
         /// form1 control.
@@ -22,12 +22,30 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Button1 control.
+        /// gvRetrieval control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.GridView gvRetrieval;
+        
+        /// <summary>
+        /// btnGenerateR control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGenerateR;
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

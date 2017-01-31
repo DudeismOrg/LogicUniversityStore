@@ -8,7 +8,7 @@ namespace LogicUniversityStore.Model
 
     [Table("RequisitionItem")]
     [Serializable]
-    public partial class RequisitionItem : IEquatable<RequisitionItem>
+    public partial class RequisitionItem 
     {
         [Key]
         public int ReqItemID { get; set; }
@@ -51,14 +51,7 @@ namespace LogicUniversityStore.Model
             return this.Requisition.Department;
         }
 
-        public bool Equals(RequisitionItem other)
-        {
-            return this.ItemID.Equals(other.ItemID);
-        }
-        public override int GetHashCode()
-        {
-            return this.ItemID;
-        }
+       
         public override string ToString()
         {
             return this.GetItem().ItemName;

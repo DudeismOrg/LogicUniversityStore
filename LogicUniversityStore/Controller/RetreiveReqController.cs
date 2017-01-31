@@ -1,5 +1,6 @@
 ﻿using LogicUniversityStore.Dao;
 using LogicUniversityStore.Model;
+using LogicUniversityStore.Util;
 using LogicUniversityStore.Utill;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,14 @@ namespace LogicUniversityStore.Controller
         public RetrievalDao RetrievalDao { get; set; }
         private List<Requisition> retReq;
 
-        public RetreiveReqController(List<Requisition> retrievalReq)
+        public RetreiveReqController(List<Requisition> retrievalReq) // this constructor is used for creating retrivelist from process requisition
         {
             RetrievalDao = new RetrievalDao();
             retReq = retrievalReq;
+        }
+        public RetreiveReqController() : this(null)  // default constructor for view the retriev list
+        {
+
         }
 
         public List<Retrieval> GetAllRetrieval()
@@ -33,13 +38,14 @@ namespace LogicUniversityStore.Controller
 
         private Dictionary<Department, Pair> GetBreakDownByDepartment(RequisitionItem reqItem)
         {
+            if (this.retReq == null) throw new InvalidConstructorException("Use another constructor for this controller");
             Dictionary<Department, Pair> result = new Dictionary<Department, Pair>();
 
             foreach (Requisition r in this.retReq)
             {
                 foreach (RequisitionItem item in r.RequisitionItems)
                 {
-                    if (!item.Equals(reqItem))
+                    if ((item.ItemID != reqItem.ItemID))
                     {
                         continue;
                     }
@@ -60,14 +66,20 @@ namespace LogicUniversityStore.Controller
             return result;
         }
 
+        internal Retrieval FindRetrieval(int index)
+        {
+           return RetrievalDao.Find(index);
+        }
+
         public Dictionary<RequisitionItem,MainRow> GetRow()
         {
-            Dictionary<RequisitionItem, MainRow> result = new Dictionary<RequisitionItem, MainRow>();
+            if (this.retReq == null) throw new InvalidConstructorException("Use another constructor for this controller");
+            Dictionary<RequisitionItem, MainRow> result = new Dictionary<RequisitionItem, MainRow>(new RequistionItemBySupplierComparator());
             foreach (Requisition r in this.retReq)
             {
                 foreach (RequisitionItem item in r.RequisitionItems)
                 {
-                   if(!result.ContainsKey(item))
+                   if(! result.ContainsKey(item))
                     {
                         MainRow row = new MainRow(new Pair(item.NeededQuantity.Value, item.ApprovedQuantity.Value), this.GetBreakDownByDepartment(item));
                         result.Add(item, row);
@@ -75,10 +87,17 @@ namespace LogicUniversityStore.Controller
                     {
                         result[item].Pair.Needed += item.NeededQuantity.Value;
                         result[item].Pair.Approved += item.ApprovedQuantity.Value;
+                   //     result[item].DictionaryMap = this.GetBreakDownByDepartment(item);
                     }
                 }
             }
+          
             return result;
+        }
+
+        public List<Requisition> GetAllRequistion(Retrieval r)
+        {
+          return  RetrievalDao.GetAllRequistion(r);
         }
     }
 
@@ -86,13 +105,12 @@ namespace LogicUniversityStore.Controller
     {
         static int counter = 1;
         private int id;
-        private int neededQuantity;
-        private int approvedQuantity;
+       
 
         public Pair(int neededQuantity, int approvedQuantity)
         {
-            this.neededQuantity = neededQuantity;
-            this.approvedQuantity = approvedQuantity;
+            Needed = neededQuantity;
+            Approved = approvedQuantity;
             id = counter++;
         }
 
@@ -115,5 +133,7 @@ namespace LogicUniversityStore.Controller
             this.Pair = pair;
             this.DictionaryMap = dictionary;
         }
+
+        
     }
 }

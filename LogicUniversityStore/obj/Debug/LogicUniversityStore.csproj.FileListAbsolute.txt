@@ -71,43 +71,6 @@ C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.
 C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
 C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\ApplicationInsights.config
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\csc.exe
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\vbc.exe
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll.config
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.pdb
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.xml
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.xml
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.xml
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.xml
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
-C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\bin\ApplicationInsights.config
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\bin\roslyn\csc.exe
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -145,5 +108,41 @@ C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUnive
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\AjaxControlToolkit.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\ApplicationInsights.config
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\csc.exe
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\vbc.exe
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll.config
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.pdb
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\AjaxControlToolkit.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
