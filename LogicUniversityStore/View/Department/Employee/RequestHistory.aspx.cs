@@ -20,7 +20,6 @@ namespace LogicUniversityStore.View.Department.Employee
             {
                 int requestorId = 2;//todo while login
                 List<Requisition> items = reqController.getRequisitionList(requestorId);
-
                 DataTable dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"), new DataColumn("Status"), new DataColumn("Remark") });
                 foreach (Requisition i in items)
@@ -32,20 +31,15 @@ namespace LogicUniversityStore.View.Department.Employee
                     r["Status"] = i.Status;
                     r["Remark"] = i.Remark;
                     dt.Rows.Add(r);
-
                 }
                 gvRequestHistory.DataSource = dt;
                 gvRequestHistory.DataBind();
-
-
             }
         }
 
         protected void gvRequestHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
             int reqId = Convert.ToInt32(gvRequestHistory.SelectedRow.Cells[0].Text);
-
-
             Response.Redirect("RequestHistoryDetails.aspx?id=" + reqId + "");
         }
     }

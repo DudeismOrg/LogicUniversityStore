@@ -14,7 +14,6 @@ namespace LogicUniversityStore.View.Department.Employee
     {
         CancelUpdatePendingApprovalController reqController = new CancelUpdatePendingApprovalController();
         RequisitionItem ri = new RequisitionItem();
-
         DataTable dt;
         DataRow r;
         protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +22,6 @@ namespace LogicUniversityStore.View.Department.Employee
             {
                 int reqId = Convert.ToInt32(Request.QueryString["id"]);
                 List<RequisitionItem> items = reqController.getRequisitionItemList(reqId);
-
                 dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[3] { new DataColumn("ItemName"), new DataColumn("NeededQuantity"), new DataColumn("UOM") });
                 foreach (RequisitionItem i in items)
@@ -63,7 +61,6 @@ namespace LogicUniversityStore.View.Department.Employee
             int rowCount = gvRequisitionDetails.Rows.Count;
             for (int i = 0; i < rowCount; i++)
             {
-
                 RequisitionItem ri = new RequisitionItem();
                 ri.ReqID = reqId;
                 String itemName = gvRequisitionDetails.Rows[i].Cells[0].Text;
@@ -74,7 +71,6 @@ namespace LogicUniversityStore.View.Department.Employee
                 ri.NeededQuantity = Convert.ToInt32(tb.Text);
                 reqController.addRequisitionItem(ri);
             }
-
             Response.Redirect("CancelUpdatePendingApproval.aspx");
         }
 

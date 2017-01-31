@@ -18,17 +18,13 @@ namespace LogicUniversityStore.View.Department.Hod
             {
                 int depId = 1;//todo while login
                 gvRequestedRequisition.DataSource = reqController.getRequestedRequisitionHod(depId);
-                gvRequestedRequisition.DataBind();
-                
+                gvRequestedRequisition.DataBind();               
             }
         }       
-
         protected void gvRequestedRequisition_SelectedIndexChanged(object sender, EventArgs e)
         {
             int reqId=Convert.ToInt32(gvRequestedRequisition.SelectedRow.Cells[0].Text);         
             Response.Redirect("ApproveRejectRequisitionItems.aspx?id="+reqId+"");
-        }
-
-        
+        }        
     }
 }

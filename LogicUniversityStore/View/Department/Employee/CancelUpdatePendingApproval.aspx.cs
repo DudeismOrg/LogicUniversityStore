@@ -12,7 +12,6 @@ namespace LogicUniversityStore.View.Department.Employee
 {
     public partial class WebForm5 : System.Web.UI.Page
     {
-
         public CancelUpdatePendingApprovalController reqController = new CancelUpdatePendingApprovalController();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +19,6 @@ namespace LogicUniversityStore.View.Department.Employee
             {
                 int requesterId = 2;//todo while login
                 List<Requisition> items = reqController.getRequestedRequisition(requesterId);
-
                 DataTable dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[4] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"), new DataColumn("Remark") });
                 foreach (Requisition i in items)
@@ -54,16 +52,9 @@ namespace LogicUniversityStore.View.Department.Employee
 
         protected void gvPendingRequests_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             int reqId = Convert.ToInt32(gvPendingRequests.SelectedRow.Cells[0].Text);
-
-
             Response.Redirect("CancelUpdatePendingDetails.aspx?id=" + reqId + "");
         }
-
-
     }
-
-
 }
 

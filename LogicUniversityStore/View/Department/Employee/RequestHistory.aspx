@@ -14,9 +14,7 @@
                         <div class="col-xs-12">
 
                             <div class="box">                               
-                                <div>
-
-                                    
+                                <div>                                    
                                         <asp:GridView ID="gvRequestHistory" runat="server" AutoGenerateColumns="False"   OnSelectedIndexChanged="gvRequestHistory_SelectedIndexChanged" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="100px" Width="826px"  >
                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                             <Columns>

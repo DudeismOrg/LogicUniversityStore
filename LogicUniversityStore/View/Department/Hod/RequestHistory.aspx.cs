@@ -31,7 +31,6 @@ namespace LogicUniversityStore.View.Department.Hod
                     r["Status"] = i.Status;
                     r["Remark"] = i.Remark;                   
                     dt.Rows.Add(r);                   
-
                 }
                 gvRequestHistory.DataSource = dt;
                 gvRequestHistory.DataBind();
@@ -41,9 +40,7 @@ namespace LogicUniversityStore.View.Department.Hod
         {
             int reqId = Convert.ToInt32(gvRequestHistory.SelectedRow.Cells[0].Text);
             Response.Redirect("RequestHistoryDetails.aspx?id=" + reqId + "");
-        }
-
-        
+        }        
     }
 }
     

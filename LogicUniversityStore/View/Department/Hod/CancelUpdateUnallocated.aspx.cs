@@ -13,11 +13,9 @@ namespace LogicUniversityStore.View.Department.Hod
 {
     public partial class WebForm6 : System.Web.UI.Page
     {
-        public CancelUpdateUnallocatedController reqController = new CancelUpdateUnallocatedController();
-        
+        public CancelUpdateUnallocatedController reqController = new CancelUpdateUnallocatedController();        
         protected void Page_Load(object sender, EventArgs e)
-        {
-            
+        {            
             if(!IsPostBack)
             {
                 int depId = 1;//todo while login
@@ -36,9 +34,7 @@ namespace LogicUniversityStore.View.Department.Hod
                     dt.Rows.Add(r);
                 }
                 gvRequisition.DataSource = dt;
-                gvRequisition.DataBind();
-
-                
+                gvRequisition.DataBind();                
             }
         }
 
@@ -47,6 +43,5 @@ namespace LogicUniversityStore.View.Department.Hod
             int reqId = Convert.ToInt32(gvRequisition.SelectedRow.Cells[0].Text);
             Response.Redirect("CancelUpdateUnallocatedDetails.aspx?id=" + reqId + "");
         }
-
     }
 }
