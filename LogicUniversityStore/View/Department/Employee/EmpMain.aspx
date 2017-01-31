@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainHeader" runat="server">
     <h1>Dashboard<small>Version 2.0</small></h1>
+    <a href="EmpMain.aspx">EmpMain.aspx</a>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
         <li class="active">Dashboard</li>

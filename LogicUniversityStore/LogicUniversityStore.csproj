@@ -136,6 +136,8 @@
     <Content Include="View\Resources\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="View\Resources\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="View\Resources\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="View\Resources\js\sweetalert-dev.js" />
+    <Content Include="View\Resources\css\sweetalert.css" />
     <Content Include="View\Resources\plugins\ckeditor\CHANGES.md" />
     <Content Include="View\Resources\plugins\ckeditor\LICENSE.md" />
     <Content Include="View\Resources\plugins\ckeditor\plugins\scayt\CHANGELOG.md" />
@@ -1057,21 +1059,36 @@
     <Content Include="View\Resources\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\Store\Clerk\ClrkMain.aspx" />
+    <Content Include="View\Store\Clerk\Modal\ItemsInPO.aspx" />
     <Content Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx" />
     <Content Include="View\Store\Clerk\Modal\CreateRetreivalForm.aspx" />
     <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
+
     <Content Include="View\Store\Clerk\RetrievalForm.aspx" />
+
+    <Content Include="View\Store\Clerk\PurchaseOrderView.aspx" />
+    <Content Include="View\Store\Clerk\PurchaseOrderConfirm.aspx" />
+
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
     <Content Include="View\Store\Clerk\ViewRetrieval.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AdjustmentController.cs" />
+    <Compile Include="Controller\PurchaseOrderController.cs" />
     <Compile Include="Controller\ApplyReqController.cs" />
     <Compile Include="Controller\ApproveRejectReqController.cs" />
     <Compile Include="Controller\CancelUpdatePendingApprovalController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
+
     <Compile Include="Controller\InvalidConstructorException.cs" />
+
+    <Compile Include="Dao\PurchaseOrderItemDao.cs" />
+    <Compile Include="Dao\PurchaseOrderDao.cs" />
+    <Compile Include="Dao\PoBatchDao.cs" />
+    <Compile Include="Util\PurchaseOrderUtil.cs" />
+    <Compile Include="Util\PurchaseOrderItems.cs" />
+
     <Compile Include="Util\DepartmentNotFoundException.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
     <Compile Include="Controller\ReapplyRejectedController.cs" />
@@ -1079,6 +1096,7 @@
     <Compile Include="Controller\RetreiveReqController.cs" />
     <Compile Include="Dao\AdjustmentDao.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
+    <Compile Include="Dao\SupplierItemDao.cs" />
     <Compile Include="Dao\RequisitionItemDao.cs" />
     <Compile Include="Dao\ItemDao.cs" />
     <Compile Include="Dao\RequisitionDao.cs" />
@@ -1263,6 +1281,13 @@
     <Compile Include="View\Store\Clerk\ClrkMain.aspx.designer.cs">
       <DependentUpon>ClrkMain.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Store\Clerk\Modal\ItemsInPO.aspx.cs">
+      <DependentUpon>ItemsInPO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\Modal\ItemsInPO.aspx.designer.cs">
+      <DependentUpon>ItemsInPO.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx.cs">
       <DependentUpon>RequestFormAlterItems.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1284,12 +1309,28 @@
     <Compile Include="View\Store\Clerk\ProcessRequest.aspx.designer.cs">
       <DependentUpon>ProcessRequest.aspx</DependentUpon>
     </Compile>
+
     <Compile Include="View\Store\Clerk\RetrievalForm.aspx.cs">
       <DependentUpon>RetrievalForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Store\Clerk\RetrievalForm.aspx.designer.cs">
       <DependentUpon>RetrievalForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\PurchaseOrderView.aspx.cs">
+      <DependentUpon>PurchaseOrderView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\PurchaseOrderView.aspx.designer.cs">
+      <DependentUpon>PurchaseOrderView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\PurchaseOrderConfirm.aspx.cs">
+      <DependentUpon>PurchaseOrderConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\PurchaseOrderConfirm.aspx.designer.cs">
+      <DependentUpon>PurchaseOrderConfirm.aspx</DependentUpon>
+
     </Compile>
     <Compile Include="View\Store\Clerk\SpotAdjustment.aspx.cs">
       <DependentUpon>SpotAdjustment.aspx</DependentUpon>
@@ -1308,8 +1349,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="View\Resources\css\" />
-    <Folder Include="View\Resources\js\" />
     <Folder Include="View\Store\Supervisor\" />
   </ItemGroup>
   <PropertyGroup>

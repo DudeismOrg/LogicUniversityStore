@@ -17,7 +17,7 @@
                     <asp:Button ID="btnView" runat="server"
                         CommandName="View"
                         CommandArgument='<%# Eval("RetrievalID") %>' 
-                        Text="View Retrieval Form" />
+                        Text="View Retrieval Form"  CssClass="btn-primary"/>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

@@ -33,6 +33,7 @@
     <link rel="stylesheet" href='<%= Page.ResolveUrl("~/View/Resources/plugins/jvectormap/jquery-jvectormap-1.2.2.css") %>'>
     <link rel="stylesheet" href='<%= Page.ResolveUrl("~/View/Resources/dist/css/AdminLTE.min.css") %>'>
     <link rel="stylesheet" href='<%= Page.ResolveUrl("~/View/Resources/dist/css/skins/_all-skins.min.css") %>'>
+    <link rel="stylesheet" href='<%= Page.ResolveUrl("~/View/Resources/css/sweetalert.css") %>'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <asp:ContentPlaceHolder ID="cssBlock" runat="server"></asp:ContentPlaceHolder>
 </head>
@@ -885,6 +886,7 @@
     <script src='<%= Page.ResolveUrl("~/View/Resources/bootstrap/js/bootstrap.min.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/View/Resources/plugins/fastclick/fastclick.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/View/Resources/dist/js/app.min.js") %>'></script>
+    <script src='<%= Page.ResolveUrl("~/View/Resources/js/sweetalert-dev.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/View/Resources/plugins/sparkline/jquery.sparkline.min.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/View/Resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/View/Resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js") %>'></script>

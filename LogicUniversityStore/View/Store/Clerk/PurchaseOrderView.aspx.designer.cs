@@ -7,54 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicUniversityStore.View.Department.Employee {
+namespace LogicUniversityStore.View.Store.Clerk {
     
     
-    public partial class WebForm6 {
+    public partial class PurchaseOrderView {
         
         /// <summary>
-        /// requisitionDetails control.
+        /// purchaseOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm requisitionDetails;
+        protected global::System.Web.UI.HtmlControls.HtmlForm purchaseOrder;
         
         /// <summary>
-        /// gvRequisitionDetails control.
+        /// DdlCategories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRequisitionDetails;
+        protected global::System.Web.UI.WebControls.DropDownList DdlCategories;
         
         /// <summary>
-        /// txtRemark control.
+        /// DdlItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRemark;
+        protected global::System.Web.UI.WebControls.DropDownList DdlItems;
         
         /// <summary>
-        /// btnUpdate control.
+        /// btnAddPurchaseOrderItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        protected global::System.Web.UI.WebControls.Button btnAddPurchaseOrderItem;
         
         /// <summary>
-        /// btnClose control.
+        /// gvReqItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
+        protected global::System.Web.UI.WebControls.GridView gvReqItems;
+        
+        /// <summary>
+        /// confirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button confirm;
     }
 }

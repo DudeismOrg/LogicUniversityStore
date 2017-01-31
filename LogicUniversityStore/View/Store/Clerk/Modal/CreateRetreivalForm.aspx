@@ -7,7 +7,7 @@
 
     <form id="form1" runat="server">
         <div>
-            <asp:GridView ID="gvRetrieval" runat="server" AutoGenerateColumns="false" >
+            <asp:GridView ID="gvRetrieval" runat="server" AutoGenerateColumns="false" CssClass="table-striped" >
                 <Columns>
 
                     <asp:BoundField DataField="key.SupplierItem.Item.ItemName" HeaderText="Request ID" />
@@ -30,8 +30,8 @@
             </asp:GridView>
         </div>
         <div>
-            <asp:Button ID="btnGenerateR" runat="server" Text="Generate Retrieval" OnClick="btnGenerateR_Click" Width="371px" />
-            <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+            <asp:Button ID="btnGenerateR" runat="server" Text="Generate Retrieval" OnClick="btnGenerateR_Click" Width="371px" CssClass="btn-info" />
+            <asp:Button ID="btnCancel" runat="server" Text="Back and Reselect" OnClick="btnCancel_Click"  CssClass="btn-primary"/>
             
         </div>
     </form>

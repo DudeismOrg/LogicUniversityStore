@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicUniversityStore.View.Department.Hod {
+namespace LogicUniversityStore.View.Store.Clerk.Modal {
     
     
-    public partial class WebForm2 {
+    public partial class ItemsInPO {
         
         /// <summary>
-        /// ApproveReject control.
+        /// lvItemsInPO control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm ApproveReject;
-        
-        /// <summary>
-        /// gvRequestedRequisition control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRequestedRequisition;
+        protected global::System.Web.UI.WebControls.ListView lvItemsInPO;
     }
 }

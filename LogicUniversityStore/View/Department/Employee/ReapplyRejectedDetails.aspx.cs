@@ -15,7 +15,6 @@ namespace LogicUniversityStore.View.Department.Employee
     {
         ReapplyRejectedController reqController = new ReapplyRejectedController();
         RequisitionItem ri = new RequisitionItem();
-
         DataTable dt;
         DataRow r;
         protected void Page_Load(object sender, EventArgs e)
@@ -24,7 +23,6 @@ namespace LogicUniversityStore.View.Department.Employee
             {
                 int reqId = Convert.ToInt32(Request.QueryString["id"]);
                 List<RequisitionItem> items = reqController.getRequisitionItemList(reqId);
-
                 dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[3] { new DataColumn("ItemName"), new DataColumn("NeededQuantity"), new DataColumn("UOM") });
                 foreach (RequisitionItem i in items)
@@ -47,8 +45,7 @@ namespace LogicUniversityStore.View.Department.Employee
         }
 
         protected void gvRequisitionDetails_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            
+        {            
             int rowIndex = e.RowIndex;
             dt = (DataTable)ViewState["dt"];     
             dt.Rows[rowIndex].Delete();
@@ -62,12 +59,10 @@ namespace LogicUniversityStore.View.Department.Employee
             String remark = txtRemark.Text;
             DateTime date = System.DateTime.Now;
             reqController.reapplyRequisition(reqId, remark, date);
-
             reqController.removeRequisitionItems(reqId);
             int rowCount = gvRequisitionDetails.Rows.Count;
             for(int i=0;i<rowCount;i++)
-            {
-         
+            {         
                 RequisitionItem ri = new RequisitionItem();
                 ri.ReqID = reqId;
                 String itemName = gvRequisitionDetails.Rows[i].Cells[0].Text;
@@ -85,7 +80,6 @@ namespace LogicUniversityStore.View.Department.Employee
         protected void btnClose_Click(object sender, EventArgs e)
         {
             Response.Redirect("ReapplyRejected.aspx");
-
         }
     }
 }
