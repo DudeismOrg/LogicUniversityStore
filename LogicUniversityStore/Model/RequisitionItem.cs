@@ -53,11 +53,11 @@ namespace LogicUniversityStore.Model
 
         public bool Equals(RequisitionItem other)
         {
-            return this.GetItem().ItemID.Equals(other.GetItem().ItemID);
+            return this.ItemID.Equals(other.ItemID);
         }
         public override int GetHashCode()
         {
-            return this.GetItem().ItemID;
+            return this.ItemID;
         }
         public override string ToString()
         {
