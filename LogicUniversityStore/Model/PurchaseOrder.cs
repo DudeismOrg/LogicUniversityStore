@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("PurchaseOrder")]
     [Serializable]
-
     public partial class PurchaseOrder
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -44,6 +43,10 @@ namespace LogicUniversityStore.Model
 
         [Column(TypeName = "date")]
         public DateTime? ExpectedDeliveryDate { get; set; }
+
+        public int? POBatchID { get; set; }
+
+        public virtual POBatch POBatch { get; set; }
 
         public virtual Supplier Supplier { get; set; }
 

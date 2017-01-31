@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("StockCard")]
     [Serializable]
-
     public partial class StockCard
     {
         public int ItemID { get; set; }
@@ -23,7 +22,6 @@ namespace LogicUniversityStore.Model
 
         public int StockCardID { get; set; }
 
-        public int? LockedQuantity { get; set; }
 
         public virtual SupplierItem SupplierItem { get; set; }
     }

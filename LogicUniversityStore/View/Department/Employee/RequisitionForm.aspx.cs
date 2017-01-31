@@ -18,10 +18,7 @@ namespace LogicUniversityStore.View.Department.Employee
         private List<CartItem> items;
         private Category category;
         private Item item;
-
-
         private ItemDao itemDao;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -58,12 +55,11 @@ namespace LogicUniversityStore.View.Department.Employee
             rItem.SupplierItem = item.GetSupplierItem();
             rItem.Quantity = Convert.ToInt32(tbAmount.Text);
             rItem.Category = item.Category;
-            items = (List<CartItem>) ViewState["items"];
+            items = (ViewState["items"] == null ? new List<CartItem>() :  (List<CartItem>) ViewState["items"]);
             items.Add(rItem);
             ViewState["items"] = items;
             gvReqItems.DataSource = items;
-            gvReqItems.DataBind();
-            
+            gvReqItems.DataBind();            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -76,7 +72,7 @@ namespace LogicUniversityStore.View.Department.Employee
                 requisition.ReqDate = System.DateTime.Now;
                 requisition.ReqNumber = new Random().Next().ToString(); //Todo 
                 requisition.Status = RequisitionStatus.Requested.ToString();
-                requisition.RequesterID = 1; // Todo: need to change later once login up
+                requisition.RequesterID = 2; // Todo: need to change later once login up
                 requisition.DapartmentID = 1; // Todo: same
                 requisition.RecieveByID = 1;  //Todo: same
                 dao.db.Requisitions.Add(requisition);
@@ -90,18 +86,16 @@ namespace LogicUniversityStore.View.Department.Employee
                     dao.db.RequisitionItems.Add(item);
                 }
                 dao.db.SaveChanges();
-                ViewState["items"] = null;
+                ViewState["items"] = new List<CartItem>();
                 gvReqItems.DataSource = null;
                 gvReqItems.DataBind();
             }
-
         }
-
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            ViewState["items"] = null;
+            ViewState["items"] = new List<RequisitionItem>();
             gvReqItems.DataSource = null;
             gvReqItems.DataBind();
-        }
+        }        
     }
 }

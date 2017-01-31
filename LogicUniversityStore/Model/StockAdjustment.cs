@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("StockAdjustment")]
     [Serializable]
-
     public partial class StockAdjustment
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -28,6 +27,17 @@ namespace LogicUniversityStore.Model
 
         [Column(TypeName = "date")]
         public DateTime? EndDate { get; set; }
+
+        [StringLength(20)]
+        public string Status { get; set; }
+
+        [StringLength(20)]
+        public string Type { get; set; }
+
+        public int? CreatedBy { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? CreatedDate { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StockAdjustmentItem> StockAdjustmentItems { get; set; }

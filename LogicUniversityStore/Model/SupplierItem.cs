@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("SupplierItem")]
     [Serializable]
-
     public partial class SupplierItem
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -34,6 +33,10 @@ namespace LogicUniversityStore.Model
 
         public virtual Item Item { get; set; }
 
+        public virtual String SupplierName { get { return SupplierNameNumber(); } }
+        
+        public virtual int SupplierId { get { return GetSupplierId(); } }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PurchaseOrderItem> PurchaseOrderItems { get; set; }
 
@@ -48,10 +51,21 @@ namespace LogicUniversityStore.Model
 
         public virtual Supplier Supplier { get; set; }
 
+        public virtual String SupplierNameNumber()
+        {
+            return this.Supplier.SupplierName + " - " + this.Supplier.SupplierPhone;
+        }
+
+        public virtual int GetSupplierId()
+        {
+            return this.Supplier.SupplierID;
+        }
 
         public override string ToString()
         {
             return this.Item.ItemName;
         }
+
+
     }
 }

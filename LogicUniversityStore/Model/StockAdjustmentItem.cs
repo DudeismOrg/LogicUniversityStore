@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("StockAdjustmentItem")]
     [Serializable]
-
     public partial class StockAdjustmentItem
     {
         public int StockAdjustmentItemID { get; set; }
@@ -16,14 +15,6 @@ namespace LogicUniversityStore.Model
         public int StockAdjustmentID { get; set; }
 
         public int ItemID { get; set; }
-
-        [Required]
-        [StringLength(20)]
-        public string Status { get; set; }
-
-        [Required]
-        [StringLength(20)]
-        public string AdjustType { get; set; }
 
         public int CountQuantity { get; set; }
 

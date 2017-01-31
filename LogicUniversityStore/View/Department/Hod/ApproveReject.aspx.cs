@@ -16,15 +16,15 @@ namespace LogicUniversityStore.View.Department.Hod
         {
            if(!IsPostBack)
             {
-                gvRequestedRequisition.DataSource = reqController.getRequestedRequisition();
-                gvRequestedRequisition.DataBind();
+                int depId = 1;//todo while login
+                gvRequestedRequisition.DataSource = reqController.getRequestedRequisitionHod(depId);
+                gvRequestedRequisition.DataBind();               
             }
-        }
-
+        }       
         protected void gvRequestedRequisition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            Response.Redirect("ApproveRejectRequisitionItems.aspx");
-        }
+            int reqId=Convert.ToInt32(gvRequestedRequisition.SelectedRow.Cells[0].Text);         
+            Response.Redirect("ApproveRejectRequisitionItems.aspx?id="+reqId+"");
+        }        
     }
 }

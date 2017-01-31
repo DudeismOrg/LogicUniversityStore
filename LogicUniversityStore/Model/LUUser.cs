@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("LUUser")]
     [Serializable]
-
     public partial class LUUser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

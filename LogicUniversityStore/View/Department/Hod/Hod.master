@@ -29,7 +29,7 @@
     </li>
 
     <li class="treeview">
-        <a href="index.html">
+        <a href="CancelUpdateUnallocated.aspx">
             <i class="fa fa-share"></i>
             <span>Cancel/Update Requests</span>
             <span class="pull-right-container">
@@ -39,7 +39,7 @@
     </li>
 
     <li class="treeview">
-        <a href="index.html">
+        <a href="RequestHistory.aspx">
             <i class="fa fa-pie-chart"></i>
             <span>Request History</span>
         </a>

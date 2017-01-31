@@ -8,7 +8,6 @@ namespace LogicUniversityStore.Model
 
     [Table("Notification")]
     [Serializable]
-
     public partial class Notification
     {
         public int NotificationID { get; set; }

@@ -13,21 +13,21 @@ namespace LogicUniversityStore.View.Store.Clerk {
     public partial class ProcessRequest {
         
         /// <summary>
-        /// lvSearchResults control.
+        /// gvRequisitions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvSearchResults;
+        protected global::System.Web.UI.WebControls.GridView gvRequisitions;
         
         /// <summary>
-        /// form1 control.
+        /// btnGenRetrival control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button btnGenRetrival;
     }
 }

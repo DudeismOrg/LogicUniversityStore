@@ -15,9 +15,15 @@ namespace LogicUniversityStore.Controller
         {
             CategoryDao = new CategoryDao();
         }
+
         public List<Category> GetCategories()
         {
            return CategoryDao.GetCategories();
+        }
+
+        public List<Item> GetItemsByCategoryId(int categoryId)
+        {
+            return CategoryDao.GetItemsByCategoryId(categoryId);
         }
     }
 }

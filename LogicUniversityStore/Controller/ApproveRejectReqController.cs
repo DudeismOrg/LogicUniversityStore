@@ -16,9 +16,24 @@ namespace LogicUniversityStore.Controller
             RequisitionDao = new RequisitionDao();
         }
 
-        public List<Requisition> getRequestedRequisition()
+        public List<Requisition> getRequestedRequisitionHod(int depId)
         {
-            return RequisitionDao.GetRequestedRequisitionList();
+            return RequisitionDao.GetRequestedRequisitionListHod(depId);
+        }
+
+        public List<RequisitionItem> getRequisitionItemList(int requisitionId)
+        {
+            return RequisitionDao.GetRequisitionItemList(requisitionId);
+        }
+
+        public void approveRequisition(int requisitionId,String remark)
+        {
+            RequisitionDao.approveRequisition(requisitionId,remark);
+        }
+
+        public void rejectRequisition(int requisitionId,String remark)
+        {
+            RequisitionDao.rejectRequisition(requisitionId,remark);
         }
     }
 }

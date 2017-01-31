@@ -15,14 +15,29 @@ namespace LogicUniversityStore.Dao
             
         }
 
-        public int GetProductCountInStock(int itemID)
+        public List<StockCard> GetAllInStock()
         {
-            StockCard card = db.StockCards.Where(s => s.ItemID == itemID).FirstOrDefault();
-            if(card != null)
-            {
-                return card.OnHandQuantity.Value;
-            }
-            return -1;
+            return db.StockCards.ToList();
         }
+
+        public int GetProductCountInStock(int supplierItemId)
+        {
+            StockCard card = db.StockCards.Where(s => s.ItemID == supplierItemId).FirstOrDefault();
+            if (card == null) throw new ArgumentException("supplierItemID is not Valid");
+
+                return card.OnHandQuantity.Value;
+          
+        }
+
+      
+
+      
+        public StockCard GetStockCardByItemId(int ItemId)
+        {
+            StockCard card = db.StockCards.Where(s => s.ItemID == ItemId).FirstOrDefault();
+            return card;
+        }
+
+
     }
 }

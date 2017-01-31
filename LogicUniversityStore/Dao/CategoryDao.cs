@@ -21,5 +21,9 @@ namespace LogicUniversityStore.Dao
             return db.Categories.Find(id);
         }
 
+        public List<Item> GetItemsByCategoryId(int categoryId)
+        {
+            return db.Items.Where(item => item.Category.CategoryID == categoryId).ToList();
+        }
     }
 }
