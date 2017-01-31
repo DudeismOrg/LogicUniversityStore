@@ -13,34 +13,9 @@
 
                         <div class="col-xs-12">
 
-                            <div class="box">
-
-                                <div class="box-header">
-
-
-
-                                    <div class="input-group input-group-sm pull-left" style="width: 150px;">
-
-                                        <input type="text" name="table_search" class="form-control pull-left" placeholder="Search">
-
-
-
-                                        <div class="input-group-btn">
-
-                                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-
-                                        </div>
-
-                                    </div>                                    
-
-                                </div>
-
-                                <!-- /.box-header -->
-
-                                <div>
-
-                                    
-                                        <asp:GridView ID="gvRequestHistory" runat="server" OnRowDataBound = "OnRowDataBound" AutoGenerateColumns="False"   OnSelectedIndexChanged="gvRequestHistory_SelectedIndexChanged" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="100px" Width="826px"  >
+                            <div class="box">                               
+                                <div>                                    
+                                        <asp:GridView ID="gvRequestHistory" runat="server" AutoGenerateColumns="False"   OnSelectedIndexChanged="gvRequestHistory_SelectedIndexChanged" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="100px" Width="826px"  >
                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                             <Columns>
                                               <asp:BoundField DataField="ReqID" HeaderText="RequisitionID" />
@@ -48,6 +23,7 @@
                                               <asp:BoundField DataField="ReqDate" HeaderText="Requisition Date" DataFormatString="{0:D}" />
                                               <asp:BoundField DataField="Status" HeaderText="Requisition Status" />
                                               <asp:BoundField DataField="Remark" HeaderText="Remark" />
+                                              <asp:CommandField HeaderText="View" ButtonType="Button" ShowSelectButton="true" SelectText="View" ControlStyle-CssClass="btn btn-sm btn-primary"  />
                                             </Columns>
                                             <EditRowStyle BackColor="#999999" />
                                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

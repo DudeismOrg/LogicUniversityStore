@@ -18,24 +18,34 @@ namespace LogicUniversityStore.Dao
             
         }
 
-        public List<Requisition> GetRequestedRequisitionList()
+        public List<Requisition> GetRequestedRequisitionList(int requesterId)
         {
-            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString())).ToList();
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString())&& r.RequesterID==requesterId).ToList();
         }
 
-        public List<Requisition> GetRejectedRequisitionList()
+        public List<Requisition> GetRequestedRequisitionListHod(int depId)
         {
-            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Rejected.ToString())).ToList();
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString()) && r.DapartmentID == depId).ToList();
         }
 
-        public List<Requisition> GetApprovedRejectedRequisitionList()
+        public List<Requisition> GetRejectedRequisitionList(int requesterId)
         {
-            return db.Requisitions.Where(r => (r.Status.Equals(RequisitionStatus.Approved.ToString())) || (r.Status.Equals(RequisitionStatus.Rejected.ToString()))).ToList();
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Rejected.ToString())&& r.RequesterID==requesterId).ToList();
         }
 
-        public List<Requisition> GetRequisitionList()
+        public List<Requisition> GetApprovedRejectedRequisitionList(int depId)
         {
-            return db.Requisitions.ToList();
+            return db.Requisitions.Where(r => ((r.Status.Equals(RequisitionStatus.Approved.ToString())) || (r.Status.Equals(RequisitionStatus.Rejected.ToString()))) && r.DapartmentID==depId).ToList();
+        }
+
+        public List<Requisition> GetRequisitionList(int requesterId)
+        {
+            return db.Requisitions.Where(x => x.RequesterID == requesterId).ToList();
+        }
+
+        public List<Requisition> GetRequisitionListHod(int depId)
+        {
+            return db.Requisitions.Where(x => x.DapartmentID == depId).ToList();
         }
 
         public List<RequisitionItem> GetRequisitionItemList(int requisitionID)
@@ -77,6 +87,16 @@ namespace LogicUniversityStore.Dao
                 entry.Property(e => e.Status).IsModified = true;
                 entry.Property(e => e.Remark).IsModified = true;            
                 db.SaveChanges();
+        }
+
+        public void updateRemark(int reqId,String remark)
+        {
+            Requisition requisition = db.Requisitions.Find(reqId);
+            requisition.Remark = remark;
+            db.Requisitions.Attach(requisition);
+            var entry = db.Entry(requisition);
+            entry.Property(e => e.Remark).IsModified = true;
+            db.SaveChanges();
         }
 
         public void rejectRequisition(int reqId,String remark)

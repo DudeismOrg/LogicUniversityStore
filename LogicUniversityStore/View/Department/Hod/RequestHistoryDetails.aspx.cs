@@ -18,13 +18,8 @@ namespace LogicUniversityStore.View.Department.Hod
         {
             if (!IsPostBack)
             {
-                //reqId = Convert.ToInt32(Request.QueryString["id"]);
-                //gvRequisitionDetails.DataSource=reqController.getRequisitionItemList(reqId);
-                //gvRequisitionDetails.DataBind();
-
                 reqId = Convert.ToInt32(Request.QueryString["id"]);
                 List<RequisitionItem> items = reqController.getRequisitionItemList(reqId);
-
                 DataTable dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[3] { new DataColumn("ItemName"), new DataColumn("NeededQuantity"), new DataColumn("UOM") });
                 foreach (RequisitionItem i in items)
