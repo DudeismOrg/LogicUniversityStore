@@ -19,7 +19,7 @@
     </li>
 
     <li class="treeview">
-        <a href="index.html">
+        <a href="RetrievalForm.aspx">
             <i class="fa fa-edit"></i>
             <span>Process Retrieval Forms</span>
             <span class="pull-right-container">
