@@ -22,7 +22,6 @@ namespace LogicUniversityStore.Model
 
         public int StockCardID { get; set; }
 
-        public int? LockedQuantity { get; set; }
 
         public virtual SupplierItem SupplierItem { get; set; }
     }

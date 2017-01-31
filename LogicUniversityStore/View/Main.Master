@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="LogicUniversityStore.View.Main" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <%--<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,7 +22,7 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+<head >
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>LogicUTY | Portal</title>

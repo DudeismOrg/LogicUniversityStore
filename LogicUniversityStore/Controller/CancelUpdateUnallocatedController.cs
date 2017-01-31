@@ -55,5 +55,14 @@ namespace LogicUniversityStore.Controller
             riDao.updateRequisitionItem(reqId,itemId,qty);
         }
 
+        public void removeRequisitionItems(int reqId)
+        {
+            riDao.deleteRequisitionItem(reqId);
+        }
+
+        public void addRequisitionItem(RequisitionItem item)
+        {
+            riDao.addRequisitionItem(item);
+        }
     }
 }

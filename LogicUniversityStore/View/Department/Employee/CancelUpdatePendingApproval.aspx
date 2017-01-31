@@ -1,13 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Department/Employee/Employee.master" AutoEventWireup="true" CodeBehind="ReapplyRejected.aspx.cs" Inherits="LogicUniversityStore.View.Department.Employee.WebForm3" EnableEventValidation = "false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Department/Employee/Employee.master" AutoEventWireup="true" CodeBehind="CancelUpdatePendingApproval.aspx.cs" Inherits="LogicUniversityStore.View.Department.Employee.WebForm5" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="empMainHeader" runat="server">
-    <h1>Reapply Requests</h1>
+    <h1>Cancel/Update Pending Approval Requests</h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-        <li class="active">Reapply Requests</li>
+        <li class="active">Cancel/Update Pending Requests</li>
     </ol>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
-    <form id="rejectedRequests" runat="server">
+<form id="pendingRequests" runat="server">
     <div class="row">
 
                         <div class="col-xs-12">
@@ -39,7 +39,7 @@
                                 <div>
 
                                     
-                                        <asp:GridView ID="gvRejectedRequests" runat="server"  OnSelectedIndexChanged="gvRejectedRequisition_SelectedIndexChanged" AutoGenerateColumns="False"  CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="100px" Width="961px" OnRowDeleting="gvRejectedRequests_RowDeleting"  >
+                                        <asp:GridView ID="gvPendingRequests" runat="server"  OnSelectedIndexChanged="gvPendingRequests_SelectedIndexChanged" AutoGenerateColumns="False"  CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="100px" Width="961px" OnRowDeleting="gvPendingRequests_RowDeleting"  >
                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                             <Columns>
                                               <asp:BoundField DataField="ReqID" HeaderText="RequisitionID" />

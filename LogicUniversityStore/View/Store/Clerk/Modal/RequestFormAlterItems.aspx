@@ -7,6 +7,7 @@
     <title></title>
 </head>
 <body>
+    <form runat="server" method="post">
         <div class="col-md-12" id="adijada">
             <div class="box">   
                 <div class="box-body no-padding">
@@ -41,10 +42,12 @@
                     </table>
                 </div>
                 <div class="box-body">
-                    <a class="btn btn-success pull-right">Save</a>
-                </div>
+                    <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-success pull-right" OnClick="btnSave_Click"/>
+                   
+                      </div>
                 <!-- /.box-body -->
             </div>
         </div>
+        </form>
 </body>
 </html>

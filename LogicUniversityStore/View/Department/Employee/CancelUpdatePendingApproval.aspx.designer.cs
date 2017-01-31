@@ -7,27 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicUniversityStore.View.Store.Clerk.Modal {
+namespace LogicUniversityStore.View.Department.Employee {
     
     
-    public partial class RequestFormAlterItems {
+    public partial class WebForm5 {
         
         /// <summary>
-        /// lvItemsInReq control.
+        /// pendingRequests control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvItemsInReq;
+        protected global::System.Web.UI.HtmlControls.HtmlForm pendingRequests;
         
         /// <summary>
-        /// btnSave control.
+        /// gvPendingRequests control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSave;
+        protected global::System.Web.UI.WebControls.GridView gvPendingRequests;
     }
 }

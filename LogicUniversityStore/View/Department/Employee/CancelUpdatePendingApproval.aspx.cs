@@ -10,15 +10,16 @@ using System.Web.UI.WebControls;
 
 namespace LogicUniversityStore.View.Department.Employee
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class WebForm5 : System.Web.UI.Page
     {
-        public ReapplyRejectedController reqController = new ReapplyRejectedController();
+
+        public CancelUpdatePendingApprovalController reqController = new CancelUpdatePendingApprovalController();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
 
-                List<Requisition> items = reqController.getRejectedRequisition();
+                List<Requisition> items = reqController.getRequestedRequisition();
 
                 DataTable dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[4] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"), new DataColumn("Remark") });
@@ -27,42 +28,42 @@ namespace LogicUniversityStore.View.Department.Employee
                     DataRow r = dt.NewRow();
                     r["ReqID"] = i.ReqID;
                     r["ReqNumber"] = i.ReqNumber;
-                    r["ReqDate"] = i.ReqDate.ToLongDateString();               
+                    r["ReqDate"] = i.ReqDate.ToLongDateString();
                     r["Remark"] = i.Remark;
                     dt.Rows.Add(r);
-
                 }
                 ViewState["dt"] = dt;
-                gvRejectedRequests.DataSource = dt;
-                gvRejectedRequests.DataBind();
+                gvPendingRequests.DataSource = dt;
+                gvPendingRequests.DataBind();
             }
         }
 
-        protected void gvRejectedRequests_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {            
+        protected void gvPendingRequests_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
             int rowIndex = e.RowIndex;
-            int reqId = Convert.ToInt32(gvRejectedRequests.Rows[rowIndex].Cells[0].Text);
-            DataTable dt = (DataTable)ViewState["dt"];            
+            int reqId = Convert.ToInt32(gvPendingRequests.Rows[rowIndex].Cells[0].Text);
+            DataTable dt = (DataTable)ViewState["dt"];
             DataRow dr = dt.Rows[rowIndex];
             reqController.removeRequisitionItems(reqId);
-            bool result=reqController.removeRequisition(reqId);
+            bool result = reqController.removeRequisition(reqId);
             dt.Rows[rowIndex].Delete();
             ViewState["dt"] = dt;
-            gvRejectedRequests.DataSource = (DataTable)ViewState["dt"];
-            gvRejectedRequests.DataBind();
+            gvPendingRequests.DataSource = (DataTable)ViewState["dt"];
+            gvPendingRequests.DataBind();
         }
 
-        
-
-        protected void gvRejectedRequisition_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvPendingRequests_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            int reqId = Convert.ToInt32(gvRejectedRequests.SelectedRow.Cells[0].Text);
+            int reqId = Convert.ToInt32(gvPendingRequests.SelectedRow.Cells[0].Text);
 
 
-            Response.Redirect("ReapplyRejectedDetails.aspx?id=" + reqId + "");
+            Response.Redirect("CancelUpdatePendingDetails.aspx?id=" + reqId + "");
         }
 
-        
+
     }
+
+
 }
+
