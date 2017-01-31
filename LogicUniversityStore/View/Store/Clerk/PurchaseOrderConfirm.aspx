@@ -48,29 +48,32 @@
                         </div>
                     </div>
                     <div class="box-body">
-                        <asp:GridView ID="gvPurchaseOrders" onrowdatabound="gvItems_RowCreated"  runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" Width="100%" DataKeyNames="ItemId" AllowPaging="true" OnRowDeleting="DeleteRow" PageSize="10">
+                        <asp:GridView ID="gvPurchaseOrders" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" Width="100%" DataKeyNames="suplierId" AllowPaging="true" PageSize="10">
                             <Columns>
-                                <asp:BoundField DataField="Supplier" HeaderText="#" ReadOnly="true" />
-                                <asp:BoundField DataField="ItemCode" HeaderText="Item Number" ReadOnly="true" />
-                                <asp:BoundField DataField="Category" HeaderText="Category" ReadOnly="true" />
-                                <asp:BoundField DataField="ItemName" HeaderText="Description" ReadOnly="true" />
-                                <asp:TemplateField HeaderText="Reorder Quantity">
+                              <asp:TemplateField>
+                                  <ItemTemplate>
+                                      <asp:TextBox Visible="false" ID="idVal" runat="server" Text='<%#Bind("suplierId") %>'></asp:TextBox>
+                                  </ItemTemplate>
+                              </asp:TemplateField>
+                                <asp:BoundField DataField="suplierId" HeaderText="#" ReadOnly="true" />
+                                <asp:BoundField DataField="suplierName" HeaderText="Supplier" ReadOnly="true" />
+                                <asp:BoundField DataField="supplierContact" HeaderText="Supplier Staff" ReadOnly="true" />
+                                <asp:BoundField DataField="supplierPhone" HeaderText="Phone" ReadOnly="true" />
+                                <%--<asp:BoundField DataField="supplierAddress" HeaderText="Address" ReadOnly="true" />--%>
+                                <asp:BoundField DataField="registration" HeaderText="Registraion Number" ReadOnly="true" />
+                                <asp:TemplateField HeaderText="Expected Delivery Date">
                                     <ItemTemplate>
-                                        <asp:TextBox ID="txtReorder" runat="server" Text='<%# Bind("ReorderQuantity") %>' CssClass="form-control" />
+                                        <asp:TextBox ID="txtReorder" runat="server" Text='<%# Bind("expectedDeliveryDate") %>' CssClass="form-control"  ReadOnly="true"/>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Supplier">
+                                <asp:TemplateField HeaderText="Remarks">
                                     <ItemTemplate>
-                                        <asp:DropDownList ID="ddlSupplier" CssClass="form-control suplier-drp" runat="server"  DataValueField="SupplierId" DataTextField="SupplierName"/>
+                                        <asp:TextBox ID="supRemark" CssClass="form-control suplier-drp" runat="server"/>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Delete?">
+                                <asp:TemplateField HeaderText="Items">
                                     <ItemTemplate>
-                                        <span onclick="return confirm('Are you sure to delete?')">
-                                            <asp:LinkButton ID="lnkDelete" runat="server" Text="Delete" ForeColor="Red" CommandName="Delete">
-                                                <i class="fa fa-times"></i>
-                                            </asp:LinkButton>
-                                        </span>
+                                        <a class="btn btn-success viewItems" href="#" data-id="<%# Eval("suplierId")%>">Items</a>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
@@ -78,11 +81,12 @@
                     </div>
                     <div class="box-footer">
                         <a href="#" class="btn btn-danger pull-right" style="margin-left: 5px">Cancel</a>
-                        <a href="#" id="purchaseorde-modal-show" class="btn btn-success pull-right" style="margin-right: 5px">Generate PO</a>
-                        <asp:Button ID="confirm" OnClick="ConfirmItems_Click" CssClass="btn-success" runat="server" Text="Confirm Items" />
+                        <asp:Button ID="cnfrmPo" class="btn btn-success pull-right" OnClick="POnfirmPo_Click" runat="server" Text="Confirm and Generate PO" />
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="divItemsInPO" style="min-height: 92px; max-height: none; height: 378px; width: 0px" title="Basic dialog">
         </div>
     </form>
 </asp:Content>
@@ -94,6 +98,23 @@
             $(".remove-item").click(function () {
                 var itemId = $(this).data("id");
             });
+        });
+
+        $(".viewItems").click(function () {
+            var id = $(this).data("id");
+            $("#divItemsInPO").html("Please wait content is Loading...");
+            $("#divItemsInPO")
+                .load("/View/Store/Clerk/Modal/ItemsInPO.aspx", { Id: id })
+                .dialog({
+                    autoOpen: false,
+                    show: "blind",
+                    hide: "explode",
+                    modal: true,
+                    width: 673,
+                    title: "Requested Items"
+                });
+            $("#divItemsInPO").dialog("open");
+            return false;
         });
     </script>
 </asp:Content>

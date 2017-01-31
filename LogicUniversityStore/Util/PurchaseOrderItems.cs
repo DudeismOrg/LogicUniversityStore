@@ -14,6 +14,23 @@ namespace LogicUniversityStore.Util
         private int createdBy;
         private DateTime createdDate;
 
+        private int itemId;
+        public int ItemId
+        {
+            get { return poItem.ItemID; }
+        }
+        private string itemName;
+        public string ItemName
+        {
+            get { return poItem.ItemDesc; }
+        }
+        private string catagory;
+        public string Catagory
+        {
+            get { return poItem.Category.ToString(); }
+        }
+
+
         public Item PoItem
         {
             get { return poItem; }

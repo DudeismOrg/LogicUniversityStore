@@ -13,7 +13,7 @@ using System.Web.Script.Services;
 
 namespace LogicUniversityStore.View.Store.Clerk
 {
-    public partial class PurchaseOrder : System.Web.UI.Page
+    public partial class PurchaseOrderView : System.Web.UI.Page
     {
         public PurchaseOrderController PurchaseOrderController { get; set; }
         public ApplyReqController reqController = new ApplyReqController();
@@ -169,6 +169,7 @@ namespace LogicUniversityStore.View.Store.Clerk
                 finalPurchaseOrders.Add(pou);
             }
             Session["selectedPO"] = finalPurchaseOrders;
+            Session["ItemsInPO"] = finalPoItems;
             Response.Redirect("PurchaseOrderConfirm.aspx");
         }
     }

@@ -10,7 +10,7 @@
 namespace LogicUniversityStore.View.Store.Clerk {
     
     
-    public partial class PurchaseOrder {
+    public partial class PurchaseOrderView {
         
         /// <summary>
         /// purchaseOrder control.

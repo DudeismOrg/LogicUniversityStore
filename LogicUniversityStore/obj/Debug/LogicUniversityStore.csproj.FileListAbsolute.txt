@@ -146,3 +146,4 @@ C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUnive
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 C:\Users\Vasanth Kumar P\Documents\NUS\Term 3\AD\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\AjaxControlToolkit.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache

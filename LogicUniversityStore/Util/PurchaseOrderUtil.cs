@@ -16,6 +16,43 @@ namespace LogicUniversityStore.Util
         private int orderedBy;
         private string remark;
 
+        private int suplierId;
+        public int SuplierId
+        {
+            get { return supplier.SupplierID; }  
+        }
+        private string suplierName;
+        public string SuplierName
+        {
+            get { return supplier.SupplierName; }
+        }
+        private string supplierContact;
+        public string SupplierContact
+        {
+            get { return supplier.SupplierContact; }
+        }
+        private string supplierPhone;
+        public string SupplierPhone
+        {
+            get { return supplier.SupplierPhone; }
+        }
+        private string supplierAddress;
+        public string SupplierAddress
+        {
+            get { return supplier.SupplierAddress; }
+        }
+        private string registration;
+        public string Registration
+        {
+            get { return supplier.GSTRegistrationNumber; }
+        }
+        private String expectedDeliveryDate;
+        public String ExpectedDeliveryDate
+        {
+            get { return DateTime.Now.AddDays(Convert.ToDouble(supplier.MinDeliveryDay)).ToString(); }
+        }
+
+
         public List<PurchaseOrderItems> Items
         {
             get { return items; }

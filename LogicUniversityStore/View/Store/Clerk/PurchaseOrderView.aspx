@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Store/Clerk/Clerk.master" AutoEventWireup="true" CodeBehind="PurchaseOrder.aspx.cs" Inherits="LogicUniversityStore.View.Store.Clerk.PurchaseOrder" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Store/Clerk/Clerk.master" AutoEventWireup="true" CodeBehind="PurchaseOrderView.aspx.cs" Inherits="LogicUniversityStore.View.Store.Clerk.PurchaseOrderView" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="clrkCssBlock" runat="server">
     <style type="text/css">
@@ -68,15 +68,10 @@
 
                 <div class="box">
                     <div class="box-header">
-
                         <div class="input-group input-group-sm pull-left" style="width: 150px;">
                         </div>
                     </div>
-
-
                     <div class="box-body">
-
-
                         <asp:GridView ID="gvReqItems" onrowdatabound="gvItems_RowCreated"  runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" Width="100%" DataKeyNames="ItemId" AllowPaging="true" OnRowDeleting="DeleteRow" PageSize="10">
                             <Columns>
                                 <asp:TemplateField>
@@ -109,8 +104,6 @@
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
-
-
 
                         <%--<table class="table">
                             <tbody>
@@ -157,12 +150,9 @@
                         </table>--%>
                     </div>
 
-
-
                     <div class="box-footer">
                         <a href="#" class="btn btn-danger pull-right" style="margin-left: 5px">Cancel</a>
-                        <a href="#" id="purchaseorde-modal-show" class="btn btn-success pull-right" style="margin-right: 5px">Generate PO</a>
-                        <asp:Button ID="confirm" OnClick="ConfirmItems_Click" CssClass="btn-success" runat="server" Text="Confirm Items" />
+                        <a href="#" id="purchaseorde-modal-show" class="btn btn-success pull-right" style="margin-right: 5px">Submit</a>
                     </div>
                 </div>
             </div>
@@ -185,9 +175,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <%--<button type="button" class="btn btn-success">Confirm</button>--%>
-                                <%--<asp:Button ID="confirm" OnClick="ConfirmItems_Click" CssClass="btn-success" runat="server" Text="Confirm Items" />--%>
-                                <%--<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />--%>
+                                <asp:Button ID="confirm" OnClick="ConfirmItems_Click" CssClass="btn btn-success" runat="server" Text="Confirm Items" />
                                 <button type="button" class="btn btn-default">Close</button>
                             </div>
                         </div>
