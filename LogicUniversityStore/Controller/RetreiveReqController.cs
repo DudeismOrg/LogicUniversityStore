@@ -1,5 +1,6 @@
 ﻿using LogicUniversityStore.Dao;
 using LogicUniversityStore.Model;
+using LogicUniversityStore.Util;
 using LogicUniversityStore.Utill;
 using System;
 using System.Collections.Generic;
@@ -62,12 +63,12 @@ namespace LogicUniversityStore.Controller
 
         public Dictionary<RequisitionItem,MainRow> GetRow()
         {
-            Dictionary<RequisitionItem, MainRow> result = new Dictionary<RequisitionItem, MainRow>();
+            Dictionary<RequisitionItem, MainRow> result = new Dictionary<RequisitionItem, MainRow>(new RequistionItemBySupplierComparator());
             foreach (Requisition r in this.retReq)
             {
                 foreach (RequisitionItem item in r.RequisitionItems)
                 {
-                   if(!result.ContainsKey(item))
+                   if(! result.ContainsKey(item))
                     {
                         MainRow row = new MainRow(new Pair(item.NeededQuantity.Value, item.ApprovedQuantity.Value), this.GetBreakDownByDepartment(item));
                         result.Add(item, row);
@@ -86,13 +87,12 @@ namespace LogicUniversityStore.Controller
     {
         static int counter = 1;
         private int id;
-        private int neededQuantity;
-        private int approvedQuantity;
+       
 
         public Pair(int neededQuantity, int approvedQuantity)
         {
-            this.neededQuantity = neededQuantity;
-            this.approvedQuantity = approvedQuantity;
+            Needed = neededQuantity;
+            Approved = approvedQuantity;
             id = counter++;
         }
 

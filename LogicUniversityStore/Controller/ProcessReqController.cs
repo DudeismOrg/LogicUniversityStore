@@ -3,6 +3,7 @@ using LogicUniversityStore.Model;
 using LogicUniversityStore.Util;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -65,6 +66,9 @@ namespace LogicUniversityStore.Controller
                         unfullfilledItem += 1;
                         progrssMeter += (double)rItem.ApprovedQuantity / (double)rItem.NeededQuantity; 
                     }
+
+                    //RequisitionItemDao.db.RequisitionItems.Attach(rItem);
+                    //RequisitionItemDao.db.Entry(rItem).State = EntityState.Modified;
                     RequisitionItemDao.db.SaveChanges();
                 }
 

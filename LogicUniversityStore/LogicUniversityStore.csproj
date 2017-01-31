@@ -1113,6 +1113,7 @@
     <Compile Include="Util\Common.cs" />
     <Compile Include="Util\Enumeration.cs" />
     <Compile Include="Util\Popup.cs" />
+    <Compile Include="Util\RequistionItemBySupplierComparator.cs" />
     <Compile Include="View\Department\Employee\Employee.master.cs">
       <DependentUpon>Employee.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
