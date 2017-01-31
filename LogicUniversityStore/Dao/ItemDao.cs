@@ -20,5 +20,11 @@ namespace LogicUniversityStore.Dao
         {
             return db.Items.Where(x => x.ItemName.Equals(itemName)).FirstOrDefault();
         }
+
+        public List<Item> GetAllItems()
+        {
+            return db.Items.ToList();
+        }
+
     }
 }

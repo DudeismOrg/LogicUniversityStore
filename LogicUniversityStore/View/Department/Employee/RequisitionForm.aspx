@@ -84,69 +84,7 @@
                                     </div>
                                     <!-- /.box-header -->
                                     <div class="box-body no-padding">
-                                        <%--<table class="table table-condensed">
-                                            <tbody>
-                                                <tr>
-                                                    <th style="width: 10px">#</th>
-                                                    <th>Item Code</th>
-                                                    <th>Category</th>
-                                                    <th>Item</th>
-                                                    <th>Qty</th>
-                                                    <th style="width: 40px">Remove</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>1.</td>
-                                                    <td>C001</td>
-                                                    <td>Clip</td>
-                                                    <td>Clip Double2</td>
-                                                    <td>
-                                                        <span class="badge bg-red">5 Units</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#">
-                                                            <i class="fa fa-close" aria-hidden="true"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2.</td>
-                                                    <td>E001</td>
-                                                    <td>Envelop</td>
-                                                    <td>Envelop Item</td>
-                                                    <td>
-                                                        <span class="badge bg-red">2 Units</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-close" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3.</td>
-                                                    <td>P001</td>
-                                                    <td>Pen</td>
-                                                    <td>Pen Item</td>
-                                                    <td>
-                                                        <span class="badge bg-red">1 Units</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-close" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4.</td>
-                                                    <td>C001</td>
-                                                    <td>Clip</td>
-                                                    <td>Clip Double1</td>
-                                                    <td>
-                                                        <span class="badge bg-red">5 Units</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-close" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>--%>
-                                     
+
                                         <asp:GridView ID="gvReqItems" runat="server" AutoGenerateColumns="False">
                                             <Columns>
                                                 <asp:BoundField DataField="Category" HeaderText="Category" />

@@ -130,6 +130,8 @@
     <Content Include="View\Resources\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="View\Resources\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="View\Resources\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="View\Resources\js\sweetalert-dev.js" />
+    <Content Include="View\Resources\css\sweetalert.css" />
     <Content Include="View\Resources\plugins\ckeditor\CHANGES.md" />
     <Content Include="View\Resources\plugins\ckeditor\LICENSE.md" />
     <Content Include="View\Resources\plugins\ckeditor\plugins\scayt\CHANGELOG.md" />
@@ -1053,11 +1055,13 @@
     <Content Include="View\Store\Clerk\ClrkMain.aspx" />
     <Content Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx" />
     <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
+    <Content Include="View\Store\Clerk\PurchaseOrder.aspx" />
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AdjustmentController.cs" />
+    <Compile Include="Controller\PurchaseOrderController.cs" />
     <Compile Include="Controller\ApplyReqController.cs" />
     <Compile Include="Controller\ApproveRejectReqController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
@@ -1066,6 +1070,7 @@
     <Compile Include="Controller\RequestHistoryController.cs" />
     <Compile Include="Dao\AdjustmentDao.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
+    <Compile Include="Dao\SupplierItemDao.cs" />
     <Compile Include="Dao\RequisitionItemDao.cs" />
     <Compile Include="Dao\ItemDao.cs" />
     <Compile Include="Dao\RequisitionDao.cs" />
@@ -1247,6 +1252,13 @@
     <Compile Include="View\Store\Clerk\ProcessRequest.aspx.designer.cs">
       <DependentUpon>ProcessRequest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Store\Clerk\PurchaseOrder.aspx.cs">
+      <DependentUpon>PurchaseOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\PurchaseOrder.aspx.designer.cs">
+      <DependentUpon>PurchaseOrder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Store\Clerk\SpotAdjustment.aspx.cs">
       <DependentUpon>SpotAdjustment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1257,8 +1269,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="View\Resources\css\" />
-    <Folder Include="View\Resources\js\" />
     <Folder Include="View\Store\Supervisor\" />
   </ItemGroup>
   <PropertyGroup>

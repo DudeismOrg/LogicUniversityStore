@@ -57,7 +57,7 @@
                                 <ItemTemplate>
                                     <tr>
                                         <td>
-                                        <input value="<%# Eval("key.ReqID") %>" type="checkbox"></td>
+                                            <input value="<%# Eval("key.ReqID") %>" type="checkbox"></td>
                                         <td><%# Eval("key.ReqID") %>.</td>
                                         <td><%# Eval("key.ReqNumber") %></td>
                                         <td><%# Eval("key.Department.DepartmentName") %></td>

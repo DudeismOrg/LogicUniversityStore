@@ -38,7 +38,6 @@ namespace LogicUniversityStore.View.Store.Clerk
                 ViewState["prItems"] = processReq.GetMainProcessReqList();
             }
             listRequests = (Dictionary<Requisition, double>)ViewState["prItems"];
-            // var listRequests = (from r in processReq.GetMainProcessReqList() select new { r.Item1 , r.Item2.ReqNumber, r.Item2.Department.DepartmentName, r.Item2.ReqDate, r.Item2.ReqID }).ToList();
             lvSearchResults.DataSource = listRequests;
             lvSearchResults.DataBind();
         }
