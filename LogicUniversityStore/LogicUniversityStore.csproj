@@ -1074,6 +1074,8 @@
     <Compile Include="Controller\ApproveRejectReqController.cs" />
     <Compile Include="Controller\CancelUpdatePendingApprovalController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
+    <Compile Include="Util\PurchaseOrder.cs" />
+    <Compile Include="Util\PurchaseOrderItems.cs" />
     <Compile Include="Util\DepartmentNotFoundException.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
     <Compile Include="Controller\ReapplyRejectedController.cs" />

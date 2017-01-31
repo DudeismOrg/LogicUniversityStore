@@ -130,20 +130,46 @@ namespace LogicUniversityStore.View.Store.Clerk
 
         protected void ConfirmItems_Click(object sender, EventArgs e)
         {
-            List<String> s = new List<string>();
+            List<PurchaseOrderItems> finalPoItems = new List<PurchaseOrderItems>();
+            List<PurchaseOrderUtil> finalPurchaseOrders = new List<PurchaseOrderUtil>();
             foreach (GridViewRow row in gvReqItems.Rows)
             {
                 if (row.RowType == DataControlRowType.DataRow)
                 {
                     CheckBox chkRow = (row.Cells[0].FindControl("chkRow") as CheckBox);
-                    CheckBox mpTextBox = (CheckBox)Master.FindControl("chkRow");
                     if (chkRow.Checked)
                     {
-                        string name = row.Cells[1].Text;
-                        s.Add(name);
+                        PurchaseOrderController purchaseOrder = new PurchaseOrderController();
+                        int itemId = Convert.ToInt32(row.Cells[1].Text);
+                        Item itm = ItemsToPurchase.Where(i => i.ItemID == itemId).FirstOrDefault();
+                        DropDownList supp = (row.Cells[6].FindControl("ddlSupplier") as DropDownList);
+                        int supId = Convert.ToInt32(supp.SelectedItem.Value);
+                        Supplier selectedSup = purchaseOrder.GetSuplier(supId);
+
+                        PurchaseOrderItems checkedPoItems = new PurchaseOrderItems()
+                        {
+                            PoItem = itm,
+                            PoSupplier = selectedSup,
+                            ReorderQuantity = Convert.ToInt32((row.Cells[0].FindControl("txtReorder") as TextBox).Text),
+                            CreatedDate = DateTime.Now,
+                        };
+                        finalPoItems.Add(checkedPoItems);
                     }
                 }
             }
+
+            List<PurchaseOrderItems> distSupp = finalPoItems.GroupBy(z => z.PoSupplier.SupplierID).Select(y => y.First()).ToList();
+            foreach(PurchaseOrderItems poi in distSupp)
+            {
+                PurchaseOrderUtil pou = new PurchaseOrderUtil() {
+                    Supplier = poi.PoSupplier,
+                    OrderDate = DateTime.Now,
+                    Items = finalPoItems.Where(q => q.PoSupplier.SupplierID == poi.PoSupplier.SupplierID).ToList(),
+                };
+                finalPurchaseOrders.Add(pou);
+            }
+            Session["selectedPO"] = finalPurchaseOrders;
+            Response.Redirect("PurchaseOrderConfirm.aspx");
         }
     }
 }

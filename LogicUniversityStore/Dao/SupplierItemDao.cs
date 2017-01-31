@@ -23,5 +23,10 @@ namespace LogicUniversityStore.Dao
             string number = supplier.SupplierPhone;
             return name + " - " + number;
         }
+
+        public Supplier GetSupplierObj(int SupplierId)
+        {
+            return db.Suppliers.Where(x => x.SupplierID == SupplierId).FirstOrDefault();
+        }
     }
 }

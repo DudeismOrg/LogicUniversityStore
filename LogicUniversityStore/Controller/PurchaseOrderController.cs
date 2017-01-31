@@ -45,6 +45,11 @@ namespace LogicUniversityStore.Controller
             return NameNumber;
         }
 
+        public Supplier GetSuplier(int suplietId)
+        {
+            return SupplierItemDao.GetSupplierObj(suplietId);  
+        }
+
         public List<SupplierItem> getAllSuplierItems(Item item)
         {
             List<SupplierItem> suppliersItems = SupplierItemDao.GetSuppliersOfItem(item);
