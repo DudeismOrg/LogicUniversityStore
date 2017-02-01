@@ -17,12 +17,11 @@ namespace LogicUniversityStore.View.Department.Employee
         {
             if (!IsPostBack)
             {
-                int requesterId = 2;//todo while login
+                int requesterId = 2;//to do while login
                 List<Requisition> items = reqController.getRejectedRequisition(requesterId);
-
                 DataTable dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[4] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"), new DataColumn("Remark") });
-                foreach (Requisition i in items)
+                foreach(Requisition i in items)
                 {
                     DataRow r = dt.NewRow();
                     r["ReqID"] = i.ReqID;

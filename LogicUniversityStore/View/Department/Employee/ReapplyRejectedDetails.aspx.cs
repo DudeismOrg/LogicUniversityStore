@@ -13,11 +13,11 @@ namespace LogicUniversityStore.View.Department.Employee
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
-        ReapplyRejectedController reqController = new ReapplyRejectedController();
-        RequisitionItem ri = new RequisitionItem();
-        DataTable dt;
-        DataRow r;
-        protected void Page_Load(object sender, EventArgs e)
+       ReapplyRejectedController reqController = new ReapplyRejectedController();
+       RequisitionItem ri = new RequisitionItem();
+       DataTable dt;
+       DataRow r;
+       protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
@@ -64,7 +64,7 @@ namespace LogicUniversityStore.View.Department.Employee
             for(int i=0;i<rowCount;i++)
             {         
                 RequisitionItem ri = new RequisitionItem();
-                ri.ReqID = reqId;
+                ri.ReqID = reqId; 
                 String itemName = gvRequisitionDetails.Rows[i].Cells[0].Text;
                 Item item = reqController.GetItem(itemName);
                 int itemId = item.ItemID;
