@@ -123,6 +123,7 @@
     <Content Include="View\Department\Hod\HodMain.aspx" />
     <Content Include="View\Department\Hod\ApproveReject.aspx" />
     <Content Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx" />
+    <Content Include="View\Department\Hod\ManageRole.aspx" />
     <Content Include="View\Department\Hod\RequestHistory.aspx" />
     <Content Include="View\Department\Hod\RequestHistoryDetails.aspx" />
     <Content Include="View\Department\Hod\CancelUpdateUnallocated.aspx" />
@@ -1162,6 +1163,13 @@
     </Compile>
     <Compile Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx.designer.cs">
       <DependentUpon>ApproveRejectRequisitionItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Hod\ManageRole.aspx.cs">
+      <DependentUpon>ManageRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Hod\ManageRole.aspx.designer.cs">
+      <DependentUpon>ManageRole.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Department\Hod\RequestHistory.aspx.cs">
       <DependentUpon>RequestHistory.aspx</DependentUpon>

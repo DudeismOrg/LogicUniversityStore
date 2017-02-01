@@ -31,5 +31,15 @@ namespace Core.Controller
         {
             return new UserDao().GetRolesByDeptType(deptType);
         }
+
+        public LUUser GetUserProfileByUserId(int userId)
+        {
+            return new UserDao().GetUserProfileByUserId(userId);
+        }
+
+        public bool UpdateUserRole(int userId, string roleCode)
+        {
+            return new UserDao().UpdateUserRole(userId, roleCode);
+        }
     }
 }

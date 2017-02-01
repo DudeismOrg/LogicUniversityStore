@@ -43,6 +43,21 @@ namespace LogicUniversityStore.Dao
             return name;
         }
 
+        public bool UpdateUserRole(int userId, string roleCode)
+        {
+            bool result = false;
+            LUUser emp = db.LUUsers.Where(user => user.UserID == userId).FirstOrDefault();
+            emp.RoleID = db.Roles.Where(role => role.RoleCode == roleCode).FirstOrDefault().RoleID;
+            if (db.SaveChanges() > 0)
+                result = true;
+            return result;
+        }
+
+        public LUUser GetUserProfileByUserId(int userId)
+        {
+            return db.LUUsers.Where(user => user.UserID == userId).FirstOrDefault();
+        }
+
         public List<Role> GetRolesByDeptType(string deptType)
         {
             return db.Roles.Where(r => r.DepType == deptType).ToList();
