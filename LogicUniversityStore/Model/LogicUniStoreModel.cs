@@ -34,6 +34,7 @@ namespace LogicUniversityStore.Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Properties<string>().Configure(c => c.HasColumnType("varchar"));
             modelBuilder.Entity<Category>()
                 .Property(e => e.CategoryCode)
                 .IsFixedLength();

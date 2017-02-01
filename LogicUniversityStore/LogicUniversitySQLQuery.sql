@@ -7,14 +7,15 @@ delete from dbo.CollectionPoint;
 delete from dbo.category;
 delete from dbo.role;
 
-DBCC CHECKIDENT ('dbo.Role', RESEED, 0);
-DBCC CHECKIDENT ('dbo.Category', RESEED, 0);
-DBCC CHECKIDENT ('dbo.CollectionPoint', RESEED, 0);
-DBCC CHECKIDENT ('dbo.Supplier', RESEED, 0);
-DBCC CHECKIDENT ('dbo.SupplierItem', RESEED, 0);
-DBCC CHECKIDENT ('dbo.Department', RESEED, 0);
-DBCC CHECKIDENT ('dbo.LUUser', RESEED, 0);
-DBCC CHECKIDENT ('dbo.Item', RESEED, 0);
+DBCC CHECKIDENT ('dbo.Role', RESEED, 1);
+DBCC CHECKIDENT ('dbo.Category', RESEED, 1);
+DBCC CHECKIDENT ('dbo.CollectionPoint', RESEED, 1);
+DBCC CHECKIDENT ('dbo.Supplier', RESEED, 1);
+DBCC CHECKIDENT ('dbo.SupplierItem', RESEED, 1);
+DBCC CHECKIDENT ('dbo.Department', RESEED, 1);
+DBCC CHECKIDENT ('dbo.LUUser', RESEED,1);
+DBCC CHECKIDENT ('dbo.Item', RESEED, 1);
+DBCC CHECKIDENT ('dbo.StockCard', RESEED, 1);
 
 
 
@@ -144,3 +145,18 @@ values
 ('zoolreq', 'Zoology', 'Department', 'password', 2, 'zoolreq@lu.edu.sg', 'Blk 123 Wonderful Street', 4),
 ('zoolhod', 'Zoology', 'Department', 'password', 1, 'zoolhod@lu.edu.sg', 'Blk 123 Wonderful Street', 4);
 
+
+insert into StockCard values(1,50,'valid','#B-001');
+insert into StockCard values(2,50,'valid','#B-001');
+insert into StockCard values(3,50,'valid','#B-001');
+insert into StockCard values(4,50,'valid','#B-001');
+insert into StockCard values(5,50,'valid','#B-001');
+insert into StockCard values(6,50,'valid','#B-001');
+insert into StockCard values(7,50,'valid','#B-001');
+insert into StockCard values(8,50,'valid','#B-001');
+insert into StockCard values(9,50,'valid','#B-001');
+insert into StockCard values(10,50,'valid','#B-001');
+insert into StockCard values(11,50,'valid','#B-001');
+insert into StockCard values(12,50,'valid','#B-001');
+insert into StockCard values(13,50,'valid','#B-001');
+insert into StockCard values(14,50,'valid','#B-001');
