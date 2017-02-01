@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LogicUniversityStore.Model;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -11,6 +13,8 @@ namespace LogicUniversityStore
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+
+            Database.SetInitializer<LogicUniStoreModel>(new LogicUniStoreModelInitializer());
         }
     }
 }
