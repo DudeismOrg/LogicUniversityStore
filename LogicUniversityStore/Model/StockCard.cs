@@ -10,6 +10,8 @@ namespace LogicUniversityStore.Model
     [Serializable]
     public partial class StockCard
     {
+        public int StockCardID { get; set; }
+        [Index(IsUnique = true)]
         public int ItemID { get; set; }
 
         public int? OnHandQuantity { get; set; }
@@ -20,9 +22,8 @@ namespace LogicUniversityStore.Model
         [StringLength(10)]
         public string BinNumber { get; set; }
 
-        public int StockCardID { get; set; }
 
 
-        public virtual SupplierItem SupplierItem { get; set; }
+        public virtual Item Item { get; set; }
     }
 }

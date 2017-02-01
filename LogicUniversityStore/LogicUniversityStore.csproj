@@ -108,6 +108,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LogicUniversitySQLQuery.sql" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1084,6 +1085,7 @@
     <Compile Include="Dao\PurchaseOrderItemDao.cs" />
     <Compile Include="Dao\PurchaseOrderDao.cs" />
     <Compile Include="Dao\PoBatchDao.cs" />
+    <Compile Include="Model\LogicUniStoreModelInitializer.cs" />
     <Compile Include="Util\PurchaseOrderUtil.cs" />
     <Compile Include="Util\PurchaseOrderItems.cs" />
     <Compile Include="Util\DepartmentNotFoundException.cs" />
