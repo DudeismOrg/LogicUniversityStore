@@ -73,7 +73,7 @@ namespace LogicUniversityStore.Model
             modelBuilder.Entity<Department>()
                 .HasMany(e => e.Requisitions)
                 .WithRequired(e => e.Department)
-                .HasForeignKey(e => e.DapartmentID)
+                .HasForeignKey(e => e.DepartmentID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Disbursement>()
@@ -104,6 +104,7 @@ namespace LogicUniversityStore.Model
                 .HasMany(e => e.SupplierItems)
                 .WithRequired(e => e.Item)
                 .WillCascadeOnDelete(false);
+            
 
             modelBuilder.Entity<LUUser>()
                 .Property(e => e.UserName)
@@ -242,6 +243,7 @@ namespace LogicUniversityStore.Model
             modelBuilder.Entity<StockCard>()
                 .Property(e => e.BinNumber)
                 .IsFixedLength();
+           
 
             modelBuilder.Entity<Supplier>()
                 .Property(e => e.SupplierCode)
@@ -294,11 +296,7 @@ namespace LogicUniversityStore.Model
                 .HasForeignKey(e => e.ItemID)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<SupplierItem>()
-                .HasMany(e => e.StockCards)
-                .WithRequired(e => e.SupplierItem)
-                .HasForeignKey(e => e.ItemID)
-                .WillCascadeOnDelete(false);
+           
         }
     }
 }
