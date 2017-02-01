@@ -34,6 +34,7 @@ namespace LogicUniversityStore.Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Properties<string>().Configure(c => c.HasColumnType("varchar"));
             modelBuilder.Entity<Category>()
                 .Property(e => e.CategoryCode)
                 .IsFixedLength();
@@ -104,6 +105,7 @@ namespace LogicUniversityStore.Model
                 .HasMany(e => e.SupplierItems)
                 .WithRequired(e => e.Item)
                 .WillCascadeOnDelete(false);
+            
 
             modelBuilder.Entity<LUUser>()
                 .Property(e => e.UserName)
@@ -242,6 +244,7 @@ namespace LogicUniversityStore.Model
             modelBuilder.Entity<StockCard>()
                 .Property(e => e.BinNumber)
                 .IsFixedLength();
+           
 
             modelBuilder.Entity<Supplier>()
                 .Property(e => e.SupplierCode)
@@ -294,11 +297,7 @@ namespace LogicUniversityStore.Model
                 .HasForeignKey(e => e.ItemID)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<SupplierItem>()
-                .HasMany(e => e.StockCards)
-                .WithRequired(e => e.SupplierItem)
-                .HasForeignKey(e => e.ItemID)
-                .WillCascadeOnDelete(false);
+           
         }
     }
 }

@@ -28,11 +28,11 @@ namespace LogicUniversityStore.Controller
             List<StockCard> allItemsInStock = StockCardDao.GetAllInStock();
             foreach(StockCard item in allItemsInStock)
             {
-                if (item.OnHandQuantity < item.SupplierItem.Item.ReorderLevel)
+                if (item.OnHandQuantity < item.Item.ReorderLevel)
                 {
-                    List<SupplierItem> suppliersItems = SupplierItemDao.GetSuppliersOfItem(item.SupplierItem.Item);
-                    StockReorder.Add(item.SupplierItem.Item, suppliersItems);
-                    reorderItem.Add(item.SupplierItem.Item);
+                    List<SupplierItem> suppliersItems = SupplierItemDao.GetSuppliersOfItem(item.Item);
+                    StockReorder.Add(item.Item, suppliersItems);
+                    reorderItem.Add(item.Item);
                 }
             }
 

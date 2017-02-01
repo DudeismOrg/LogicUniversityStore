@@ -57,8 +57,10 @@ namespace LogicUniversityStore.View.Store.Clerk
             }
 
             
+        }
 
-
+        protected void DdlCategories_Change(object sender, EventArgs e)
+        {
             int catId = Convert.ToInt32(DdlCategories.SelectedValue);
             category = reqController.CategoryDao.GetCategory(catId);
             if (DdlItems.SelectedValue != null && !DdlItems.SelectedValue.Equals(""))

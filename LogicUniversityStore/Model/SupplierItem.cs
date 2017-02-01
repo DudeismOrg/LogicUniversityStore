@@ -16,7 +16,6 @@ namespace LogicUniversityStore.Model
             PurchaseOrderItems = new HashSet<PurchaseOrderItem>();
             RequisitionItems = new HashSet<RequisitionItem>();
             StockAdjustmentItems = new HashSet<StockAdjustmentItem>();
-            StockCards = new HashSet<StockCard>();
         }
 
         public int SupplierItemId { get; set; }
@@ -47,7 +46,6 @@ namespace LogicUniversityStore.Model
         public virtual ICollection<StockAdjustmentItem> StockAdjustmentItems { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StockCard> StockCards { get; set; }
 
         public virtual Supplier Supplier { get; set; }
 

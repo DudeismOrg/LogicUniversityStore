@@ -48,7 +48,7 @@
                         <div class="col-md-12">
                             <div class="col-md-6">
                                 <label>Category</label>
-                                <asp:DropDownList ID="DdlCategories" runat="server" AutoPostBack="true" CssClass="form-control select2"></asp:DropDownList>
+                                <asp:DropDownList ID="DdlCategories" runat="server" OnSelectedIndexChanged="DdlCategories_Change" AutoPostBack="true" CssClass="form-control select2"></asp:DropDownList>
                             </div>
                             <div class="col-md-6">
                                 <label>Item</label>
