@@ -77,7 +77,7 @@ namespace LogicUniversityStore.View.Department.Employee
                 requisition.ReqNumber = new Random().Next().ToString(); //Todo 
                 requisition.Status = RequisitionStatus.Requested.ToString();
                 requisition.RequesterID = 1; // Todo: need to change later once login up
-                requisition.DapartmentID = 1; // Todo: same
+                requisition.DepartmentID = 1; // Todo: same
                 requisition.RecieveByID = 1;  //Todo: same
                 dao.db.Requisitions.Add(requisition);
                 dao.db.SaveChanges();

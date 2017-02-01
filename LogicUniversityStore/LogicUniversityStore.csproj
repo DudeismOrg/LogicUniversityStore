@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -1054,6 +1058,8 @@
     <Content Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx" />
     <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
+    <Content Include="View\Store\Reports\DisplayDeptUsage.aspx" />
+    <Content Include="View\Store\Reports\DisplaySupplierReport.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1254,12 +1260,51 @@
     <Compile Include="View\Store\Clerk\SpotAdjustment.aspx.designer.cs">
       <DependentUpon>SpotAdjustment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Store\Reports\DeptUsage.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeptUsage.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Store\Reports\DisplayDeptUsage.aspx.cs">
+      <DependentUpon>DisplayDeptUsage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Reports\DisplayDeptUsage.aspx.designer.cs">
+      <DependentUpon>DisplayDeptUsage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Reports\DisplaySupplierReport.aspx.cs">
+      <DependentUpon>DisplaySupplierReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Reports\DisplaySupplierReport.aspx.designer.cs">
+      <DependentUpon>DisplaySupplierReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Reports\SupplierReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="View\Resources\css\" />
     <Folder Include="View\Resources\js\" />
     <Folder Include="View\Store\Supervisor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\Store\Reports\DeptUsage.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DeptUsage.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Store\Reports\SupplierReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SupplierReport.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
