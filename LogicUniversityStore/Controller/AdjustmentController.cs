@@ -44,7 +44,7 @@ namespace LogicUniversityStore.Controller
                 using (var txn = dbContext.Database.BeginTransaction())
                 {
                     //Create Adjustment and Items
-                    AdjustmentDao dao = new AdjustmentDao(dbContext);
+                    AdjustmentDao dao = new AdjustmentDao();
                     dao.CreateAdjustment(objAdjustment);
                     //Update stock card
                     dao.updateStockCard(objAdjustment.StockAdjustmentItems.ToList());

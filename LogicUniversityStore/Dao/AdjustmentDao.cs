@@ -10,10 +10,12 @@ namespace LogicUniversityStore.Dao
     public class AdjustmentDao
     {
         LogicUniStoreModel db;
-        public AdjustmentDao(LogicUniStoreModel dbContext)
+
+        public AdjustmentDao()
         {
-            db = dbContext;
+            db = new LogicUniStoreModel();
         }
+       
 
         public void CreateAdjustment(StockAdjustment adjustment)
         {
@@ -30,5 +32,12 @@ namespace LogicUniversityStore.Dao
                 db.SaveChanges();
             }
         }
+
+        public StockAdjustment getAdjustment(String adjustmentNumber)
+        {
+            return db.StockAdjustments.Where(x => x.SockAdjustmentNumber.Equals(adjustmentNumber)).First();
+        }
+
+        
     }
 }

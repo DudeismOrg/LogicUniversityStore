@@ -14,15 +14,15 @@
 
                             <div class="box">                               
                                 <div>                                    
-                                        <asp:GridView ID="gvAdjustmentItemList" runat="server" AutoGenerateColumns="False" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="93px" Width="977px"  >
+                                        <asp:GridView ID="gvAdjustmentItemList" runat="server" AutoGenerateColumns="False" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="93px" Width="977px" OnSelectedIndexChanged="gvAdjustmentItemList_SelectedIndexChanged" >
                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                             <Columns>
                                               <asp:BoundField DataField="StockAdjustmentNumber" HeaderText="Stock Adjustment Number" ItemStyle-Height="50px"/>
                                               <asp:BoundField DataField="ItemName" HeaderText="Item Name" />
-                                              <asp:BoundField DataField="ReqDate" HeaderText="Requisition Date" DataFormatString="{0:D}" />
-                                              <asp:BoundField DataField="Status" HeaderText="Requisition Status" />
+                                              <asp:BoundField DataField="CountQuantity" HeaderText="Count Qty" DataFormatString="{0:D}" />
+                                              <asp:BoundField DataField="AdjustQuantity" HeaderText="Adjust Quantity" />
                                               <asp:BoundField DataField="Remark" HeaderText="Remark" />
-                                              <asp:CommandField HeaderText="View" ButtonType="Button" ShowSelectButton="true" SelectText="View" ControlStyle-CssClass="btn btn-sm btn-primary"  />
+                                              <asp:CommandField HeaderText="Approve" ButtonType="Button" ShowSelectButton="true" SelectText="Approve" ControlStyle-CssClass="btn btn-sm btn-success"  />
                                             </Columns>
                                             <EditRowStyle BackColor="#999999" />
                                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

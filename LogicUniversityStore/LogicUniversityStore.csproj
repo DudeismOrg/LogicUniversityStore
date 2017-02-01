@@ -1076,12 +1076,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AdjustmentController.cs" />
+    <Compile Include="Controller\AdjustmentVoucherSupervisorController.cs" />
     <Compile Include="Controller\PurchaseOrderController.cs" />
     <Compile Include="Controller\ApplyReqController.cs" />
     <Compile Include="Controller\ApproveRejectReqController.cs" />
     <Compile Include="Controller\CancelUpdatePendingApprovalController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
     <Compile Include="Controller\InvalidConstructorException.cs" />
+    <Compile Include="Dao\AdjustmentItemDao.cs" />
     <Compile Include="Dao\PurchaseOrderItemDao.cs" />
     <Compile Include="Dao\PurchaseOrderDao.cs" />
     <Compile Include="Dao\PoBatchDao.cs" />

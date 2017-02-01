@@ -68,8 +68,8 @@ values
 'Blk 11, Hillview  Avenue #03-04 Singapore 679036',5);
 
 insert into dbo.Item(ItemCode,ItemName, ItemDesc,UOM,BasePrice,CategoryID,ReorderLevel,ReorderQuantity)
-values('C001','Clips Double 1"','Clips Double 1"','Dozen',20.00,6,50,30),
-('E001','Envelope Brown(3"*6")','Envelope Brown(3"*6")','Each',0.40,7,600,400),
+values('C001','Clips Double 1','Clips Double 1"','Dozen',20.00,6,50,30),
+('E001','Envelope Brown(3*6)','Envelope Brown(3"*6")','Each',0.40,7,600,400),
 ('E020','Eraser(hard)','Eraser(hard)','Each',1.00,8,50,20),
 ('E030','Excercise Book(100 pg)','Excercise Book(100 pg)','Each',5.00,9,100,50),
 ('F020','File Seperator','File Seperator','Set',50.00,5,100,50),
@@ -77,11 +77,11 @@ values('C001','Clips Double 1"','Clips Double 1"','Dozen',20.00,6,50,30),
 ('F022','File-Blue with Logo','File-Blue with Logo','Each',50.00,5,200,100),
 ('F031','Folder Plastic Blue','Folder Plastic Blue','Each',50.00,5,200,150),
 ('F035','Folder Plastic Yellow','Folder Plastic Yellow','Each',50.00,5,200,150),
-('P010','Pad Postit Memo 1"x2"','Pad Postit Memo 1"x2"','Packet',50.00,7,100,60),
-('P011','Pad Postit Memo 1/2"x1"','Pad Postit Memo 1/2"x1"','Packet',50.00,7,100,60),
-('P014','Pad Postit Memo 2"x4"','Pad Postit Memo 2"x4"','Packet',50.00,7,100,60),
-('P013','Pad Postit Memo 2"x3"','Pad Postit Memo 2"x3"','Packet',50.00,7,100,60),
-('P015','Note 2"x3"','Note 2"x3"','Pice',50.00,7,100,60);
+('P010','Pad Postit Memo 1x2','Pad Postit Memo 1"x2"','Packet',50.00,7,100,60),
+('P011','Pad Postit Memo 1/2x1','Pad Postit Memo 1/2"x1"','Packet',50.00,7,100,60),
+('P014','Pad Postit Memo 2x4','Pad Postit Memo 2"x4"','Packet',50.00,7,100,60),
+('P013','Pad Postit Memo 2x3','Pad Postit Memo 2"x3"','Packet',50.00,7,100,60),
+('P015','Note 2"x3"','Note 2x3','Pice',50.00,7,100,60);
 
 insert into dbo.SupplierItem (itemid, supplierid, price, activesupplier, supplierpriority)
 values

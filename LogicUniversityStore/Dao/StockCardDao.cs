@@ -29,9 +29,16 @@ namespace LogicUniversityStore.Dao
           
         }
 
-      
+        public void updateStockCardByAdjustment(int itemId, int adjustQuantity)
+        {
+            StockCard card = db.StockCards.Where(x => x.ItemID == itemId).FirstOrDefault();
+            card.OnHandQuantity = card.OnHandQuantity - adjustQuantity;
+            db.SaveChanges();
+        }
 
-      
+
+
+
         public StockCard GetStockCardByItemId(int ItemId)
         {
             StockCard card = db.StockCards.Where(s => s.ItemID == ItemId).FirstOrDefault();
