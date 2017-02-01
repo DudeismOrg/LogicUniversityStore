@@ -198,4 +198,3 @@ C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\
 C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
