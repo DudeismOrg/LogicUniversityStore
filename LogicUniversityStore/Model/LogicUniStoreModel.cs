@@ -73,7 +73,7 @@ namespace LogicUniversityStore.Model
             modelBuilder.Entity<Department>()
                 .HasMany(e => e.Requisitions)
                 .WithRequired(e => e.Department)
-                .HasForeignKey(e => e.DapartmentID)
+                .HasForeignKey(e => e.DepartmentID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Disbursement>()

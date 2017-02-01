@@ -171,6 +171,7 @@
     <Content Include="View\Department\Employee\Employee.master" />
     <Content Include="View\Store\Clerk\Clerk.master" />
     <Content Include="View\Department\Hod\Hod.master" />
+    <Content Include="View\Store\Supervisor\Supervisor.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1063,14 +1064,13 @@
     <Content Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx" />
     <Content Include="View\Store\Clerk\Modal\CreateRetreivalForm.aspx" />
     <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
-
     <Content Include="View\Store\Clerk\RetrievalForm.aspx" />
-
     <Content Include="View\Store\Clerk\PurchaseOrderView.aspx" />
     <Content Include="View\Store\Clerk\PurchaseOrderConfirm.aspx" />
-
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
     <Content Include="View\Store\Clerk\ViewRetrieval.aspx" />
+    <Content Include="View\Store\Supervisor\SupervisorMain.aspx" />
+    <Content Include="View\Store\Supervisor\ApproveRejectAdjustment.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1080,15 +1080,12 @@
     <Compile Include="Controller\ApproveRejectReqController.cs" />
     <Compile Include="Controller\CancelUpdatePendingApprovalController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
-
     <Compile Include="Controller\InvalidConstructorException.cs" />
-
     <Compile Include="Dao\PurchaseOrderItemDao.cs" />
     <Compile Include="Dao\PurchaseOrderDao.cs" />
     <Compile Include="Dao\PoBatchDao.cs" />
     <Compile Include="Util\PurchaseOrderUtil.cs" />
     <Compile Include="Util\PurchaseOrderItems.cs" />
-
     <Compile Include="Util\DepartmentNotFoundException.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
     <Compile Include="Controller\ReapplyRejectedController.cs" />
@@ -1309,7 +1306,6 @@
     <Compile Include="View\Store\Clerk\ProcessRequest.aspx.designer.cs">
       <DependentUpon>ProcessRequest.aspx</DependentUpon>
     </Compile>
-
     <Compile Include="View\Store\Clerk\RetrievalForm.aspx.cs">
       <DependentUpon>RetrievalForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1330,7 +1326,6 @@
     </Compile>
     <Compile Include="View\Store\Clerk\PurchaseOrderConfirm.aspx.designer.cs">
       <DependentUpon>PurchaseOrderConfirm.aspx</DependentUpon>
-
     </Compile>
     <Compile Include="View\Store\Clerk\SpotAdjustment.aspx.cs">
       <DependentUpon>SpotAdjustment.aspx</DependentUpon>
@@ -1346,10 +1341,30 @@
     <Compile Include="View\Store\Clerk\ViewRetrieval.aspx.designer.cs">
       <DependentUpon>ViewRetrieval.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Store\Supervisor\Supervisor.Master.cs">
+      <DependentUpon>Supervisor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\Supervisor.Master.designer.cs">
+      <DependentUpon>Supervisor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.cs">
+      <DependentUpon>SupervisorMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.designer.cs">
+      <DependentUpon>SupervisorMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\ApproveRejectAdjustment.aspx.cs">
+      <DependentUpon>ApproveRejectAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\ApproveRejectAdjustment.aspx.designer.cs">
+      <DependentUpon>ApproveRejectAdjustment.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="View\Store\Supervisor\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

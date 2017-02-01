@@ -23,7 +23,7 @@ namespace LogicUniversityStore.Dao
         public int GetProductCountInStock(int supplierItemId)
         {
             StockCard card = db.StockCards.Where(s => s.ItemID == supplierItemId).FirstOrDefault();
-            if (card == null) throw new ArgumentException("supplierItemID is not Valid");
+            if (card == null) throw new ArgumentException("supplierItemID is not Valid and no stock for this  item");
 
                 return card.OnHandQuantity.Value;
           

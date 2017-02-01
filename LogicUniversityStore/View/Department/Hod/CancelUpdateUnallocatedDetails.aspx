@@ -54,7 +54,7 @@
 
                                             <div class="box-body no-padding">
 
-                                                <asp:GridView ID="gvRequisitionDetails" AutoGenerateColumns="false"  runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" CellSpacing="5" Height="300px" Width="665px" OnRowDeleting="gvRequisitionDetails_RowDeleting">
+                                                <asp:GridView ID="gvRequisitionDetails" AutoGenerateColumns="false"  runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" CellSpacing="5"  Height="100px" Width="665px" OnRowDeleting="gvRequisitionDetails_RowDeleting">
                                                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                                     <EditRowStyle BackColor="#999999" />
                                                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -67,15 +67,15 @@
                                                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                                                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                                                     <Columns>
-                                                       <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Width="150" ReadOnly="true" />                                                 
-                                                        <asp:TemplateField HeaderText="Quantity">
+                                                       <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Height="50px" ReadOnly="true" />                                                 
+                                                        <asp:TemplateField HeaderText="Quantity" ItemStyle-Height="50px">
                                                         <ItemTemplate >
                                                         <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("NeededQuantity") %>' BorderStyle="Groove">
                                                         </asp:TextBox>                                
                                                         </ItemTemplate>
                                                         </asp:TemplateField>
-                                                       <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" ItemStyle-Width="150" ReadOnly="true" />                                 
-                                                       <asp:CommandField HeaderText="Delete" ButtonType="Button" ShowDeleteButton="true" ControlStyle-CssClass="btn btn-sm btn-danger"  />                                                                                                              
+                                                       <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" ItemStyle-Height="50px" ReadOnly="true" />                                 
+                                                       <asp:CommandField ItemStyle-Height="50px" HeaderText="Delete" ButtonType="Button" ShowDeleteButton="true" ControlStyle-CssClass="btn btn-sm btn-danger"  />                                                                                                              
                                                     </Columns>
                                                 </asp:GridView>
                                             </div>

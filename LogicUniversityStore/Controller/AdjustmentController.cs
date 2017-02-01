@@ -53,9 +53,9 @@ namespace LogicUniversityStore.Controller
                 }
                 dbContext.Database.Connection.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //   throw;
+                   throw ex;
             }
             return isSuccessful;
         }

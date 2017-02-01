@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/View/Main.Master" AutoEventWireup="true" CodeBehind="Supervisor.master.cs" Inherits="LogicUniversityStore.View.Store.Supervisor.Supervisor" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="cssBlock" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="sideMenuBlock" runat="server">
+    <li class="header">MAIN NAVIGATION</li>
+    <li class="active treeview">
+        <a href="SupervisorMain.aspx">
+            <i class="fa fa-dashboard"></i><span>Dashboard</span>
+        </a>
+    </li>
+
+    <li class="treeview">
+        <a href="ApproveRejectAdjustment.aspx">
+            <i class="fa fa-laptop"></i>
+            <span>Approve/Reject Adjustment</span>
+        </a>
+    </li>
+
+    <li class="treeview">
+        <a href="CancelUpdatePendingApproval.aspx">
+            <i class="fa fa-edit"></i>
+            <span>Generate Report</span>
+            <span class="pull-right-container">
+                <span class="label label-primary pull-right" style="margin: 0px">20</span>
+            </span>
+        </a>
+    </li>
+
+    
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="pageHeading" runat="server">
+    <asp:ContentPlaceHolder ID="empMainHeader" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="mainContentBlock" runat="server">
+    <asp:ContentPlaceHolder ID="empMainContentBlock" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="jsBlock" runat="server">
+    <asp:ContentPlaceHolder ID="empMainJs" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+

@@ -45,7 +45,7 @@
                                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
 
                                         <Columns>
-                                        <asp:BoundField DataField="ReqID" HeaderText="RequisitionID" />
+                                        <asp:BoundField DataField="ReqID" HeaderText="RequisitionID" ItemStyle-Height="50px" />
                                         <asp:BoundField DataField="ReqNumber" HeaderText="RequisitionNumber" />
                                         <asp:BoundField DataField="ReqDate" HeaderText="Requisition Date" DataFormatString="{0:D}" />
                                         <asp:BoundField DataField="Status" HeaderText="Status" />
