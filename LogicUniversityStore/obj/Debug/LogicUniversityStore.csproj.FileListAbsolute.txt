@@ -35,3 +35,4 @@ C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\L
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
