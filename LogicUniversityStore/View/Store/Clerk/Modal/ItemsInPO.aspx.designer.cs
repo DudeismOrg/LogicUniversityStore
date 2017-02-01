@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicUniversityStore.View.Store.Clerk {
+namespace LogicUniversityStore.View.Store.Clerk.Modal {
     
     
-    public partial class ProcessRequest {
+    public partial class ItemsInPO {
         
         /// <summary>
-        /// gvRequisitions control.
+        /// lvItemsInPO control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRequisitions;
-        
-        /// <summary>
-        /// btnGenRetrival control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGenRetrival;
+        protected global::System.Web.UI.WebControls.ListView lvItemsInPO;
     }
 }

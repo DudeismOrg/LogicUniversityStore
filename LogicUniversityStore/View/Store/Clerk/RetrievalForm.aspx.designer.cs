@@ -10,24 +10,15 @@
 namespace LogicUniversityStore.View.Store.Clerk {
     
     
-    public partial class ProcessRequest {
+    public partial class RetrievalForm {
         
         /// <summary>
-        /// gvRequisitions control.
+        /// gvRetrievList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRequisitions;
-        
-        /// <summary>
-        /// btnGenRetrival control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGenRetrival;
+        protected global::System.Web.UI.WebControls.GridView gvRetrievList;
     }
 }

@@ -25,5 +25,9 @@ namespace LogicUniversityStore.Util
         {
             return CategoryDao.GetItemsByCategoryId(categoryId);
         }
+        public String GetRefNumber()
+        {
+            return new Random().Next().ToString();
+        }
     }
 }

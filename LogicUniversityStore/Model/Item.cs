@@ -8,7 +8,7 @@ namespace LogicUniversityStore.Model
 
     [Table("Item")]
     [Serializable]
-    public partial class Item
+    public partial class Item : IEquatable<Item>
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Item()
@@ -57,5 +57,17 @@ namespace LogicUniversityStore.Model
             SupplierItem item = sList.Find(i => i.ActiveSupplier == true && i.SupplierPriority == 1);
             return item;
         }
+
+        public bool Equals(Item other)
+        {
+            return this.ItemID.Equals(other.ItemID);
+        }
+
+        public override int GetHashCode()
+        {
+            return ItemID;
+        }
+
+
     }
 }

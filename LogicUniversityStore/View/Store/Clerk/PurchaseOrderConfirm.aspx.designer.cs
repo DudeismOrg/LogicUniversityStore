@@ -10,24 +10,33 @@
 namespace LogicUniversityStore.View.Store.Clerk {
     
     
-    public partial class ProcessRequest {
+    public partial class PurchaseOrderConfirm {
         
         /// <summary>
-        /// gvRequisitions control.
+        /// purchaseOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRequisitions;
+        protected global::System.Web.UI.HtmlControls.HtmlForm purchaseOrder;
         
         /// <summary>
-        /// btnGenRetrival control.
+        /// gvPurchaseOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGenRetrival;
+        protected global::System.Web.UI.WebControls.GridView gvPurchaseOrders;
+        
+        /// <summary>
+        /// cnfrmPo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cnfrmPo;
     }
 }
