@@ -114,7 +114,7 @@ namespace LogicUniversityStore.View.Store.Clerk
         {
             int index = Convert.ToInt32(e.RowIndex);
             GridViewRow row = gvReqItems.Rows[index];
-            lstAdjItems.Remove(lstAdjItems.Where(i => i.ItemId == Convert.ToInt32(gvReqItems.DataKeys[index])).FirstOrDefault());
+            lstAdjItems.Remove(lstAdjItems.Where(i => i.ItemId == Convert.ToInt32(gvReqItems.DataKeys[index].Value)).FirstOrDefault());
             ViewState["items"] = lstAdjItems;
             PopulateData();
             clearFields();

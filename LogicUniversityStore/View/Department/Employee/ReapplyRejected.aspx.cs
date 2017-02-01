@@ -17,12 +17,11 @@ namespace LogicUniversityStore.View.Department.Employee
         {
             if (!IsPostBack)
             {
-
-                List<Requisition> items = reqController.getRejectedRequisition();
-
+                int requesterId = 2;//to do while login
+                List<Requisition> items = reqController.getRejectedRequisition(requesterId);
                 DataTable dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[4] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"), new DataColumn("Remark") });
-                foreach (Requisition i in items)
+                foreach(Requisition i in items)
                 {
                     DataRow r = dt.NewRow();
                     r["ReqID"] = i.ReqID;
@@ -30,7 +29,6 @@ namespace LogicUniversityStore.View.Department.Employee
                     r["ReqDate"] = i.ReqDate.ToLongDateString();               
                     r["Remark"] = i.Remark;
                     dt.Rows.Add(r);
-
                 }
                 ViewState["dt"] = dt;
                 gvRejectedRequests.DataSource = dt;
@@ -51,25 +49,10 @@ namespace LogicUniversityStore.View.Department.Employee
             gvRejectedRequests.DataSource = (DataTable)ViewState["dt"];
             gvRejectedRequests.DataBind();
         }
-
-        protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvRejectedRequests, "Select$" + e.Row.RowIndex);
-                e.Row.ToolTip = "Click this row to view details.";
-            }
-        }
-
         protected void gvRejectedRequisition_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             int reqId = Convert.ToInt32(gvRejectedRequests.SelectedRow.Cells[0].Text);
-
-
-            Response.Redirect("ReapplyRejectedDetails.aspx?id=" + reqId + "");
-        }
-
-
+            Response.Redirect("ReapplyRejectedDetails.aspx?id=" + reqId + ""); 
+        }       
     }
 }

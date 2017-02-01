@@ -18,10 +18,7 @@ namespace LogicUniversityStore.View.Department.Employee
         private List<CartItem> items;
         private Category category;
         private Item item;
-
-
         private ItemDao itemDao;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -62,8 +59,7 @@ namespace LogicUniversityStore.View.Department.Employee
             items.Add(rItem);
             ViewState["items"] = items;
             gvReqItems.DataSource = items;
-            gvReqItems.DataBind();
-            
+            gvReqItems.DataBind();            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -76,8 +72,8 @@ namespace LogicUniversityStore.View.Department.Employee
                 requisition.ReqDate = System.DateTime.Now;
                 requisition.ReqNumber = new Random().Next().ToString(); //Todo 
                 requisition.Status = RequisitionStatus.Requested.ToString();
-                requisition.RequesterID = 1; // Todo: need to change later once login up
-                requisition.DepartmentID = 1; // Todo: same
+                requisition.RequesterID = 2; // Todo: need to change later once login up
+                requisition.DapartmentID = 1; // Todo: same
                 requisition.RecieveByID = 1;  //Todo: same
                 dao.db.Requisitions.Add(requisition);
                 dao.db.SaveChanges();
@@ -94,14 +90,12 @@ namespace LogicUniversityStore.View.Department.Employee
                 gvReqItems.DataSource = null;
                 gvReqItems.DataBind();
             }
-
         }
-
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             ViewState["items"] = new List<RequisitionItem>();
             gvReqItems.DataSource = null;
             gvReqItems.DataBind();
-        }
+        }        
     }
 }

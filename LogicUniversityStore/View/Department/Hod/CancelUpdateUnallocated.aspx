@@ -39,28 +39,9 @@
 
                         <div class="col-md-12">
 
-                            <div class="box">
-
-                                <div class="box-header">
-
-
-
-                                    <div class="input-group input-group-sm pull-left" style="width: 150px;">
-
-                                        <input type="text" name="table_search" class="form-control pull-left" placeholder="Search">
-
-
-
-                                        <div class="input-group-btn">
-
-                                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-
-                                        </div>
-
-                                    </div>
-                                    </div>
+                            <div class="box">                                
                                 <div class="box-body no-padding">
-                                    <asp:GridView ID="gvRequisition" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="gvRequisition_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" Width="819px" Height="100px" >
+                                    <asp:GridView ID="gvRequisition" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvRequisition_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" Width="819px" Height="100px" >
                                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
 
                                         <Columns>
@@ -69,6 +50,7 @@
                                         <asp:BoundField DataField="ReqDate" HeaderText="Requisition Date" DataFormatString="{0:D}" />
                                         <asp:BoundField DataField="Status" HeaderText="Status" />
                                         <asp:BoundField DataField="Remark" HeaderText="Remark" />
+                                        <asp:CommandField HeaderText="View" ButtonType="Button" ShowSelectButton="true" SelectText="View" ControlStyle-CssClass="btn btn-sm btn-primary"  />
                                         </Columns>
 
                                         <EditRowStyle BackColor="#999999" />

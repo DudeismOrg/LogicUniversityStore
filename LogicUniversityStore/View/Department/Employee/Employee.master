@@ -19,7 +19,7 @@
     </li>
 
     <li class="treeview">
-        <a href="index.html">
+        <a href="CancelUpdatePendingApproval.aspx">
             <i class="fa fa-edit"></i>
             <span>Pending Approval</span>
             <span class="pull-right-container">

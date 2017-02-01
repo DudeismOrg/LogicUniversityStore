@@ -40,6 +40,9 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
             }
         }
 
-        
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,27 +16,15 @@ namespace LogicUniversityStore.View.Department.Hod
         {
            if(!IsPostBack)
             {
-                gvRequestedRequisition.DataSource = reqController.getRequestedRequisition();
-                gvRequestedRequisition.DataBind();
-                
+                int depId = 1;//todo while login
+                gvRequestedRequisition.DataSource = reqController.getRequestedRequisitionHod(depId);
+                gvRequestedRequisition.DataBind();               
             }
-        }
-
-        protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvRequestedRequisition, "Select$" + e.Row.RowIndex);
-                e.Row.ToolTip = "Click this row to view details.";
-            }
-        }
-
+        }       
         protected void gvRequestedRequisition_SelectedIndexChanged(object sender, EventArgs e)
         {
             int reqId=Convert.ToInt32(gvRequestedRequisition.SelectedRow.Cells[0].Text);         
             Response.Redirect("ApproveRejectRequisitionItems.aspx?id="+reqId+"");
-        }
-
-        
+        }        
     }
 }
