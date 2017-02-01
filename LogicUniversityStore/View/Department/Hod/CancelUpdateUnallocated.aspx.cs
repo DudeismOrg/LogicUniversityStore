@@ -13,30 +13,30 @@ namespace LogicUniversityStore.View.Department.Hod
 {
     public partial class WebForm6 : System.Web.UI.Page
     {
-        public CancelUpdateUnallocatedController reqController = new CancelUpdateUnallocatedController();        
-        protected void Page_Load(object sender, EventArgs e)
-        {            
-            if(!IsPostBack)
-            {
-                int depId = 1;//todo while login
-                List<Requisition> req = new List<Requisition>();
-                req = reqController.GetApprovedRejectedRequisition(depId);
-                DataTable dt = new DataTable();
-                dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"),new DataColumn("Status"), new DataColumn("Remark") });
-                foreach (Requisition i in req)
-                {
-                    DataRow r = dt.NewRow();
-                    r["ReqID"] = i.ReqID;
-                    r["ReqNumber"] = i.ReqNumber;
-                    r["ReqDate"] = i.ReqDate.ToLongDateString();
-                    r["Status"] = i.Status;
-                    r["Remark"] = i.Remark;
-                    dt.Rows.Add(r);
-                }
-                gvRequisition.DataSource = dt;
-                gvRequisition.DataBind();                
-            }
+      public CancelUpdateUnallocatedController reqController = new CancelUpdateUnallocatedController();        
+      protected void Page_Load(object sender, EventArgs e)
+      {            
+        if(!IsPostBack)
+        {
+          int depId = 1;//todo while login
+          List<Requisition> req = new List<Requisition>();
+          req = reqController.GetApprovedRejectedRequisition(depId);
+          DataTable dt = new DataTable();
+          dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ReqID"), new DataColumn("ReqNumber"), new DataColumn("ReqDate"),new DataColumn("Status"), new DataColumn("Remark") });
+          foreach (Requisition i in req)
+          {
+            DataRow r = dt.NewRow();
+            r["ReqID"] = i.ReqID;
+            r["ReqNumber"] = i.ReqNumber;
+            r["ReqDate"] = i.ReqDate.ToLongDateString();
+            r["Status"] = i.Status;
+            r["Remark"] = i.Remark;
+            dt.Rows.Add(r);
+          }
+          gvRequisition.DataSource = dt;
+          gvRequisition.DataBind();                
         }
+      }
 
         protected void gvRequisition_SelectedIndexChanged(object sender, EventArgs e)
         {
