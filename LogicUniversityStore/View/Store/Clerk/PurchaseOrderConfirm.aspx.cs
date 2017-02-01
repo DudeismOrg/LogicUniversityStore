@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicUniversityStore.Model;
 using LogicUniversityStore.Dao;
+using System.Data.Entity.Validation;
 
 namespace LogicUniversityStore.View.Store.Clerk
 {
@@ -46,23 +47,52 @@ namespace LogicUniversityStore.View.Store.Clerk
                 newPOUlist.Add(pou);
             }
 
-            POBatch batch = new POBatch();
-            batch.POBatchDate = DateTime.Now;
-            batch.Printed = false;
-            dao.db.POBatches.Add(batch);
-            dao.db.SaveChanges();
+            try
+            {
+                POBatch batch = new POBatch();
+                batch.POBatchDate = DateTime.Now;
+                batch.Printed = false;
+                dao.db.POBatches.Add(batch);
+                dao.db.SaveChanges();
+
+                PersistPO(newPOUlist, batch);
+            }
+            catch (DbEntityValidationException ea)
+            {
+                foreach (var eve in ea.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+
+                throw;
+            }
+        }
+
+
+        public void PersistPO(List<PurchaseOrderUtil> newPOUlist, POBatch batch)
+        {
+            PurchaseOrder po = new PurchaseOrder();
+            PurchaseOrderDao pdao = new PurchaseOrderDao();
+            PurchaseOrderItemDao poitem = new PurchaseOrderItemDao();
 
             foreach (PurchaseOrderUtil npo in newPOUlist)
             {
-                PurchaseOrder po = new PurchaseOrder();
-                po.ExpectedDeliveryDate = Convert.ToDateTime(npo.ExpectedDeliveryDate);
-                po.OrderDate = npo.OrderDate;
-                po.POBatch = batch;
-                po.POBatchID = batch.POBatchID;
-                po.PORemark = npo.Remark;
+                po = new PurchaseOrder();
                 po.PuchaseOrderNo = npo.PoNumber;
-                po.Supplier = npo.Supplier;
+                po.OrderDate = npo.OrderDate;
+                po.DeliveryAddress = "";
+                po.POStatus = "";
                 po.SupplierID = npo.Supplier.SupplierID;
+                po.DONumber = "";
+                po.PORemark = npo.Remark;
+                po.ExpectedDeliveryDate = Convert.ToDateTime(npo.ExpectedDeliveryDate);
+                po.POBatchID = batch.POBatchID;
                 pdao.db.PurchaseOrders.Add(po);
                 pdao.db.SaveChanges();
 
@@ -71,15 +101,12 @@ namespace LogicUniversityStore.View.Store.Clerk
                     PurchaseOrderItem items = new PurchaseOrderItem();
                     items.PurchaseOrder = po;
                     items.RequestedQuantity = poi.ReorderQuantity;
-                    items.SupplierItem = poi.PoItem.GetSupplierItem();
+                    items.ItemID = poi.PoItem.GetSupplierItem().ItemID;
                     poitem.db.PurchaseOrderItems.Add(items);
                     poitem.db.SaveChanges();
-
                 }
             }
-            
-            
+            Response.Write("<script language='javascript'> alert('Purchase order saved successfully!!!'); </script>");
         }
-
     }
 }
