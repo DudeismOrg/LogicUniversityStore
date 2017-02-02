@@ -10,12 +10,8 @@ namespace LogicUniversityStore.Model
     [Serializable]
     public partial class Disbursement
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Disbursement()
-        {
-            RequisitionItems = new HashSet<RequisitionItem>();
-        }
 
+        [Key, ForeignKey("Requisition")]
         public int DisbursementID { get; set; }
 
         [Required]
@@ -35,7 +31,5 @@ namespace LogicUniversityStore.Model
 
         public virtual Requisition Requisition { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RequisitionItem> RequisitionItems { get; set; }
     }
 }

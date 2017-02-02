@@ -13,15 +13,6 @@ namespace LogicUniversityStore.View.Department.Employee {
     public partial class WebForm1 {
         
         /// <summary>
-        /// requestHistory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm requestHistory;
-        
-        /// <summary>
         /// gvRequestHistory control.
         /// </summary>
         /// <remarks>

@@ -24,12 +24,12 @@ namespace LogicUniversityStore.Model
 
         public int? DisbursedQuantity { get; set; }
 
-        public int? DisbursementID { get; set; }
+     //   public int? DisbursementID { get; set; }
         public int? RetrievalID { get; set; }
 
         public bool? IsOutstanding { get; set; }
 
-        public virtual Disbursement Disbursement { get; set; }
+      //  public virtual Disbursement Disbursement { get; set; }
 
         public virtual Requisition Requisition { get; set; }
 

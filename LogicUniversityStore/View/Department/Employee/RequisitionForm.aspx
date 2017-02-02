@@ -9,7 +9,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
-    <form id="requestForm" runat="server">
+   
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-primary">
@@ -194,5 +194,4 @@
             </div>
         </div>
 
-    </form>
 </asp:Content>
