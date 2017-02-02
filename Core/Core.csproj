@@ -52,11 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AdjustmentController.cs" />
+    <Compile Include="Controller\AdjustmentVoucherManagerController.cs" />
+    <Compile Include="Controller\AdjustmentVoucherSupervisorController.cs" />
     <Compile Include="Controller\ApplyReqController.cs" />
     <Compile Include="Controller\ApproveRejectReqController.cs" />
     <Compile Include="Controller\CancelUpdatePendingApprovalController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
-    <Compile Include="Controller\InvalidConstructorException.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
     <Compile Include="Controller\PurchaseOrderController.cs" />
     <Compile Include="Controller\ReapplyRejectedController.cs" />
@@ -64,7 +65,9 @@
     <Compile Include="Controller\RetreiveReqController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Dao\AdjustmentDao.cs" />
+    <Compile Include="Dao\AdjustmentItemDao.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
+    <Compile Include="Dao\DisbursementDao.cs" />
     <Compile Include="Dao\ItemDao.cs" />
     <Compile Include="Dao\PoBatchDao.cs" />
     <Compile Include="Dao\PurchaseOrderDao.cs" />

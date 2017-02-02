@@ -29,6 +29,12 @@ namespace LogicUniversityStore.Model
 
         public int? DepartmentID { get; set; }
 
+        [Required]
+        [StringLength(50)]
+        public string Key { get; set; }
+
+        public virtual Requisition Requisition { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RequisitionItem> RequisitionItems { get; set; }
     }

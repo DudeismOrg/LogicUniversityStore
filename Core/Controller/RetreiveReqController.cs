@@ -14,7 +14,7 @@ namespace LogicUniversityStore.Controller
         public RetrievalDao RetrievalDao { get; set; }
         private List<Requisition> retReq;
 
-        public RetreiveReqController(List<Requisition> retrievalReq)
+        public RetreiveReqController(List<Requisition> retrievalReq) // this constructor is used for creating retrivelist from process requisition
         {
             RetrievalDao = new RetrievalDao();
             retReq = retrievalReq;

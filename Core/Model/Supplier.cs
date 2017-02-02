@@ -40,7 +40,7 @@ namespace LogicUniversityStore.Model
         [StringLength(20)]
         public string GSTRegistrationNumber { get; set; }
 
-        public int MinDeliveryDay { get; set; }
+        public int? MinDeliveryDay { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PurchaseOrder> PurchaseOrders { get; set; }

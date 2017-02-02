@@ -16,7 +16,7 @@ namespace LogicUniversityStore.Model
             RequisitionItems = new HashSet<RequisitionItem>();
         }
 
-        [Key]
+        [Key, ForeignKey("Disbursement")]
         public int ReqID { get; set; }
 
         [Required]
@@ -42,7 +42,11 @@ namespace LogicUniversityStore.Model
 
         public DateTime? ApprovedDate { get; set; }
 
+        public int? DisbursementID { get; set; }
+
         public virtual Department Department { get; set; }
+
+        public virtual Disbursement Disbursement { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RequisitionItem> RequisitionItems { get; set; }

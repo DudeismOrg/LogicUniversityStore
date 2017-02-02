@@ -23,12 +23,16 @@
 
             <form id="form1" runat="server">
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Username"></asp:TextBox>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Password">
+
+                    <asp:TextBox ID="txtPwd" runat="server" TextMode="Password" CssClass="form-control" placeholder="Password"></asp:TextBox>
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <asp:Label ID="lblMsg" runat="server"></asp:Label>
                 </div>
                 <div class="row">
                     <div class="col-xs-8">
@@ -40,7 +44,7 @@
                         </div>
                     </div>
                     <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        <asp:Button ID="btnLogin" runat="server" Text="Sign In" CssClass="btn btn-primary btn-block btn-flat" OnClick="btnLogin_Click" />
                     </div>
                 </div>
             </form>

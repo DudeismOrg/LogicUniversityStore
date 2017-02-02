@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Core.Controller;
+using LogicUniversityStore.Model;
+using LogicUniversityStore.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +15,35 @@ namespace LogicUniversityStore.View
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            LUUser user = new UserController().ValidateUser(txtEmail.Text, txtPwd.Text);
+            if (user == null)
+            {
+                lblMsg.Text = "Please check credentials";
+                return;
+            }
+            Session["User"] = user;
+            Roles userROle = (Roles)Enum.Parse(typeof(Roles), user.Role.RoleCode);
+            switch (userROle)
+            {
+                case Roles.EMP:
+                case Roles.REP:
+                    Response.Redirect("~/View/Department/Employee/EmpMain.aspx");
+                    break;
+                case Roles.HOD:
+                    Response.Redirect("~/View/Department/Hod/HodMain.aspx");
+                    break;
+                case Roles.CLERK:
+                    Response.Redirect("~/View/Store/Clerk/ClrkMain.aspx");
+                    break;
+                case Roles.MANAGER:
+                case Roles.SUPERVISOR:
+                    Response.Redirect("");
+                    break;
+            }
         }
     }
 }

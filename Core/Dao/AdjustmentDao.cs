@@ -30,5 +30,18 @@ namespace LogicUniversityStore.Dao
                 db.SaveChanges();
             }
         }
+
+        public StockAdjustment getAdjustment(String adjustmentNumber)
+        {
+            return db.StockAdjustments.Where(x => x.SockAdjustmentNumber.Equals(adjustmentNumber)).First();
+        }
+
+        public int getOnHandQty(int itemId)
+        {
+           StockCard card=db.StockCards.Where(x => x.ItemID == itemId).FirstOrDefault();
+           return Convert.ToInt32(card.OnHandQuantity);
+
+        }
+        
     }
 }

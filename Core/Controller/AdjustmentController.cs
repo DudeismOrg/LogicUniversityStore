@@ -10,6 +10,12 @@ namespace LogicUniversityStore.Controller
 {
     public class AdjustmentController
     {
+        AdjustmentDao dao;
+        public AdjustmentController()
+        {
+            LogicUniStoreModel db = new LogicUniStoreModel();
+            dao = new AdjustmentDao(db);
+        }
         public bool CreateSpotAdjustment(Adjustment adjustment)
         {
             bool isSuccessful = false;
@@ -34,6 +40,8 @@ namespace LogicUniversityStore.Controller
                         CountQuantity = item.Quantity,
                         ItemID = item.ItemId,
                         Remark = item.Remarks,
+                        Status = AdjustmentStatus.Created.ToString(),
+                        AdjustQuantity = item.Quantity,
                         StockAdjustment = objAdjustment
                     };
                     objAdjustment.StockAdjustmentItems.Add(objAdjItem);
