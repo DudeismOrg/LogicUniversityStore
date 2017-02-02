@@ -6,11 +6,6 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="clrkMainContentBlock" runat="server">
     <form id="form1" runat="server">
-    <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="50px" ReportSourceID="SupplierReport" ToolbarImagesFolderUrl="" ToolPanelWidth="200px" Width="350px" />
-    <CR:CrystalReportSource ID="SupplierReport" runat="server">
-        <Report FileName="View\Store\Reports\SupplierReport.rpt">
-        </Report>
-    </CR:CrystalReportSource>
 </form>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="clrkMainJs" runat="server">

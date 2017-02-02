@@ -1057,7 +1057,11 @@
     <Content Include="View\Store\Clerk\ClrkMain.aspx" />
     <Content Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx" />
     <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
+    <Content Include="View\Store\Clerk\PurchaseOrderConfirm.aspx" />
+    <Content Include="View\Store\Clerk\PurchaseOrderView.aspx" />
+    <Content Include="View\Store\Clerk\RetrievalForm.aspx" />
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
+    <Content Include="View\Store\Clerk\ViewRetrieval.aspx" />
     <Content Include="View\Store\Reports\DisplayDeptUsage.aspx" />
     <Content Include="View\Store\Reports\DisplaySupplierReport.aspx" />
     <Content Include="Web.config" />
@@ -1066,16 +1070,25 @@
     <Compile Include="Controller\AdjustmentController.cs" />
     <Compile Include="Controller\ApplyReqController.cs" />
     <Compile Include="Controller\ApproveRejectReqController.cs" />
+    <Compile Include="Controller\CancelUpdatePendingApprovalController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
+    <Compile Include="Controller\InvalidConstructorException.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
+    <Compile Include="Controller\PurchaseOrderController.cs" />
     <Compile Include="Controller\ReapplyRejectedController.cs" />
     <Compile Include="Controller\RequestHistoryController.cs" />
+    <Compile Include="Controller\RetreiveReqController.cs" />
     <Compile Include="Dao\AdjustmentDao.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
+    <Compile Include="Dao\PoBatchDao.cs" />
+    <Compile Include="Dao\PurchaseOrderDao.cs" />
+    <Compile Include="Dao\PurchaseOrderItemDao.cs" />
     <Compile Include="Dao\RequisitionItemDao.cs" />
     <Compile Include="Dao\ItemDao.cs" />
     <Compile Include="Dao\RequisitionDao.cs" />
+    <Compile Include="Dao\RetrievalDao.cs" />
     <Compile Include="Dao\StockCardDao.cs" />
+    <Compile Include="Dao\SupplierItemDao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1085,6 +1098,7 @@
     <Compile Include="Model\Disbursement.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\LogicUniStoreModel.cs" />
+    <Compile Include="Model\LogicUniStoreModelInitializer.cs" />
     <Compile Include="Model\LUUser.cs" />
     <Compile Include="Model\Notification.cs" />
     <Compile Include="Model\POBatch.cs" />
@@ -1103,9 +1117,13 @@
     <Compile Include="Util\Adjustment.cs" />
     <Compile Include="Util\AdjustmentItem.cs" />
     <Compile Include="Util\CartItem.cs" />
+    <Compile Include="Util\DepartmentNotFoundException.cs" />
     <Compile Include="Util\LockedFullException.cs" />
     <Compile Include="Util\Common.cs" />
     <Compile Include="Util\Enumeration.cs" />
+    <Compile Include="Util\PurchaseOrderItems.cs" />
+    <Compile Include="Util\PurchaseOrderUtil.cs" />
+    <Compile Include="Util\RequistionItemBySupplierComparator.cs" />
     <Compile Include="View\Department\Employee\Employee.master.cs">
       <DependentUpon>Employee.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1253,12 +1271,40 @@
     <Compile Include="View\Store\Clerk\ProcessRequest.aspx.designer.cs">
       <DependentUpon>ProcessRequest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Store\Clerk\PurchaseOrderConfirm.aspx.cs">
+      <DependentUpon>PurchaseOrderConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\PurchaseOrderConfirm.aspx.designer.cs">
+      <DependentUpon>PurchaseOrderConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\PurchaseOrderView.aspx.cs">
+      <DependentUpon>PurchaseOrderView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\PurchaseOrderView.aspx.designer.cs">
+      <DependentUpon>PurchaseOrderView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\RetrievalForm.aspx.cs">
+      <DependentUpon>RetrievalForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\RetrievalForm.aspx.designer.cs">
+      <DependentUpon>RetrievalForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Store\Clerk\SpotAdjustment.aspx.cs">
       <DependentUpon>SpotAdjustment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Store\Clerk\SpotAdjustment.aspx.designer.cs">
       <DependentUpon>SpotAdjustment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\ViewRetrieval.aspx.cs">
+      <DependentUpon>ViewRetrieval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\ViewRetrieval.aspx.designer.cs">
+      <DependentUpon>ViewRetrieval.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Store\Reports\DeptUsage.cs">
       <AutoGen>True</AutoGen>
@@ -1280,10 +1326,10 @@
     <Compile Include="View\Store\Reports\DisplaySupplierReport.aspx.designer.cs">
       <DependentUpon>DisplaySupplierReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Reports\SupplierReport.cs">
+    <Compile Include="View\Store\Reports\SupplierOrder.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SupplierReport.rpt</DependentUpon>
+      <DependentUpon>SupplierOrder.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -1298,9 +1344,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DeptUsage.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Store\Reports\SupplierReport.rpt">
+    <EmbeddedResource Include="View\Store\Reports\SupplierOrder.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>SupplierReport.cs</LastGenOutput>
+      <LastGenOutput>SupplierOrder.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

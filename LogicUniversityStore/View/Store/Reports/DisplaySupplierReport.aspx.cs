@@ -11,9 +11,9 @@ namespace LogicUniversityStore.View.Store.Reports
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SupplierReport srpt = new SupplierReport();
-            CrystalReportViewer1.ReportSource = srpt;
-            CrystalReportViewer1.Zoom(90);
+            SupplierOrder srpt = new SupplierOrder();
+            //CrystalReportViewer1.ReportSource = srpt;
+            //CrystalReportViewer1.Zoom(90);
         }
     }
 }
