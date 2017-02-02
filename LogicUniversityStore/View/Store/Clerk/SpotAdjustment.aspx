@@ -6,6 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="clrkMainContentBlock" runat="server">
 
+    
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-primary">
@@ -175,6 +176,7 @@
             </div>
         </div>
 
+    
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="clrkMainJs" runat="server">
