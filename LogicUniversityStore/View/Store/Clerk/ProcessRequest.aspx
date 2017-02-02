@@ -13,7 +13,6 @@
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="clrkMainContentBlock" runat="server">
-    <form runat="server">
 
 
         <div class="row">
@@ -200,7 +199,6 @@
         
     </div>--%>
 
-    </form>
 </asp:Content>
 
 

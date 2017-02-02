@@ -5,7 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="clrkMainHeader" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="clrkMainContentBlock" runat="server">
-    <form id="form1" runat="server">
         <div>
             <asp:GridView ID="gvRetrieval" runat="server" AutoGenerateColumns="false" CssClass="table-striped">
                 <Columns>
@@ -39,7 +38,6 @@
             <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CssClass="btn-info"/>
 
         </div>
-    </form>
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="clrkMainJs" runat="server">
