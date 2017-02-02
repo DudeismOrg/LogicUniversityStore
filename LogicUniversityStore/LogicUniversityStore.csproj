@@ -1288,7 +1288,9 @@
     <Compile Include="View\Store\Clerk\ViewRetrieval.aspx.designer.cs">
       <DependentUpon>ViewRetrieval.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Reports\DeptUsage.cs" />
+    <Compile Include="View\Store\Reports\DeptUsage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\Store\Reports\DisplayDeptUsage.aspx.cs">
       <DependentUpon>DisplayDeptUsage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1303,7 +1305,9 @@
     <Compile Include="View\Store\Reports\DisplaySupplierReport.aspx.designer.cs">
       <DependentUpon>DisplaySupplierReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Reports\SupplierOrder.cs" />
+    <Compile Include="View\Store\Reports\SupplierOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
