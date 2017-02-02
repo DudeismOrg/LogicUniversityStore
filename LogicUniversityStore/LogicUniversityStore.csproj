@@ -173,6 +173,7 @@
     <Content Include="View\Store\Clerk\Clerk.master" />
     <Content Include="View\Department\Hod\Hod.master" />
     <Content Include="View\Store\Manager\ManagerMain.aspx" />
+    <Content Include="View\Store\Manager\ApproveAdjustment.aspx" />
     <Content Include="View\Store\Supervisor\Supervisor.Master" />
     <Content Include="View\Store\Manager\Manager.Master" />
     <None Include="Web.Debug.config">
@@ -1078,6 +1079,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AdjustmentController.cs" />
+    <Compile Include="Controller\AdjustmentVoucherManagerController.cs" />
     <Compile Include="Controller\AdjustmentVoucherSupervisorController.cs" />
     <Compile Include="Controller\PurchaseOrderController.cs" />
     <Compile Include="Controller\ApplyReqController.cs" />
@@ -1360,6 +1362,13 @@
     </Compile>
     <Compile Include="View\Store\Manager\ManagerMain.aspx.designer.cs">
       <DependentUpon>ManagerMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Manager\ApproveAdjustment.aspx.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Manager\ApproveAdjustment.aspx.designer.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Store\Supervisor\Supervisor.Master.cs">
       <DependentUpon>Supervisor.Master</DependentUpon>

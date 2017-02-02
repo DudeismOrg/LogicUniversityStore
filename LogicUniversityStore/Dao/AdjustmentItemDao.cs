@@ -23,6 +23,18 @@ namespace LogicUniversityStore.Dao
             } 
         }
 
+        public List<StockAdjustmentItem> getAdjustmentItemsManager()
+        {
+            try
+            {
+                return db.StockAdjustmentItems.Where(x => (((x.SupplierItem.Item.BasePrice) * (x.AdjustQuantity)) > 250) && (x.Status.Equals(AdjustmentStatus.Created.ToString()))).ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public void approveAdjustmentItem(int adjustmentId,int itemId)
         {
             StockAdjustmentItem item = db.StockAdjustmentItems.Where(x => x.StockAdjustmentID == adjustmentId && x.ItemID == itemId).FirstOrDefault();
