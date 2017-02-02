@@ -173,6 +173,7 @@
     <Content Include="View\Department\Employee\Employee.master" />
     <Content Include="View\Store\Clerk\Clerk.master" />
     <Content Include="View\Department\Hod\Hod.master" />
+    <Content Include="View\Store\Clerk\Modal\CreateRetreivalForm.aspx" />
     <Content Include="View\Store\Clerk\Outstanding.aspx" />
     <Content Include="View\Store\Manager\ManagerMain.aspx" />
     <Content Include="View\Store\Manager\ApproveAdjustment.aspx" />
@@ -1069,7 +1070,6 @@
     <Content Include="View\Store\Clerk\DeliveryOrder.aspx" />
     <Content Include="View\Store\Clerk\Modal\ItemsInPO.aspx" />
     <Content Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx" />
-    <Content Include="View\Store\Clerk\Modal\RetrievalForm.aspx" />
     <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
     <Content Include="View\Store\Clerk\RetrievalForm.aspx" />
     <Content Include="View\Store\Clerk\PurchaseOrderView.aspx" />

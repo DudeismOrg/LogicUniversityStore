@@ -39,7 +39,6 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="clrkMainContentBlock" runat="server">
 
 
-    <form id="purchaseOrder" runat="server">
         <div class="row">
             <div class="col-md-12">
                 <div class="box">
@@ -88,7 +87,6 @@
         </div>
         <div id="divItemsInPO" style="min-height: 92px; max-height: none; height: 378px; width: 0px" title="Basic dialog">
         </div>
-    </form>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="clrkMainJs" runat="server">
