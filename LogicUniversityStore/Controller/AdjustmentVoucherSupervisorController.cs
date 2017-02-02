@@ -41,6 +41,11 @@ namespace LogicUniversityStore.Controller
             adj.approveAdjustmentItem(adjustmentId, itemId);
         }
 
+        public void rejectAdjustmentItem(int adjustmentId,int itemId)
+        {
+            adj.rejectAdjustmentItem(adjustmentId, itemId);
+        }
+
         public void updateStockCardByAdjustment(int itemId,int adjustQuantity)
         {
             sdao.updateStockCardByAdjustment(itemId, adjustQuantity); 

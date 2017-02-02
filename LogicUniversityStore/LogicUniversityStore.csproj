@@ -1071,7 +1071,7 @@
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
     <Content Include="View\Store\Clerk\ViewRetrieval.aspx" />
     <Content Include="View\Store\Supervisor\SupervisorMain.aspx" />
-    <Content Include="View\Store\Supervisor\ApproveRejectAdjustment.aspx" />
+    <Content Include="View\Store\Supervisor\ApproveAdjustment.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1359,12 +1359,12 @@
     <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.designer.cs">
       <DependentUpon>SupervisorMain.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Supervisor\ApproveRejectAdjustment.aspx.cs">
-      <DependentUpon>ApproveRejectAdjustment.aspx</DependentUpon>
+    <Compile Include="View\Store\Supervisor\ApproveAdjustment.aspx.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Store\Supervisor\ApproveRejectAdjustment.aspx.designer.cs">
-      <DependentUpon>ApproveRejectAdjustment.aspx</DependentUpon>
+    <Compile Include="View\Store\Supervisor\ApproveAdjustment.aspx.designer.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

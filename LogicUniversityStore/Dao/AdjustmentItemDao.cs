@@ -13,7 +13,14 @@ namespace LogicUniversityStore.Dao
 
         public List<StockAdjustmentItem> getAdjustmentItemsSupervisor()
         {
-            return db.StockAdjustmentItems.Where(x => ((x.SupplierItem.Item.BasePrice) * (x.AdjustQuantity)) <= 250).ToList();
+            try
+            {
+                return db.StockAdjustmentItems.Where(x => (((x.SupplierItem.Item.BasePrice) * (x.AdjustQuantity)) <= 250) && (x.Status.Equals(AdjustmentStatus.Created.ToString()))).ToList();
+            }
+            catch(Exception ex)
+            {
+                return null;
+            } 
         }
 
         public void approveAdjustmentItem(int adjustmentId,int itemId)
@@ -23,6 +30,16 @@ namespace LogicUniversityStore.Dao
             db.StockAdjustmentItems.Attach(item);
             var entry = db.Entry(item);
             entry.Property(e => e.Status).IsModified = true;            
+            db.SaveChanges();
+        }
+
+        public void rejectAdjustmentItem(int adjustmentId, int itemId)
+        {
+            StockAdjustmentItem item = db.StockAdjustmentItems.Where(x => x.StockAdjustmentID == adjustmentId && x.ItemID == itemId).FirstOrDefault();
+            item.Status = AdjustmentStatus.Rejected.ToString();
+            db.StockAdjustmentItems.Attach(item);
+            var entry = db.Entry(item);
+            entry.Property(e => e.Status).IsModified = true;
             db.SaveChanges();
         }
 
