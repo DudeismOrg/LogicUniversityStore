@@ -8,7 +8,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
-    <form id="requestHistory" runat="server">
+    
     <div class="row">
 
                         <div class="col-xs-12">
@@ -51,7 +51,7 @@
                         </div>
 
                     </div>
-        </form>
+        
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
 </asp:Content>

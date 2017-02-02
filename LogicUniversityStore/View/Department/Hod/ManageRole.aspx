@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="empMainHeader" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
-    <form id="form1" runat="server">
+    
         <table style="width: 100%;">
             <tr>
                 <td colspan="2">
@@ -48,7 +48,7 @@
                 </td>
             </tr>
         </table>
-    </form>
+   
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
 </asp:Content>

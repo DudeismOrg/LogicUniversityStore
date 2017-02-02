@@ -14,7 +14,7 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
-    <form id="ApproveReject" runat="server">
+    
         <div class="row">
             <div class="col-md-12">
                 <div class="box">                                       
@@ -44,7 +44,7 @@
             </div>
             <!-- /.content -->
         </div>
-    </form>  
+     
     <!-- /.box-body -->
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">

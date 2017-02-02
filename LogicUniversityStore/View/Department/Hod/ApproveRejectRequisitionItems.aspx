@@ -20,7 +20,7 @@
 </div>
 </div>
 <div class="col-md-12" style="height:10px"></div>
-   <form id="requisitionDetails" runat="server">
+   
       <div class="col-md-12" style="height:10px"></div>
           <div class="col-md-12">
               <div class="box">
@@ -62,7 +62,7 @@
                  <asp:Button ID="btnReject" CssClass="btn btn-danger" runat="server" Text="Reject" OnClick="btnReject_Click" />
                  <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back" OnClick="btnClose_Click" />
               </div>
-    </form>
+    
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
