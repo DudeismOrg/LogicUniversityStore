@@ -31,16 +31,15 @@ namespace LogicUniversityStore.Controller
                 };
                 objAdjustment.StockAdjustmentItems = new List<StockAdjustmentItem>();
                 foreach (AdjustmentItem item in adjustment.Items)
-                {
+                {                   
                     StockAdjustmentItem objAdjItem = new StockAdjustmentItem()
                     {
                         CountDate = DateTime.Now,
                         CountPerson = adjustment.CreatedBy.ToString(), //TODO: Change to Id
-                        CountQuantity = item.Quantity,
                         ItemID = item.ItemId,
                         Remark = item.Remarks,
                         Status = AdjustmentStatus.Created.ToString(),
-                        AdjustQuantity = dao.getOnHandQty(item.ItemId) - (item.Quantity),
+                        AdjustQuantity = item.Quantity,
                         StockAdjustment = objAdjustment
                     };
                     
