@@ -34,6 +34,8 @@ namespace LogicUniversityStore.View.Store.Clerk
                 processReq = new ProcessReqController();
 
                 Dictionary<Requisition, double> listRequests;
+                Dictionary<int, int> lockedItem = processReq.lockedItemsCountForProcess;
+                Session["lockedItem"] = lockedItem;
                 if (ViewState["prItems"] == null)
                 {
                     ViewState["prItems"] = processReq.GetMainProcessReqList();
@@ -89,6 +91,11 @@ namespace LogicUniversityStore.View.Store.Clerk
 
             //Popup.Show(this, page);
             Response.Redirect(page);
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

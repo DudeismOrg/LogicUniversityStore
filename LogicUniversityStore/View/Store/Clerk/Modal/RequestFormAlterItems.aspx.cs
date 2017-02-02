@@ -7,6 +7,8 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicUniversityStore.Controller;
+using LogicUniversityStore.Model;
+using LogicUniversityStore.Dao;
 
 namespace LogicUniversityStore.View.Store.Clerk.Modal
 {
@@ -20,6 +22,15 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
             if (!IsPostBack)
             {
                 int requestIDq = Convert.ToInt32(Request.Form["Id"]);
+                Dictionary<int,int> lockedItems = (Dictionary<int, int>)Session["lockedItem"];
+                StockCardDao sDao = new StockCardDao();
+                List<RequisitionItem> items = processReq.GetRequisitionItems(requestIDq);
+
+                Dictionary<RequisitionItem, int> itemsWithOnhand = new Dictionary<RequisitionItem, int>();
+                foreach (var item in items)
+                {
+                    itemsWithOnhand[item] = sDao.GetProductCountInStock(item.ItemID) - lockedItems[item.ItemID];
+                }
                 //Label1.Text = requestIDq.ToString();
                 var listRequestItems = (from i in processReq.GetRequisitionItems(requestIDq)
                                         join s in processReq.GetAllStockCard() on i.ItemID equals s.ItemID
@@ -35,12 +46,20 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
                                             i.ApprovedQuantity
                                         }).ToList();
 
-                lvItemsInReq.DataSource = listRequestItems.ToList();
+
+
+                //  lvItemsInReq.DataSource = listRequestItems.ToList();
+                lvItemsInReq.DataSource = itemsWithOnhand;
                 lvItemsInReq.DataBind();
             }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
+        {
+           // Response.Redirect("~/View/Store/Clerk/ProcessRequest.aspx");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
         {
 
         }

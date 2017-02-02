@@ -20,27 +20,37 @@ namespace LogicUniversityStore.Dao
             return db.StockCards.ToList();
         }
 
-        public int GetProductCountInStock(int supplierItemId)
+        public int GetProductCountInStock(int itemID)
         {
-            StockCard card = db.StockCards.Where(s => s.ItemID == supplierItemId).FirstOrDefault();
-            if (card == null) throw new ArgumentException("supplierItemID is not Valid and no stock for this  item");
-
-                return card.OnHandQuantity.Value;
-          
-        }
-
-        public void updateStockCardByAdjustment(int itemId, int adjustQuantity)
-        {
-            StockCard card = db.StockCards.Where(x => x.ItemID == itemId).FirstOrDefault();
-            int qty=card.OnHandQuantity.Value + adjustQuantity;
-            if(qty>=0)
+            StockCard card = db.StockCards.Where(s => s.ItemID == itemID).FirstOrDefault();
+            if (card == null)
             {
-                card.OnHandQuantity = qty;
-                db.SaveChanges();
-            }            
+                Item item = db.Items.Find(itemID);
+                if ( item != null)
+                {
+                    StockCard c = new StockCard();
+                    c.ItemID = itemID;
+                    c.OnHandQuantity = 0;
+                    c.Remarks = "Valid";
+                    db.StockCards.Add(c);
+                    db.SaveChanges();
+                }else
+                {
+                    throw new ArgumentException("Item Id  is not Valid");
+                }
+            }
+                return card.OnHandQuantity.Value;
         }
 
-
+      
+        public void UpdateItemInStock(int itemID, int Quantity)
+        {
+            StockCard card = GetStockCardByItemId(itemID);
+            if(card == null) throw new ArgumentException("Item Id  is not Valid");
+            card.OnHandQuantity += Quantity;
+            if (card.OnHandQuantity < 0) throw new InvalidOperationException("On hand quanity for ItemID " + itemID + " is going negative. ItemName: " + card.Item.ItemName);
+            db.SaveChanges();
+        }
 
 
         public StockCard GetStockCardByItemId(int ItemId)
