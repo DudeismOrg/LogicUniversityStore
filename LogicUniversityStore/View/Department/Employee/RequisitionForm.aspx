@@ -53,7 +53,7 @@
                                                 <label>Select Item</label>
                                             </div>
                                             <div class="col-md-8">
-                                                <asp:DropDownList ID="DdlItems" runat="server" CssClass="form-control select2" ></asp:DropDownList>
+                                                <asp:DropDownList ID="DdlItems" runat="server" CssClass="form-control select2" AutoPostBack="true"></asp:DropDownList>
                                             </div>
                                         </div>
                                         <div class="col-md-12" style="height: 10px"></div>
@@ -66,7 +66,8 @@
                                                    <%-- <input class="form-control" type="text" placeholder="Enter Quntity">--%>
                                                     <asp:TextBox ID="tbAmount" runat="server" CssClass="form-control" ></asp:TextBox>
                                                     <span class="input-group-addon"> 
-                                                       
+                                                        <span >Unit: </span>
+                                                        <asp:Label ID="lblUnit" runat="server" Text=" "></asp:Label>
                                                     </span>
                                                 </div>
                                             </div>
@@ -149,12 +150,22 @@
                                             </tbody>
                                         </table>--%>
                                      
-                                        <asp:GridView ID="gvReqItems" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="576px">
+                                        <asp:GridView ID="gvReqItems" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="576px" OnRowCommand="GridView1_RowCommand">
                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                             <Columns>
                                                 <asp:BoundField DataField="Category" HeaderText="Category" />
                                                 <asp:BoundField DataField="SupplierItem" HeaderText="Description" />
-                                                <asp:BoundField DataField="Quantity" HeaderText="Quantity" />   
+                                                <asp:TemplateField HeaderText="Quantity">
+                                                    <ItemTemplate>
+                                                        <asp:TextBox ID="tbQuantity" runat="server" Text='<%# Eval("Quantity") %>'> </asp:TextBox>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:TemplateField >
+                                                    <ItemTemplate>
+                                                        <asp:Button runat="server" ID="btnModify" Text="Modify" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                               <%-- <asp:BoundField DataField="Quantity" HeaderText="Quantity" />   --%>
                                             </Columns>
                                             <EditRowStyle BackColor="#999999" />
                                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

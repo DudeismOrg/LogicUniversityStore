@@ -39,14 +39,19 @@ namespace LogicUniversityStore.View.Department.Employee
 
             int catId = Convert.ToInt32(DdlCategories.SelectedValue);
             category = reqController.CategoryDao.GetCategory(catId);
-            if(DdlItems.SelectedValue != null && !DdlItems.SelectedValue.Equals(""))
+            if (DdlItems.SelectedValue != null && !DdlItems.SelectedValue.Equals(""))
             {
                 item = new ItemDao().GetItem(Convert.ToInt32(DdlItems.SelectedValue));
+                lblUnit.Text = item.UOM;
             }
-            DdlItems.DataSource = category.Items;
-            DdlItems.DataTextField = "ItemName";
-            DdlItems.DataValueField = "ItemID";
-            DdlItems.DataBind();
+            else
+            {
+                DdlItems.DataSource = category.Items;
+                DdlItems.DataTextField = "ItemName";
+                DdlItems.DataValueField = "ItemID";
+                DdlItems.DataBind();
+            }
+
         }
 
         protected void btnAddItem_Click(object sender, EventArgs e)
@@ -59,14 +64,15 @@ namespace LogicUniversityStore.View.Department.Employee
             if (items.Contains(rItem))
             {
                 items.Find(i => i.SupplierItem.ItemID == rItem.SupplierItem.ItemID).Quantity += rItem.Quantity;
-            }else
+            }
+            else
             {
                 items.Add(rItem);
 
             }
             ViewState["items"] = items;
             gvReqItems.DataSource = items;
-            gvReqItems.DataBind();            
+            gvReqItems.DataBind();
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -103,6 +109,33 @@ namespace LogicUniversityStore.View.Department.Employee
             ViewState["items"] = new List<RequisitionItem>();
             gvReqItems.DataSource = null;
             gvReqItems.DataBind();
-        }        
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+
+            int index = Convert.ToInt32(e.CommandArgument);
+
+            // Retrieve the row that contains the button 
+            // from the Rows collection.
+            GridViewRow row = gvReqItems.Rows[index];
+          //  CartItem item = DataBoundItem as CartItem;
+            List<CartItem> items = (List<CartItem>)ViewState["items"];
+            if (items != null)
+            {
+               CartItem _item =  items[index];
+               if(_item != null)
+                {
+                    string amount = ((TextBox)row.FindControl("tbQuantity")).Text;
+                    _item.Quantity = (amount != null || !amount.Equals("")) ? Convert.ToInt32(amount) : _item.Quantity;
+                    ViewState["items"] = items;
+                }
+            }
+           
+            // Add code here to add the item to the shopping cart.
+
+
+        }
     }
 }
