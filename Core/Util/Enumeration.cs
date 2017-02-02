@@ -7,7 +7,7 @@ namespace LogicUniversityStore.Util
 {
     public enum RequisitionStatus
     {
-        Requested,Submitted,Cancelled,Approved,Rejected,Allocated,Shipped,Delivered
+        Requested, Submitted, Cancelled, Approved, Rejected, Allocated, Shipped, Delivered
     }
 
     public enum AdjustmentType
@@ -23,5 +23,15 @@ namespace LogicUniversityStore.Util
     public enum AdjustmentStatus
     {
         Created, Approved, Rejected
+    }
+
+    public enum Roles
+    {
+        HOD,
+        REP,
+        CLERK,
+        SUPERVISOR,
+        MANAGER,
+        EMP
     }
 }

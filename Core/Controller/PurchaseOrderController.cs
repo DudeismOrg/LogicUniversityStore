@@ -56,5 +56,9 @@ namespace LogicUniversityStore.Controller
             return suppliersItems;
         }
 
+        public List<Supplier> GetSuppliers()
+        {
+            return new ItemDao().GetSuppliers();
+        }
     }
 }

@@ -56,6 +56,7 @@
     <Compile Include="Controller\ApproveRejectReqController.cs" />
     <Compile Include="Controller\CancelUpdatePendingApprovalController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
+    <Compile Include="Controller\DisbursementController.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
     <Compile Include="Controller\PurchaseOrderController.cs" />
     <Compile Include="Controller\ReapplyRejectedController.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Dao\AdjustmentDao.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
+    <Compile Include="Dao\DisbursementDao.cs" />
     <Compile Include="Dao\ItemDao.cs" />
     <Compile Include="Dao\RequisitionDao.cs" />
     <Compile Include="Dao\RequisitionItemDao.cs" />

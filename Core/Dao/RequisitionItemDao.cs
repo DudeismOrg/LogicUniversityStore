@@ -19,12 +19,12 @@ namespace LogicUniversityStore.Dao
         {
             db = context;
         }
-        public void deleteRequisitionItem(int reqId,int itemId)
+        public void deleteRequisitionItem(int reqId, int itemId)
         {
-            RequisitionItem item = db.RequisitionItems.Where(s => s.ReqID == reqId && s.ItemID==itemId).First();
+            RequisitionItem item = db.RequisitionItems.Where(s => s.ReqID == reqId && s.ItemID == itemId).First();
 
 
-            if (item!=null)
+            if (item != null)
             {
                 db.RequisitionItems.Remove(item);
             }
@@ -36,9 +36,9 @@ namespace LogicUniversityStore.Dao
         public void deleteRequisitionItem(int reqId)
         {
             List<RequisitionItem> items = db.RequisitionItems.Where(s => s.ReqID == reqId).ToList();
-            if(items!=null)
+            if (items != null)
             {
-                foreach(RequisitionItem i in items)
+                foreach (RequisitionItem i in items)
                 {
                     db.RequisitionItems.Remove(i);
                 }
@@ -46,7 +46,7 @@ namespace LogicUniversityStore.Dao
             db.SaveChanges();
         }
 
-        public void updateRequisitionItem(int reqId,int itemId,int qty)
+        public void updateRequisitionItem(int reqId, int itemId, int qty)
         {
             RequisitionItem item = db.RequisitionItems.Where(s => s.ReqID == reqId && s.ItemID == itemId).First();
             if (item != null)
@@ -61,7 +61,7 @@ namespace LogicUniversityStore.Dao
 
 
         public Boolean InitialApprovedQuantity(RequisitionItem reqItem)
-        { 
+        {
             return true;
         }
 
@@ -73,7 +73,8 @@ namespace LogicUniversityStore.Dao
 
         public List<RequisitionItem> GetOutstandingItems()
         {
-            return db.RequisitionItems.Where(item => item.IsOutstanding.Value && ((item.NeededQuantity.HasValue ? item.NeededQuantity.Value : 0) -
+            return db.RequisitionItems.Where(item => (item.IsOutstanding.HasValue ? item.IsOutstanding.Value : false) &&
+            ((item.NeededQuantity.HasValue ? item.NeededQuantity.Value : 0) -
             (item.RetirevedQuantity.HasValue ? item.RetirevedQuantity.Value : 0) > 0)).ToList();
         }
 
