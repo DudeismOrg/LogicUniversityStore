@@ -14,7 +14,7 @@ namespace LogicUniversityStore
         protected void Application_Start(object sender, EventArgs e)
         {
 
-          //  Database.SetInitializer<LogicUniStoreModel>(new LogicUniStoreModelInitializer());
+          Database.SetInitializer<LogicUniStoreModel>(new LogicUniStoreModelInitializer());
         }
     }
 }

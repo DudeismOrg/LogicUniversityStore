@@ -150,7 +150,7 @@
                                             </tbody>
                                         </table>--%>
                                      
-                                        <asp:GridView ID="gvReqItems" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="576px" OnRowCommand="GridView1_RowCommand">
+                                        <asp:GridView ID="gvReqItems" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="576px" OnRowCommand="gvReqItems_RowCommand">
                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                             <Columns>
                                                 <asp:BoundField DataField="Category" HeaderText="Category" />
@@ -162,7 +162,7 @@
                                                 </asp:TemplateField>
                                                 <asp:TemplateField >
                                                     <ItemTemplate>
-                                                        <asp:Button runat="server" ID="btnModify" Text="Modify" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>
+                                                        <asp:Button runat="server" ID="btnModify" Text="Remove" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                <%-- <asp:BoundField DataField="Quantity" HeaderText="Quantity" />   --%>

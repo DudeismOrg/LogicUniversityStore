@@ -52,6 +52,19 @@ namespace LogicUniversityStore.View.Department.Employee
                 DdlItems.DataBind();
             }
 
+            if (ViewState["items"] != null)
+            {
+                items = (List<CartItem>)ViewState["items"];
+                for (int i = 0; i < items.Count; i++)
+                {
+                    GridViewRow row = gvReqItems.Rows[i];
+                    string amount = ((TextBox)row.FindControl("tbQuantity")).Text;
+                    items[i].Quantity = (amount != null || !amount.Equals("")) ? Convert.ToInt32(amount) : items[i].Quantity;
+
+                }
+                ViewState["items"] = items;
+            }
+
         }
 
         protected void btnAddItem_Click(object sender, EventArgs e)
@@ -77,6 +90,8 @@ namespace LogicUniversityStore.View.Department.Employee
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            LUUser user = (LUUser) Session["User"];
+            if (user == null) throw new InvalidOperationException("User Is not valid");
             if (ViewState["items"] != null)
             {
                 items = (List<CartItem>)ViewState["items"];
@@ -85,17 +100,17 @@ namespace LogicUniversityStore.View.Department.Employee
                 requisition.ReqDate = System.DateTime.Now;
                 requisition.ReqNumber = new Random().Next().ToString(); //Todo 
                 requisition.Status = RequisitionStatus.Requested.ToString();
-                requisition.RequesterID = 2; // Todo: need to change later once login up
-                requisition.DepartmentID = 1; // Todo: same
-                requisition.RecieveByID = 1;  //Todo: same
+                requisition.RequesterID = user.UserID; // Todo: need to change later once login up
+                requisition.DepartmentID = user.DepartmentID.Value; // Todo: same
+                requisition.RecieveByID =user.Department.HodID;  //Todo: same
                 dao.db.Requisitions.Add(requisition);
-                dao.db.SaveChanges();
                 foreach (var cartItem in items)
                 {
                     RequisitionItem item = new RequisitionItem();
                     item.ItemID = cartItem.SupplierItem.SupplierItemId;
                     item.NeededQuantity = cartItem.Quantity;
                     item.ReqID = requisition.ReqID;
+                    item.IsOutstanding = false;
                     dao.db.RequisitionItems.Add(item);
                 }
                 dao.db.SaveChanges();
@@ -106,36 +121,22 @@ namespace LogicUniversityStore.View.Department.Employee
         }
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            ViewState["items"] = new List<RequisitionItem>();
+            ViewState["items"] = new List<CartItem>();
             gvReqItems.DataSource = null;
             gvReqItems.DataBind();
         }
 
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvReqItems_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
-
-            int index = Convert.ToInt32(e.CommandArgument);
-
-            // Retrieve the row that contains the button 
-            // from the Rows collection.
-            GridViewRow row = gvReqItems.Rows[index];
-          //  CartItem item = DataBoundItem as CartItem;
-            List<CartItem> items = (List<CartItem>)ViewState["items"];
-            if (items != null)
+            int index = Convert.ToInt32(e.CommandArgument.ToString());
+            if (ViewState["items"] != null)
             {
-               CartItem _item =  items[index];
-               if(_item != null)
-                {
-                    string amount = ((TextBox)row.FindControl("tbQuantity")).Text;
-                    _item.Quantity = (amount != null || !amount.Equals("")) ? Convert.ToInt32(amount) : _item.Quantity;
-                    ViewState["items"] = items;
-                }
+                items = (List<CartItem>)ViewState["items"];
+                items.Remove(items[index]);
+                ViewState["items"] = items;
+                gvReqItems.DataSource = items;
+                gvReqItems.DataBind();
             }
-           
-            // Add code here to add the item to the shopping cart.
-
-
         }
     }
 }
