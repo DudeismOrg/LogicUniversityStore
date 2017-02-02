@@ -55,7 +55,7 @@ public class Convertor
         return new LogicUniversityStore.Model.Requisition()
         {
             ReqNumber = request.Number,
-            DapartmentID = request.DepartmentId,
+            DepartmentID = request.DepartmentId,
             Remark = request.Remarks,
             ReqDate = request.CreatedDate,
             RequesterID = request.CreatedBy,

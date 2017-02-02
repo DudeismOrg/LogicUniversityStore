@@ -35,7 +35,7 @@ namespace LogicUniversityStore.Model
 
         public int? RecieveByID { get; set; }
 
-        public int DapartmentID { get; set; }
+        public int DepartmentID { get; set; }
 
         [StringLength(120)]
         public string Remark { get; set; }

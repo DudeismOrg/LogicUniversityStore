@@ -146,17 +146,17 @@ values
 ('zoolhod', 'Zoology', 'Department', 'password', 1, 'zoolhod@lu.edu.sg', 'Blk 123 Wonderful Street', 4);
 
 
-insert into StockCard values(1,50,'valid','#B-001');
-insert into StockCard values(2,50,'valid','#B-001');
-insert into StockCard values(3,50,'valid','#B-001');
-insert into StockCard values(4,50,'valid','#B-001');
-insert into StockCard values(5,50,'valid','#B-001');
-insert into StockCard values(6,50,'valid','#B-001');
+insert into StockCard values(1,250,'valid','#B-001');
+insert into StockCard values(2,250,'valid','#B-001');
+insert into StockCard values(3,250,'valid','#B-001');
+insert into StockCard values(4,250,'valid','#B-001');
+insert into StockCard values(5,250,'valid','#B-001');
+insert into StockCard values(6,250,'valid','#B-001');
 insert into StockCard values(7,50,'valid','#B-001');
 insert into StockCard values(8,50,'valid','#B-001');
 insert into StockCard values(9,50,'valid','#B-001');
 insert into StockCard values(10,50,'valid','#B-001');
 insert into StockCard values(11,50,'valid','#B-001');
 insert into StockCard values(12,50,'valid','#B-001');
-insert into StockCard values(13,50,'valid','#B-001');
-insert into StockCard values(14,50,'valid','#B-001');
+insert into StockCard values(13,250,'valid','#B-001');
+insert into StockCard values(14,250,'valid','#B-001');

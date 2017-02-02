@@ -4,6 +4,8 @@ using LogicUniversityStore.Util;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
+using System.Linq;
+using System.Web;
 
 namespace LogicUniversityStore.Controller
 {
@@ -99,7 +101,7 @@ namespace LogicUniversityStore.Controller
                 po.PuchaseOrderNo = npo.PoNumber;
                 po.OrderDate = npo.OrderDate;
                 po.DeliveryAddress = "";
-                po.POStatus = "";
+                po.POStatus = "Requested";
                 po.SupplierID = npo.Supplier.SupplierID;
                 po.DONumber = "";
                 po.PORemark = npo.Remark;
@@ -127,6 +129,7 @@ namespace LogicUniversityStore.Controller
                     items.PurchaseOrderID = poi.Key.PurchaseOrderID;
                     items.RequestedQuantity = itm.ReorderQuantity;
                     items.ItemID = itm.PoItem.GetSupplierItem().ItemID;
+                    items.UnitPrice = poitem.GetUnitPrice(itm.PoItem, itm.PoSupplier);
                     poitem.db.PurchaseOrderItems.Add(items);
                     poitem.db.SaveChanges();
                 }

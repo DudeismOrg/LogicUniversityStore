@@ -15,5 +15,13 @@ namespace LogicUniversityStore.Dao
             
         }
 
+
+        public double GetUnitPrice(Item itm, Supplier supp)
+        {
+            SupplierItem supplierItems = db.SupplierItems.Where(d => d.ItemID == itm.ItemID && d.SupplierID == supp.SupplierID).FirstOrDefault();
+            double price = supplierItems.Price.HasValue ?  supplierItems.Price.Value : 0;
+            return price;
+        }
+
     }
 }

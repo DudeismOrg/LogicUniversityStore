@@ -35,7 +35,7 @@ namespace LogicUniversityStore.Dao
 
         public List<Requisition> GetRequestedRequisitionListHod(int depId)
         {
-            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString()) && r.DapartmentID == depId).ToList();
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString()) && r.DepartmentID == depId).ToList();
         }
 
         public List<Requisition> GetRejectedRequisitionList(int requesterId)
@@ -45,7 +45,7 @@ namespace LogicUniversityStore.Dao
 
         public List<Requisition> GetApprovedRejectedRequisitionList(int depId)
         {
-            return db.Requisitions.Where(r => ((r.Status.Equals(RequisitionStatus.Approved.ToString())) || (r.Status.Equals(RequisitionStatus.Rejected.ToString()))) && r.DapartmentID==depId).ToList();
+            return db.Requisitions.Where(r => ((r.Status.Equals(RequisitionStatus.Approved.ToString())) || (r.Status.Equals(RequisitionStatus.Rejected.ToString()))) && r.DepartmentID==depId).ToList();
         }
 
         public List<Requisition> GetRequisitionList(int requesterId)
@@ -55,7 +55,7 @@ namespace LogicUniversityStore.Dao
 
         public List<Requisition> GetRequisitionListHod(int depId)
         {
-            return db.Requisitions.Where(x => x.DapartmentID == depId).ToList();
+            return db.Requisitions.Where(x => x.DepartmentID == depId).ToList();
         }
 
         public List<RequisitionItem> GetRequisitionItemList(int requisitionID)

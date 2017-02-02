@@ -10,16 +10,28 @@ namespace LogicUniversityStore.Dao
     {
         public LogicUniStoreModel db = new LogicUniStoreModel();
 
-        internal List<Retrieval> FindAll()
+        public List<Retrieval> FindAll()
         {
            return  db.Retrievals.ToList();
         }
 
-        internal void Create(Retrieval ret)
+        public void Create(Retrieval ret)
         {
             if(ret.RetrievalID == 0)
                db.Retrievals.Add(ret);
             db.SaveChanges();
+        }
+
+        public List<Requisition> GetAllRequistion(Retrieval ret)
+        {
+           return  ret.RequisitionItems.Where(item => item.RetrievalID == ret.RetrievalID).Select(item => item.Requisition).Distinct().ToList();
+        }
+
+        public Retrieval Find(int index)
+        {
+            Retrieval r = db.Retrievals.Find(index);
+            if (r == null) throw new Exception("Retrieval Id not valid");
+            return r;
         }
     }
 }
