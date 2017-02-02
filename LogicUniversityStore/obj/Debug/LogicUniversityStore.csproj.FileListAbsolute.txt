@@ -72,3 +72,4 @@ C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Micro
 C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache

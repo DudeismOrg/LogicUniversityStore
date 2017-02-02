@@ -53,6 +53,7 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
             ret.RetrievalDate = DateTime.Now.Date;
             ret.RetrievalNumber = new Common().GetRefNumber();
             RetrievalDao dao = new RetrievalDao();
+            StockCardDao scDao = new StockCardDao();
             dao.Create(ret);
             foreach (var requisition in reqList)
             {
@@ -60,6 +61,7 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
                 foreach (var item in req.RequisitionItems)
                 {
                     item.RetrievalID = ret.RetrievalID;
+                    
                 }
                 req.Status = RequisitionStatus.Allocated.ToString();
                 dao.db.SaveChanges();

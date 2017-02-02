@@ -193,6 +193,7 @@
         </div>
     </div>--%>
         <div id="divStudentFullRecord" style="min-height: 92px; max-height: none; height: 378px; width: 0px" title="Basic dialog">
+
         </div>
 
         <%--<div id="divPopup" style="min-height: 92px;max-height: none;height: 378px; width:0px" title="Basic dialog">

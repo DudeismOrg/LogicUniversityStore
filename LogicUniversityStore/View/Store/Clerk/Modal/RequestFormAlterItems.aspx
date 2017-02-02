@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-    <form runat="server" method="post">
+    <form runat="server" action="./Modal/RequestFormAlterItems.aspx">
         <div class="col-md-12" id="adijada">
             <div class="box">   
                 <div class="box-body no-padding">
@@ -25,14 +25,14 @@
                             <asp:ListView ID="lvItemsInReq" runat="server">
                                 <ItemTemplate>
                                     <tr>
-                                        <td><%# Eval("ReqItemID") %>.</td>
-                                        <td><%# Eval("ItemName") %></td>
+                                        <td><%# Eval("key.ReqItemID") %>.</td>
+                                        <td><%# Eval("key.SupplierItem.Item.ItemName") %></td>
                                         <td>
-                                            <span class="badge bg-red"><%# Eval("NeededQuantity") %> Units</span>
+                                            <span class="badge bg-red"><%# Eval("key.NeededQuantity") %> Units</span>
                                         </td>
-                                        <td><%# Eval("OnHandQuantity") %> Units</td>
+                                        <td><%# Eval("value") %> Units</td>
                                         <td>
-                                            <input type="text" data-id="<%# Eval("ReqItemID") %>" value="<%# Eval("ApprovedQuantity") %>" class="form-control" />
+                                            <input type="text" data-id="<%# Eval("key.ReqItemID") %>" value="<%# Eval("key.ApprovedQuantity") %>" class="form-control" />
                                         </td>
                                     </tr>
                                 </ItemTemplate>
@@ -42,7 +42,9 @@
                     </table>
                 </div>
                 <div class="box-body">
-                    <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-success pull-right" OnClick="btnSave_Click"/>
+                   
+
+                    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="btnSave_Click" />
                    
                       </div>
                 <!-- /.box-body -->
