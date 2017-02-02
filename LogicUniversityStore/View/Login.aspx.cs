@@ -42,10 +42,10 @@ namespace LogicUniversityStore.View
                     Response.Redirect("~/View/Store/Clerk/ClrkMain.aspx");
                     break;
                 case Roles.MANAGER:
-                    Response.Redirect("~/View/Store/Clerk/ManagerMain.aspx");
+                    Response.Redirect("~/View/Store/Manager/ManagerMain.aspx");
                     break;
                 case Roles.SUPERVISOR:
-                    Response.Redirect("~/View/Store/Clerk/SupervisorMain.aspx");
+                    Response.Redirect("~/View/Store/Supervisor/SupervisorMain.aspx");
                     break;
             }
         }

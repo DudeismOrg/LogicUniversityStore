@@ -146,8 +146,10 @@ values
 ('hodregr', 'Registrar', 'Department', 'hodregr', 1, 'commreq@lu.edu.sg', 'Blk 123 Wonderful Street', 4),
 ('repzool', 'Zoology', 'Department', 'repzool', 2, 'zoolreq@lu.edu.sg', 'Blk 123 Wonderful Street', 5),
 ('hodzool', 'Zoology', 'Department', 'hodzool', 1, 'zoolhod@lu.edu.sg', 'Blk 123 Wonderful Street', 5),
-('repstore', 'Store', 'Store', 'repstore', 2, 'zoolreq@lu.edu.sg', 'Blk 123 Wonderful Street', 6),
-('hodstore', 'Store', 'Store', 'hodstore', 1, 'zoolhod@lu.edu.sg', 'Blk 123 Wonderful Street', 6);
+('suprstore', 'Store', 'Store', 'suprstore', 4, 'zoolreq@lu.edu.sg', 'Blk 123 Wonderful Street', 6),
+('mgrstore', 'Store', 'Store', 'mgrstore', 5, 'zoolhod@lu.edu.sg', 'Blk 123 Wonderful Street', 6),
+('clrkstore', 'Store', 'Store', 'clrkstore', 3, 'zoolhod@lu.edu.sg', 'Blk 123 Wonderful Street', 6);
+
 
 
 insert into StockCard values(1,250,'valid','#B-001');

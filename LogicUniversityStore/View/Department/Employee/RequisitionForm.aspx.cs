@@ -66,14 +66,15 @@ namespace LogicUniversityStore.View.Department.Employee
         {
             if (ViewState["items"] != null)
             {
+                LUUser user = (LUUser)Session["User"];
                 items = (List<CartItem>)ViewState["items"];
                 RequisitionItemDao dao = new RequisitionItemDao();
                 Requisition requisition = new Requisition();
                 requisition.ReqDate = System.DateTime.Now;
                 requisition.ReqNumber = new Random().Next().ToString(); //Todo 
-                requisition.Status = RequisitionStatus.Requested.ToString();
-                requisition.RequesterID = 2; // Todo: need to change later once login up
-                requisition.DepartmentID = 1; // Todo: same
+                requisition.Status = RequisitionStatus.Requested.ToString();             
+                requisition.RequesterID = user.UserID; 
+                requisition.DepartmentID = user.DepartmentID.Value; 
                 requisition.RecieveByID = 1;  //Todo: same
                 dao.db.Requisitions.Add(requisition);
                 dao.db.SaveChanges();

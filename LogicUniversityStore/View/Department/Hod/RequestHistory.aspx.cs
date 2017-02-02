@@ -20,7 +20,7 @@ namespace LogicUniversityStore.View.Department.Hod
             {
                 LUUser user = (LUUser)Session["User"];
                 int depId = user.DepartmentID.Value;
-                List<Requisition> items = reqController.getRequisitionList(depId);
+                List<Requisition> items = reqController.getRequisitionListHod(depId);
                 DataTable dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[5] { new DataColumn("ReqID"), new DataColumn("ReqNumber"),new DataColumn("ReqDate"),new DataColumn("Status"), new DataColumn("Remark") });
                 foreach (Requisition i in items)
