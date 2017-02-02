@@ -65,6 +65,12 @@
             <span> On-spot Stock Adjustment</span>
         </a>
     </li>
+     <li class="treeview">
+        <a href="Outstanding.aspx">
+            <i class="fa fa-stack-overflow"></i>
+            <span>  Outstanding</span>
+        </a>
+    </li>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="pageHeading" runat="server">

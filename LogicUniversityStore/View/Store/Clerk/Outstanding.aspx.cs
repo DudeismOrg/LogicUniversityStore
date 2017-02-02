@@ -17,12 +17,12 @@ namespace LogicUniversityStore.View.Store.Clerk
         {
             List<CoreModel.RequisitionItem> lstCoreReqItems = new ProcessReqController().GetOutstandingItems();
             StringBuilder text = new StringBuilder();
-            //foreach (CoreModel.RequisitionItem item in lstCoreReqItems)
-            //{
-            //    text.Append(item.SupplierItem.Item.ItemName);
-            //    text.Append(item.Requisition.Department.DepartmentName);
-            //    text.Append(((item.NeededQuantity.HasValue ? item.NeededQuantity.Value : 0) - (item.RetirevedQuantity.HasValue ? item.RetirevedQuantity.Value : 0)));
-            //}
+            foreach (CoreModel.RequisitionItem item in lstCoreReqItems)
+            {
+                text.Append(item.SupplierItem.Item.ItemName);
+                text.Append(item.Requisition.Department.DepartmentName);
+                text.Append(((item.NeededQuantity.HasValue ? item.NeededQuantity.Value : 0) - (item.RetirevedQuantity.HasValue ? item.RetirevedQuantity.Value : 0)));
+            }
 
             //List<CoreModel.Supplier> lstCoreSup = new PurchaseOrderController().GetSuppliers();
             //if (lstCoreSup.Count > 0)
@@ -51,7 +51,7 @@ namespace LogicUniversityStore.View.Store.Clerk
             //    }
             //}
 
-            new DisbursementController().ProcessDisbursement(1, "vas", 1);
+            // new DisbursementController().ProcessDisbursement(1, "vas", 1);
         }
     }
 }
