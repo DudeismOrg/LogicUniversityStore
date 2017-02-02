@@ -64,6 +64,6 @@ namespace LogicUniversityStore.Model
             return this.Item.ItemName;
         }
 
-
+        
     }
 }

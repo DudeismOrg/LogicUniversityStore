@@ -52,11 +52,8 @@ namespace LogicUniversityStore.View.Store.Clerk
                 if (ViewState["purxhaseOrderItems"] != null)
                 {
                     ItemsToPurchase = (List<Item>)ViewState["purxhaseOrderItems"];
-                    //fillGridView();
                 }
             }
-
-            
         }
 
         protected void DdlCategories_Change(object sender, EventArgs e)
@@ -119,15 +116,12 @@ namespace LogicUniversityStore.View.Store.Clerk
 
         protected void gvItems_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-                if (e.Row.RowType == DataControlRowType.DataRow)
-                {
-                    DropDownList ddl = (DropDownList)e.Row.FindControl("ddlSupplier");
-                    ddl.DataSource = ((Item)e.Row.DataItem).SupplierItems;
-                    ddl.DataBind();
-                }
-            //}
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                DropDownList ddl = (DropDownList)e.Row.FindControl("ddlSupplier");
+                ddl.DataSource = ((Item)e.Row.DataItem).SupplierItems;
+                ddl.DataBind();
+            }
         }
 
         protected void ConfirmItems_Click(object sender, EventArgs e)
@@ -161,9 +155,10 @@ namespace LogicUniversityStore.View.Store.Clerk
             }
 
             List<PurchaseOrderItems> distSupp = finalPoItems.GroupBy(z => z.PoSupplier.SupplierID).Select(y => y.First()).ToList();
-            foreach(PurchaseOrderItems poi in distSupp)
+            foreach (PurchaseOrderItems poi in distSupp)
             {
-                PurchaseOrderUtil pou = new PurchaseOrderUtil() {
+                PurchaseOrderUtil pou = new PurchaseOrderUtil()
+                {
                     Supplier = poi.PoSupplier,
                     OrderDate = DateTime.Now,
                     Items = finalPoItems.Where(q => q.PoSupplier.SupplierID == poi.PoSupplier.SupplierID).ToList(),

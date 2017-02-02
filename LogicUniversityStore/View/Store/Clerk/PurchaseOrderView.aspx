@@ -83,6 +83,11 @@
                                 <asp:BoundField DataField="ItemCode" HeaderText="Item Number" ReadOnly="true" />
                                 <asp:BoundField DataField="Category" HeaderText="Category" ReadOnly="true" />
                                 <asp:BoundField DataField="ItemName" HeaderText="Description" ReadOnly="true" />
+                                <%--<asp:TemplateField HeaderText="Onhand Quantity">
+                                    <ItemTemplate>
+                                        <a class="btn btn-success viewItems" href="#" data-id="<%# Eval("suplierId")%>">Items</a>
+                                    </ItemTemplate>
+                                </asp:TemplateField>--%>
                                 <asp:TemplateField HeaderText="Reorder Quantity">
                                     <ItemTemplate>
                                         <asp:TextBox ID="txtReorder" runat="server" Text='<%# Bind("ReorderQuantity") %>' CssClass="form-control" />
