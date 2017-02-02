@@ -15,6 +15,7 @@ C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\L
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.pdb
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\AjaxControlToolkit.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Core.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Agent.Intercept.dll
@@ -25,6 +26,7 @@ C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\L
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Core.pdb
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.xml
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.xml
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.xml
@@ -33,8 +35,6 @@ C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\L
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.xml
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Core.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Core.pdb

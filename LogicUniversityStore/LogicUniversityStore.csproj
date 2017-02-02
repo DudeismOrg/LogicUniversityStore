@@ -173,7 +173,9 @@
     <Content Include="View\Department\Employee\Employee.master" />
     <Content Include="View\Store\Clerk\Clerk.master" />
     <Content Include="View\Department\Hod\Hod.master" />
+    <Content Include="View\Store\Clerk\Outstanding.aspx" />
     <Content Include="View\Store\Manager\ManagerMain.aspx" />
+    <Content Include="View\Store\Manager\ApproveAdjustment.aspx" />
     <Content Include="View\Store\Supervisor\Supervisor.Master" />
     <Content Include="View\Store\Manager\Manager.Master" />
     <None Include="Web.Debug.config">
@@ -1265,6 +1267,13 @@
     <Compile Include="View\Store\Clerk\Modal\CreateRetreivalForm.aspx.designer.cs">
       <DependentUpon>CreateRetreivalForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Store\Clerk\Outstanding.aspx.cs">
+      <DependentUpon>Outstanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\Outstanding.aspx.designer.cs">
+      <DependentUpon>Outstanding.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Store\Clerk\ProcessRequest.aspx.cs">
       <DependentUpon>ProcessRequest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1321,6 +1330,13 @@
     <Compile Include="View\Store\Manager\ManagerMain.aspx.designer.cs">
       <DependentUpon>ManagerMain.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Store\Manager\ApproveAdjustment.aspx.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Manager\ApproveAdjustment.aspx.designer.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Store\Supervisor\Supervisor.Master.cs">
       <DependentUpon>Supervisor.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1345,7 +1361,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Dao\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

@@ -16,8 +16,9 @@ namespace LogicUniversityStore.Controller
 
         public AdjustmentVoucherSupervisorController()
         {
+            LogicUniStoreModel db = new LogicUniStoreModel();
             adj = new AdjustmentItemDao();
-            adao = new AdjustmentDao();
+            adao = new AdjustmentDao(db);
             idao = new ItemDao();
             sdao = new StockCardDao();
         }

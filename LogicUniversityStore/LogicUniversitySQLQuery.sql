@@ -23,9 +23,10 @@ DBCC CHECKIDENT ('dbo.StockCard', RESEED, 1);
 insert into dbo.Role (rolecode, rolename) values
 ('HOD', 'Department Head'),
 ('REP', 'Department Representative'),
-('S-CLERK', 'Store Clerk'),
-('S-SUPERVISOR', 'Store Supervisor'),
-('S-MANAGER', 'Store Manager');
+('CLERK', 'Store Clerk'),
+('SUPERVISOR', 'Store Supervisor'),
+('MANAGER', 'Store Manager'),
+('EMPLOYEE', 'Store Manager');
 
 insert into dbo.Category(CategoryCode) 
 values('Clip'),
@@ -130,13 +131,14 @@ values('ENGL','English Dept','Mrs Pamela Kow','8742234','8921456',2,1,1),
 ('CPSC','Computer Science','Mr Wee Kian Fatt','8901235','8921457',4,2,3),
 ('COMM','Commerce Dept','Mr Mohd.Azman','8741284','8921256',6,3,5),
 ('REGR','Registrar Dept','Ms Helen Ho','8901266','8921465',8,4,7),
-('ZOOL','Zoology Dept','Mr.Peter Tan Ah Meng','8901266','8921465',10,5,9);
+('ZOOL','Zoology Dept','Mr.Peter Tan Ah Meng','8901266','8921465',10,5,9),
+('STORE','STORE Dept','Logic  UniStore','8901266','8921465',10,5,9);
 
 insert into dbo.LUUser (username, firstname, lastname, password, roleid, email, address, departmentid)
 values
-('englreq', 'English', 'Department', 'password', 2, 'englreq@lu.edu.sg', 'Blk 123 Wonderful Street', 1),
-('englhod', 'English', 'Department', 'password', 1, 'englhod@lu.edu.sg', 'Blk 123 Wonderful Street', 1),
-('cpscreq', 'Computer Science', 'Department', 'password', 2, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
+('hod', 'English', 'Department', 'hod', 1, 'englreq@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
+('clerk', 'English', 'Department', 'clerk', 3, 'englhod@lu.edu.sg', 'Blk 123 Wonderful Street', 6),
+('emp', 'Computer Science', 'Department', 'emp', 6, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
 ('cpschod', 'Computer Science', 'Department', 'password', 1, 'cpschod@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
 ('commreq', 'Commerce', 'Department', 'password', 2, 'commreq@lu.edu.sg', 'Blk 123 Wonderful Street', 3),
 ('commhod', 'Commerce', 'Department', 'password', 1, 'commhod@lu.edu.sg', 'Blk 123 Wonderful Street', 3),

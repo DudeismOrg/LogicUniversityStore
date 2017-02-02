@@ -16,8 +16,9 @@ namespace LogicUniversityStore.Controller
 
         public AdjustmentVoucherManagerController()
         {
+            LogicUniStoreModel db = new LogicUniStoreModel();
             adj = new AdjustmentItemDao();
-            adao = new AdjustmentDao();
+            adao = new AdjustmentDao(db);
             idao = new ItemDao();
             sdao = new StockCardDao();
         }
@@ -40,6 +41,16 @@ namespace LogicUniversityStore.Controller
         public void approveAdjustmentItem(int adjustmentId, int itemId)
         {
             adj.approveAdjustmentItem(adjustmentId, itemId);
+        }
+
+        public void rejectAdjustmentItem(int adjustmentId, int itemId)
+        {
+            adj.rejectAdjustmentItem(adjustmentId, itemId);
+        }
+
+        public void updateStockCardByAdjustment(int itemId, int adjustQuantity)
+        {
+            sdao.updateStockCardByAdjustment(itemId, adjustQuantity);
         }
     }
 }
