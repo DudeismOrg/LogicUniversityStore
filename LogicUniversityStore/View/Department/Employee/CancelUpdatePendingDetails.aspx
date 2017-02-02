@@ -67,14 +67,14 @@
                                                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                                                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                                                     <Columns>
-                                                       <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Width="150" ReadOnly="true" />                                                 
+                                                       <asp:BoundField DataField="ItemName" HeaderText="Item Name" ReadOnly="true" />                                                 
                                                         <asp:TemplateField HeaderText="Quantity">
                                                         <ItemTemplate >
                                                         <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("NeededQuantity") %>' BorderStyle="Groove">
                                                         </asp:TextBox>                                
                                                         </ItemTemplate>
                                                         </asp:TemplateField>
-                                                       <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" ItemStyle-Width="150" ReadOnly="true" />                                 
+                                                       <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" ReadOnly="true" />                                 
                                                        <asp:CommandField HeaderText="Delete" ButtonType="Button" ShowDeleteButton="true" ControlStyle-CssClass="btn btn-sm btn-danger"  />                                                                                                              
                                                     </Columns>
                                                 </asp:GridView>

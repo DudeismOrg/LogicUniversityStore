@@ -56,14 +56,14 @@
                                             <asp:GridView ID="gvRequisitionDetails" runat="server" AutoGenerateColumns="False" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Width="665px" Height="100px">
                                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                                 <Columns>
-                                                    <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Width="150" >
-                                                    <ItemStyle Width="150px"></ItemStyle>
+                                                    <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Height="50px" >
+                                                   
                                                     </asp:BoundField>
-                                                    <asp:BoundField DataField="NeededQuantity" HeaderText="Quantity" ItemStyle-Width="150" >
-                                                    <ItemStyle Width="150px"></ItemStyle>
+                                                    <asp:BoundField DataField="NeededQuantity" HeaderText="Quantity">
+                                                    
                                                     </asp:BoundField>
-                                                    <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" ItemStyle-Width="150" >
-                                                    <ItemStyle Width="150px"></ItemStyle>
+                                                    <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" >
+                                                    
                                                     </asp:BoundField>
                                                 </Columns>
                                                 <EditRowStyle BackColor="#999999" />

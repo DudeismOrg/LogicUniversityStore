@@ -44,9 +44,9 @@
                       <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                       
                       <Columns>
-                          <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Width="150" />
-                          <asp:BoundField DataField="NeededQuantity" HeaderText="Quantity" ItemStyle-Width="150" />
-                          <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" ItemStyle-Width="150" />
+                          <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Height="50px" />
+                          <asp:BoundField DataField="NeededQuantity" HeaderText="Quantity" />
+                          <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" />
                       </Columns>
                   </asp:GridView>
                   </div>

@@ -67,7 +67,7 @@
                                                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                                                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                                                     <Columns>
-                                                       <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Width="150" ReadOnly="true" />                                                 
+                                                       <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Height="50px" ReadOnly="true" />                                                 
                                                         <asp:TemplateField HeaderText="Quantity">
                                                         <ItemTemplate >
                                                         <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("NeededQuantity") %>' BorderStyle="Groove">

@@ -20,7 +20,7 @@
                                         <asp:GridView ID="gvRequestHistory" runat="server" AutoGenerateColumns="False"   OnSelectedIndexChanged="gvRequestHistory_SelectedIndexChanged" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="100px" Width="813px"  >
                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                             <Columns>
-                                              <asp:BoundField DataField="ReqID" HeaderText="RequisitionID" />
+                                              <asp:BoundField DataField="ReqID" HeaderText="RequisitionID" ItemStyle-Height="50px" />
                                               <asp:BoundField DataField="ReqNumber" HeaderText="RequisitionNumber" />
                                               <asp:BoundField DataField="ReqDate" HeaderText="Requisition Date" DataFormatString="{0:D}" />
                                               <asp:BoundField DataField="Status" HeaderText="Requisition Status" />

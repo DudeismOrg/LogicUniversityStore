@@ -172,6 +172,9 @@
     <Content Include="View\Department\Employee\Employee.master" />
     <Content Include="View\Store\Clerk\Clerk.master" />
     <Content Include="View\Department\Hod\Hod.master" />
+    <Content Include="View\Store\Manager\ManagerMain.aspx" />
+    <Content Include="View\Store\Supervisor\Supervisor.Master" />
+    <Content Include="View\Store\Manager\Manager.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1070,9 +1073,37 @@
     <Content Include="View\Store\Clerk\PurchaseOrderConfirm.aspx" />
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
     <Content Include="View\Store\Clerk\ViewRetrieval.aspx" />
+    <Content Include="View\Store\Supervisor\SupervisorMain.aspx" />
+    <Content Include="View\Store\Supervisor\ApproveAdjustment.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AdjustmentController.cs" />
+    <Compile Include="Controller\PurchaseOrderController.cs" />
+    <Compile Include="Controller\ApplyReqController.cs" />
+    <Compile Include="Controller\ApproveRejectReqController.cs" />
+    <Compile Include="Controller\CancelUpdatePendingApprovalController.cs" />
+    <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
+    <Compile Include="Controller\InvalidConstructorException.cs" />
+    <Compile Include="Dao\PurchaseOrderItemDao.cs" />
+    <Compile Include="Dao\PurchaseOrderDao.cs" />
+    <Compile Include="Dao\PoBatchDao.cs" />
+    <Compile Include="Model\LogicUniStoreModelInitializer.cs" />
+    <Compile Include="Util\PurchaseOrderUtil.cs" />
+    <Compile Include="Util\PurchaseOrderItems.cs" />
+    <Compile Include="Util\DepartmentNotFoundException.cs" />
+    <Compile Include="Controller\ProcessReqController.cs" />
+    <Compile Include="Controller\ReapplyRejectedController.cs" />
+    <Compile Include="Controller\RequestHistoryController.cs" />
+    <Compile Include="Controller\RetreiveReqController.cs" />
+    <Compile Include="Dao\AdjustmentDao.cs" />
+    <Compile Include="Dao\CategoryDao.cs" />
+    <Compile Include="Dao\SupplierItemDao.cs" />
+    <Compile Include="Dao\RequisitionItemDao.cs" />
+    <Compile Include="Dao\ItemDao.cs" />
+    <Compile Include="Dao\RequisitionDao.cs" />
+    <Compile Include="Dao\RetrievalDao.cs" />
+    <Compile Include="Dao\StockCardDao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1294,10 +1325,44 @@
     <Compile Include="View\Store\Clerk\ViewRetrieval.aspx.designer.cs">
       <DependentUpon>ViewRetrieval.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Store\Manager\Manager.Master.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Manager\Manager.Master.designer.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Manager\ManagerMain.aspx.cs">
+      <DependentUpon>ManagerMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Manager\ManagerMain.aspx.designer.cs">
+      <DependentUpon>ManagerMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\Supervisor.Master.cs">
+      <DependentUpon>Supervisor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\Supervisor.Master.designer.cs">
+      <DependentUpon>Supervisor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.cs">
+      <DependentUpon>SupervisorMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.designer.cs">
+      <DependentUpon>SupervisorMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\ApproveAdjustment.aspx.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\ApproveAdjustment.aspx.designer.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="View\Store\Supervisor\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

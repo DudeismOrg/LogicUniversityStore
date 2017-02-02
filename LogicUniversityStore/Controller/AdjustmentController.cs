@@ -10,6 +10,11 @@ namespace LogicUniversityStore.Controller
 {
     public class AdjustmentController
     {
+        AdjustmentDao dao;
+        public AdjustmentController()
+        {
+            dao = new AdjustmentDao();
+        }
         public bool CreateSpotAdjustment(Adjustment adjustment)
         {
             bool isSuccessful = false;
@@ -21,21 +26,23 @@ namespace LogicUniversityStore.Controller
                     CreatedBy = adjustment.CreatedBy,
                     CreatedDate = DateTime.Now,
                     SockAdjustmentNumber = adjustment.Number,
-                    Status = AdjustmentStatus.Created.ToString(),
+                    //Status = AdjustmentStatus.Created.ToString(),
                     Type = StockCheckType.OnSpot.ToString()
                 };
                 objAdjustment.StockAdjustmentItems = new List<StockAdjustmentItem>();
                 foreach (AdjustmentItem item in adjustment.Items)
-                {
+                {                   
                     StockAdjustmentItem objAdjItem = new StockAdjustmentItem()
                     {
                         CountDate = DateTime.Now,
                         CountPerson = adjustment.CreatedBy.ToString(), //TODO: Change to Id
-                        CountQuantity = item.Quantity,
                         ItemID = item.ItemId,
                         Remark = item.Remarks,
+                        Status = AdjustmentStatus.Created.ToString(),
+                        AdjustQuantity = item.Quantity,
                         StockAdjustment = objAdjustment
                     };
+                    
                     objAdjustment.StockAdjustmentItems.Add(objAdjItem);
                 }
 
@@ -44,18 +51,18 @@ namespace LogicUniversityStore.Controller
                 using (var txn = dbContext.Database.BeginTransaction())
                 {
                     //Create Adjustment and Items
-                    AdjustmentDao dao = new AdjustmentDao(dbContext);
+                    AdjustmentDao dao = new AdjustmentDao();
                     dao.CreateAdjustment(objAdjustment);
                     //Update stock card
-                    dao.updateStockCard(objAdjustment.StockAdjustmentItems.ToList());
+                    //dao.updateStockCard(objAdjustment.StockAdjustmentItems.ToList());
                     txn.Commit();
                     isSuccessful = true;
                 }
                 dbContext.Database.Connection.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //   throw;
+                   throw ex;
             }
             return isSuccessful;
         }

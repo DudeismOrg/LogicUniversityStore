@@ -31,6 +31,9 @@ namespace LogicUniversityStore.Model
 
         public int AdjustQuantity { get; set; }
 
+        [StringLength(20)]
+        public string Status { get; set; }
+
         public virtual StockAdjustment StockAdjustment { get; set; }
 
         public virtual SupplierItem SupplierItem { get; set; }

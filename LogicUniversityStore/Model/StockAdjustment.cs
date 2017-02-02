@@ -22,12 +22,6 @@ namespace LogicUniversityStore.Model
         [StringLength(20)]
         public string SockAdjustmentNumber { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime? StartDate { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime? EndDate { get; set; }
-
         [StringLength(20)]
         public string Status { get; set; }
 
