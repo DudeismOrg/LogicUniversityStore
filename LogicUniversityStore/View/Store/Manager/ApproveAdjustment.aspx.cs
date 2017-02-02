@@ -1,6 +1,5 @@
 ﻿using LogicUniversityStore.Controller;
 using LogicUniversityStore.Model;
-using LogicUniversityStore.Util;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,17 +8,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace LogicUniversityStore.View.Store.Supervisor
+namespace LogicUniversityStore.View.Store.Manager
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        public AdjustmentVoucherSupervisorController ctrl = new AdjustmentVoucherSupervisorController(); 
+        public AdjustmentVoucherManagerController ctrl = new AdjustmentVoucherManagerController();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+
                 List<StockAdjustmentItem> items = new List<StockAdjustmentItem>();
-                items = ctrl.getAdjustmentItemsSupervisor();
+                items = ctrl.getAdjustmentItemsManager();
                 DataTable dt = new DataTable();
                 dt.Columns.AddRange(new DataColumn[6] { new DataColumn("StockAdjustmentNumber"), new DataColumn("ItemName"), new DataColumn("CountQuantity"), new DataColumn("AdjustQuantity"), new DataColumn("Remark"), new DataColumn("AdjustmentAmount") });
                 if (items != null)
@@ -53,7 +53,8 @@ namespace LogicUniversityStore.View.Store.Supervisor
             //update stock card
             ctrl.updateStockCardByAdjustment(itemId, adjustQuantity);
             Response.Redirect("ApproveAdjustment.aspx");
-        }       
+        }
+
         protected void gvAdjustmentItemList_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             String adjustmentNumber = gvAdjustmentItemList.Rows[e.RowIndex].Cells[0].Text;
