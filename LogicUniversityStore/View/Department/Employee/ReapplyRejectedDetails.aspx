@@ -35,7 +35,6 @@
 
                                 <div class="col-md-12" style="height:10px"></div>
 
-                                <form id="requisitionDetails" runat="server">
                                     
 
                                     <div class="col-md-12" style="height:10px"></div>
@@ -105,7 +104,6 @@
 
                             </div>
 
-        </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
 </asp:Content>

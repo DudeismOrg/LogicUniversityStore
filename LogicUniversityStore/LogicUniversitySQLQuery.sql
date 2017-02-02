@@ -26,7 +26,7 @@ insert into dbo.Role (rolecode, rolename) values
 ('CLERK', 'Store Clerk'),
 ('SUPERVISOR', 'Store Supervisor'),
 ('MANAGER', 'Store Manager'),
-('EMPLOYEE', 'Store Manager');
+('EMP', 'Store Manager');
 
 insert into dbo.Category(CategoryCode) 
 values('Clip'),
