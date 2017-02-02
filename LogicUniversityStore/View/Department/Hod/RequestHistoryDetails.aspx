@@ -3,7 +3,6 @@
     <h1>Requisition Details</h1>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
-    <form id="requestDetails" runat="server">
     <div class="col-md-12">
 
                                     <div class="col-md-6">
@@ -89,7 +88,6 @@
                                 <div class="modal-footer">
                                     <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Close" OnClick="btnClose_Click" />                                
                                 </div>
-    </form>
                             
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
