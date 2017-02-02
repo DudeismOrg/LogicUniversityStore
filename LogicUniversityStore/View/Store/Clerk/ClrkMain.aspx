@@ -13,8 +13,8 @@
                 <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">CPU Traffic</span>
-                    <span class="info-box-number">90<small>%</small></span>
+                    <span class="info-box-text">REQUISITIONS</span>
+                    <span class="info-box-number">11</span>
                 </div>
             </div>
         </div>
@@ -23,8 +23,8 @@
                 <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Likes</span>
-                    <span class="info-box-number">41,410</span>
+                    <span class="info-box-text">DISBURSEMENTS</span>
+                    <span class="info-box-number">5</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -40,8 +40,8 @@
                 <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Sales</span>
-                    <span class="info-box-number">760</span>
+                    <span class="info-box-text">PURCHASE ORDERS</span>
+                    <span class="info-box-number">06</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -53,8 +53,8 @@
                 <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">New Members</span>
-                    <span class="info-box-number">2,000</span>
+                    <span class="info-box-text">NEXT STOCK-TAKE</span>
+                    <span class="info-box-number">28<small>days</small></span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -68,7 +68,7 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Monthly Recap Report</h3>
+                    <h3 class="box-title">Y-o-Y Requisition Report</h3>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -93,52 +93,58 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-8">
+
+                            <%------------------------ PUT Thing-------------------%>
                             <p class="text-center">
-                                <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                                <strong>Requisitions for period: 1 Jan, 2015 - 30 Dec, 2016</strong>
                             </p>
 
                             <div class="chart">
                                 <!-- Sales Chart Canvas -->
                                 <canvas id="salesChart" style="height: 180px;"></canvas>
                             </div>
+                            <%------------------------ PUT Thing-------------------%>
+
+
+
                             <!-- /.chart-responsive -->
                         </div>
                         <!-- /.col -->
                         <div class="col-md-4">
                             <p class="text-center">
-                                <strong>Goal Completion</strong>
+                                <strong>Frequently Requested Items (Monthly)</strong>
                             </p>
 
                             <div class="progress-group">
-                                <span class="progress-text">Add Products to Cart</span>
-                                <span class="progress-number"><b>160</b>/200</span>
+                                <span class="progress-text">Paper A4</span>
+                                <span class="progress-number"><b>600</b>/box</span>
 
                                 <div class="progress sm">
-                                    <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                                    <div class="progress-bar progress-bar-aqua" style="width: 60%"></div>
                                 </div>
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
-                                <span class="progress-text">Complete Purchase</span>
-                                <span class="progress-number"><b>310</b>/400</span>
+                                <span class="progress-text">Exercise Book - 100pg</span>
+                                <span class="progress-number"><b>310</b>/each</span>
 
                                 <div class="progress sm">
-                                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                                    <div class="progress-bar progress-bar-red" style="width: 70%"></div>
                                 </div>
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
-                                <span class="progress-text">Visit Premium Page</span>
-                                <span class="progress-number"><b>480</b>/800</span>
+                                <span class="progress-text">Pen-Ballpoint Black</span>
+                                <span class="progress-number"><b>480</b>/dozen</span>
 
                                 <div class="progress sm">
-                                    <div class="progress-bar progress-bar-green" style="width: 80%"></div>
+                                    <div class="progress-bar progress-bar-green" style="width: 90%"></div>
                                 </div>
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
-                                <span class="progress-text">Send Inquiries</span>
-                                <span class="progress-number"><b>250</b>/500</span>
+                                <span class="progress-text">Envelopes (3"x6")- Brown</span>
+                                <span class="progress-number"><b>1200</b>/each</span>
 
                                 <div class="progress sm">
                                     <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
@@ -155,36 +161,36 @@
                     <div class="row">
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
-                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i>17%</span>
-                                <h5 class="description-header">$35,210.43</h5>
-                                <span class="description-text">TOTAL REVENUE</span>
+                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i>1.7%</span>
+                                <h5 class="description-header">$5,210.43</h5>
+                                <span class="description-text">ALL DEPTS TOTAL USAGE</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
-                                <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i>0%</span>
-                                <h5 class="description-header">$10,390.90</h5>
-                                <span class="description-text">TOTAL COST</span>
+                                <span class="description-percentage text-yellow"><i class="fa fa-caret-up"></i>3%</span>
+                                <h5 class="description-header">$8,390.90</h5>
+                                <span class="description-text">TOTAL PURCHASE ORDER VALUE</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
-                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i>20%</span>
-                                <h5 class="description-header">$24,813.53</h5>
-                                <span class="description-text">TOTAL PROFIT</span>
+                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i>5%</span>
+                                <h5 class="description-header">$813.53</h5>
+                                <span class="description-text">HIGHEST DEPT USAGE VARIANCE</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block">
-                                <span class="description-percentage text-red"><i class="fa fa-caret-down"></i>18%</span>
-                                <h5 class="description-header">1200</h5>
-                                <span class="description-text">GOAL COMPLETIONS</span>
+                                <span class="description-percentage text-red"><i class="fa fa-caret-down"></i>0.8%</span>
+                                <h5 class="description-header">$134.90</h5>
+                                <span class="description-text">LEAST DEPT USAGE VARIANCE</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
@@ -200,7 +206,7 @@
     <!-- /.row -->
 
     <!-- Main row -->
-    <div class="row">
+    <%--<div class="row">
         <!-- Left col -->
         <div class="col-md-8">
             <!-- MAP & BOX PANE -->
@@ -495,7 +501,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="clrkMainJs" runat="server">

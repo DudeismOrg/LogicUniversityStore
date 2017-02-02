@@ -20,6 +20,7 @@ DBCC CHECKIDENT ('dbo.StockCard', RESEED, 1);
 
 
 
+
 insert into dbo.Role (rolecode, rolename) values
 ('HOD', 'Department Head'),
 ('REP', 'Department Representative'),

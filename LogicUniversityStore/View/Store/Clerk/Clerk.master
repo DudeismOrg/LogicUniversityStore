@@ -65,6 +65,13 @@
             <span> On-spot Stock Adjustment</span>
         </a>
     </li>
+
+    <li class="treeview">
+        <a href="../Reports/DisplayDeptUsage.aspx">
+            <i class="fa fa-stack-exchange"></i>
+            <span> Reports</span>
+        </a>
+    </li>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="pageHeading" runat="server">
