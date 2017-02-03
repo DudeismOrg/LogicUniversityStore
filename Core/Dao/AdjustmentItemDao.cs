@@ -15,7 +15,7 @@ namespace LogicUniversityStore.Dao
         {
             try
             {
-                return db.StockAdjustmentItems.Where(x => (((x.SupplierItem.Item.BasePrice) * (x.AdjustQuantity)) <= 250) && (x.Status.Equals(AdjustmentStatus.Created.ToString()))).ToList();
+                return db.StockAdjustmentItems.Where(x => (((x.SupplierItem.Item.BasePrice) * Math.Abs(x.AdjustQuantity)) <= 250) && (x.Status.Equals(AdjustmentStatus.Created.ToString()))).ToList();
             }
             catch(Exception ex)
             {
@@ -27,7 +27,7 @@ namespace LogicUniversityStore.Dao
         {
             try
             {
-                return db.StockAdjustmentItems.Where(x => (((x.SupplierItem.Item.BasePrice) * (x.AdjustQuantity)) > 250) && (x.Status.Equals(AdjustmentStatus.Created.ToString()))).ToList();
+                return db.StockAdjustmentItems.Where(x => (((x.SupplierItem.Item.BasePrice) * Math.Abs(x.AdjustQuantity)) > 250) && (x.Status.Equals(AdjustmentStatus.Created.ToString()))).ToList();
             }
             catch (Exception ex)
             {

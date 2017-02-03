@@ -21,18 +21,17 @@ namespace LogicUniversityStore.View.Store.Supervisor
                 List<StockAdjustmentItem> items = new List<StockAdjustmentItem>();
                 items = ctrl.getAdjustmentItemsSupervisor();
                 DataTable dt = new DataTable();
-                dt.Columns.AddRange(new DataColumn[6] { new DataColumn("StockAdjustmentNumber"), new DataColumn("ItemName"), new DataColumn("CountQuantity"), new DataColumn("AdjustQuantity"), new DataColumn("Remark"), new DataColumn("AdjustmentAmount") });
+                dt.Columns.AddRange(new DataColumn[5] { new DataColumn("StockAdjustmentNumber"), new DataColumn("ItemName"), new DataColumn("AdjustQuantity"), new DataColumn("Remark"), new DataColumn("AdjustmentAmount") });
                 if (items != null)
                 {
                     foreach (StockAdjustmentItem i in items)
                     {
                         DataRow r = dt.NewRow();
                         r["StockAdjustmentNumber"] = i.StockAdjustment.SockAdjustmentNumber;
-                        r["ItemName"] = i.SupplierItem.Item.ItemName;
-                        r["CountQuantity"] = i.CountQuantity;
+                        r["ItemName"] = i.SupplierItem.Item.ItemName;                      
                         r["AdjustQuantity"] = i.AdjustQuantity;
                         r["Remark"] = i.Remark;
-                        r["AdjustmentAmount"] = (i.SupplierItem.Item.BasePrice) * (i.AdjustQuantity);
+                        r["AdjustmentAmount"] = (i.SupplierItem.Item.BasePrice) * Math.Abs(i.AdjustQuantity);
                         dt.Rows.Add(r);
                     }
                     gvAdjustmentItemList.DataSource = dt;
@@ -49,7 +48,7 @@ namespace LogicUniversityStore.View.Store.Supervisor
             Item item = ctrl.GetItem(itemName);
             int itemId = item.ItemID;
             ctrl.approveAdjustmentItem(adjustmentId, itemId);
-            int adjustQuantity = Convert.ToInt32(gvAdjustmentItemList.SelectedRow.Cells[3].Text);
+            int adjustQuantity = Convert.ToInt32(gvAdjustmentItemList.SelectedRow.Cells[2].Text);
             //update stock card
             ctrl.updateStockCardByAdjustment(itemId, adjustQuantity);
             Response.Redirect("ApproveAdjustment.aspx");

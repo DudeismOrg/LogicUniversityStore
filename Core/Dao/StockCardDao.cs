@@ -63,12 +63,11 @@ namespace LogicUniversityStore.Dao
         public void updateStockCardByAdjustment(int itemId, int adjustQuantity)
         {
             StockCard card = db.StockCards.Where(x => x.ItemID == itemId).FirstOrDefault();
-            int qty = card.OnHandQuantity.Value + adjustQuantity;
-            if (qty >= 0)
-            {
-                card.OnHandQuantity = qty;
-                db.SaveChanges();
-            }
+            int onhandQty = card.OnHandQuantity.Value + adjustQuantity; 
+            card.OnHandQuantity =onhandQty;           
+            if (card.OnHandQuantity < 0) throw new InvalidOperationException("On hand quanity for ItemID " + itemId + " is going negative. ItemName: " + card.Item.ItemName);
+            db.SaveChanges();
+            
         }
 
     }
