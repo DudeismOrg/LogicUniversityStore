@@ -116,6 +116,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="View\Department\Employee\CancelUpdatePendingApproval.aspx" />
+    <Content Include="View\Department\Employee\CancelUpdatePendingDetails.aspx" />
     <Content Include="View\Department\Employee\EmpMain.aspx" />
     <Content Include="View\Department\Employee\RequisitionForm.aspx" />
     <Content Include="View\Department\Employee\RequestHistory.aspx" />
@@ -1087,6 +1089,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Department\Employee\CancelUpdatePendingApproval.aspx.cs">
+      <DependentUpon>CancelUpdatePendingApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Employee\CancelUpdatePendingApproval.aspx.designer.cs">
+      <DependentUpon>CancelUpdatePendingApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Department\Employee\CancelUpdatePendingDetails.aspx.cs">
+      <DependentUpon>CancelUpdatePendingDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Department\Employee\CancelUpdatePendingDetails.aspx.designer.cs">
+      <DependentUpon>CancelUpdatePendingDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Department\Employee\Employee.master.cs">
       <DependentUpon>Employee.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

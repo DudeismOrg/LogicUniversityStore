@@ -18,6 +18,7 @@ namespace LogicUniversityStore.View.Store.Supervisor
         {
             if (!IsPostBack)
             {
+                //System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
                 List<StockAdjustmentItem> items = new List<StockAdjustmentItem>();
                 items = ctrl.getAdjustmentItemsSupervisor();
                 DataTable dt = new DataTable();
@@ -31,7 +32,7 @@ namespace LogicUniversityStore.View.Store.Supervisor
                         r["ItemName"] = i.SupplierItem.Item.ItemName;                      
                         r["AdjustQuantity"] = i.AdjustQuantity;
                         r["Remark"] = i.Remark;
-                        r["AdjustmentAmount"] = (i.SupplierItem.Item.BasePrice) * Math.Abs(i.AdjustQuantity);
+                        r["AdjustmentAmount"] = ((i.SupplierItem.Item.BasePrice) * Math.Abs(i.AdjustQuantity));
                         dt.Rows.Add(r);
                     }
                     gvAdjustmentItemList.DataSource = dt;

@@ -45,7 +45,7 @@ namespace LogicUniversityStore.Controller
             {
                 foreach (RequisitionItem item in r.RequisitionItems)
                 {
-                    if ((item.ItemID != reqItem.ItemID))
+                    if ((item.SupplierItemID != reqItem.SupplierItemID))
                     {
                         continue;
                     }
