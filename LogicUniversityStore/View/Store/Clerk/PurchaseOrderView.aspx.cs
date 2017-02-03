@@ -66,7 +66,7 @@ namespace LogicUniversityStore.View.Store.Clerk
             }
             DdlItems.DataSource = category.Items;
             DdlItems.DataTextField = "ItemName";
-            DdlItems.DataValueField = "SupplierItemID";
+            DdlItems.DataValueField = "ItemID";
             DdlItems.DataBind();
         }
 

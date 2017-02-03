@@ -29,13 +29,13 @@ DBCC CHECKIDENT ('[dbo].[RequisitionItem]', RESEED, 1);
 
 
 
-insert into dbo.Role (rolecode, rolename) values
-('HOD', 'Department Head'),
-('REP', 'Department Representative'),
-('CLERK', 'Store Clerk'),
-('SUPERVISOR', 'Store Supervisor'),
-('MANAGER', 'Store Manager'),
-('EMP', 'Department Employee');
+insert into dbo.Role (rolecode, rolename, deptype) values
+('HOD', 'Department Head', 'Faculty'),
+('REP', 'Department Representative', 'Faculty'),
+('CLERK', 'Store Clerk', 'Store'),
+('SUPERVISOR', 'Store Supervisor', 'Store'),
+('MANAGER', 'Store Manager', 'Store'),
+('EMP', 'Department Employee', 'Faculty');
 
 
 
@@ -188,18 +188,19 @@ INSERT [dbo].[SupplierItem] ([ItemID], [SupplierID], [Price], [ActiveSupplier], 
 
 
 insert into dbo.Department(DepartmentCode,DepartmentName,ContactName,DepartmentPhone,DepartmentFax,HodID,CollectionPointID,RepresentativeID)
-values('ENGL','English Dept','Mrs Pamela Kow','8742234','8921456',2,1,1),
-('CPSC','Computer Science','Mr Wee Kian Fatt','8901235','8921457',4,2,3),
+values('ENGL','English Dept','Mrs Pamela Kow','8742234','8921456',3,1,1),
+('CPSC','Computer Science','Mr Wee Kian Fatt','8901235','8921457',15,2,14),
 ('COMM','Commerce Dept','Mr Mohd.Azman','8741284','8921256',6,3,5),
 ('REGR','Registrar Dept','Ms Helen Ho','8901266','8921465',8,4,7),
 ('ZOOL','Zoology Dept','Mr.Peter Tan Ah Meng','8901266','8921465',10,5,9),
-('STORE','STORE Dept','Logic  UniStore','8901266','8921465',10,5,9);
+('STORE','STORE Dept','Logic  UniStore','8901266','8921465',10,5,9),
+('ISS','ISS','Dr. Esther Tan','8901235','8921457',17,3,16);
 
 insert into dbo.LUUser (username, firstname, lastname, password, roleid, email, address, departmentid)
 values
-('emp', 'English', 'Department', 'emp', 6, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 1),
-('clerk', 'English', 'Department', 'clerk', 3, 'englreq@lu.edu.sg', 'Blk 123 Wonderful Street', 6),
-('hod', 'English', 'Department', 'hod', 1, 'englhod@lu.edu.sg', 'Blk 123 Wonderful Street', 1),
+('empeng', 'English', 'Employee', 'empeng', 6, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 1),
+('clerk', 'Store', 'Department', 'clerk', 3, 'englreq@lu.edu.sg', 'Blk 123 Wonderful Street', 6),
+('hodeng', 'English', 'HOD', 'hodeng', 1, 'englhod@lu.edu.sg', 'Blk 123 Wonderful Street', 1),
 ('hodcpsc', 'Computer Science', 'Department', 'hodcpsc', 1, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
 ('repcomm','Commerce','Department','repcomm',2,'cpscreq@lu.edu.sg','Blk 123 Wonderful Street',3), 
 ('hodcomm', 'Commerce', 'Department', 'hodcomm', 1, 'cpschod@lu.edu.sg', 'Blk 123 Wonderful Street', 3),
@@ -209,8 +210,14 @@ values
 ('hodzool', 'Zoology', 'Department', 'hodzool', 1, 'zoolhod@lu.edu.sg', 'Blk 123 Wonderful Street', 5),
 ('suprstore', 'Store', 'Store', 'suprstore', 4, 'zoolreq@lu.edu.sg', 'Blk 123 Wonderful Street', 6),
 ('mgrstore', 'Store', 'Store', 'mgrstore', 5, 'zoolhod@lu.edu.sg', 'Blk 123 Wonderful Street', 6),
-('clrkstore', 'Store', 'Store', 'clrkstore', 3, 'zoolhod@lu.edu.sg', 'Blk 123 Wonderful Street', 6);
-
+('clrkstore', 'Store', 'Store', 'clrkstore', 3, 'zoolhod@lu.edu.sg', 'Blk 123 Wonderful Street', 6),
+('empcom', 'Computer Science', 'Employee', 'empcom', 6, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
+('hodcom', 'Computer Science', 'HOD', 'hodcom', 1, 'englhod@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
+('empiss', 'ISS', 'Employee', 'empiss', 6, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 7),
+('hodiss', 'ISS', 'HOD', 'hodiss', 1, 'englhod@lu.edu.sg', 'Blk 123 Wonderful Street', 7),
+('repeng', 'English', 'Representative', 'repeng', 2, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 1),
+('repcom', 'Computer Science', 'Representative', 'repcom', 2, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
+('repiss', 'ISS', 'Representative', 'repiss', 2, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 7);
 
 
 
