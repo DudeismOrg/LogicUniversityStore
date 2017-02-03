@@ -30,7 +30,9 @@ namespace LogicUniversityStore.Controller
 
         public Dictionary<Requisition, double> GetMainProcessReqList()
         {
-            foreach (var requisition in RequisitionDao.GetApprovedRequisitionList())
+            LogicUniStoreModel db = new LogicUniStoreModel();
+            List<Requisition> rList = db.Requisitions.Where(r => r.Status == RequisitionStatus.Approved.ToString()).ToList();
+            foreach (var requisition in rList)
             {
 
                 if (mainList.ContainsKey(requisition))
@@ -65,10 +67,10 @@ namespace LogicUniversityStore.Controller
                         lockedItemsCountForProcess[rItem.SupplierItem.ItemID] += actualQuantityInStock;
                         rItem.ApprovedQuantity = actualQuantityInStock;
                         unfullfilledItem += 1;
-                        progrssMeter += (double)rItem.ApprovedQuantity / (double)rItem.NeededQuantity; 
+                        progrssMeter += (double)rItem.ApprovedQuantity / (double)rItem.NeededQuantity;
                     }
                 }
-                RequisitionItemDao.db.SaveChanges();
+                db.SaveChanges();
 
                 //if (unfullfilledItem.Value == 0)
                 //{
@@ -87,6 +89,7 @@ namespace LogicUniversityStore.Controller
             return mainList;
 
         }
+
 
         internal Requisition GetRequisition(int requisitonID)
         {
