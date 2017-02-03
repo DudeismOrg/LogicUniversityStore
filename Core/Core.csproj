@@ -65,6 +65,8 @@
     <Compile Include="Controller\ReapplyRejectedController.cs" />
     <Compile Include="Controller\RequestHistoryController.cs" />
     <Compile Include="Controller\RetreiveReqController.cs" />
+    <Compile Include="Controller\StockCardController.cs" />
+    <Compile Include="Controller\SupplierController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Dao\AdjustmentDao.cs" />
     <Compile Include="Dao\AdjustmentItemDao.cs" />

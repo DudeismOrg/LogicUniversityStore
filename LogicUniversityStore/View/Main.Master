@@ -1,25 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="LogicUniversityStore.View.Main" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-
-<%--<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-    </form>
-</body>
-</html>--%>
-
 
 <!DOCTYPE html>
 <html>
@@ -61,14 +41,12 @@
                                 <ul class="dropdown-menu">
                                     <li class="header">You have 4 messages</li>
                                     <li>
-                                        <!-- inner menu: contains the actual data -->
                                         <ul class="menu">
                                         </ul>
                                     </li>
                                     <li class="footer"><a href="#">See All Messages</a></li>
                                 </ul>
                             </li>
-                            <!-- Notifications: style can be found in dropdown.less -->
                             <li class="dropdown notifications-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-bell-o"></i>
@@ -77,14 +55,12 @@
                                 <ul class="dropdown-menu">
                                     <li class="header">You have 10 notifications</li>
                                     <li>
-                                        <!-- inner menu: contains the actual data -->
                                         <ul class="menu">
                                         </ul>
                                     </li>
                                     <li class="footer"><a href="#">View all</a></li>
                                 </ul>
                             </li>
-                            <!-- Tasks: style can be found in dropdown.less -->
                             <li class="dropdown tasks-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-flag-o"></i>
@@ -93,9 +69,7 @@
                                 <ul class="dropdown-menu">
                                     <li class="header">You have 9 tasks</li>
                                     <li>
-                                        <!-- inner menu: contains the actual data -->
                                         <ul class="menu">
-                                            <!-- end task item -->
                                         </ul>
                                     </li>
                                     <li class="footer">
@@ -120,8 +94,6 @@
                                             <asp:Label ID="lblUserName" runat="server"></asp:Label>
                                         </p>
                                     </li>
-                                    <!-- Menu Body -->
-                                    <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-right">
                                             <asp:Button ID="btnLogOut" runat="server" OnClick="btnLogOut_Click" Text="Sign out" CssClass="btn btn-default btn-flat" />
@@ -129,17 +101,13 @@
                                     </li>
                                 </ul>
                             </li>
-                            <!-- Control Sidebar Toggle Button -->
                         </ul>
                     </div>
 
                 </nav>
             </header>
-            <!-- Left side column. contains the logo and sidebar -->
             <aside class="main-sidebar">
-                <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
-                    <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
                             <img src='<%= Page.ResolveUrl("/View/Resources/dist/img/user-160x160.jpg") %>' class="img-circle" alt="User Image">
@@ -149,8 +117,7 @@
                             <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
                         </div>
                     </div>
-                    <!-- search form -->
-                    <%--<form action="#" method="get" class="sidebar-form">--%>
+
                     <div class="input-group">
                         <input type="text" name="q" class="form-control" placeholder="Search...">
                         <span class="input-group-btn">
@@ -159,13 +126,8 @@
                             </button>
                         </span>
                     </div>
-                    <%--</form>--%>
-                    <!-- /.search form -->
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
+
                     <ul class="sidebar-menu">
-
-
-
                         <asp:ContentPlaceHolder ID="sideMenuBlock" runat="server">
                             <%--<li class="header">MAIN NAVIGATION</li>
                             <li class="active treeview">
@@ -342,8 +304,6 @@
                             </ul>
                         </li>--%>
                         </asp:ContentPlaceHolder>
-
-
                         <li class="header">Others</li>
                         <li><a href="#"><i class="fa fa-circle-o text-green"></i><span>Documentation</span></a></li>
                         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i><span>Contacts</span></a></li>

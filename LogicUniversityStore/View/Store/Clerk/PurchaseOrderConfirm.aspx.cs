@@ -37,10 +37,6 @@ namespace LogicUniversityStore.View.Store.Clerk
             PurchaseOrderController POController = new PurchaseOrderController();
 
             List<PurchaseOrderUtil> newPOUlist = new List<PurchaseOrderUtil>();
-            PoBatchDao dao = new PoBatchDao();
-            PurchaseOrderDao pdao = new PurchaseOrderDao();
-            PurchaseOrderItemDao poitem = new PurchaseOrderItemDao();
-
 
             foreach (GridViewRow row in gvPurchaseOrders.Rows)
             {
