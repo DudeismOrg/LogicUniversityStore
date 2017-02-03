@@ -35,9 +35,11 @@
                                                         <asp:TemplateField HeaderText="Quantity">
                                                         <ItemTemplate >
                                                         <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("NeededQuantity") %>' BorderStyle="Groove">
-                                                        </asp:TextBox>                                
-                                                        </ItemTemplate>
-                                                        </asp:TemplateField>
+                                                        </asp:TextBox>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Quantity must be entered" Display="Dynamic" Text="*" ControlToValidate="txtQty" ForeColor="Red"></asp:RequiredFieldValidator> 
+                                                        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Quantity must be a integer" Text="*" Display="Dynamic" ControlToValidate="txtQty" Type="Integer" ForeColor="Red" Operator="DataTypeCheck"></asp:CompareValidator>                               
+                                                        </ItemTemplate>                            
+                                                        </asp:TemplateField>                      
                                                        <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" ReadOnly="true" />                                 
                                                        <asp:CommandField HeaderText="Delete" ButtonType="Button" ShowDeleteButton="true" ControlStyle-CssClass="btn btn-sm btn-danger"  />                                                                                                              
                                                     </Columns>
@@ -64,7 +66,8 @@
                                         <asp:Button ID="btnUpdate" CssClass="btn btn-success" runat="server" Text="Update" OnClick="btnUpdate_Click" />
                                         
                                         <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back" OnClick="btnClose_Click"/>
-                                        
+                                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowSummary="true" DisplayMode="List" ShowMessageBox="True"/> 
+        
                                         
 
                             </div>
