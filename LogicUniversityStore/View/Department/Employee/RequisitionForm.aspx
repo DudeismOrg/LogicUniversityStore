@@ -44,7 +44,7 @@
                                                 <label>Select Category</label>
                                             </div>
                                             <div class="col-md-8">
-                                                <asp:DropDownList ID="DdlCategories" runat="server" AutoPostBack="true" CssClass="form-control select2"></asp:DropDownList>
+                                                <asp:DropDownList ID="DdlCategories" runat="server" AutoPostBack="true" CssClass="form-control select2" OnSelectedIndexChanged="DdlCategories_SelectedIndexChanged"></asp:DropDownList>
                                             </div>
                                         </div>
                                         <div class="col-md-12" style="height: 10px"></div>
@@ -53,7 +53,7 @@
                                                 <label>Select Item</label>
                                             </div>
                                             <div class="col-md-8">
-                                                <asp:DropDownList ID="DdlItems" runat="server" CssClass="form-control select2" AutoPostBack="true"></asp:DropDownList>
+                                                <asp:DropDownList ID="DdlItems" runat="server" CssClass="form-control select2" AutoPostBack="true" OnSelectedIndexChanged="DdlItems_SelectedIndexChanged"></asp:DropDownList>
                                             </div>
                                         </div>
                                         <div class="col-md-12" style="height: 10px"></div>
@@ -186,7 +186,7 @@
                             <div class="col-md-12">
                                 <label>Remarks</label>
                                 <div class="box-body pad">
-                                    <textarea class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                    <asp:TextBox ID="tbRemarks"  runat="server" CssClass="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></asp:TextBox>
                                 </div>
                             </div>
 

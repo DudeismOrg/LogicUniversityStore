@@ -37,21 +37,7 @@ namespace LogicUniversityStore.View.Department.Employee
                 DdlCategories.DataBind();
             }
 
-            int catId = Convert.ToInt32(DdlCategories.SelectedValue);
-            category = reqController.CategoryDao.GetCategory(catId);
-            if (DdlItems.SelectedValue != null && !DdlItems.SelectedValue.Equals(""))
-            {
-                item = new ItemDao().GetItem(Convert.ToInt32(DdlItems.SelectedValue));
-                lblUnit.Text = item.UOM;
-            }
-            else
-            {
-                DdlItems.DataSource = category.Items;
-                DdlItems.DataTextField = "ItemName";
-                DdlItems.DataValueField = "ItemID";
-                DdlItems.DataBind();
-            }
-
+           
             if (ViewState["items"] != null)
             {
                 items = (List<CartItem>)ViewState["items"];
@@ -69,7 +55,22 @@ namespace LogicUniversityStore.View.Department.Employee
 
         protected void btnAddItem_Click(object sender, EventArgs e)
         {
+            Item item = null;
+            if (DdlCategories.SelectedValue != null && !DdlCategories.SelectedValue.Equals("")){
+                int catId = Convert.ToInt32(DdlCategories.SelectedValue);
+                category = reqController.CategoryDao.GetCategory(catId);
+
+                if (DdlItems.SelectedValue != null && !DdlItems.SelectedValue.Equals(""))
+                {
+                    item = new ItemDao().GetItem(Convert.ToInt32(DdlItems.SelectedValue));
+                    lblUnit.Text = item.UOM;
+                }
+            }
+            if (item == null) throw new InvalidOperationException("Item is not selected here");
+           
+
             CartItem rItem = new CartItem();
+           
             rItem.SupplierItem = item.GetSupplierItem();
             rItem.Quantity = Convert.ToInt32(tbAmount.Text);
             rItem.Category = item.Category;
@@ -103,6 +104,7 @@ namespace LogicUniversityStore.View.Department.Employee
                 requisition.RequesterID = user.UserID; // Todo: need to change later once login up
                 requisition.DepartmentID = user.DepartmentID.Value; // Todo: same
                 requisition.RecieveByID =user.Department.HodID;  //Todo: same
+                requisition.Remark = tbRemarks.Text;
                 dao.db.Requisitions.Add(requisition);
                 foreach (var cartItem in items)
                 {
@@ -114,16 +116,18 @@ namespace LogicUniversityStore.View.Department.Employee
                     dao.db.RequisitionItems.Add(item);
                 }
                 dao.db.SaveChanges();
-                ViewState["items"] = new List<CartItem>();
-                gvReqItems.DataSource = null;
-                gvReqItems.DataBind();
+                //ViewState["items"] = new List<CartItem>();
+                //gvReqItems.DataSource = null;
+                //gvReqItems.DataBind();
+                reset();
             }
         }
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            ViewState["items"] = new List<CartItem>();
-            gvReqItems.DataSource = null;
-            gvReqItems.DataBind();
+
+           
+
+            reset();
         }
 
         protected void gvReqItems_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -137,6 +141,62 @@ namespace LogicUniversityStore.View.Department.Employee
                 gvReqItems.DataSource = items;
                 gvReqItems.DataBind();
             }
+        }
+
+        protected void DdlCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int catId = Convert.ToInt32(DdlCategories.SelectedValue);
+            category = reqController.CategoryDao.GetCategory(catId);
+
+            // item = new ItemDao().GetItem(Convert.ToInt32(DdlItems.SelectedValue));
+            // lblUnit.Text = item.UOM;
+           
+
+            DdlItems.DataSource = category.Items;
+                DdlItems.DataTextField = "ItemName";
+                DdlItems.DataValueField = "ItemID";
+                DdlItems.DataBind();
+
+            if (DdlItems.SelectedValue != null && !DdlItems.SelectedValue.Equals(""))
+            {
+                item = new ItemDao().GetItem(Convert.ToInt32(DdlItems.SelectedValue));
+                lblUnit.Text = item.UOM;
+            }
+
+        }
+
+        protected void DdlItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(DdlItems.SelectedValue != null && !DdlItems.SelectedValue.Equals(""))
+            {
+                item = new ItemDao().GetItem(Convert.ToInt32(DdlItems.SelectedValue));
+                lblUnit.Text = item.UOM;
+            }
+          
+
+        }
+
+        private void reset()
+        {
+            ViewState["items"] = new List<CartItem>();
+            gvReqItems.DataSource = null;
+            gvReqItems.DataBind();
+
+
+            DdlCategories.DataSource = reqController.GetCategories();
+            DdlCategories.DataValueField = "CategoryID";
+            DdlCategories.DataTextField = "CategoryCode";
+            DdlCategories.DataBind();
+
+            if (DdlCategories.SelectedValue != null && !DdlCategories.SelectedValue.Equals(""))
+            {
+                int catId = Convert.ToInt32(DdlCategories.SelectedValue);
+                category = reqController.CategoryDao.GetCategory(catId);
+                DdlItems.DataSource = category.Items;
+                DdlItems.DataBind();
+            }
+            tbAmount.Text = "";
+               
         }
     }
 }

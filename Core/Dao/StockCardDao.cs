@@ -8,11 +8,16 @@ namespace LogicUniversityStore.Dao
 {
     public class StockCardDao
     {
-        public LogicUniStoreModel db = new LogicUniStoreModel();
+        public LogicUniStoreModel db;
 
         public StockCardDao()
         {
-            
+            db = new LogicUniStoreModel();
+        }
+
+        public StockCardDao(LogicUniStoreModel context)
+        {
+            db = context;
         }
 
         public List<StockCard> GetAllInStock()

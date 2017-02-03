@@ -67,6 +67,15 @@ namespace LogicUniversityStore.View.Department.Employee {
         protected global::System.Web.UI.WebControls.GridView gvReqItems;
         
         /// <summary>
+        /// tbRemarks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbRemarks;
+        
+        /// <summary>
         /// btnCancel control.
         /// </summary>
         /// <remarks>

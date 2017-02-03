@@ -16,7 +16,7 @@ namespace LogicUniversityStore.Model
             RequisitionItems = new HashSet<RequisitionItem>();
         }
 
-        [Key, ForeignKey("Disbursement")]
+        [Key]
         public int ReqID { get; set; }
 
         [Required]
