@@ -19,7 +19,7 @@
     </li>
 
     <li class="treeview">
-        <a href="index.html">
+        <a href="ManageRole.aspx">
             <i class="fa fa-edit"></i>
             <span>Transfer/Remove Roles</span>
             <span class="pull-right-container">

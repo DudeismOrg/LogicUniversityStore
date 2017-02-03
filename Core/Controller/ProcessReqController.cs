@@ -52,7 +52,7 @@ namespace LogicUniversityStore.Controller
                     {
                         lockedItemsCountForProcess.Add(rItem.ItemID, 0);
                     }
-                    int actualQuantityInStock = (StockCardDao.GetProductCountInStock(rItem.ItemID) - lockedItemsCountForProcess[rItem.ItemID]);
+                    int actualQuantityInStock = (StockCardDao.GetProductCountInStock(rItem.SupplierItem.ItemID) - lockedItemsCountForProcess[rItem.SupplierItem.ItemID]);
 
                     if ((actualQuantityInStock - rItem.NeededQuantity) >= 0)
                     {

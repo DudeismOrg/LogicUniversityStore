@@ -15,5 +15,10 @@ namespace LogicUniversityStore.Dao
             
         }
 
+        public List<POBatch> GetAllPoBatch()
+        {
+            return db.POBatches.ToList();
+        }
+
     }
 }

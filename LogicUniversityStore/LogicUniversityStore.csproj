@@ -43,10 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit, Version=16.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <HintPath>..\packages\AjaxControlToolkit.16.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -88,6 +88,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -119,8 +122,6 @@
     <Content Include="View\Department\Employee\RequestHistoryDetails.aspx" />
     <Content Include="View\Department\Employee\ReapplyRejected.aspx" />
     <Content Include="View\Department\Employee\ReapplyRejectedDetails.aspx" />
-    <Content Include="View\Department\Employee\CancelUpdatePendingApproval.aspx" />
-    <Content Include="View\Department\Employee\CancelUpdatePendingDetails.aspx" />
     <Content Include="View\Department\Hod\HodMain.aspx" />
     <Content Include="View\Department\Hod\ApproveReject.aspx" />
     <Content Include="View\Department\Hod\ApproveRejectRequisitionItems.aspx" />
@@ -138,8 +139,6 @@
     <Content Include="View\Resources\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="View\Resources\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="View\Resources\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="View\Resources\js\sweetalert-dev.js" />
-    <Content Include="View\Resources\css\sweetalert.css" />
     <Content Include="View\Resources\plugins\ckeditor\CHANGES.md" />
     <Content Include="View\Resources\plugins\ckeditor\LICENSE.md" />
     <Content Include="View\Resources\plugins\ckeditor\plugins\scayt\CHANGELOG.md" />
@@ -173,12 +172,17 @@
     <Content Include="View\Department\Employee\Employee.master" />
     <Content Include="View\Store\Clerk\Clerk.master" />
     <Content Include="View\Department\Hod\Hod.master" />
+    <Content Include="View\Store\Clerk\DeliveryOrder.aspx" />
+    <Content Include="View\Store\Clerk\DeliveryOrderConfirm.aspx" />
     <Content Include="View\Store\Clerk\Modal\CreateRetreivalForm.aspx" />
     <Content Include="View\Store\Clerk\Outstanding.aspx" />
     <Content Include="View\Store\Manager\ManagerMain.aspx" />
     <Content Include="View\Store\Manager\ApproveAdjustment.aspx" />
+    <Content Include="View\Store\Reports\DisplayDeptUsage.aspx" />
+    <Content Include="View\Store\Reports\DisplaySupplierReport.aspx" />
     <Content Include="View\Store\Supervisor\Supervisor.Master" />
     <Content Include="View\Store\Manager\Manager.Master" />
+    <Content Include="aspnet_client" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1067,17 +1071,15 @@
     <Content Include="View\Resources\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\Store\Clerk\ClrkMain.aspx" />
-    <Content Include="View\Store\Clerk\DeliveryOrder.aspx" />
     <Content Include="View\Store\Clerk\Modal\ItemsInPO.aspx" />
     <Content Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx" />
+    <Content Include="View\Store\Clerk\Modal\RetrievalForm.aspx" />
     <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
-    <Content Include="View\Store\Clerk\RetrievalForm.aspx" />
-    <Content Include="View\Store\Clerk\PurchaseOrderView.aspx" />
     <Content Include="View\Store\Clerk\PurchaseOrderConfirm.aspx" />
+    <Content Include="View\Store\Clerk\PurchaseOrderView.aspx" />
+    <Content Include="View\Store\Clerk\RetrievalForm.aspx" />
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
     <Content Include="View\Store\Clerk\ViewRetrieval.aspx" />
-    <Content Include="View\Store\Supervisor\SupervisorMain.aspx" />
-    <Content Include="View\Store\Supervisor\ApproveAdjustment.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1133,20 +1135,6 @@
     </Compile>
     <Compile Include="View\Department\Employee\ReapplyRejectedDetails.aspx.designer.cs">
       <DependentUpon>ReapplyRejectedDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Department\Employee\CancelUpdatePendingApproval.aspx.cs">
-      <DependentUpon>CancelUpdatePendingApproval.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Department\Employee\CancelUpdatePendingApproval.aspx.designer.cs">
-      <DependentUpon>CancelUpdatePendingApproval.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Department\Employee\CancelUpdatePendingDetails.aspx.cs">
-      <DependentUpon>CancelUpdatePendingDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Department\Employee\CancelUpdatePendingDetails.aspx.designer.cs">
-      <DependentUpon>CancelUpdatePendingDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Department\Hod\Hod.master.cs">
       <DependentUpon>Hod.master</DependentUpon>
@@ -1246,6 +1234,13 @@
     <Compile Include="View\Store\Clerk\DeliveryOrder.aspx.designer.cs">
       <DependentUpon>DeliveryOrder.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Store\Clerk\DeliveryOrderConfirm.aspx.cs">
+      <DependentUpon>DeliveryOrderConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\DeliveryOrderConfirm.aspx.designer.cs">
+      <DependentUpon>DeliveryOrderConfirm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Store\Clerk\Modal\ItemsInPO.aspx.cs">
       <DependentUpon>ItemsInPO.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1267,13 +1262,6 @@
     <Compile Include="View\Store\Clerk\Modal\CreateRetreivalForm.aspx.designer.cs">
       <DependentUpon>CreateRetreivalForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Clerk\Outstanding.aspx.cs">
-      <DependentUpon>Outstanding.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Store\Clerk\Outstanding.aspx.designer.cs">
-      <DependentUpon>Outstanding.aspx</DependentUpon>
-    </Compile>
     <Compile Include="View\Store\Clerk\ProcessRequest.aspx.cs">
       <DependentUpon>ProcessRequest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1281,12 +1269,12 @@
     <Compile Include="View\Store\Clerk\ProcessRequest.aspx.designer.cs">
       <DependentUpon>ProcessRequest.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Clerk\RetrievalForm.aspx.cs">
-      <DependentUpon>RetrievalForm.aspx</DependentUpon>
+    <Compile Include="View\Store\Clerk\PurchaseOrderConfirm.aspx.cs">
+      <DependentUpon>PurchaseOrderConfirm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Store\Clerk\RetrievalForm.aspx.designer.cs">
-      <DependentUpon>RetrievalForm.aspx</DependentUpon>
+    <Compile Include="View\Store\Clerk\PurchaseOrderConfirm.aspx.designer.cs">
+      <DependentUpon>PurchaseOrderConfirm.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Store\Clerk\PurchaseOrderView.aspx.cs">
       <DependentUpon>PurchaseOrderView.aspx</DependentUpon>
@@ -1295,12 +1283,12 @@
     <Compile Include="View\Store\Clerk\PurchaseOrderView.aspx.designer.cs">
       <DependentUpon>PurchaseOrderView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Clerk\PurchaseOrderConfirm.aspx.cs">
-      <DependentUpon>PurchaseOrderConfirm.aspx</DependentUpon>
+    <Compile Include="View\Store\Clerk\RetrievalForm.aspx.cs">
+      <DependentUpon>RetrievalForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Store\Clerk\PurchaseOrderConfirm.aspx.designer.cs">
-      <DependentUpon>PurchaseOrderConfirm.aspx</DependentUpon>
+    <Compile Include="View\Store\Clerk\RetrievalForm.aspx.designer.cs">
+      <DependentUpon>RetrievalForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Store\Clerk\SpotAdjustment.aspx.cs">
       <DependentUpon>SpotAdjustment.aspx</DependentUpon>
@@ -1316,51 +1304,42 @@
     <Compile Include="View\Store\Clerk\ViewRetrieval.aspx.designer.cs">
       <DependentUpon>ViewRetrieval.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Manager\Manager.Master.cs">
-      <DependentUpon>Manager.Master</DependentUpon>
+    <Compile Include="View\Store\Reports\DeptUsage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Store\Reports\DisplayDeptUsage.aspx.cs">
+      <DependentUpon>DisplayDeptUsage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Store\Manager\Manager.Master.designer.cs">
-      <DependentUpon>Manager.Master</DependentUpon>
+    <Compile Include="View\Store\Reports\DisplayDeptUsage.aspx.designer.cs">
+      <DependentUpon>DisplayDeptUsage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Manager\ManagerMain.aspx.cs">
-      <DependentUpon>ManagerMain.aspx</DependentUpon>
+    <Compile Include="View\Store\Reports\DisplaySupplierReport.aspx.cs">
+      <DependentUpon>DisplaySupplierReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Store\Manager\ManagerMain.aspx.designer.cs">
-      <DependentUpon>ManagerMain.aspx</DependentUpon>
+    <Compile Include="View\Store\Reports\DisplaySupplierReport.aspx.designer.cs">
+      <DependentUpon>DisplaySupplierReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Manager\ApproveAdjustment.aspx.cs">
-      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Store\Manager\ApproveAdjustment.aspx.designer.cs">
-      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Store\Supervisor\Supervisor.Master.cs">
-      <DependentUpon>Supervisor.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Store\Supervisor\Supervisor.Master.designer.cs">
-      <DependentUpon>Supervisor.Master</DependentUpon>
-    </Compile>
-    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.cs">
-      <DependentUpon>SupervisorMain.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.designer.cs">
-      <DependentUpon>SupervisorMain.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Store\Supervisor\ApproveAdjustment.aspx.cs">
-      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Store\Supervisor\ApproveAdjustment.aspx.designer.cs">
-      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
+    <Compile Include="View\Store\Reports\SupplierOrder.cs">
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\Store\Reports\DeptUsage.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DeptUsage.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Store\Reports\SupplierOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SupplierOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

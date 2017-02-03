@@ -10,42 +10,33 @@
 namespace LogicUniversityStore.View.Store.Clerk {
     
     
-    public partial class DeliveryOrder {
+    public partial class DeliveryOrderConfirm {
         
         /// <summary>
-        /// DdlBatchNumber control.
+        /// gvPurchaseOrderItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlBatchNumber;
+        protected global::System.Web.UI.WebControls.GridView gvPurchaseOrderItems;
         
         /// <summary>
-        /// DdlSupplier control.
+        /// txtDoNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlSupplier;
+        protected global::System.Web.UI.WebControls.TextBox txtDoNumber;
         
         /// <summary>
-        /// gvPoByBatchNumb control.
+        /// btnSaveDo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPoByBatchNumb;
-        
-        /// <summary>
-        /// gvPoBySupplier control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPoBySupplier;
+        protected global::System.Web.UI.WebControls.Button btnSaveDo;
     }
 }
