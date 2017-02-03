@@ -2,7 +2,42 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="empMainHeader" runat="server">
     <h1>Requisition Details</h1>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">  
+<asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
+    <div class="col-md-12">
+
+                                    <div class="col-md-6">
+
+                                        <div class="pull-left" style="text-align: left">
+
+                                            <h5><u>Request form Number</u>: #Numb</h5>
+
+                                            <h5><u>Created Date</u>: dd-mm-yyyy</h5>
+
+                                            <h5><u>Remark by Employee</u>: Some Remark</h5>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="pull-right" style="text-align: right">
+
+                                            <h5><u>Department</u>: Dept </h5><small>Dept code</small>
+
+                                            <h5><u>Created By</u>: Name</h5>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-12" style="height:10px"></div>
+
+                                    
+
+                                    <div class="col-md-12" style="height:10px"></div>
 
                                     <div class="col-md-12">
 
@@ -69,7 +104,6 @@
 
                             </div>
 
-        
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
 </asp:Content>
