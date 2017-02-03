@@ -136,9 +136,9 @@ values('ENGL','English Dept','Mrs Pamela Kow','8742234','8921456',2,1,1),
 
 insert into dbo.LUUser (username, firstname, lastname, password, roleid, email, address, departmentid)
 values
-('repeng', 'English', 'Department', 'repeng', 2, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 1),
-('hodeng', 'English', 'Department', 'hodeng', 1, 'englreq@lu.edu.sg', 'Blk 123 Wonderful Street', 1),
-('repcpsc', 'Computer Science', 'Department', 'repcpsc', 2, 'englhod@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
+('emp', 'English', 'Department', 'emp', 6, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 1),
+('clerk', 'English', 'Department', 'clerk', 3, 'englreq@lu.edu.sg', 'Blk 123 Wonderful Street', 6),
+('hod', 'Computer Science', 'Department', 'hod', 1, 'englhod@lu.edu.sg', 'Blk 123 Wonderful Street', 1),
 ('hodcpsc', 'Computer Science', 'Department', 'hodcpsc', 1, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
 ('repcomm','Commerce','Department','repcomm',2,'cpscreq@lu.edu.sg','Blk 123 Wonderful Street',3), 
 ('hodcomm', 'Commerce', 'Department', 'hodcomm', 1, 'cpschod@lu.edu.sg', 'Blk 123 Wonderful Street', 3),

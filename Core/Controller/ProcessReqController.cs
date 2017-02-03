@@ -20,9 +20,10 @@ namespace LogicUniversityStore.Controller
 
         public ProcessReqController()
         {
-            RequisitionDao = new RequisitionDao();
-            StockCardDao = new StockCardDao();
-            RequisitionItemDao = new RequisitionItemDao();
+            LogicUniStoreModel db = new LogicUniStoreModel();
+            RequisitionDao = new RequisitionDao(db);
+            StockCardDao = new StockCardDao(db);
+            RequisitionItemDao = new RequisitionItemDao(db);
             lockedItemsCountForProcess = new Dictionary<int, int>();
             mainList = new Dictionary<Requisition, double>();
         }
@@ -51,7 +52,7 @@ namespace LogicUniversityStore.Controller
                     {
                         lockedItemsCountForProcess.Add(rItem.ItemID, 0);
                     }
-                    int actualQuantityInStock = (StockCardDao.GetProductCountInStock(rItem.SupplierItem.ItemID) - lockedItemsCountForProcess[rItem.ItemID]);
+                    int actualQuantityInStock = (StockCardDao.GetProductCountInStock(rItem.ItemID) - lockedItemsCountForProcess[rItem.ItemID]);
 
                     if ((actualQuantityInStock - rItem.NeededQuantity) >= 0)
                     {
@@ -66,8 +67,8 @@ namespace LogicUniversityStore.Controller
                         unfullfilledItem += 1;
                         progrssMeter += (double)rItem.ApprovedQuantity / (double)rItem.NeededQuantity; 
                     }
-                    RequisitionItemDao.db.SaveChanges();
                 }
+                RequisitionItemDao.db.SaveChanges();
 
                 //if (unfullfilledItem.Value == 0)
                 //{

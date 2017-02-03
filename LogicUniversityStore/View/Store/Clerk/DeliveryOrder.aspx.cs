@@ -47,26 +47,31 @@ namespace LogicUniversityStore.View.Store.Clerk
 
         protected void DdlBatchNumber_Change(object sender, EventArgs e)
         {
-            gvPoBySupplier.Visible = false;
-            gvPoByBatchNumb.Visible = true;
-            DdlSupplier.SelectedIndex = 0;
-            PurchaseOrderController pocont = new PurchaseOrderController();
-            int batchId = Convert.ToInt32(DdlBatchNumber.SelectedValue);
-            List<PurchaseOrder> poList = pocont.FindAllPurchaseOrderByBatch(batchId);
-            gvPoByBatchNumb.DataSource = poList;
-            gvPoByBatchNumb.DataBind();
+            if(Convert.ToInt32(DdlBatchNumber.SelectedValue) != 0) { 
+                gvPoBySupplier.Visible = false;
+                gvPoByBatchNumb.Visible = true;
+                DdlSupplier.SelectedIndex = 0;
+                PurchaseOrderController pocont = new PurchaseOrderController();
+                int batchId = Convert.ToInt32(DdlBatchNumber.SelectedValue);
+                List<PurchaseOrder> poList = pocont.FindAllPurchaseOrderByBatch(batchId);
+                gvPoByBatchNumb.DataSource = poList;
+                gvPoByBatchNumb.DataBind();
+            }
         }
 
         protected void DdlSupplier_Change(object sender, EventArgs e)
         {
-            gvPoByBatchNumb.Visible = false;
-            gvPoBySupplier.Visible = true;
-            DdlBatchNumber.SelectedIndex = 0;
-            PurchaseOrderController pocont = new PurchaseOrderController();
-            int suplierId = Convert.ToInt32(DdlSupplier.SelectedValue);
-            List<PurchaseOrder> poList = pocont.FindAllPurchaseOrderBySupplier(suplierId);
-            gvPoBySupplier.DataSource = poList;
-            gvPoBySupplier.DataBind();
+            if (Convert.ToInt32(DdlSupplier.SelectedValue) != 0)
+            {
+                gvPoByBatchNumb.Visible = false;
+                gvPoBySupplier.Visible = true;
+                DdlBatchNumber.SelectedIndex = 0;
+                PurchaseOrderController pocont = new PurchaseOrderController();
+                int suplierId = Convert.ToInt32(DdlSupplier.SelectedValue);
+                List<PurchaseOrder> poList = pocont.FindAllPurchaseOrderBySupplier(suplierId);
+                gvPoBySupplier.DataSource = poList;
+                gvPoBySupplier.DataBind();
+            }
         }
 
     }

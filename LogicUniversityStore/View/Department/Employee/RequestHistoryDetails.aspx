@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
                                                                                                            
-                                <div class="col-md-12" style="height:10px"></div>
+                                
 
                                 <div class="col-md-12">
 

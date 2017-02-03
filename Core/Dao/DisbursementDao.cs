@@ -39,5 +39,10 @@ namespace Core.Dao
             dsb.Requisition.RecieveByID = receivedBy;
             return db.SaveChanges() > 0 ? true : false;
         }
+
+        internal List<Requisition> getShipedReqByDept(int deptId)
+        {
+            return db.Requisitions.Where(r => r.DepartmentID == deptId && r.Status == RequisitionStatus.Shipped.ToString()).ToList();
+        }
     }
 }
