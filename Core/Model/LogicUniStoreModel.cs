@@ -193,7 +193,7 @@ namespace LogicUniversityStore.Model
             modelBuilder.Entity<Requisition>()
                 .HasMany(e => e.RequisitionItems)
                 .WithRequired(e => e.Requisition)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Retrieval>()
                 .Property(e => e.RetrievalNumber)
