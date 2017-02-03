@@ -177,6 +177,7 @@
     <Content Include="View\Store\Manager\ApproveAdjustment.aspx" />
     <Content Include="View\Store\Reports\DisplayDeptUsage.aspx" />
     <Content Include="View\Store\Reports\DisplaySupplierReport.aspx" />
+    <Content Include="View\Store\Supervisor\ApproveAdjustment.aspx" />
     <Content Include="View\Store\Supervisor\Supervisor.Master" />
     <Content Include="View\Store\Manager\Manager.Master" />
     <Content Include="aspnet_client" />
@@ -1071,13 +1072,14 @@
     <Content Include="View\Store\Clerk\ClrkMain.aspx" />
     <Content Include="View\Store\Clerk\Modal\ItemsInPO.aspx" />
     <Content Include="View\Store\Clerk\Modal\RequestFormAlterItems.aspx" />
-    <Content Include="View\Store\Clerk\Modal\CreateRetreivalForm.aspx" />
+    <Content Include="View\Store\Clerk\Modal\RetrievalForm.aspx" />
     <Content Include="View\Store\Clerk\ProcessRequest.aspx" />
     <Content Include="View\Store\Clerk\PurchaseOrderConfirm.aspx" />
     <Content Include="View\Store\Clerk\PurchaseOrderView.aspx" />
     <Content Include="View\Store\Clerk\RetrievalForm.aspx" />
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
     <Content Include="View\Store\Clerk\ViewRetrieval.aspx" />
+    <Content Include="View\Store\Supervisor\SupervisorMain.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1317,6 +1319,20 @@
     </Compile>
     <Compile Include="View\Store\Reports\SupplierOrder.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\ApproveAdjustment.aspx.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\ApproveAdjustment.aspx.designer.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.cs">
+      <DependentUpon>SupervisorMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.designer.cs">
+      <DependentUpon>SupervisorMain.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

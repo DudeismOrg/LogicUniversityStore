@@ -27,7 +27,7 @@ insert into dbo.Role (rolecode, rolename) values
 ('CLERK', 'Store Clerk'),
 ('SUPERVISOR', 'Store Supervisor'),
 ('MANAGER', 'Store Manager'),
-('EMP', 'Store Manager');
+('EMP', 'Department Employee');
 
 insert into dbo.Category(CategoryCode) 
 values('Clip'),
@@ -140,6 +140,8 @@ values
 ('hod', 'English', 'Department', 'hod', 1, 'englreq@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
 ('clerk', 'English', 'Department', 'clerk', 3, 'englhod@lu.edu.sg', 'Blk 123 Wonderful Street', 6),
 ('emp', 'Computer Science', 'Department', 'emp', 6, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
+('janaki', 'Computer Science', 'Department', 'emp', 6, 'cpscreq@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
+
 ('cpschod', 'Computer Science', 'Department', 'password', 1, 'cpschod@lu.edu.sg', 'Blk 123 Wonderful Street', 2),
 ('commreq', 'Commerce', 'Department', 'password', 2, 'commreq@lu.edu.sg', 'Blk 123 Wonderful Street', 3),
 ('commhod', 'Commerce', 'Department', 'password', 1, 'commhod@lu.edu.sg', 'Blk 123 Wonderful Street', 3),
