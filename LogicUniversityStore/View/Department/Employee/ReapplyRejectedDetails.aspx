@@ -67,10 +67,8 @@
                                         <asp:Button ID="btnReapply" CssClass="btn btn-success" runat="server" Text="Reapply" OnClick="btnReapply_Click" />
                                         
                                         <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back" OnClick="btnClose_Click"/>
-                                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowSummary="true" DisplayMode="List" ShowMessageBox="True"/> 
-                                        
-
-                            </div>
+                                        </div>
+    <asp:ValidationSummary ID="ValidationSummary1" ForeColor="Red" runat="server" ShowSummary="true" DisplayMode="BulletList" ShowMessageBox="True"/> 
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
