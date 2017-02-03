@@ -39,7 +39,7 @@ namespace LogicUniversityStore.View.Department.Hod
         private void PopulateEmpList()
         {
             LUUser logUser = (LUUser)Session["user"];
-            List<LUUser> users = new UserController().GetUsersByDeptCode(logUser != null && logUser.Department != null ? logUser.Department.DepartmentCode : "");
+            List<LUUser> users = new UserController().GetUsersByDeptCode(logUser != null && logUser.Department != null ? logUser.Department.DepartmentID : 0);
             lstEmp.DataSource = users;
             lstEmp.DataBind();
             if (users.Count > 0)
@@ -60,7 +60,7 @@ namespace LogicUniversityStore.View.Department.Hod
                 }
             }
 
-            if (new UserController().UpdateUserRole(3, roleCode))
+            if (new UserController().UpdateUserRole(Convert.ToInt32(lstEmp.SelectedItem.Value), roleCode))
                 lblMessage.Text = "Role has been updated succesfully";
 
         }

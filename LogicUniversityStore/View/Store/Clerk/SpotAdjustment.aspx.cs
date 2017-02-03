@@ -86,9 +86,10 @@ namespace LogicUniversityStore.View.Store.Clerk
             {
                 lstAdjItems = (List<AdjustmentItem>)ViewState["items"];
                 AdjustmentController ctrl = new AdjustmentController();
+                LUUser user = (LUUser)Session["user"];
                 Adjustment adjustment = new Adjustment()
                 {
-                    CreatedBy = 1,
+                    CreatedBy = user.UserID,
                     CreatedDate = DateTime.Now,
                     Items = lstAdjItems,
                     Number = lblAdjId.Text

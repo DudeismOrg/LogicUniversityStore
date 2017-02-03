@@ -1262,6 +1262,13 @@
     <Compile Include="View\Store\Clerk\Modal\CreateRetreivalForm.aspx.designer.cs">
       <DependentUpon>CreateRetreivalForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Store\Clerk\Outstanding.aspx.cs">
+      <DependentUpon>Outstanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\Outstanding.aspx.designer.cs">
+      <DependentUpon>Outstanding.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Store\Clerk\ProcessRequest.aspx.cs">
       <DependentUpon>ProcessRequest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

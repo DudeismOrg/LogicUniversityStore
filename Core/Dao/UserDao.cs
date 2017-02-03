@@ -27,9 +27,9 @@ namespace LogicUniversityStore.Dao
             return db.LUUsers.Where(user => user.UserName == username && user.Password == password).FirstOrDefault();
         }
 
-        public List<LUUser> GetUsersByDeptCode(string deptCode)
+        public List<LUUser> GetUsersByDeptCode(int deptId)
         {
-            return db.LUUsers.Where(user => user.Department.DepartmentCode == deptCode).ToList();
+            return db.LUUsers.Where(user => user.Department.DepartmentID == deptId).ToList();
         }
 
         public string GetUserNameByUserId(int userId)

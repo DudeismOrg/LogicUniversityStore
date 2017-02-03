@@ -22,9 +22,9 @@ namespace Core.Controller
             return new UserDao().GetUserNameByUserId(userId);
         }
 
-        public List<LUUser> GetUsersByDeptCode(string deptCode)
+        public List<LUUser> GetUsersByDeptCode(int deptId)
         {
-            return new UserDao().GetUsersByDeptCode(deptCode);
+            return new UserDao().GetUsersByDeptCode(deptId);
         }
 
         public List<Role> GetRolesByDeptType(string deptType)
