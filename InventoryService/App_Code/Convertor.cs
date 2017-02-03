@@ -44,7 +44,7 @@ public class Convertor
             modelReq.RequisitionItems.Add(
             new CoreModel.RequisitionItem()
             {
-                ItemID = item.ItemId,
+                SupplierItemID = item.ItemId,
                 NeededQuantity = item.NeededQuantity
             });
         }

@@ -14,14 +14,31 @@ namespace LogicUniversityStore.Controller
         public ItemDao ItemDao { get; set; }
         public StockCardDao StockCardDao { get; set; }
         public SupplierItemDao SupplierItemDao { get; set; }
+        public PoBatchDao POBatchDao { get; set; }
+        public PurchaseOrderDao PODao { get; set; }
+        public PurchaseOrderItemDao POItemDao { get; set; }
+
         public Dictionary<Item, List<SupplierItem>> StockReorder;
+
+        public List<PurchaseOrderItem> FindAllItemsInPurchaseOrder(int poId)
+        {
+            return POItemDao.FindAllItemsByPOId(poId);
+        }
+
+        public PurchaseOrder findPOById(int poId)
+        {
+            return PODao.getPoById(poId);
+        }
 
         public PurchaseOrderController()
         {
             ItemDao = new ItemDao();
             StockCardDao = new StockCardDao();
             SupplierItemDao = new SupplierItemDao();
+            POBatchDao = new PoBatchDao();
             StockReorder = new Dictionary<Item, List<SupplierItem>>();
+            PODao = new PurchaseOrderDao();
+            POItemDao = new PurchaseOrderItemDao();
         }
 
         public List<Item> GetItems()
@@ -39,6 +56,16 @@ namespace LogicUniversityStore.Controller
             }
 
             return reorderItem;
+        }
+
+        public void SaveDODetailsInPO(int currentPOId, string doNumber)
+        {
+            PODao.SaveDOInPO(currentPOId, doNumber);
+        }
+
+        public void SaveDoForPOItems(int poItemId, int receivedQuantity)
+        {
+            POItemDao.SaveDOForPOItems(poItemId, receivedQuantity);
         }
 
         public string supplierNameNumber(int suplietId)
@@ -60,8 +87,6 @@ namespace LogicUniversityStore.Controller
 
         public void SavePurchaseOrder(List<PurchaseOrderUtil> newPOUlist)
         {
-            PoBatchDao dao = new PoBatchDao();
-            PurchaseOrderDao pdao = new PurchaseOrderDao();
             PurchaseOrderItemDao poitem = new PurchaseOrderItemDao();
 
             try
@@ -69,8 +94,8 @@ namespace LogicUniversityStore.Controller
                 POBatch batch = new POBatch();
                 batch.POBatchDate = DateTime.Now;
                 batch.Printed = false;
-                dao.db.POBatches.Add(batch);
-                dao.db.SaveChanges();
+                POBatchDao.db.POBatches.Add(batch);
+                POBatchDao.db.SaveChanges();
 
                 PersistPO(newPOUlist, batch);
             }
@@ -90,9 +115,10 @@ namespace LogicUniversityStore.Controller
             }
         }
 
+        
+
         public void PersistPO(List<PurchaseOrderUtil> newPOUlist, POBatch batch)
         {
-            PurchaseOrderDao pdao = new PurchaseOrderDao();
             Dictionary<PurchaseOrder, List<PurchaseOrderItems>> poitemsList = new Dictionary<PurchaseOrder, List<PurchaseOrderItems>>();
 
             foreach (PurchaseOrderUtil npo in newPOUlist)
@@ -107,8 +133,8 @@ namespace LogicUniversityStore.Controller
                 po.PORemark = npo.Remark;
                 po.ExpectedDeliveryDate = Convert.ToDateTime(npo.ExpectedDeliveryDate);
                 po.POBatchID = batch.POBatchID;
-                pdao.db.PurchaseOrders.Add(po);
-                pdao.db.SaveChanges();
+                PODao.db.PurchaseOrders.Add(po);
+                PODao.db.SaveChanges();
 
                 poitemsList.Add(po, npo.Items);
             }
@@ -120,7 +146,6 @@ namespace LogicUniversityStore.Controller
 
         public void PersistPoItems(Dictionary<PurchaseOrder, List<PurchaseOrderItems>> poitemsList)
         {
-            PurchaseOrderItemDao poitem = new PurchaseOrderItemDao();
             foreach (KeyValuePair<PurchaseOrder, List<PurchaseOrderItems>> poi in poitemsList)
             {
                 foreach (PurchaseOrderItems itm in poi.Value)
@@ -129,13 +154,28 @@ namespace LogicUniversityStore.Controller
                     items.PurchaseOrderID = poi.Key.PurchaseOrderID;
                     items.RequestedQuantity = itm.ReorderQuantity;
                     items.ItemID = itm.PoItem.GetSupplierItem().ItemID;
-                    items.UnitPrice = poitem.GetUnitPrice(itm.PoItem, itm.PoSupplier);
-                    poitem.db.PurchaseOrderItems.Add(items);
-                    poitem.db.SaveChanges();
+                    items.UnitPrice = POItemDao.GetUnitPrice(itm.PoItem, itm.PoSupplier);
+                    POItemDao.db.PurchaseOrderItems.Add(items);
+                    POItemDao.db.SaveChanges();
                 }
             }
 
         }
 
+        public List<POBatch> getAllPoBatch()
+        {
+            return POBatchDao.GetAllPoBatch();
+        }
+
+
+        public List<PurchaseOrder> FindAllPurchaseOrderByBatch(int batchId)
+        {
+            return PODao.findPoByBatchId(batchId);
+        }
+
+        public List<PurchaseOrder> FindAllPurchaseOrderBySupplier(int suplierId)
+        {
+            return PODao.findPoBySupplierId(suplierId);
+        }
     }
 }

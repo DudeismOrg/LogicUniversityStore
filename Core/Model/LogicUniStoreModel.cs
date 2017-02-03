@@ -288,7 +288,7 @@ namespace LogicUniversityStore.Model
             modelBuilder.Entity<SupplierItem>()
                 .HasMany(e => e.RequisitionItems)
                 .WithRequired(e => e.SupplierItem)
-                .HasForeignKey(e => e.ItemID)
+                .HasForeignKey(e => e.SupplierItemID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SupplierItem>()

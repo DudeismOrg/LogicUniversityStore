@@ -14,7 +14,6 @@ C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\L
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll.config
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.pdb
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\AjaxControlToolkit.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Core.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.dll
@@ -38,60 +37,192 @@ C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\L
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\ApplicationInsights.config
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\csc.exe
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\vbc.exe
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll.config
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.pdb
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Core.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.CrystalReports.Engine.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportSource.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.Shared.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.Web.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.QualityTools.Testing.Fakes.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.Controllers.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.Prompting.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\stdole.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Core.pdb
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.xml
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.xml
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.xml
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojFakesResolveAssemblyReference.cache
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
-C:\Users\Imran\Desktop\AD-Project\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportSource.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.Shared.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.Web.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\stdole.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\ApplicationInsights.config
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\csc.exe
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\vbc.exe
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll.config
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.pdb
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Core.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Core.pdb
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.xml
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.xml
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.xml
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.xml
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\ApplicationInsights.config
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\csc.exe
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\vbc.exe
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll.config
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.pdb
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Core.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportSource.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.Shared.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.Web.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\stdole.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Core.pdb
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
+C:\Users\ahmed\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportSource.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.Shared.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.Web.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\DELL\Documents\LogicUniversityStore\LogicUniversityStore\bin\stdole.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\ApplicationInsights.config
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\csc.exe
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\vbc.exe
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll.config
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\LogicUniversityStore.pdb
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Core.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportSource.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.Shared.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.Web.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\stdole.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Core.pdb
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.xml
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\EntityFramework.SqlServer.xml
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.Web.xml
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.xml
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
+C:\Users\LMP\Documents\git\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb

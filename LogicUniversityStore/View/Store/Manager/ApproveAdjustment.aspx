@@ -22,9 +22,9 @@
                                               <asp:BoundField DataField="CountQuantity" HeaderText="Count Qty" DataFormatString="{0:D}" />
                                               <asp:BoundField DataField="AdjustQuantity" HeaderText="Adjust Quantity" />
                                               <asp:BoundField DataField="Remark" HeaderText="Remark" />
-                                              <asp:BoundField DataField="AdjustmentAmount" HeaderText="Adjustment Amount" />
+                                              <asp:BoundField DataField="AdjustmentAmount" HeaderText="Adjustment Amount" DataFormatString="${0:C2}" />
                                               <asp:CommandField HeaderText="Approve" ButtonType="Button" ShowSelectButton="true" SelectText="Approve" ControlStyle-CssClass="btn btn-sm btn-success"  />
-                                              <asp:CommandField HeaderText="Reject" ButtonType="Button" ShowDeleteButton="true" DeleteText="Reject" ControlStyle-CssClass="btn btn-sm btn-success"  />
+                                              <asp:CommandField HeaderText="Reject" ButtonType="Button" ShowDeleteButton="true" DeleteText="Reject" ControlStyle-CssClass="btn btn-sm btn-danger"  />
                                             </Columns>
                                             <EditRowStyle BackColor="#999999" />
                                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
