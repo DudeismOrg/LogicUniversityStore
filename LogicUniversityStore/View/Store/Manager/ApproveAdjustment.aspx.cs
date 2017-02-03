@@ -32,7 +32,7 @@ namespace LogicUniversityStore.View.Store.Manager
                         r["CountQuantity"] = i.CountQuantity;
                         r["AdjustQuantity"] = i.AdjustQuantity;
                         r["Remark"] = i.Remark;
-                        r["AdjustmentAmount"] = (i.SupplierItem.Item.BasePrice) * (i.AdjustQuantity);
+                        r["AdjustmentAmount"] = (i.SupplierItem.Item.BasePrice) * Math.Abs(i.AdjustQuantity);
                         dt.Rows.Add(r);
                     }
                     gvAdjustmentItemList.DataSource = dt;

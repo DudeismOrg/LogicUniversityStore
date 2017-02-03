@@ -18,7 +18,8 @@ namespace LogicUniversityStore.View.Department.Hod
       {            
         if(!IsPostBack)
         {
-          int depId = 1;//todo while login
+          LUUser user = (LUUser)Session["User"];
+          int depId = user.DepartmentID.Value;
           List<Requisition> req = new List<Requisition>();
           req = reqController.GetApprovedRejectedRequisition(depId);
           DataTable dt = new DataTable();
