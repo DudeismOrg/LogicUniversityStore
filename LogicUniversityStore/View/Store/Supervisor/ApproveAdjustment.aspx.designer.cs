@@ -13,15 +13,6 @@ namespace LogicUniversityStore.View.Store.Supervisor {
     public partial class WebForm2 {
         
         /// <summary>
-        /// approveRejectAdjustment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm approveRejectAdjustment;
-        
-        /// <summary>
         /// gvAdjustmentItemList control.
         /// </summary>
         /// <remarks>
