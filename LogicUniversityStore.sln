@@ -7,27 +7,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicUniversityStore", "Log
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{EE5121F7-198D-4BB2-869B-D1F29E37CDD8}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "InventoryService", "http://localhost/InventoryService", "{8C363542-D34A-43B7-98AD-0B4208FCBEFC}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "InventoryService", "http://localhost/LogicUniversityStore/InventoryService", "{F6B5E93C-1D3F-453D-8DA5-73A9BB267F99}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
-		ProjectReferences = "{ee5121f7-198d-4bb2-869b-d1f29e37cdd8}|Core.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/InventoryService"
-		Debug.AspNetCompiler.PhysicalPath = "..\InventoryService\"
+		Debug.AspNetCompiler.PhysicalPath = "InventoryService\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\InventoryService\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/InventoryService"
-		Release.AspNetCompiler.PhysicalPath = "..\InventoryService\"
+		Release.AspNetCompiler.PhysicalPath = "InventoryService\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\InventoryService\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\InventoryService\"
-		DefaultWebSiteLanguage = "Visual C#"
+		SlnRelativePath = "InventoryService\"
 	EndProjectSection
 EndProject
 Global
@@ -44,10 +42,10 @@ Global
 		{EE5121F7-198D-4BB2-869B-D1F29E37CDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE5121F7-198D-4BB2-869B-D1F29E37CDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE5121F7-198D-4BB2-869B-D1F29E37CDD8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C363542-D34A-43B7-98AD-0B4208FCBEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C363542-D34A-43B7-98AD-0B4208FCBEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C363542-D34A-43B7-98AD-0B4208FCBEFC}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C363542-D34A-43B7-98AD-0B4208FCBEFC}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F6B5E93C-1D3F-453D-8DA5-73A9BB267F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6B5E93C-1D3F-453D-8DA5-73A9BB267F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6B5E93C-1D3F-453D-8DA5-73A9BB267F99}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6B5E93C-1D3F-453D-8DA5-73A9BB267F99}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
