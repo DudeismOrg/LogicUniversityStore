@@ -64,14 +64,18 @@
                 <div class="box-body">
                     <asp:GridView ID="gvPoByBatchNumb" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" Width="100%" DataKeyNames="PurchaseOrderID" AllowPaging="true" PageSize="10">
                         <Columns>
-                            <asp:BoundField DataField="PurchaseOrderID" HeaderText="#" ReadOnly="true" />
+                            <asp:TemplateField HeaderText="#">
+                                <ItemTemplate>
+                                    <%# Container.DataItemIndex + 1 %>
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField DataField="PuchaseOrderNo" HeaderText="Purchase-order Number" ReadOnly="true" />
                             <asp:BoundField DataField="OrderDate" HeaderText="Ordered Date" ReadOnly="true" />
                             <asp:BoundField DataField="SupplierDetails" HeaderText="Supplier Name" ReadOnly="true" />
                             <asp:BoundField DataField="PORemark" HeaderText="Remarks" ReadOnly="true" />
                             <asp:TemplateField HeaderText="Items">
                                 <ItemTemplate>
-                                    <asp:HyperLink ID="HyperLink1" CssClass="btn btn-success" runat="server" navigateurl='<%# String.Format("DeliveryOrderConfirm.aspx?poid={0}", Eval("PurchaseOrderID")) %>' OnClick="btnDoConfirm_Click">
+                                    <asp:HyperLink ID="HyperLink1" CssClass="btn btn-success" runat="server" NavigateUrl='<%# String.Format("DeliveryOrderConfirm.aspx?poid={0}", Eval("PurchaseOrderID")) %>' OnClick="btnDoConfirm_Click">
                                          <i class="fa fa-2x fa-truck" aria-hidden="true"></i>
                                     </asp:HyperLink>
                                 </ItemTemplate>
@@ -88,7 +92,7 @@
                             <asp:BoundField DataField="PORemark" HeaderText="Remarks" ReadOnly="true" />
                             <asp:TemplateField HeaderText="Items">
                                 <ItemTemplate>
-                                    <asp:HyperLink ID="HyperLink1" CssClass="btn btn-success" runat="server" navigateurl='<%# String.Format("DeliveryOrderConfirm.aspx?poid={0}", Eval("PurchaseOrderID")) %>' OnClick="btnDoConfirm_Click">
+                                    <asp:HyperLink ID="HyperLink1" CssClass="btn btn-success" runat="server" NavigateUrl='<%# String.Format("DeliveryOrderConfirm.aspx?poid={0}", Eval("PurchaseOrderID")) %>' OnClick="btnDoConfirm_Click">
                                          <i class="fa fa-2x fa-truck" aria-hidden="true"></i>
                                     </asp:HyperLink>
                                 </ItemTemplate>

@@ -20,27 +20,17 @@ namespace LogicUniversityStore.View.Store.Clerk
                 gvRetrievList.DataSource = controller.GetAllRetrieval();
                 gvRetrievList.DataBind();
             }
-               
-           
         }
 
         protected void gvRetrievList_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "View")
             {
-                // Retrieve the row index stored in the 
-                // CommandArgument property.
                 int index = Convert.ToInt32(e.CommandArgument);
-
-                // Retrieve the row that contains the button 
-                // from the Rows collection.
-                //  gvRetrievList.Rows[index];
-
-
                 Retrieval r = controller.FindRetrieval(index);
                 List<Requisition> reqList = controller.GetAllRequistion(r);
                 Session["retId"] = index;
-               Response.Redirect("/View/Store/Clerk/ViewRetrieval.aspx");
+                Response.Redirect("/View/Store/Clerk/ViewRetrieval.aspx");
             }
         }
     }

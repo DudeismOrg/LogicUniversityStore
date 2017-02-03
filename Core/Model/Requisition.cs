@@ -51,6 +51,8 @@ namespace LogicUniversityStore.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RequisitionItem> RequisitionItems { get; set; }
 
+        public string DepartmentName { get { return Department.DepartmentName; } }
+
         public bool Equals(Requisition other)
         {
             return this.ReqID.Equals(other.ReqID);

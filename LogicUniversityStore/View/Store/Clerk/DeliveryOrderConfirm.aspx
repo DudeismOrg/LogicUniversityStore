@@ -63,7 +63,11 @@
                                     <asp:TextBox Visible="false" ID="idVal" runat="server" Text='<%#Bind("PurchaeOrderItemID") %>'></asp:TextBox>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:BoundField DataField="PurchaeOrderItemID" HeaderText="#" ReadOnly="true" />
+                            <asp:TemplateField HeaderText="#">
+                                <ItemTemplate>
+                                    <%# Container.DataItemIndex + 1 %>
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField DataField="ItemCode" HeaderText="Item Number" ReadOnly="true" />
                             <asp:BoundField DataField="ItemCategory" HeaderText="Category" ReadOnly="true" />
                             <asp:BoundField DataField="ItemName" HeaderText="Description" ReadOnly="true" />

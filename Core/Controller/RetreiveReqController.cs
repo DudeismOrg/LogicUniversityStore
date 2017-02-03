@@ -24,6 +24,12 @@ namespace LogicUniversityStore.Controller
 
         }
 
+        public Retrieval GetRetrievalFromId(int retrId)
+        {
+            RetrievalDao = new RetrievalDao();
+            return RetrievalDao.findRetrievalById(retrId);
+        }
+
         public List<Retrieval> GetAllRetrieval()
         {
             return RetrievalDao.FindAll();
@@ -34,7 +40,7 @@ namespace LogicUniversityStore.Controller
             RetrievalDao.Create(ret);
         }
 
-      
+
 
         private Dictionary<Department, Pair> GetBreakDownByDepartment(RequisitionItem reqItem)
         {
@@ -68,10 +74,10 @@ namespace LogicUniversityStore.Controller
 
         public Retrieval FindRetrieval(int index)
         {
-           return RetrievalDao.Find(index);
+            return RetrievalDao.Find(index);
         }
 
-        public Dictionary<RequisitionItem,MainRow> GetRow()
+        public Dictionary<RequisitionItem, MainRow> GetRow()
         {
             if (this.retReq == null) throw new InvalidConstructorException("Use another constructor for this controller");
             Dictionary<RequisitionItem, MainRow> result = new Dictionary<RequisitionItem, MainRow>(new RequistionItemBySupplierComparator());
@@ -79,11 +85,12 @@ namespace LogicUniversityStore.Controller
             {
                 foreach (RequisitionItem item in r.RequisitionItems)
                 {
-                   if(!result.ContainsKey(item))
+                    if (!result.ContainsKey(item))
                     {
                         MainRow row = new MainRow(new Pair(item.NeededQuantity.Value, item.ApprovedQuantity.Value), this.GetBreakDownByDepartment(item));
                         result.Add(item, row);
-                    }else
+                    }
+                    else
                     {
                         result[item].Pair.Needed += item.NeededQuantity.Value;
                         result[item].Pair.Approved += item.ApprovedQuantity.Value;
@@ -93,18 +100,28 @@ namespace LogicUniversityStore.Controller
             return result;
         }
 
+        public void saveRetrevedQuantityWithMismatch(int itemId, int retrId, int collectedQty)
+        {
+            RetrievalDao.saveCollectedQuantityWithMismatch(itemId, retrId, collectedQty);
+        }
+
+        public void saveRetrevedQuantityWithoutMismatch(int itemId, int retrId, int collectedQty)
+        {
+            RetrievalDao.saveCollectedQuantityWithoutMismatch(itemId, retrId, collectedQty);
+        }
+
         public List<Requisition> GetAllRequistion(Retrieval r)
         {
-          return  RetrievalDao.GetAllRequistion(r);
+            return RetrievalDao.GetAllRequistion(r);
         }
     }
 
-  public  class Pair : IEquatable<Pair>
+
+
+    public class Pair : IEquatable<Pair>
     {
         static int counter = 1;
         private int id;
-        private int neededQuantity;
-        private int approvedQuantity;
 
         public Pair(int neededQuantity, int approvedQuantity)
         {
@@ -127,7 +144,7 @@ namespace LogicUniversityStore.Controller
         public Pair Pair { get; set; }
         public Dictionary<Department, Pair> DictionaryMap { get; set; }
 
-        public MainRow(Pair pair,Dictionary<Department,Pair> dictionary)
+        public MainRow(Pair pair, Dictionary<Department, Pair> dictionary)
         {
             this.Pair = pair;
             this.DictionaryMap = dictionary;

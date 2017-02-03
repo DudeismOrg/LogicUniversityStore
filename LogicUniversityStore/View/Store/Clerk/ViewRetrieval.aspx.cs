@@ -15,16 +15,21 @@ namespace LogicUniversityStore.View.Store.Clerk
     {
         RetreiveReqController controller;
         RetrievalDao dao = new RetrievalDao();
+        public Retrieval ret;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-              
-               controller = new RetreiveReqController(GetAllRequisition());
+                controller = new RetreiveReqController(GetAllRequisition());
+                int retrId = getSession();
+                ret = controller.GetRetrievalFromId(retrId);
                 Dictionary<RequisitionItem, MainRow> dic = controller.GetRow();
-                gvRetrieval.RowDataBound += GvRetrieval_RowDataBound;
                 gvRetrieval.DataSource = dic;
                 gvRetrieval.DataBind();
+
+                List<Requisition> reqistions = GetAllRequisition();
+                gvRequisition.DataSource = reqistions;
+                gvRequisition.DataBind();
             }
         }
 
@@ -44,17 +49,46 @@ namespace LogicUniversityStore.View.Store.Clerk
             }
         }
 
-      
-
         private List<Requisition> GetAllRequisition()
         {
             int id = Convert.ToInt32(Session["retId"]);
-           return dao.GetAllRequistion(dao.Find(id));
+            return dao.GetAllRequistion(dao.Find(id));
+        }
+
+        private int getSession()
+        {
+            return Convert.ToInt32(Session["retId"]);
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("/View/Store/Clerk/RetrievalForm.aspx");
+        }
+
+        protected void btnCollected_Click(object sender, EventArgs e)
+        {
+            controller = new RetreiveReqController(GetAllRequisition());
+            int retrId = getSession();
+            foreach (GridViewRow row in gvRetrieval.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    TextBox collectedQtyTxt = (row.Cells[4].FindControl("txtRetrevedQuantity") as TextBox);
+                    TextBox approvedQtyTxt = (row.Cells[4].FindControl("approvedQuantity") as TextBox);
+                    TextBox ItemIdTxt = (row.Cells[4].FindControl("txtItemId") as TextBox);
+                    int collectedQty = Convert.ToInt32(collectedQtyTxt.Text);
+                    int approvedQty = Convert.ToInt32(approvedQtyTxt.Text);
+                    int ItemId = Convert.ToInt32(ItemIdTxt.Text);
+                    if (collectedQty == approvedQty)
+                    {
+                        controller.saveRetrevedQuantityWithoutMismatch(ItemId, retrId, collectedQty);
+                    }
+                    else
+                    {
+                        controller.saveRetrevedQuantityWithMismatch(ItemId, retrId, collectedQty);
+                    }
+                }
+            }
         }
     }
 }
