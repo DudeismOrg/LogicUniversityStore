@@ -151,7 +151,7 @@ namespace LogicUniversityStore.View.Store.Clerk
         {
             lstItems = reqController.GetItemsByCategoryId(parseInt(DdlCategories.SelectedItem.Value));
             DdlItems.DataSource = lstItems;
-            DdlItems.DataValueField = "ItemID";
+            DdlItems.DataValueField = "SupplierItemID";
             DdlItems.DataTextField = "ItemName";
             DdlItems.DataBind();
             setUnitOfMeasure(lstItems);

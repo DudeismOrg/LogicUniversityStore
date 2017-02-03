@@ -109,7 +109,7 @@ namespace LogicUniversityStore.View.Department.Employee
                 foreach (var cartItem in items)
                 {
                     RequisitionItem item = new RequisitionItem();
-                    item.ItemID = cartItem.SupplierItem.SupplierItemId;
+                    item.SupplierItemID = cartItem.SupplierItem.SupplierItemId;
                     item.NeededQuantity = cartItem.Quantity;
                     item.ReqID = requisition.ReqID;
                     item.IsOutstanding = false;

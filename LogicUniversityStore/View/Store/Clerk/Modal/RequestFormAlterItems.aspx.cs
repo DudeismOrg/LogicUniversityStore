@@ -29,14 +29,14 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
                 Dictionary<RequisitionItem, int> itemsWithOnhand = new Dictionary<RequisitionItem, int>();
                 foreach (var item in items)
                 {
-                    itemsWithOnhand[item] = sDao.GetProductCountInStock(item.ItemID) - lockedItems[item.ItemID];
+                    itemsWithOnhand[item] = sDao.GetProductCountInStock(item.SupplierItem.ItemID) - lockedItems[item.SupplierItem.ItemID];
                 }
                 //Label1.Text = requestIDq.ToString();
                 var listRequestItems = (from i in processReq.GetRequisitionItems(requestIDq)
-                                        join s in processReq.GetAllStockCard() on i.ItemID equals s.ItemID
+                                        join s in processReq.GetAllStockCard() on i.SupplierItemID equals s.ItemID
                                         select new
                                         {
-                                            i.ItemID,
+                                            i.SupplierItemID,
                                             i.ReqID,
                                             i.ReqItemID,
                                             i.NeededQuantity,

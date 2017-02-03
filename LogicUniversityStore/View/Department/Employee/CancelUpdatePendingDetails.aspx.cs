@@ -66,7 +66,7 @@ namespace LogicUniversityStore.View.Department.Employee
                 String itemName = gvRequisitionDetails.Rows[i].Cells[0].Text;
                 Item item = reqController.GetItem(itemName);
                 int itemId = item.ItemID;
-                ri.ItemID = itemId;
+                ri.SupplierItemID = itemId;
                 TextBox tb = gvRequisitionDetails.Rows[i].FindControl("txtQty") as TextBox;
                 ri.NeededQuantity = Convert.ToInt32(tb.Text);
                 reqController.addRequisitionItem(ri);

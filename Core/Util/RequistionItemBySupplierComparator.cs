@@ -10,12 +10,12 @@ namespace LogicUniversityStore.Util
     {
         public bool Equals(RequisitionItem x, RequisitionItem y)
         {
-            return x.ItemID == y.ItemID;
+            return x.SupplierItemID == y.SupplierItemID;
         }
 
         public int GetHashCode(RequisitionItem obj)
         {
-           return obj.ItemID.GetHashCode();
+           return obj.SupplierItemID.GetHashCode();
         }
     }
 }
