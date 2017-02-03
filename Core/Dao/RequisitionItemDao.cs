@@ -21,7 +21,7 @@ namespace LogicUniversityStore.Dao
         }
         public void deleteRequisitionItem(int reqId, int itemId)
         {
-            RequisitionItem item = db.RequisitionItems.Where(s => s.ReqID == reqId && s.ItemID == itemId).First();
+            RequisitionItem item = db.RequisitionItems.Where(s => s.ReqID == reqId && s.SupplierItemID == itemId).First();
 
 
             if (item != null)
@@ -48,7 +48,7 @@ namespace LogicUniversityStore.Dao
 
         public void updateRequisitionItem(int reqId, int itemId, int qty)
         {
-            RequisitionItem item = db.RequisitionItems.Where(s => s.ReqID == reqId && s.ItemID == itemId).First();
+            RequisitionItem item = db.RequisitionItems.Where(s => s.ReqID == reqId && s.SupplierItemID == itemId).First();
             if (item != null)
             {
                 item.NeededQuantity = qty;

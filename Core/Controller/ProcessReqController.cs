@@ -48,21 +48,21 @@ namespace LogicUniversityStore.Controller
                 {
                     RequisitionItem rItem = RequisitionItemDao.db.RequisitionItems.Find(item.ReqItemID);
 
-                    if (!lockedItemsCountForProcess.ContainsKey(rItem.ItemID))
+                    if (!lockedItemsCountForProcess.ContainsKey(rItem.SupplierItem.ItemID))
                     {
-                        lockedItemsCountForProcess.Add(rItem.ItemID, 0);
+                        lockedItemsCountForProcess.Add(rItem.SupplierItem.ItemID, 0);
                     }
                     int actualQuantityInStock = (StockCardDao.GetProductCountInStock(rItem.SupplierItem.ItemID) - lockedItemsCountForProcess[rItem.SupplierItem.ItemID]);
 
                     if ((actualQuantityInStock - rItem.NeededQuantity) >= 0)
                     {
-                        lockedItemsCountForProcess[rItem.ItemID] += rItem.NeededQuantity.Value;
+                        lockedItemsCountForProcess[rItem.SupplierItem.ItemID] += rItem.NeededQuantity.Value;
                         rItem.ApprovedQuantity = rItem.NeededQuantity;
                         progrssMeter += 1;
                     }
                     else
                     {
-                        lockedItemsCountForProcess[rItem.ItemID] += actualQuantityInStock;
+                        lockedItemsCountForProcess[rItem.SupplierItem.ItemID] += actualQuantityInStock;
                         rItem.ApprovedQuantity = actualQuantityInStock;
                         unfullfilledItem += 1;
                         progrssMeter += (double)rItem.ApprovedQuantity / (double)rItem.NeededQuantity; 
