@@ -36,8 +36,9 @@
                                                         <ItemTemplate >
                                                         <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("NeededQuantity") %>' BorderStyle="Groove">
                                                         </asp:TextBox>
-                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Quantity must be entered" Display="Dynamic" Text="*" ControlToValidate="txtQty" ForeColor="Red"></asp:RequiredFieldValidator> 
-                                                        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Quantity must be a integer" Text="*" Display="Dynamic" ControlToValidate="txtQty" Type="Integer" ForeColor="Red" Operator="DataTypeCheck"></asp:CompareValidator>                               
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Quantity must be entered" Display="Dynamic" Text="*" ControlToValidate="txtQty" ForeColor="Red" ValidationGroup="vg"></asp:RequiredFieldValidator> 
+                                                        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Quantity must be a integer" Text="*" Display="Dynamic" ControlToValidate="txtQty" Type="Integer" ForeColor="Red" Operator="DataTypeCheck" ValidationGroup="vg"></asp:CompareValidator> 
+                                                        <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Quantity must be greater than 0" Operator="GreaterThan" ValueToCompare=0 Text="*" Display="Dynamic" ControlToValidate="txtQty" ForeColor="Red"  ValidationGroup="vg"></asp:CompareValidator>                               
                                                         </ItemTemplate>                            
                                                         </asp:TemplateField>                      
                                                        <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" ReadOnly="true" />                                 
@@ -63,7 +64,7 @@
                                 <%--<button type="button" class="btn btn-danger">Reject</button>--%>
 
                                 <%--<button type="button" class="btn btn-default">Close</button>--%>
-                                        <asp:Button ID="btnUpdate" CssClass="btn btn-success" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+                                        <asp:Button ID="btnUpdate" CssClass="btn btn-success" runat="server" Text="Update" OnClick="btnUpdate_Click" ValidationGroup="vg" />
                                         
                                         <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back" OnClick="btnClose_Click"/>
                                        
@@ -71,7 +72,7 @@
                                         
 
                             </div>
-     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowSummary="true" DisplayMode="BulletList" ShowMessageBox="True" ForeColor="Red"/> 
+     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowSummary="true" DisplayMode="BulletList" ShowMessageBox="True" ForeColor="Red" ValidationGroup="vg"/> 
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
