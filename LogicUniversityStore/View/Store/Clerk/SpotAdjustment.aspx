@@ -46,6 +46,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <asp:DropDownList ID="DdlCategories" runat="server" AutoPostBack="true" CssClass="form-control select2" OnSelectedIndexChanged="DdlCategories_SelectedIndexChanged"></asp:DropDownList>
+                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Category must be selected" Display="Dynamic" Text="*" ControlToValidate="DdlCategories" ForeColor="Red" ValidationGroup="vg"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="col-md-12" style="height: 10px"></div>
@@ -55,6 +56,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <asp:DropDownList ID="DdlItems" runat="server" CssClass="form-control select2"></asp:DropDownList>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Item must be selected" Display="Dynamic" Text="*" ControlToValidate="DdlItems" ForeColor="Red" ValidationGroup="vg"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="col-md-12" style="height: 10px"></div>
@@ -66,6 +68,8 @@
                                             <div class="input-group">
                                                 <%-- <input class="form-control" type="text" placeholder="Enter Quntity">--%>
                                                 <asp:TextBox ID="tbAmount" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Adjust quantity must be entered" Display="Dynamic" Text="*" ControlToValidate="tbAmount" ForeColor="Red" ValidationGroup="vg"></asp:RequiredFieldValidator>
+                                                <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Adjust Quantity must be an integer" Text="*" Display="Dynamic" ControlToValidate="tbAmount" Type="Integer" ForeColor="Red" Operator="DataTypeCheck" ValidationGroup="vg"></asp:CompareValidator> 
                                                 <span class="input-group-addon">
                                                     <asp:Label ID="lblUnits" runat="server"></asp:Label></span>
                                             </div>
@@ -86,9 +90,10 @@
                                 </div>
                                 <div class="panel-footer" style="height: 50px">
                                     <%--    <a class="pull-right btn btn-success">Add Item</a>--%>
-                                    <asp:Button ID="btnAddItem" runat="server" Text="Add Item" CssClass="pull-right btn btn-success" OnClick="btnAddItem_Click" />
+                                    <asp:Button ID="btnAddItem" runat="server" Text="Add Item" CssClass="pull-right btn btn-success" OnClick="btnAddItem_Click" ValidationGroup="vg" />
                                     <asp:Button ID="btnCancelEdit" runat="server" Text="Cancel" CssClass="pull-right btn btn-success" OnClick="btnCancelEdit_Click" />
                                 </div>
+<asp:ValidationSummary ID="ValidationSummary2" runat="server" ShowSummary="true" DisplayMode="BulletList" ShowMessageBox="True" ForeColor="Red" ValidationGroup="vg"/> 
                             </div>
                         </div>
                         <div class="col-md-12" style="height: 20px"></div>
@@ -170,7 +175,7 @@
                         <%--<button type="submit" class="pull-right btn btn-danger" style="margin-left: 5px">Cancel</button>--%>
                         <%-- <button type="submit" class="pull-right btn btn-primary" style="margin-right: 5px">Put Request</button>--%>
                         <asp:Button ID="btnSubmit" runat="server" Text="Create Adjustment" CssClass="pull-right btn btn-primary" OnClick="btnSubmit_Click" />
-                    </div>
+                    </div>    
                 </div>
             </div>
         </div>

@@ -107,8 +107,8 @@ namespace LogicUniversityStore.View.Store.Clerk
             DdlItems.ClearSelection();
             DdlItems.DataSource = null;
             DdlItems.DataBind();
-            tbAmount.Text = "";
             tbRemarks.Text = "";
+            tbAmount.Text = "";
         }
 
         protected void DeleteRow(object sender, GridViewDeleteEventArgs e)
@@ -152,7 +152,7 @@ namespace LogicUniversityStore.View.Store.Clerk
         {
             lstItems = reqController.GetItemsByCategoryId(parseInt(DdlCategories.SelectedItem.Value));
             DdlItems.DataSource = lstItems;
-            DdlItems.DataValueField = "SupplierItemID";
+            DdlItems.DataValueField = "ItemID";
             DdlItems.DataTextField = "ItemName";
             DdlItems.DataBind();
             setUnitOfMeasure(lstItems);

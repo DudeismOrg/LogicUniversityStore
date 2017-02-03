@@ -18,6 +18,9 @@ namespace LogicUniversityStore.Controller
         public Dictionary<int, int> lockedItemsCountForProcess; // will hold SupplierItemID and Count
         public Dictionary<Requisition, double> mainList;  // will hold requisition and unfullfilItemNumbers
 
+        public int? unfullfill;
+        public double progrss;
+
         public ProcessReqController()
         {
             LogicUniStoreModel db = new LogicUniStoreModel();
@@ -30,23 +33,18 @@ namespace LogicUniversityStore.Controller
 
         public Dictionary<Requisition, double> GetMainProcessReqList()
         {
-            foreach (var requisition in RequisitionDao.GetApprovedRequisitionList())
+            foreach (Requisition requisition in RequisitionDao.GetApprovedRequisitionList())
             {
-
                 if (mainList.ContainsKey(requisition))
                 {
                     continue;
                 }
-
                 int? unfullfilledItem = 0;
-                double percentage = 100;
-                //  int countReqItem = requisition.RequisitionItems.Count();
                 double progrssMeter = 0.0;
-
-
-                //try
-                //{
-                    foreach (RequisitionItem item in requisition.RequisitionItems)
+                List<RequisitionItem> reqItm = RequisitionDao.getAllRequisitionItemsFromReqId(requisition.ReqID);
+                try
+                {
+                    foreach (RequisitionItem item in reqItm)
                     {
                         RequisitionItem rItem = RequisitionItemDao.db.RequisitionItems.Where(ri => ri.ReqItemID == item.ReqItemID).FirstOrDefault();
 
@@ -59,47 +57,30 @@ namespace LogicUniversityStore.Controller
                         if ((actualQuantityInStock - rItem.NeededQuantity) >= 0)
                         {
                             lockedItemsCountForProcess[rItem.SupplierItem.ItemID] += rItem.NeededQuantity.Value;
-                            rItem.ApprovedQuantity = rItem.NeededQuantity;
+                            RequisitionItemDao.saveApprovedQty(item.ReqItemID, rItem.NeededQuantity);
                             progrssMeter += 1;
                         }
                         else
                         {
                             lockedItemsCountForProcess[rItem.SupplierItem.ItemID] += actualQuantityInStock;
-                            rItem.ApprovedQuantity = actualQuantityInStock;
+                            RequisitionItemDao.saveApprovedQty(item.ReqItemID, actualQuantityInStock);
                             unfullfilledItem += 1;
                             progrssMeter += (double)rItem.ApprovedQuantity / (double)rItem.NeededQuantity;
                         }
                     }
-                    RequisitionItemDao.db.SaveChanges();
-                //}
-                //catch (Exception ex)
-                //{
-
-                //    throw;
-                //}
-
-                //if (unfullfilledItem.Value == 0)
-                //{
-                //    percentage = 100;
-                //}
-                //else
-                //{
-                //    double value = (requisition.RequisitionItems.Count - Convert.ToDouble(unfullfilledItem)) / requisition.RequisitionItems.Count;
-                //    percentage = value * 100;
-                //}
-
-                //   mainList.Add(requisition, percentage);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
                 mainList.Add(requisition, (progrssMeter / requisition.RequisitionItems.Count) * 100);
             }
-
             return mainList;
-
         }
 
         internal Requisition GetRequisition(int requisitonID)
         {
             return RequisitionDao.Find(requisitonID);
-            // throw new NotImplementedException();
         }
 
         public List<StockCard> GetAllStockCard()
@@ -136,5 +117,7 @@ namespace LogicUniversityStore.Controller
         {
             return new RequisitionDao().GenerateRetreivalForm(retReq);
         }
+
+
     }
 }

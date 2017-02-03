@@ -53,6 +53,12 @@ namespace LogicUniversityStore.Dao
             return db.Requisitions.Where(x => x.RequesterID == requesterId).ToList();
         }
 
+        internal List<RequisitionItem> getAllRequisitionItemsFromReqId(int reqID)
+        {
+            return db.RequisitionItems.Where(u => u.ReqID == reqID).ToList();
+            throw new NotImplementedException();
+        }
+
         public List<Requisition> GetRequisitionListHod(int depId)
         {
             return db.Requisitions.Where(x => x.DepartmentID == depId).ToList();
@@ -126,6 +132,11 @@ namespace LogicUniversityStore.Dao
         public int GetApprovedRequisitionCount()
         {
           return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).Count();
+        }
+
+        internal List<RequisitionItem> getAllApprovedRequisitionItemsFromReqId()
+        {
+            return db.RequisitionItems.Where(r => r.Requisition.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
         }
 
         public void reapplyRequisition(int reqId, String remark,DateTime reqDate)

@@ -33,13 +33,13 @@ namespace LogicUniversityStore.Model
 
         public virtual Requisition Requisition { get; set; }
 
-        public string ItemName
-        {
-            get
-            {
-                return SupplierItem.Item.ItemName;
-            }
-        }
+        //public string ItemName
+        //{
+        //    get
+        //    {
+        //        return SupplierItem.Item.ItemName;
+        //    }
+        //}
 
         public string DepartmentName
         {

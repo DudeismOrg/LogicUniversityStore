@@ -70,7 +70,10 @@
                                                         <asp:TemplateField HeaderText="Quantity" ItemStyle-Height="50px">
                                                         <ItemTemplate >
                                                         <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("NeededQuantity") %>' BorderStyle="Groove">
-                                                        </asp:TextBox>                                
+                                                        </asp:TextBox> 
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Quantity must be entered" Display="Dynamic" Text="*" ControlToValidate="txtQty" ForeColor="Red" ValidationGroup="vg"></asp:RequiredFieldValidator> 
+                                                        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Quantity must be a integer" Text="*" Display="Dynamic" ControlToValidate="txtQty" Type="Integer" ForeColor="Red" Operator="DataTypeCheck" ValidationGroup="vg"></asp:CompareValidator> 
+                                                        <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Quantity must be greater than 0" Text="*" Display="Dynamic" ControlToValidate="txtQty" Operator="GreaterThan" ValueToCompare=0 ForeColor="Red" ValidationGroup="vg"></asp:CompareValidator>                                 
                                                         </ItemTemplate>
                                                         </asp:TemplateField>
                                                        <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" ItemStyle-Height="50px" ReadOnly="true" />                                 
@@ -96,13 +99,14 @@
                                 <%--<button type="button" class="btn btn-danger">Reject</button>--%>
 
                                 <%--<button type="button" class="btn btn-default">Close</button>--%>
-                                        <asp:Button ID="btnApprove" CssClass="btn btn-success" runat="server" Text="Approve" OnClick="btnApprove_Click" />
+                                        <asp:Button ID="btnApprove" CssClass="btn btn-success" runat="server" Text="Approve" OnClick="btnApprove_Click" ValidationGroup="vg" />
                                         <asp:Button ID="btnReject" CssClass="btn btn-danger" runat="server" Text="Reject" OnClick="btnReject_Click" />
                                         <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back" OnClick="btnClose_Click"/>
                                         
                                         
 
                             </div>
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowSummary="true" DisplayMode="BulletList" ShowMessageBox="True" ForeColor="Red"/> 
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
