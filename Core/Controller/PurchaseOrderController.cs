@@ -85,7 +85,7 @@ namespace LogicUniversityStore.Controller
             return suppliersItems;
         }
 
-        public void SavePurchaseOrder(List<PurchaseOrderUtil> newPOUlist)
+        public void SavePurchaseOrder(List<PurchaseOrderUtil> newPOUlist, LUUser user)
         {
             PurchaseOrderItemDao poitem = new PurchaseOrderItemDao();
 
@@ -94,10 +94,11 @@ namespace LogicUniversityStore.Controller
                 POBatch batch = new POBatch();
                 batch.POBatchDate = DateTime.Now;
                 batch.Printed = false;
+                batch.GeneratedBy = user.UserID;
                 POBatchDao.db.POBatches.Add(batch);
                 POBatchDao.db.SaveChanges();
 
-                PersistPO(newPOUlist, batch);
+                PersistPO(newPOUlist, batch, user);
             }
             catch (DbEntityValidationException ea)
             {
@@ -117,17 +118,17 @@ namespace LogicUniversityStore.Controller
 
         
 
-        public void PersistPO(List<PurchaseOrderUtil> newPOUlist, POBatch batch)
+        public void PersistPO(List<PurchaseOrderUtil> newPOUlist, POBatch batch, LUUser user)
         {
             Dictionary<PurchaseOrder, List<PurchaseOrderItems>> poitemsList = new Dictionary<PurchaseOrder, List<PurchaseOrderItems>>();
-
             foreach (PurchaseOrderUtil npo in newPOUlist)
             {
                 PurchaseOrder po = new PurchaseOrder();
                 po.PuchaseOrderNo = npo.PoNumber;
+                po.OrderEmpID = user.UserID;
                 po.OrderDate = npo.OrderDate;
-                po.DeliveryAddress = "";
-                po.POStatus = "Requested";
+                po.DeliveryAddress = "Store Address";
+                po.POStatus = PurchaseOrderStatus.Requested.ToString();
                 po.SupplierID = npo.Supplier.SupplierID;
                 po.DONumber = "";
                 po.PORemark = npo.Remark;
@@ -139,12 +140,12 @@ namespace LogicUniversityStore.Controller
                 poitemsList.Add(po, npo.Items);
             }
 
-            PersistPoItems(poitemsList);
+            PersistPoItems(poitemsList,user);
 
         }
 
 
-        public void PersistPoItems(Dictionary<PurchaseOrder, List<PurchaseOrderItems>> poitemsList)
+        public void PersistPoItems(Dictionary<PurchaseOrder, List<PurchaseOrderItems>> poitemsList, LUUser user)
         {
             foreach (KeyValuePair<PurchaseOrder, List<PurchaseOrderItems>> poi in poitemsList)
             {

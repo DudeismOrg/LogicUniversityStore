@@ -44,11 +44,11 @@ namespace LogicUniversityStore.View.Store.Clerk
                 PurchaseOrderUtil pou = finalPO.Where(f => f.Supplier.SupplierID == SuplierId).FirstOrDefault();
                 pou.Remark = (row.Cells[7].FindControl("supRemark") as TextBox).Text;
                 pou.OrderDate = DateTime.Now;
-                pou.PoNumber = SuplierId.ToString();
+                pou.PoNumber = "#"+SuplierId.ToString()+""+DateTime.Now.Day+""+""+DateTime.Now.Month+"/"+DateTime.Now.Hour+DateTime.Now.Minute;
                 newPOUlist.Add(pou);
             }
-
-            POController.SavePurchaseOrder(newPOUlist);
+            LUUser user = (LUUser)Session["user"];
+            POController.SavePurchaseOrder(newPOUlist, user);
 
             Response.Write("<script language='javascript'> alert('Purchase order saved successfully!!!'); </script>");
             Response.Redirect("ClrkMain.aspx");

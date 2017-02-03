@@ -10,6 +10,10 @@ namespace LogicUniversityStore.Util
         Requested, Submitted, Cancelled, Approved, Rejected, Allocated, Shipped, Delivered
     }
 
+    public enum PurchaseOrderStatus
+    {
+        Requested, Delivered
+    }
     public enum AdjustmentType
     {
         Positive, Negative
