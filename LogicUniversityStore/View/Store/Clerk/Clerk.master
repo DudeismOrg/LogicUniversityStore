@@ -46,7 +46,7 @@
     </li>
 
     <li class="treeview">
-        <a href="index.html">
+        <a href="DeliveryOrder.aspx">
             <i class="fa fa-table"></i>
             <span> Delivery Order</span>
         </a>

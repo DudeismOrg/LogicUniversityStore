@@ -172,6 +172,8 @@
     <Content Include="View\Department\Employee\Employee.master" />
     <Content Include="View\Store\Clerk\Clerk.master" />
     <Content Include="View\Department\Hod\Hod.master" />
+    <Content Include="View\Store\Clerk\DeliveryOrder.aspx" />
+    <Content Include="View\Store\Clerk\DeliveryOrderConfirm.aspx" />
     <Content Include="View\Store\Clerk\Modal\CreateRetreivalForm.aspx" />
     <Content Include="View\Store\Clerk\Outstanding.aspx" />
     <Content Include="View\Store\Manager\ManagerMain.aspx" />
@@ -181,7 +183,6 @@
     <Content Include="View\Store\Supervisor\Supervisor.Master" />
     <Content Include="View\Store\Manager\Manager.Master" />
     <Content Include="aspnet_client" />
-    <Fakes Include="Fakes\CrystalDecisions.CrystalReports.Engine.fakes" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1225,6 +1226,20 @@
     </Compile>
     <Compile Include="View\Store\Clerk\ClrkMain.aspx.designer.cs">
       <DependentUpon>ClrkMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\DeliveryOrder.aspx.cs">
+      <DependentUpon>DeliveryOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\DeliveryOrder.aspx.designer.cs">
+      <DependentUpon>DeliveryOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Clerk\DeliveryOrderConfirm.aspx.cs">
+      <DependentUpon>DeliveryOrderConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Clerk\DeliveryOrderConfirm.aspx.designer.cs">
+      <DependentUpon>DeliveryOrderConfirm.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Store\Clerk\Modal\ItemsInPO.aspx.cs">
       <DependentUpon>ItemsInPO.aspx</DependentUpon>

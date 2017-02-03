@@ -23,5 +23,28 @@ namespace LogicUniversityStore.Dao
             return price;
         }
 
+        internal List<PurchaseOrderItem> FindAllItemsByPOId(int poId)
+        {
+            List<Item> itemList = new List<Item>();
+            List<PurchaseOrderItem> poItems = db.PurchaseOrderItems.Where(e => e.PurchaseOrderID == poId).ToList();
+            foreach(PurchaseOrderItem p in poItems)
+            {
+                itemList.Add(p.SupplierItem.Item);
+            }
+            return poItems;
+        }
+
+        internal Item getTheItemFromPOItem(int poItemId)
+        {
+            PurchaseOrderItem poitm = db.PurchaseOrderItems.Where(o => o.PurchaeOrderItemID == poItemId).FirstOrDefault();
+            return poitm.SupplierItem.Item;
+        }
+
+        internal void SaveDOForPOItems(int poItemId, int receivedQuantity)
+        {
+            PurchaseOrderItem poItm = db.PurchaseOrderItems.Where(p => p.PurchaeOrderItemID == poItemId).FirstOrDefault();
+            poItm.ReceivedQuantity = receivedQuantity;
+            db.SaveChanges();
+        }
     }
 }

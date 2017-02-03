@@ -43,7 +43,14 @@ namespace LogicUniversityStore.Dao
           
         }
 
-      
+        internal void updateStockCardByPurchaseDelivery(Item item, int receivedQuantity)
+        {
+            StockCard stock = db.StockCards.Where(i => i.ItemID == item.ItemID).FirstOrDefault();
+            int currentOnhandQty = stock.OnHandQuantity.HasValue ? stock.OnHandQuantity.Value : 0;
+            stock.OnHandQuantity = currentOnhandQty + receivedQuantity;
+            db.SaveChanges();
+        }
+
         public void UpdateItemInStock(int itemID, int Quantity)
         {
             StockCard card = GetStockCardByItemId(itemID);
