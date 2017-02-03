@@ -26,19 +26,24 @@ namespace LogicUniversityStore.View.Department.Hod
 
         private void PopulateRolesList()
         {
-            List<Role> users = new UserController().GetRolesByDeptType("Faculty");
-            lstRoles.DataSource = users;
+            List<Role> roles = new UserController().GetRolesByDeptType("Faculty");
+            lstRoles.DataSource = roles;
             lstRoles.DataBind();
-            int userId = Convert.ToInt32(lstEmp.SelectedItem.Value);
-            SetRole(userId);
+            if (lstEmp.SelectedItem != null)
+            {
+                int userId = Convert.ToInt32(lstEmp.SelectedItem.Value);
+                SetRole(userId);
+            }
         }
 
         private void PopulateEmpList()
         {
-            List<LUUser> users = new UserController().GetUsersByDeptCode("ZOOL");
+            LUUser logUser = (LUUser)Session["user"];
+            List<LUUser> users = new UserController().GetUsersByDeptCode(logUser != null && logUser.Department != null ? logUser.Department.DepartmentCode : "");
             lstEmp.DataSource = users;
             lstEmp.DataBind();
-            lstEmp.SelectedIndex = 0;
+            if (users.Count > 0)
+                lstEmp.Items[0].Selected = true;
         }
 
         protected void btnSave_Click(object sender, EventArgs e)

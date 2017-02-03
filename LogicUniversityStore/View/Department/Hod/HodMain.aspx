@@ -25,8 +25,7 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Manage Roles</span>
-                        
+                        <span class="info-box-text">Manage Roles</span> 
                     </div>
                 </div>
             </div>

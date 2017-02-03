@@ -15,5 +15,27 @@ namespace LogicUniversityStore.Dao
             
         }
 
+        internal List<PurchaseOrder> findPoByBatchId(int batchId)
+        {
+            return db.PurchaseOrders.Where(z => z.POBatchID == batchId && z.POStatus == "Requested" && z.DONumber == "").ToList();
+        }
+
+        internal List<PurchaseOrder> findPoBySupplierId(int suplierId)
+        {
+            return db.PurchaseOrders.Where(z => z.SupplierID == suplierId && z.POStatus == "Requested" && z.DONumber == "").ToList();
+        }
+
+        internal PurchaseOrder getPoById(int poId)
+        {
+            return db.PurchaseOrders.Where(l => l.PurchaseOrderID == poId).FirstOrDefault();
+        }
+
+        internal void SaveDOInPO(int currentPOId, string doNumber)
+        {
+            PurchaseOrder po = db.PurchaseOrders.Where(t => t.PurchaseOrderID == currentPOId).FirstOrDefault();
+            po.DONumber = doNumber;
+            po.POStatus = "Received";
+            db.SaveChanges();
+        }
     }
 }

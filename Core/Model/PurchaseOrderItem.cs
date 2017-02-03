@@ -28,5 +28,12 @@ namespace LogicUniversityStore.Model
         public virtual PurchaseOrder PurchaseOrder { get; set; }
 
         public virtual SupplierItem SupplierItem { get; set; }
+
+        public string ItemCode { get { return SupplierItem.Item.ItemCode; } } 
+
+        public Category ItemCategory { get { return SupplierItem.Item.Category; } }
+
+        public string ItemName { get { return SupplierItem.Item.ItemName; } }
+
     }
 }

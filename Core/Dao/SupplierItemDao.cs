@@ -28,5 +28,10 @@ namespace LogicUniversityStore.Dao
         {
             return db.Suppliers.Where(x => x.SupplierID == SupplierId).FirstOrDefault();
         }
+
+        public List<Supplier> GetAllSupliers()
+        {
+            return db.Suppliers.ToList();
+        }
     }
 }

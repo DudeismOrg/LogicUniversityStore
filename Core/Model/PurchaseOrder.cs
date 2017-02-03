@@ -41,6 +41,13 @@ namespace LogicUniversityStore.Model
         [StringLength(10)]
         public string PORemark { get; set; }
 
+        public string SupplierDetails { get { return getSupplierNameDetails(); } }
+
+        private string getSupplierNameDetails()
+        {
+            return Supplier.SupplierName + " - " + Supplier.SupplierPhone;
+        }
+
         [Column(TypeName = "date")]
         public DateTime? ExpectedDeliveryDate { get; set; }
 
@@ -52,5 +59,7 @@ namespace LogicUniversityStore.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PurchaseOrderItem> PurchaseOrderItems { get; set; }
+
+
     }
 }
