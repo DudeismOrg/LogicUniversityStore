@@ -61,8 +61,15 @@
                 </div>
                 <div class="box-body">
                     <div class="col-md-12">
+
+
+
+
+
+
                         <% foreach (var s in requisition)
-                            { %>
+                            {
+                        %>
 
 
                         <div class="col-md-12">
@@ -110,21 +117,19 @@
                                                 <td><%= reqItm.ApprovedQuantity %></td>
                                                 <td><%= reqItm.RetirevedQuantity %></td>
                                                 <td>
-                                                    <input type="text"  class="form-control delivered-qty %>" name="delivered-<%= reqItm.ReqItemID %>" value="<%= reqItm.RetirevedQuantity %>"  />
+                                                    <input type="text" class="form-control delivered-qty" name="delivered-<%= reqItm.ReqItemID %>" value="<%= reqItm.RetirevedQuantity %>" />
                                                 </td>
                                             </tr>
-                                            
+
                                             <% } %>
                                         </tbody>
                                     </table>
-                                    <asp:Button ID="Button1" runat="server" CommandArgument='<%# this.ReqIdColumnDetail() %>' OnCommand="something" Text="Button" />
-                                    <a class="btn btn-success col-md-12 delivered" data-reqid="<%= s.ReqID %>" style="text-align: center; margin-top: 10px">Items Delivered</a>
+                                    <a class="btn btn-success col-md-12 delivered" data-reqid='<%= s.ReqID %>' style="text-align: center; margin-top: 10px">Items Delivered</a>
                                 </div>
                             </div>
                         </div>
 
                         <%} %>
-                        <asp:TextBox ID="reqId" CssClass="reqId" Text="0" runat="server" />
                     </div>
                 </div>
             </div>
@@ -137,15 +142,32 @@
         $(document).ready(function () {
             $("table").addClass("table table-condensed");
 
-            $(".delivered").click(function (e) {
-                var reqId = $(this).data("reqid");
-                alert(reqId);
-                $(".reqId").val(reqId);
-                
+            $(".delivered").click(function () {
+                var dataId = $(this).data("reqid");
+                $.ajax({
+                    type: "POST",
+                    url: "DisbursementsMain.aspx/GetSetSessionValue",
+                    data: '{ ReqIdSess: "' + dataId + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        alert(response.d);
+                        $("form").submit();
+                    },
+                    failure: function (response) {
+                        alert("Error in calling Ajax:" + response.d);
+                    }
+
+                });
+
             });
 
+            $(".delivered-qty").click(function () {
+                var id = $(this).data();
+            });
 
         });
+
     </script>
 </asp:Content>
 

@@ -70,5 +70,24 @@ namespace Core.Dao
                 db.SaveChanges();
             }
         }
+
+        public void SaveRequsitionAsDelivered(int reqIdInt)
+        {
+            Requisition req = db.Requisitions.Where(o => o.ReqID == reqIdInt).FirstOrDefault();
+            req.Status = RequisitionStatus.Delivered.ToString();
+            db.SaveChanges();
+        }
+
+        public void saveDeliveredStatusToReq(int reqItemID, int deliverdQuantity)
+        {
+            RequisitionItem reqItm = db.RequisitionItems.Where(e => e.ReqItemID == reqItemID).FirstOrDefault();
+            reqItm.DisbursedQuantity = deliverdQuantity;
+            db.SaveChanges();
+        }
+
+        public List<RequisitionItem> GetShipedReqItmsByReqId(int reqIdInt)
+        {
+            return db.RequisitionItems.Where(r=>r.ReqID == reqIdInt && r.Requisition.Status == RequisitionStatus.Shipped.ToString()).ToList();
+        }
     }
 }
