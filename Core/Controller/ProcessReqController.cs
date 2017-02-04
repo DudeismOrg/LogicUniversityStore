@@ -20,9 +20,10 @@ namespace LogicUniversityStore.Controller
 
         public ProcessReqController()
         {
-            RequisitionDao = new RequisitionDao();
-            StockCardDao = new StockCardDao();
-            RequisitionItemDao = new RequisitionItemDao();
+            LogicUniStoreModel db = new LogicUniStoreModel();
+            RequisitionDao = new RequisitionDao(db);
+            StockCardDao = new StockCardDao(db);
+            RequisitionItemDao = new RequisitionItemDao(db);
             lockedItemsCountForProcess = new Dictionary<int, int>();
             mainList = new Dictionary<Requisition, double>();
         }
@@ -43,31 +44,39 @@ namespace LogicUniversityStore.Controller
                 double progrssMeter = 0.0;
 
 
-                foreach (RequisitionItem item in requisition.RequisitionItems)
-                {
-                    RequisitionItem rItem = RequisitionItemDao.db.RequisitionItems.Find(item.ReqItemID);
+                //try
+                //{
+                    foreach (RequisitionItem item in requisition.RequisitionItems)
+                    {
+                        RequisitionItem rItem = RequisitionItemDao.db.RequisitionItems.Where(ri => ri.ReqItemID == item.ReqItemID).FirstOrDefault();
 
-                    if (!lockedItemsCountForProcess.ContainsKey(rItem.ItemID))
-                    {
-                        lockedItemsCountForProcess.Add(rItem.ItemID, 0);
-                    }
-                    int actualQuantityInStock = (StockCardDao.GetProductCountInStock(rItem.SupplierItem.ItemID) - lockedItemsCountForProcess[rItem.ItemID]);
+                        if (!lockedItemsCountForProcess.ContainsKey(rItem.SupplierItem.ItemID))
+                        {
+                            lockedItemsCountForProcess.Add(rItem.SupplierItem.ItemID, 0);
+                        }
+                        int actualQuantityInStock = (StockCardDao.GetProductCountInStock(rItem.SupplierItem.ItemID) - lockedItemsCountForProcess[rItem.SupplierItem.ItemID]);
 
-                    if ((actualQuantityInStock - rItem.NeededQuantity) >= 0)
-                    {
-                        lockedItemsCountForProcess[rItem.ItemID] += rItem.NeededQuantity.Value;
-                        rItem.ApprovedQuantity = rItem.NeededQuantity;
-                        progrssMeter += 1;
-                    }
-                    else
-                    {
-                        lockedItemsCountForProcess[rItem.ItemID] += actualQuantityInStock;
-                        rItem.ApprovedQuantity = actualQuantityInStock;
-                        unfullfilledItem += 1;
-                        progrssMeter += (double)rItem.ApprovedQuantity / (double)rItem.NeededQuantity; 
+                        if ((actualQuantityInStock - rItem.NeededQuantity) >= 0)
+                        {
+                            lockedItemsCountForProcess[rItem.SupplierItem.ItemID] += rItem.NeededQuantity.Value;
+                            rItem.ApprovedQuantity = rItem.NeededQuantity;
+                            progrssMeter += 1;
+                        }
+                        else
+                        {
+                            lockedItemsCountForProcess[rItem.SupplierItem.ItemID] += actualQuantityInStock;
+                            rItem.ApprovedQuantity = actualQuantityInStock;
+                            unfullfilledItem += 1;
+                            progrssMeter += (double)rItem.ApprovedQuantity / (double)rItem.NeededQuantity;
+                        }
                     }
                     RequisitionItemDao.db.SaveChanges();
-                }
+                //}
+                //catch (Exception ex)
+                //{
+
+                //    throw;
+                //}
 
                 //if (unfullfilledItem.Value == 0)
                 //{
@@ -90,7 +99,7 @@ namespace LogicUniversityStore.Controller
         internal Requisition GetRequisition(int requisitonID)
         {
             return RequisitionDao.Find(requisitonID);
-           // throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
 
         public List<StockCard> GetAllStockCard()

@@ -25,7 +25,8 @@ namespace Core.Controller
                 Description = message,
                 SenderUserID = senderId,
                 status = status.ToString(),
-                ReceiverRoleID = (int)receiverRole
+                ReceiverRoleID = (int)receiverRole,
+                ReceiverRole = new LogicUniStoreModel().Roles.Where(rol => rol.RoleID == (int)receiverRole).FirstOrDefault()
             };
             objDao.CreateNotification(objNot);
         }
@@ -33,6 +34,16 @@ namespace Core.Controller
         public void ChangeNotification(int userId, int notId, NotificationStatus status)
         {
             objDao.ClearNotification(userId, notId, status);
+        }
+
+        public List<Notification> GetNotificationsByRoleCode(string roleCode)
+        {
+            return objDao.GetNotificationsByRoleCode(roleCode);
+        }
+
+        public List<Notification> GetNotificationsByRoleCodeAnd(string roleCode, string notType)
+        {
+            return objDao.GetNotificationsByRoleCodeAndType(roleCode, notType);
         }
 
         public void SendEmail(string from, string to, string subject, string body)

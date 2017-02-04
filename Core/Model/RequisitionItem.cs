@@ -15,7 +15,7 @@ namespace LogicUniversityStore.Model
 
         public int ReqID { get; set; }
 
-        public int ItemID { get; set; }
+        public int SupplierItemID { get; set; }
 
         public int? NeededQuantity { get; set; }
 
@@ -77,11 +77,11 @@ namespace LogicUniversityStore.Model
 
         public bool Equals(RequisitionItem other)
         {
-            return this.ItemID.Equals(other.ItemID);
+            return this.SupplierItemID.Equals(other.SupplierItemID);
         }
         public override int GetHashCode()
         {
-            return this.ItemID;
+            return this.SupplierItemID;
         }
         public override string ToString()
         {

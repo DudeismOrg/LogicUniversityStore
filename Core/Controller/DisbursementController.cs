@@ -5,11 +5,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LogicUniversityStore.Dao;
 
-namespace Core.Controller
+namespace LogicUniversityStore.Controller
 {
     public class DisbursementController
     {
+        UserDao userDao { get; set; }
+        DisbursementDao disbDao { get; set; }
+        public DisbursementController()
+        {
+            userDao = new UserDao();
+            disbDao = new DisbursementDao();
+        }
+
         public List<Disbursement> GetDisbursements(int deptId)
         {
             return new DisbursementDao().GetDisbursements(deptId);
@@ -35,6 +44,16 @@ namespace Core.Controller
             }
             dbContext.Database.Connection.Close();
             return result;
+        }
+
+        public List<Department> GetAllDepartments()
+        {
+            return userDao.getAllDepartments();
+        }
+
+        public List<Requisition> GetAllShipedRequsitionByDept(int deptId)
+        {
+            return disbDao.getShipedReqByDept(deptId);
         }
     }
 }

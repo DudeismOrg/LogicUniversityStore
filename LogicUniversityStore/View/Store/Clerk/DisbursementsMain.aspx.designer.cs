@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicUniversityStore.View.Department.Employee {
+namespace LogicUniversityStore.View.Store.Clerk {
     
     
-    public partial class EmpMain {
+    public partial class DisbursementsMain {
         
         /// <summary>
-        /// lblPendingApproval control.
+        /// DdlDepartment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPendingApproval;
+        protected global::System.Web.UI.WebControls.DropDownList DdlDepartment;
     }
 }

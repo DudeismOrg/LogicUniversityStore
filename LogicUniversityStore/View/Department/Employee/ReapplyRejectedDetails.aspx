@@ -3,41 +3,7 @@
     <h1>Requisition Details</h1>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
-    <div class="col-md-12">
-
-                                    <div class="col-md-6">
-
-                                        <div class="pull-left" style="text-align: left">
-
-                                            <h5><u>Request form Number</u>: #Numb</h5>
-
-                                            <h5><u>Created Date</u>: dd-mm-yyyy</h5>
-
-                                            <h5><u>Remark by Employee</u>: Some Remark</h5>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="pull-right" style="text-align: right">
-
-                                            <h5><u>Department</u>: Dept </h5><small>Dept code</small>
-
-                                            <h5><u>Created By</u>: Name</h5>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-12" style="height:10px"></div>
-
-                                    
-
-                                    <div class="col-md-12" style="height:10px"></div>
+                                                                                                       
 
                                     <div class="col-md-12">
 
@@ -70,7 +36,9 @@
                                                         <asp:TemplateField HeaderText="Quantity">
                                                         <ItemTemplate >
                                                         <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("NeededQuantity") %>' BorderStyle="Groove">
-                                                        </asp:TextBox>                                
+                                                        </asp:TextBox>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Quantity must be entered" Display="Dynamic" Text="*" ControlToValidate="txtQty" ForeColor="Red"></asp:RequiredFieldValidator> 
+                                                        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Quantity must be a integer" Text="*" Display="Dynamic" ControlToValidate="txtQty" Type="Integer" ForeColor="Red" Operator="DataTypeCheck"></asp:CompareValidator>                                 
                                                         </ItemTemplate>
                                                         </asp:TemplateField>
                                                        <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" ItemStyle-Width="150" ReadOnly="true" />                                 
@@ -99,7 +67,7 @@
                                         <asp:Button ID="btnReapply" CssClass="btn btn-success" runat="server" Text="Reapply" OnClick="btnReapply_Click" />
                                         
                                         <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Back" OnClick="btnClose_Click"/>
-                                        
+                                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowSummary="true" DisplayMode="List" ShowMessageBox="True"/> 
                                         
 
                             </div>

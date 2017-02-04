@@ -18,10 +18,10 @@ public class SupplierItemResponse
     }
 
     [DataMember]
-    public int ItemId { get; set; }
+    public string ItemId { get; set; }
 
     [DataMember]
-    public int SupplierId { get; set; }
+    public string SupplierId { get; set; }
 
     [DataMember]
     public string ItemName { get; set; }

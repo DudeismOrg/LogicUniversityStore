@@ -24,7 +24,7 @@ public class RequisitionResponse
     [DataMember]
     public string CreatedBy { get; set; }
     [DataMember]
-    public int UserId { get; set; }
+    public string UserId { get; set; }
     [DataMember]
     public string ApprovedBy { get; set; }
     [DataMember]

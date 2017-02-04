@@ -43,6 +43,11 @@ namespace LogicUniversityStore.Dao
             return name;
         }
 
+        internal List<Department> getAllDepartments()
+        {
+            return db.Departments.ToList();
+        }
+
         public bool UpdateUserRole(int userId, string roleCode)
         {
             bool result = false;

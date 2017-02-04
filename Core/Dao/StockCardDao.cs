@@ -8,11 +8,16 @@ namespace LogicUniversityStore.Dao
 {
     public class StockCardDao
     {
-        public LogicUniStoreModel db = new LogicUniStoreModel();
+        public LogicUniStoreModel db;
 
         public StockCardDao()
         {
-            
+            db = new LogicUniStoreModel();
+        }
+
+        public StockCardDao(LogicUniStoreModel context)
+        {
+            db = context;
         }
 
         public List<StockCard> GetAllInStock()
@@ -43,13 +48,20 @@ namespace LogicUniversityStore.Dao
           
         }
 
-      
+        internal void updateStockCardByPurchaseDelivery(Item item, int receivedQuantity)
+        {
+            StockCard stock = db.StockCards.Where(i => i.ItemID == item.ItemID).FirstOrDefault();
+            int currentOnhandQty = stock.OnHandQuantity.HasValue ? stock.OnHandQuantity.Value : 0;
+            stock.OnHandQuantity = currentOnhandQty + receivedQuantity;
+            db.SaveChanges();
+        }
+
         public void UpdateItemInStock(int itemID, int Quantity)
         {
             StockCard card = GetStockCardByItemId(itemID);
             if(card == null) throw new ArgumentException("Item Id  is not Valid");
             card.OnHandQuantity += Quantity;
-            if (card.OnHandQuantity < 0) throw new InvalidOperationException("On hand quanity for ItemID " + itemID + " is going negative. ItemName: " + card.Item.ItemName);
+            if (card.OnHandQuantity < 0) throw new InvalidOperationException("On hand quanity for SupplierItemID " + itemID + " is going negative. ItemName: " + card.Item.ItemName);
             db.SaveChanges();
         }
 
@@ -63,12 +75,11 @@ namespace LogicUniversityStore.Dao
         public void updateStockCardByAdjustment(int itemId, int adjustQuantity)
         {
             StockCard card = db.StockCards.Where(x => x.ItemID == itemId).FirstOrDefault();
-            int qty = card.OnHandQuantity.Value + adjustQuantity;
-            if (qty >= 0)
-            {
-                card.OnHandQuantity = qty;
-                db.SaveChanges();
-            }
+            int onhandQty = card.OnHandQuantity.Value + adjustQuantity; 
+            card.OnHandQuantity =onhandQty;           
+            if (card.OnHandQuantity < 0) throw new InvalidOperationException("On hand quanity for SupplierItemID " + itemId + " is going negative. ItemName: " + card.Item.ItemName);
+            db.SaveChanges();
+            
         }
 
     }

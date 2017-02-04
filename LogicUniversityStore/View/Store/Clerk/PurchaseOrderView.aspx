@@ -22,8 +22,9 @@
             vertical-align: inherit;
             border-color: inherit;
         }
-        .align-center{
-            text-align:center;
+
+        .align-center {
+            text-align: center;
         }
     </style>
 </asp:Content>
@@ -37,79 +38,83 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="clrkMainContentBlock" runat="server">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box">
-                    <div class="box-header">
-                        <h4>Add Another Item</h4>
-                    </div>
-                    <div class="box-body">
-                        <div class="col-md-12">
-                            <div class="col-md-6">
-                                <label>Category</label>
-                                <asp:DropDownList ID="DdlCategories" runat="server" OnSelectedIndexChanged="DdlCategories_Change" AutoPostBack="true" CssClass="form-control select2"></asp:DropDownList>
-                            </div>
-                            <div class="col-md-6">
-                                <label>Item</label>
-                                <asp:DropDownList ID="DdlItems" runat="server" CssClass="form-control select2"></asp:DropDownList>
-                            </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h4>Add Another Item</h4>
+                </div>
+                <div class="box-body">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label>Category</label>
+                            <asp:DropDownList ID="DdlCategories" runat="server" OnSelectedIndexChanged="DdlCategories_Change" AutoPostBack="true" CssClass="form-control select2"></asp:DropDownList>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Item</label>
+                            <asp:DropDownList ID="DdlItems" runat="server" CssClass="form-control select2"></asp:DropDownList>
                         </div>
                     </div>
-                    <div class="panel-footer" style="height: 50px">
-                        <asp:Button ID="btnAddPurchaseOrderItem" runat="server" Text="Add Item" CssClass="pull-right btn btn-success" OnClick="btnAddPurchaseOrderItem_Click" />
-                    </div>
+                </div>
+                <div class="panel-footer" style="height: 50px">
+                    <asp:Button ID="btnAddPurchaseOrderItem" runat="server" Text="Add Item" CssClass="pull-right btn btn-success" OnClick="btnAddPurchaseOrderItem_Click" />
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
 
-                <div class="box">
-                    <div class="box-header">
-                        <div class="input-group input-group-sm pull-left" style="width: 150px;">
-                        </div>
+            <div class="box">
+                <div class="box-header">
+                    <div class="input-group input-group-sm pull-left" style="width: 150px;">
                     </div>
-                    <div class="box-body">
-                        <asp:GridView ID="gvReqItems" onrowdatabound="gvItems_RowCreated"  runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" Width="100%" DataKeyNames="ItemId" AllowPaging="true" OnRowDeleting="DeleteRow" PageSize="10">
-                            <Columns>
-                                <asp:TemplateField>
-                                    <ItemTemplate>
-                                        <asp:CheckBox ID="chkRow"  CssClass="item-checkbox" runat="server" Checked="false"/>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:BoundField DataField="ItemID" HeaderText="#" ReadOnly="true" />
-                                <asp:BoundField DataField="ItemCode" HeaderText="Item Number" ReadOnly="true" />
-                                <asp:BoundField DataField="Category" HeaderText="Category" ReadOnly="true" />
-                                <asp:BoundField DataField="ItemName" HeaderText="Description" ReadOnly="true" />
-                                <%--<asp:TemplateField HeaderText="Onhand Quantity">
+                </div>
+                <div class="box-body">
+                    <asp:GridView ID="gvReqItems" OnRowDataBound="gvItems_RowCreated" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" Width="100%" DataKeyNames="ItemId" AllowPaging="true" OnRowDeleting="DeleteRow" PageSize="10">
+                        <Columns>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:CheckBox ID="chkRow" CssClass="item-checkbox" runat="server" Checked="false" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="#">
+                                <ItemTemplate>
+                                    <%# Container.DataItemIndex + 1 %>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="ItemCode" HeaderText="Item Number" ReadOnly="true" />
+                            <asp:BoundField DataField="Category" HeaderText="Category" ReadOnly="true" />
+                            <asp:BoundField DataField="ItemName" HeaderText="Description" ReadOnly="true" />
+                            <%--<asp:TemplateField HeaderText="Onhand Quantity">
                                     <ItemTemplate>
                                         <a class="btn btn-success viewItems" href="#" data-id="<%# Eval("suplierId")%>">Items</a>
                                     </ItemTemplate>
                                 </asp:TemplateField>--%>
-                                <asp:TemplateField HeaderText="Reorder Quantity">
-                                    <ItemTemplate>
-                                        <asp:TextBox ID="txtReorder" runat="server" Text='<%# Bind("ReorderQuantity") %>' CssClass="form-control" />
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Supplier">
-                                    <ItemTemplate>
-                                        <asp:DropDownList ID="ddlSupplier" CssClass="form-control suplier-drp" runat="server"  DataValueField="SupplierId" DataTextField="SupplierName"/>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Delete?">
-                                    <ItemTemplate>
-                                        <span onclick="return confirm('Are you sure to delete?')">
-                                            <asp:LinkButton ID="lnkDelete" runat="server" Text="Delete" ForeColor="Red" CommandName="Delete">
+                            <asp:TemplateField HeaderText="Reorder Quantity">
+                                <ItemTemplate>
+                                    <asp:TextBox ID="txtReorder" runat="server" Text='<%# Bind("ReorderQuantity") %>' CssClass="form-control" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Supplier">
+                                <ItemTemplate>
+                                    <asp:DropDownList ID="ddlSupplier" CssClass="form-control suplier-drp" runat="server" DataValueField="SupplierId" DataTextField="SupplierName" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Delete?">
+                                <ItemTemplate>
+                                    <span onclick="return confirm('Are you sure to delete?')">
+                                        <asp:LinkButton ID="lnkDelete" runat="server" Text="Delete" ForeColor="Red" CommandName="Delete">
                                                 <i class="fa fa-times"></i>
-                                            </asp:LinkButton>
-                                        </span>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                            </Columns>
-                        </asp:GridView>
+                                        </asp:LinkButton>
+                                    </span>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
 
-                        <%--<table class="table">
+                    <%--<table class="table">
                             <tbody>
                                 <tr>
                                     <th style="width: 10px">
@@ -152,39 +157,39 @@
                                 <% } %>
                             </tbody>
                         </table>--%>
-                    </div>
+                </div>
 
-                    <div class="box-footer">
-                        <a href="#" class="btn btn-danger pull-right" style="margin-left: 5px">Cancel</a>
-                        <a href="#" id="purchaseorde-modal-show" class="btn btn-success pull-right" style="margin-right: 5px">Submit</a>
-                    </div>
+                <div class="box-footer">
+                    <a href="#" class="btn btn-danger pull-right" style="margin-left: 5px">Cancel</a>
+                    <a href="#" id="purchaseorde-modal-show" class="btn btn-success pull-right" style="margin-right: 5px">Submit</a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="modal fade" id="po-modal" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content" style="width:130%">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="retrievel-modalLabel">Purchase Order #PO123</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="col-md-12">
-                                    <div class="box">
-                                        <div class="box-body">
-                                            <h4>Confirm to generate Purchase order for selected items and send mail to the respective Suppliers</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <asp:Button ID="confirm" OnClick="ConfirmItems_Click" CssClass="btn btn-success" runat="server" Text="Confirm Items" />
-                                <button type="button" class="btn btn-default">Close</button>
+    <div class="modal fade" id="po-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 130%">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="retrievel-modalLabel">Purchase Order #PO123</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="box">
+                            <div class="box-body">
+                                <h4>Confirm to generate Purchase order for selected items and send mail to the respective Suppliers</h4>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <asp:Button ID="confirm" OnClick="ConfirmItems_Click" CssClass="btn btn-success" runat="server" Text="Confirm Items" />
+                    <button type="button" class="btn btn-default">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </asp:Content>

@@ -154,7 +154,7 @@ public class Service : IService
                 {
                     DeptName = item.Requisition.Department.DepartmentName,
                     ItemName = item.SupplierItem.Item.ItemName,
-                    Quantity = ((item.NeededQuantity.HasValue ? item.NeededQuantity.Value : 0) - (item.RetirevedQuantity.HasValue ? item.RetirevedQuantity.Value : 0))
+                    Quantity = ((item.NeededQuantity.HasValue ? item.NeededQuantity.Value : 0) - (item.RetirevedQuantity.HasValue ? item.RetirevedQuantity.Value : 0)).ToString()
                 });
             }
         }
@@ -177,7 +177,7 @@ public class Service : IService
                 lstSuppliers.Add(new SupplierResponse()
                 {
                     SupplierCode = sup.SupplierCode,
-                    SupplierId = sup.SupplierID,
+                    SupplierId = sup.SupplierID.ToString(),
                     SupplierName = sup.SupplierName,
                     SupplierItems = GetSupplierItems(sup.SupplierID.ToString())
 
@@ -199,9 +199,9 @@ public class Service : IService
                 lstSupItem.Add(new SupplierItemResponse()
                 {
                     ItemName = item.Item.ItemName,
-                    ItemId = item.ItemID,
+                    ItemId = item.ItemID.ToString(),
                     Description = item.Item.ItemDesc,
-                    SupplierId = item.SupplierId
+                    SupplierId = item.SupplierId.ToString()
                 });
             }
         }
@@ -301,7 +301,7 @@ public class Service : IService
                 {
                     DeptName = item.Item1,
                     ItemName = item.Item2,
-                    Quantity = item.Item3
+                    Quantity = item.Item3.ToString()
                 });
             }
         }

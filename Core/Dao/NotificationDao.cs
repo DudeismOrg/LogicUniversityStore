@@ -20,6 +20,7 @@ namespace Core.Dao
         public void CreateNotification(Notification objNot)
         {
             db.Notifications.Add(objNot);
+            db.SaveChanges();
         }
 
         public void ClearNotification(int userId, int notId, NotificationStatus status)
@@ -28,6 +29,17 @@ namespace Core.Dao
             not.status = status.ToString();
             not.ReciverUserID = userId;
             db.SaveChanges();
+        }
+
+        public List<Notification> GetNotificationsByRoleCode(string roleCode)
+        {
+            return db.Notifications.Where(not => not.ReceiverRole.RoleCode == roleCode && not.status == NotificationStatus.Created.ToString()).ToList();
+        }
+
+        public List<Notification> GetNotificationsByRoleCodeAndType(string roleCode, string notType)
+        {
+            return db.Notifications.Where(not => not.ReceiverRole.RoleCode == roleCode && not.status == NotificationStatus.Created.ToString()
+            && not.Type == notType).ToList();
         }
     }
 }

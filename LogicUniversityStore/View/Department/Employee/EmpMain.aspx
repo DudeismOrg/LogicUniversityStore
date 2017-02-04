@@ -27,7 +27,9 @@
                     <span class="info-box-icon bg-aqua"><i class="fa fa-spinner"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Pending Approval</span>
-                        <span class="info-box-number">20</span>
+                        <span class="info-box-number">
+                            <asp:Label ID="lblPendingApproval" runat="server"></asp:Label>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -36,7 +38,7 @@
                     <span class="info-box-icon bg-red"><i class="fa fa-thumbs-o-down"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Rejected Requests</span>
-                        <span class="info-box-number">10</span>
+                        
                     </div>
                 </div>
             </div>

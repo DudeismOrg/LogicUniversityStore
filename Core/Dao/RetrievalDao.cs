@@ -40,5 +40,27 @@ namespace LogicUniversityStore.Dao
             if (r == null) throw new Exception("Retrieval Id not valid");
             return r;
         }
+
+        internal Retrieval findRetrievalById(int retrId)
+        {
+            return db.Retrievals.Where(r => r.RetrievalID == retrId).FirstOrDefault();
+        }
+
+        internal void saveCollectedQuantityWithMismatch(int itemId, int retrId, int collectedQty)
+        {
+            List<Requisition> reqByIdOrdred = db.RequisitionItems.Where(item => item.RetrievalID == retrId && item.SupplierItem.ItemID == itemId).Select(item => item.Requisition).Distinct().ToList();
+            reqByIdOrdred = reqByIdOrdred.OrderBy(d => d.ReqDate).ToList();
+            int x = 0;
+            throw new NotImplementedException();
+        }
+
+        internal void saveCollectedQuantityWithoutMismatch(int itemId, int retrId, int collectedQty)
+        {
+            List<Requisition> reqByIdOrdred = db.RequisitionItems.Where(item => item.RetrievalID == retrId && item.SupplierItem.ItemID == itemId).Select(item => item.Requisition).Distinct().ToList();
+            reqByIdOrdred = reqByIdOrdred.OrderBy(d => d.ReqDate).ToList();
+            int x = 0;
+            throw new NotImplementedException();
+            throw new NotImplementedException();
+        }
     }
 }

@@ -30,6 +30,8 @@ namespace LogicUniversityStore.View
             switch (userROle)
             {
                 case Roles.EMP:
+                    Response.Redirect("~/View/Department/Employee/EmpMain.aspx");
+                    break;
                 case Roles.REP:
                     Response.Redirect("~/View/Department/Employee/EmpMain.aspx");
                     break;
@@ -40,8 +42,10 @@ namespace LogicUniversityStore.View
                     Response.Redirect("~/View/Store/Clerk/ClrkMain.aspx");
                     break;
                 case Roles.MANAGER:
+                    Response.Redirect("~/View/Store/Manager/ManagerMain.aspx");
+                    break;
                 case Roles.SUPERVISOR:
-                    Response.Redirect("");
+                    Response.Redirect("~/View/Store/Supervisor/SupervisorMain.aspx");
                     break;
             }
         }

@@ -55,7 +55,7 @@ namespace LogicUniversityStore.Controller
                     AdjustmentDao dao = new AdjustmentDao(dbContext);
                     dao.CreateAdjustment(objAdjustment);
                     //Update stock card
-                    dao.updateStockCard(objAdjustment.StockAdjustmentItems.ToList());
+                    //dao.updateStockCard(objAdjustment.StockAdjustmentItems.ToList());
                     txn.Commit();
                     isSuccessful = true;
                 }

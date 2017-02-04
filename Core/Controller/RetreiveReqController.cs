@@ -24,6 +24,12 @@ namespace LogicUniversityStore.Controller
 
         }
 
+        public Retrieval GetRetrievalFromId(int retrId)
+        {
+            RetrievalDao = new RetrievalDao();
+            return RetrievalDao.findRetrievalById(retrId);
+        }
+
         public List<Retrieval> GetAllRetrieval()
         {
             return RetrievalDao.FindAll();
@@ -45,7 +51,7 @@ namespace LogicUniversityStore.Controller
             {
                 foreach (RequisitionItem item in r.RequisitionItems)
                 {
-                    if ((item.ItemID != reqItem.ItemID))
+                    if ((item.SupplierItemID != reqItem.SupplierItemID))
                     {
                         continue;
                     }
@@ -94,6 +100,16 @@ namespace LogicUniversityStore.Controller
             return result;
         }
 
+        public void saveRetrevedQuantityWithMismatch(int itemId, int retrId, int collectedQty)
+        {
+            RetrievalDao.saveCollectedQuantityWithMismatch(itemId, retrId, collectedQty);
+        }
+
+        public void saveRetrevedQuantityWithoutMismatch(int itemId, int retrId, int collectedQty)
+        {
+            RetrievalDao.saveCollectedQuantityWithoutMismatch(itemId, retrId, collectedQty);
+        }
+
         public List<Requisition> GetAllRequistion(Retrieval r)
         {
             return RetrievalDao.GetAllRequistion(r);
@@ -123,8 +139,6 @@ namespace LogicUniversityStore.Controller
     {
         static int counter = 1;
         private int id;
-        private int neededQuantity;
-        private int approvedQuantity;
 
         public Pair(int neededQuantity, int approvedQuantity)
         {

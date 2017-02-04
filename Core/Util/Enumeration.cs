@@ -10,6 +10,10 @@ namespace LogicUniversityStore.Util
         Requested, Submitted, Cancelled, Approved, Rejected, Allocated, Shipped, Delivered
     }
 
+    public enum PurchaseOrderStatus
+    {
+        Requested, Delivered
+    }
     public enum AdjustmentType
     {
         Positive, Negative
@@ -27,7 +31,7 @@ namespace LogicUniversityStore.Util
 
     public enum Roles
     {
-        HOD,
+        HOD = 1,
         REP,
         CLERK,
         SUPERVISOR,

@@ -37,8 +37,6 @@ C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\L
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojFakesResolveAssemblyReference.cache
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.CrystalReports.Engine.Fakes.fakesconfig
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportSource.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.Shared.dll
@@ -57,61 +55,9 @@ C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\L
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\stdole.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Core.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Core.pdb
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.CrystalReports.Engine.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.CrystalReports.Engine.Fakes.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.CrystalReports.Engine.Fakes.fakesconfig
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.CrystalReports.Engine.Fakes.pdb
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.CrystalReports.Engine.Fakes.xml
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.ClientDoc.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.CommLayer.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.CommonControls.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.Controllers.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.CubeDefModel.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.DataDefModel.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.ObjectFactory.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.Prompting.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportAppServer.XmlSerialize.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.ReportSource.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.Shared.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\CrystalDecisions.Web.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\EntityFramework.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\EntityFramework.SqlServer.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\EntityFramework.SqlServer.xml
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\EntityFramework.xml
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\log4net.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.AI.Agent.Intercept.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.AI.DependencyCollector.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.AI.DependencyCollector.xml
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.AI.Web.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.AI.Web.xml
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.AI.WindowsServer.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.AI.WindowsServer.xml
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.ApplicationInsights.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.ApplicationInsights.xml
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\Microsoft.QualityTools.Testing.Fakes.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\b\stdole.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\f.ah
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\f.ch
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\f.cs
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\f.csproj
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\f.fakes
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\f.fakesconfig
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\f.snk
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\o\CrystalDecisions.CrystalReports.Engine.Fakes.dll
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\o\CrystalDecisions.CrystalReports.Engine.Fakes.pdb
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\o\f.csproj.FileListAbsolute.txt
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\cdcre\o\f.csprojResolveAssemblyReference.cache
-C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\obj\Debug\Fakes\fakes.args
+C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
+C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\ApplicationInsights.config
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\roslyn\csc.exe
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -165,6 +111,3 @@ C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.We
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.xml
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.xml
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
-C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
-C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
