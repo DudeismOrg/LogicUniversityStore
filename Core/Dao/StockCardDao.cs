@@ -6,6 +6,7 @@ using System.Web;
 
 namespace LogicUniversityStore.Dao
 {
+    [Serializable]
     public class StockCardDao
     {
         public LogicUniStoreModel db;

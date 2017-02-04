@@ -55,19 +55,38 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
             RetrievalDao dao = new RetrievalDao();
             StockCardDao scDao = new StockCardDao();
             dao.Create(ret);
-            foreach (var requisition in reqList)
+            //foreach (var requisition in reqList)
+            //{
+            //  Requisition req =  dao.db.Requisitions.Find(requisition.ReqID);
+            //    foreach (var item in req.RequisitionItems)
+            //    {
+            //        item.RetrievalID = ret.RetrievalID;
+                   
+            //    }
+            //    req.Status = RequisitionStatus.Allocated.ToString();
+            //    dao.db.SaveChanges();
+                
+            //}
+
+            foreach (var req in reqList)
             {
-              Requisition req =  dao.db.Requisitions.Find(requisition.ReqID);
+                dao.db.Requisitions.Find(req.ReqID).Status = RequisitionStatus.Allocated.ToString();
                 foreach (var item in req.RequisitionItems)
                 {
-                    item.RetrievalID = ret.RetrievalID;
-                    
+                   RequisitionItem dbItem = dao.db.RequisitionItems.Find(item.ReqItemID);
+                    dbItem.ApprovedQuantity = item.ApprovedQuantity;
+                    dbItem.RetrievalID = ret.RetrievalID;
+                    if(item.ApprovedQuantity < item.NeededQuantity)
+                    {
+                        dbItem.IsOutstanding = true;
+                    }
                 }
-                req.Status = RequisitionStatus.Allocated.ToString();
-                dao.db.SaveChanges();
-                
+               
             }
+            dao.db.SaveChanges();
             Session["reqListRetrieval"] = null;
+            Session["reqList"] = null;
+            Session["lockedItem"] = null;
 
             Response.Redirect("/View/Store/Clerk/ProcessRequest.aspx");
         }

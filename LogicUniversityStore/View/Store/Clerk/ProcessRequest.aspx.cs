@@ -18,39 +18,43 @@ namespace LogicUniversityStore.View.Store.Clerk
     {
         public ProcessReqController processReq { get; set; }
         public ApplyReqController reqController { get; set; }
+        Dictionary<Requisition, double> listRequests;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["reqListRetrieval"] = null;
 
-            if (!IsPostBack)
+            if ( Request.Params.Get("IsAlter") == null)
             {
-                /* if (Application["processReq"] == null)
-            {
-                Application["processReq"] = new ProcessReqController();
-            }
-
-            processReq = (ProcessReqController)Application["processReq"]; //in future will think about it. 
-            */
                 processReq = new ProcessReqController();
 
-                Dictionary<Requisition, double> listRequests;
-                Dictionary<int, int> lockedItem = processReq.lockedItemsCountForProcess;
-                Session["lockedItem"] = lockedItem;
-                if (ViewState["prItems"] == null)
-                {
-                    ViewState["prItems"] = processReq.GetMainProcessReqList();
-                }
-
-                if (((Dictionary<Requisition, double>)ViewState["prItems"]).Count < this.processReq.GetApprovedRequistionCount())
-                {
-                    ViewState["prItems"] = processReq.GetMainProcessReqList();
-                }
-                listRequests = (Dictionary<Requisition, double>)ViewState["prItems"];
+                listRequests = processReq.GetMainProcessReqList();
+                Session["mainList"] = listRequests;
+                Session["lockedItem"] = processReq.LockedItem;
+                Session["reqList"] = processReq.ProcessedRequistions;
                 // var listRequests = (from r in processReq.GetMainProcessReqList() select new { r.Item1 , r.Item2.ReqNumber, r.Item2.Department.DepartmentName, r.Item2.ReqDate, r.Item2.ReqID }).ToList();
-                gvRequisitions.DataSource = listRequests;
+               
 
+            }
+            else if (Request.Params.Get("IsAlter") != null)
+            {
+                listRequests =(Dictionary<Requisition, double>)Session["mainList"];
+                
+                if(Request.Params.Get("IsAlter").Equals("True"))
+                    Response.Write("<script language='javascript'> alert('saved successfully!!!'); </script>");
+                else if(Request.Params.Get("IsAlter").Equals("False"))
+                {
+                    Response.Write("<script language='javascript'> alert('Amount Invalid !!!'); </script>");
+                }
+
+            }
+            if (!IsPostBack)
+            {
+                gvRequisitions.DataSource = listRequests;
                 gvRequisitions.DataBind();
             }
+           
+
         }
 
 
@@ -65,13 +69,16 @@ namespace LogicUniversityStore.View.Store.Clerk
         {
             List<Requisition> reqList = new List<Requisition>();
             RequisitionDao dao = new RequisitionDao();
+            List<Requisition> sesReq = (List<Requisition>)Session["reqList"];
             foreach (GridViewRow row in gvRequisitions.Rows)
             {
                 CheckBox check = (CheckBox)row.FindControl("cbReq");
 
                 if (check.Checked)
                 {
-                   reqList.Add( dao.Find(Convert.ToInt32(row.Cells[1].Text)));
+                   int reqId =  Convert.ToInt32(row.Cells[1].Text);
+                   
+                   reqList.Add(sesReq.Find(r => r.ReqID == reqId));
                     //string name = row.Cells[1].;
                 }
                 

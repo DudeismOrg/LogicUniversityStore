@@ -7,6 +7,7 @@ using LogicUniversityStore.Util;
 
 namespace LogicUniversityStore.Dao
 {
+    [Serializable]
     public class RequisitionDao
     {
         LogicUniStoreModel db;

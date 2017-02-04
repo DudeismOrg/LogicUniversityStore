@@ -13,13 +13,13 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal {
     public partial class RequestFormAlterItems {
         
         /// <summary>
-        /// lvItemsInReq control.
+        /// gvAlter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvItemsInReq;
+        protected global::System.Web.UI.WebControls.GridView gvAlter;
         
         /// <summary>
         /// Button1 control.
@@ -29,5 +29,14 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// btnCancell control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancell;
     }
 }
