@@ -38,4 +38,17 @@ namespace LogicUniversityStore.Util
         MANAGER,
         EMP
     }
+
+    public enum NotificationStatus
+    {
+        Created,
+        Working,
+        Cleared
+    }
+
+    public enum NotificationType
+    {
+        RequisitionCreated, // HOD
+        Re
+    }
 }

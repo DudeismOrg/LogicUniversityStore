@@ -89,5 +89,19 @@ namespace Core.Dao
         {
             return db.RequisitionItems.Where(r=>r.ReqID == reqIdInt && r.Requisition.Status == RequisitionStatus.Shipped.ToString()).ToList();
         }
+
+        public void UpdateDisbusedQuantity(int disbId, List<Tuple<int, int>> itemQtys)
+        {
+            List<RequisitionItem> itemList = db.RequisitionItems.Where(reqI => reqI.Requisition.Disbursement.DisbursementID == disbId).ToList();
+            foreach (RequisitionItem item in itemList)
+            {
+                var temp = itemQtys.Where(val => val.Item1 == item.SupplierItemID).FirstOrDefault();
+                if (temp != null)
+                {
+                    item.DisbursedQuantity = temp.Item2;
+                }
+            }
+            db.SaveChanges();
+        }
     }
 }

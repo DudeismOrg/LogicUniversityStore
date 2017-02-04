@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using LogicUniversityStore.Util;
+using Core.Util;
 
 namespace LogicUniversityStore.Dao
 {
@@ -136,6 +137,16 @@ namespace LogicUniversityStore.Dao
 
         }
 
+        public bool AckRequisition(AckRequisition roleReq)
+        {
+            Requisition requisition = db.Requisitions.Where(req => req.ReqID == roleReq.ReqId).FirstOrDefault();
+            requisition.Status = roleReq.Status;
+            requisition.Remark = roleReq.Remarks;
+            requisition.ApprovedRejectedByID = roleReq.AcknowledgedBy;
+            requisition.ApprovedDate = DateTime.Now;
+            return db.SaveChanges() > 0 ? true : false;
+        }
+
         public int GetApprovedRequisitionCount()
         {
             return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).Count();
@@ -144,6 +155,7 @@ namespace LogicUniversityStore.Dao
         internal List<RequisitionItem> getAllApprovedRequisitionItemsFromReqId()
         {
             return db.RequisitionItems.Where(r => r.Requisition.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
+            //return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).Count();
         }
 
         public void reapplyRequisition(int reqId, String remark, DateTime reqDate)
@@ -173,6 +185,12 @@ namespace LogicUniversityStore.Dao
         {
             return db.Requisitions.Where(r => r.Status == status.ToString()).ToList();
         }
+
+        public List<Requisition> GetToBeApproveRequisitions(int deptId)
+        {
+            return db.Requisitions.Where(r => r.DepartmentID == deptId && r.Status == RequisitionStatus.Requested.ToString()).ToList();
+        }
+
 
         public string GenerateRetreivalForm(Tuple<int, List<int>> retReq)
         {

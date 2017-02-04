@@ -19,7 +19,8 @@ namespace LogicUniversityStore.Util
         private int suplierId;
         public int SuplierId
         {
-            get { return supplier.SupplierID; }  
+            get { return supplier.SupplierID; }
+            set { this.suplierId = value; }
         }
         private string suplierName;
         public string SuplierName

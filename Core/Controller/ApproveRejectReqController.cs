@@ -1,4 +1,5 @@
-﻿using LogicUniversityStore.Dao;
+﻿using Core.Util;
+using LogicUniversityStore.Dao;
 using LogicUniversityStore.Model;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ namespace LogicUniversityStore.Controller
 {
     public class ApproveRejectReqController
     {
-       public RequisitionDao RequisitionDao { get; set; }
+        public RequisitionDao RequisitionDao { get; set; }
 
-       public ApproveRejectReqController()
+        public ApproveRejectReqController()
         {
             RequisitionDao = new RequisitionDao();
         }
@@ -26,14 +27,19 @@ namespace LogicUniversityStore.Controller
             return RequisitionDao.GetRequisitionItemList(requisitionId);
         }
 
-        public void approveRequisition(int requisitionId,String remark)
+        public void approveRequisition(int requisitionId, String remark)
         {
-            RequisitionDao.approveRequisition(requisitionId,remark);
+            RequisitionDao.approveRequisition(requisitionId, remark);
         }
 
-        public void rejectRequisition(int requisitionId,String remark)
+        public void rejectRequisition(int requisitionId, String remark)
         {
-            RequisitionDao.rejectRequisition(requisitionId,remark);
+            RequisitionDao.rejectRequisition(requisitionId, remark);
+        }
+
+        public bool AckRequisition(AckRequisition roleReq)
+        {
+            return new RequisitionDao().AckRequisition(roleReq);
         }
     }
 }

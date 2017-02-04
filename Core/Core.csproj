@@ -60,6 +60,7 @@
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
     <Compile Include="Controller\DisbursementController.cs" />
     <Compile Include="Controller\InvalidConstructorException.cs" />
+    <Compile Include="Controller\NotificationController.cs" />
     <Compile Include="Controller\ProcessReqController.cs" />
     <Compile Include="Controller\PurchaseOrderController.cs" />
     <Compile Include="Controller\ReapplyRejectedController.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Dao\CategoryDao.cs" />
     <Compile Include="Dao\DisbursementDao.cs" />
     <Compile Include="Dao\ItemDao.cs" />
+    <Compile Include="Dao\NotificationDao.cs" />
     <Compile Include="Dao\PoBatchDao.cs" />
     <Compile Include="Dao\PurchaseOrderDao.cs" />
     <Compile Include="Dao\PurchaseOrderItemDao.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\SupplierItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\AckRequisition.cs" />
     <Compile Include="Util\Adjustment.cs" />
     <Compile Include="Util\AdjustmentItem.cs" />
     <Compile Include="Util\CartItem.cs" />

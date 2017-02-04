@@ -168,6 +168,17 @@ namespace LogicUniversityStore.Controller
             return POBatchDao.GetAllPoBatch();
         }
 
+        public bool CreatePO(POBatch poBactch, PurchaseOrder Order)
+        {
+            bool result = false;
+            LogicUniStoreModel db = new LogicUniStoreModel();
+            db.POBatches.Add(poBactch);
+            db.SaveChanges();
+            Order.POBatchID = poBactch.POBatchID;
+            db.PurchaseOrders.Add(Order);
+            result = db.SaveChanges() > 0 ? true : false;
+            return result;
+        }
 
         public List<PurchaseOrder> FindAllPurchaseOrderByBatch(int batchId)
         {
@@ -177,6 +188,21 @@ namespace LogicUniversityStore.Controller
         public List<PurchaseOrder> FindAllPurchaseOrderBySupplier(int suplierId)
         {
             return PODao.findPoBySupplierId(suplierId);
+        }
+
+        public Supplier GetSupplierById(int supplierId)
+        {
+            return SupplierItemDao.GetSupplierObj(supplierId);
+        }
+
+        public double GetUnitPrice(Item item, Supplier sup)
+        {
+            return new PurchaseOrderItemDao().GetUnitPrice(item, sup);
+        }
+
+        public Item GetItemByItemId(int itemId)
+        {
+            return new ItemDao().GetItem(itemId);
         }
     }
 }

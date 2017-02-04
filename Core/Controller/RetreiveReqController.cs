@@ -118,9 +118,26 @@ namespace LogicUniversityStore.Controller
         {
             return RetrievalDao.GetAllRequistion(r);
         }
+
+        public List<Tuple<string, string, int>> GetRetreivalCounts(string userId)
+        {
+            List<Requisition> reqs = GetPendingRetreivals(Convert.ToInt32(userId));
+            List<Tuple<string, string, int>> lstItems = new List<Tuple<string, string, int>>();
+            foreach (Requisition req in reqs)
+            {
+                foreach (RequisitionItem reqItem in req.RequisitionItems)
+                {
+                    lstItems.Add(Tuple.Create(reqItem.Requisition.Department.DepartmentName, reqItem.GetItem().ItemName, reqItem.NeededQuantity.Value));
+                }
+            }
+            return lstItems;
+        }
+
+        public List<Requisition> GetPendingRetreivals(int userId)
+        {
+            return new RetrievalDao().GetPendingRetreivalsByUserId(userId);
+        }
     }
-
-
 
     public class Pair : IEquatable<Pair>
     {

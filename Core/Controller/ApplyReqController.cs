@@ -19,7 +19,7 @@ namespace LogicUniversityStore.Controller
 
         public List<Category> GetCategories()
         {
-           return CategoryDao.GetCategories();
+            return CategoryDao.GetCategories();
         }
 
         public List<Item> GetItemsByCategoryId(int categoryId)
@@ -66,6 +66,11 @@ namespace LogicUniversityStore.Controller
             if (Enum.TryParse(status, true, out val))
                 lstReqs = new RequisitionDao().GetRequisitionListByStatus(val);
             return lstReqs;
+        }
+
+        public List<Requisition> GetToBeApproveRequisitions(int deptId)
+        {
+            return new RequisitionDao().GetToBeApproveRequisitions(deptId);
         }
 
         public List<RequisitionItem> GetReqItemsByReqId(int reqId)
