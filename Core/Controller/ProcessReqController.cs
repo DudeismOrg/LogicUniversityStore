@@ -48,7 +48,7 @@ namespace LogicUniversityStore.Controller
 
                 foreach (RequisitionItem item in requisition.RequisitionItems)
                 {
-                    RequisitionItem rItem = RequisitionItemDao.db.RequisitionItems.Find(item.ReqItemID);
+                    RequisitionItem rItem = db.RequisitionItems.Find(item.ReqItemID);
 
                     if (!lockedItemsCountForProcess.ContainsKey(rItem.SupplierItem.ItemID))
                     {
