@@ -34,7 +34,7 @@ namespace LogicUniversityStore.Controller
             RetrievalDao.Create(ret);
         }
 
-      
+
 
         private Dictionary<Department, Pair> GetBreakDownByDepartment(RequisitionItem reqItem)
         {
@@ -68,10 +68,10 @@ namespace LogicUniversityStore.Controller
 
         public Retrieval FindRetrieval(int index)
         {
-           return RetrievalDao.Find(index);
+            return RetrievalDao.Find(index);
         }
 
-        public Dictionary<RequisitionItem,MainRow> GetRow()
+        public Dictionary<RequisitionItem, MainRow> GetRow()
         {
             if (this.retReq == null) throw new InvalidConstructorException("Use another constructor for this controller");
             Dictionary<RequisitionItem, MainRow> result = new Dictionary<RequisitionItem, MainRow>(new RequistionItemBySupplierComparator());
@@ -79,11 +79,12 @@ namespace LogicUniversityStore.Controller
             {
                 foreach (RequisitionItem item in r.RequisitionItems)
                 {
-                   if(!result.ContainsKey(item))
+                    if (!result.ContainsKey(item))
                     {
                         MainRow row = new MainRow(new Pair(item.NeededQuantity.Value, item.ApprovedQuantity.Value), this.GetBreakDownByDepartment(item));
                         result.Add(item, row);
-                    }else
+                    }
+                    else
                     {
                         result[item].Pair.Needed += item.NeededQuantity.Value;
                         result[item].Pair.Approved += item.ApprovedQuantity.Value;
@@ -95,11 +96,30 @@ namespace LogicUniversityStore.Controller
 
         public List<Requisition> GetAllRequistion(Retrieval r)
         {
-          return  RetrievalDao.GetAllRequistion(r);
+            return RetrievalDao.GetAllRequistion(r);
+        }
+
+        public List<Tuple<string, string, int>> GetRetreivalCounts(string userId)
+        {
+            List<Requisition> reqs = GetPendingRetreivals(Convert.ToInt32(userId));
+            List<Tuple<string, string, int>> lstItems = new List<Tuple<string, string, int>>();
+            foreach (Requisition req in reqs)
+            {
+                foreach (RequisitionItem reqItem in req.RequisitionItems)
+                {
+                    lstItems.Add(Tuple.Create(reqItem.Requisition.Department.DepartmentName, reqItem.GetItem().ItemName, reqItem.NeededQuantity.Value));
+                }
+            }
+            return lstItems;
+        }
+
+        public List<Requisition> GetPendingRetreivals(int userId)
+        {
+            return new RetrievalDao().GetPendingRetreivalsByUserId(userId);
         }
     }
 
-  public  class Pair : IEquatable<Pair>
+    public class Pair : IEquatable<Pair>
     {
         static int counter = 1;
         private int id;
@@ -127,7 +147,7 @@ namespace LogicUniversityStore.Controller
         public Pair Pair { get; set; }
         public Dictionary<Department, Pair> DictionaryMap { get; set; }
 
-        public MainRow(Pair pair,Dictionary<Department,Pair> dictionary)
+        public MainRow(Pair pair, Dictionary<Department, Pair> dictionary)
         {
             this.Pair = pair;
             this.DictionaryMap = dictionary;

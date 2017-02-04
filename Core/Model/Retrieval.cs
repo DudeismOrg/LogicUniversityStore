@@ -27,6 +27,8 @@ namespace LogicUniversityStore.Model
 
         public int? Retriever { get; set; }
 
+        public bool? IsCollected { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RequisitionItem> RequisitionItems { get; set; }
     }

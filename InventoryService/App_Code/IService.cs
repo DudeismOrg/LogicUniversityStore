@@ -77,7 +77,7 @@ public interface IService
 
     [OperationContract]
     [WebInvoke(Method = "POST", UriTemplate = "/PurchaseOrder/Create", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-    bool CreatePurchaseOrder(PurchaseOrderRequest request);
+    string CreatePurchaseOrder(PurchaseOrderRequest request);
 
 
     #endregion
@@ -93,5 +93,11 @@ public interface IService
     [WebInvoke(Method = "POST", UriTemplate = "/Disbursement/Process", ResponseFormat = WebMessageFormat.Json)]
     bool ProcessDisbursement(DisbursementRequest disReq);
 
+    #endregion
+
+    #region
+    [OperationContract]
+    [WebInvoke(Method = "GET", UriTemplate = "/Retreival/{userId}", ResponseFormat = WebMessageFormat.Json)]
+    List<RetreivalResponse> GetRetreivalCountsByUserId(string userId);
     #endregion
 }

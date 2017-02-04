@@ -12,19 +12,26 @@ namespace LogicUniversityStore.Dao
 
         public List<Retrieval> FindAll()
         {
-           return  db.Retrievals.ToList();
+            return db.Retrievals.ToList();
         }
 
         public void Create(Retrieval ret)
         {
-            if(ret.RetrievalID == 0)
-               db.Retrievals.Add(ret);
+            if (ret.RetrievalID == 0)
+                db.Retrievals.Add(ret);
             db.SaveChanges();
         }
 
         public List<Requisition> GetAllRequistion(Retrieval ret)
         {
-           return  ret.RequisitionItems.Where(item => item.RetrievalID == ret.RetrievalID).Select(item => item.Requisition).Distinct().ToList();
+            return ret.RequisitionItems.Where(item => item.RetrievalID == ret.RetrievalID).Select(item => item.Requisition).Distinct().ToList();
+        }
+
+        public List<Requisition> GetPendingRetreivalsByUserId(int userId)
+        {
+            return db.Retrievals.Where(ret => ((ret.Retriever.HasValue && ret.Retriever.Value == userId)
+                                && !ret.IsCollected.Value)).SelectMany(ret => ret.RequisitionItems)
+                                .Select(reqI => reqI.Requisition).Distinct().ToList();
         }
 
         public Retrieval Find(int index)

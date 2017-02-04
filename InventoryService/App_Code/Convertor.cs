@@ -68,11 +68,11 @@ public class Convertor
         return new RequisitionResponse()
         {
             ApprovedBy = uCtrl.GetUserNameByUserId(req.ApprovedRejectedByID),
-            ApprovedDate = req.ApprovedDate.HasValue ? req.ApprovedDate.Value.ToString() : DateTime.Now.ToShortDateString(),
+            ApprovedDate = req.ApprovedDate.HasValue ? req.ApprovedDate.Value.ToString("dd-MMM-yy") : DateTime.Now.ToString("dd-MMM-yy"),
             CreatedBy = uCtrl.GetUserNameByUserId(req.RequesterID),
             DepartmentCode = req.Department.DepartmentCode,
             DepartmentName = req.Department.DepartmentName,
-            RequisitionDate = req.ReqDate.ToString(),
+            RequisitionDate = req.ReqDate.ToString("dd-MMM-yy"),
             RequisitionNum = req.ReqNumber,
             UserId = req.RequesterID,
             RequisitionId = req.ReqID

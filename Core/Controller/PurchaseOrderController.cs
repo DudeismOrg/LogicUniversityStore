@@ -137,40 +137,36 @@ namespace LogicUniversityStore.Controller
 
         }
 
-        public bool CreatePO(PurchaseOrderUtil poUtil)
+        public bool CreatePO(POBatch poBactch, PurchaseOrder Order)
         {
             bool result = false;
-            PurchaseOrderDao pdao = new PurchaseOrderDao();
-
-            PurchaseOrder po = new PurchaseOrder();
-            po.PuchaseOrderNo = poUtil.PoNumber;
-            po.OrderDate = poUtil.OrderDate;
-            po.DeliveryAddress = "";
-            po.POStatus = "Requested";
-            po.SupplierID = poUtil.Supplier != null ? poUtil.Supplier.SupplierID : poUtil.SuplierId;
-            po.DONumber = "";
-            po.PORemark = poUtil.Remark;
-            if (!string.IsNullOrEmpty(poUtil.ExpectedDeliveryDate))
-                po.ExpectedDeliveryDate = Convert.ToDateTime(poUtil.ExpectedDeliveryDate);
-            pdao.db.PurchaseOrders.Add(po);
-            pdao.db.SaveChanges();
-            PurchaseOrderItemDao poitem = new PurchaseOrderItemDao();
-            foreach (PurchaseOrderItems itm in poUtil.Items)
-            {
-                PurchaseOrderItem items = new PurchaseOrderItem();
-                items.PurchaseOrderID = po.PurchaseOrderID;
-                items.RequestedQuantity = itm.ReorderQuantity;
-                items.ItemID = itm.PoItem.GetSupplierItem().ItemID;
-                items.UnitPrice = poitem.GetUnitPrice(itm.PoItem, itm.PoSupplier);
-                poitem.db.PurchaseOrderItems.Add(items);
-                result = poitem.db.SaveChanges() > 0;
-            }
+            LogicUniStoreModel db = new LogicUniStoreModel();
+            db.POBatches.Add(poBactch);
+            db.SaveChanges();
+            Order.POBatchID = poBactch.POBatchID;
+            db.PurchaseOrders.Add(Order);
+            result = db.SaveChanges() > 0 ? true : false;
             return result;
         }
 
         public List<Supplier> GetSuppliers()
         {
             return new ItemDao().GetSuppliers();
+        }
+
+        public Supplier GetSupplierById(int supplierId)
+        {
+            return SupplierItemDao.GetSupplierObj(supplierId);
+        }
+
+        public double GetUnitPrice(Item item, Supplier sup)
+        {
+            return new PurchaseOrderItemDao().GetUnitPrice(item, sup);
+        }
+
+        public Item GetItemByItemId(int itemId)
+        {
+            return new ItemDao().GetItem(itemId);
         }
     }
 }

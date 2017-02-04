@@ -208,23 +208,45 @@ public class Service : IService
         return lstSupItem;
     }
 
-    public bool CreatePurchaseOrder(PurchaseOrderRequest request)
+    public string CreatePurchaseOrder(PurchaseOrderRequest request)
     {
-        PurchaseOrderUtil poUtil = new PurchaseOrderUtil();
-        poUtil.OrderedBy = request.CreatedyBy;
-        poUtil.SuplierId = request.SupplierId;
-        poUtil.PoNumber = "PON" + new Random().Next(1000, 9999).ToString();
-        poUtil.OrderDate = DateTime.Now;
+        string result = string.Empty;
+        PurchaseOrderController poc = new PurchaseOrderController();
+        CoreModel.Supplier sup = poc.GetSupplierById(request.SupplierId);
 
-        foreach (POItemRequest req in request.Items)
+        CoreModel.POBatch poBatch = new LogicUniversityStore.Model.POBatch()
         {
-            poUtil.Items.Add(new PurchaseOrderItems()
-            {
-                ItemId = req.ItemId,
-                ReorderQuantity = req.Quantity
-            });
+            GeneratedBy = request.CreatedyBy,
+            POBatchDate = DateTime.Now
+        };
+
+        CoreModel.PurchaseOrder order = new LogicUniversityStore.Model.PurchaseOrder()
+        {
+            OrderEmpID = request.CreatedyBy,
+            SupplierID = request.SupplierId,
+            PuchaseOrderNo = "#" + sup.SupplierID.ToString() + "" + DateTime.Now.Day + "" + "" + DateTime.Now.Month + "/" + DateTime.Now.Hour + DateTime.Now.Minute,
+            OrderDate = DateTime.Now,
+            DeliveryAddress = "",
+            ExpectedDeliveryDate = DateTime.Now.AddDays(Convert.ToDouble(sup.MinDeliveryDay)),
+            POStatus = "Requested"
+        };
+
+        foreach (POItemRequest item in request.Items)
+        {
+            CoreModel.Item coreItem = poc.GetItemByItemId(item.ItemId);
+            order.PurchaseOrderItems.Add(
+                new CoreModel.PurchaseOrderItem()
+                {
+                    ItemID = item.ItemId,
+                    RequestedQuantity = item.Quantity,
+                    UnitPrice = poc.GetUnitPrice(coreItem, sup)
+                }
+                );
         }
-        return new PurchaseOrderController().CreatePO(poUtil);
+
+        if (new PurchaseOrderController().CreatePO(poBatch, order))
+            result = order.PuchaseOrderNo;
+        return result;
     }
 
     public List<DisbursementResponse> GetDisbursements(string departmentId)
@@ -241,7 +263,7 @@ public class Service : IService
                 {
                     DisbursementNum = dsb.DisbursementNumber,
                     ReqNum = dsb.Requisition.ReqNumber,
-                    RequestedDate = dsb.Requisition.ReqDate.ToString()
+                    RequestedDate = dsb.Requisition.ReqDate.ToString("dd-MMM-yy")
                 });
             }
         }
@@ -263,6 +285,26 @@ public class Service : IService
         reqCore.ReqId = roleReq.ReqId;
         reqCore.Status = roleReq.Status;
         return new ApproveRejectReqController().AckRequisition(reqCore);
+    }
+
+    public List<RetreivalResponse> GetRetreivalCountsByUserId(string userId)
+    {
+        List<Tuple<string, string, int>> retList = new RetreiveReqController().GetRetreivalCounts(userId);
+        List<RetreivalResponse> lstRetResponse = null;
+        if (retList.Count > 0)
+        {
+            lstRetResponse = new List<RetreivalResponse>();
+            foreach (Tuple<string, string, int> item in retList)
+            {
+                lstRetResponse.Add(new RetreivalResponse()
+                {
+                    DeptName = item.Item1,
+                    ItemName = item.Item2,
+                    Quantity = item.Item3
+                });
+            }
+        }
+        return lstRetResponse;
     }
     #endregion
 }
