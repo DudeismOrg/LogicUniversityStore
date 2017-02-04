@@ -18,7 +18,7 @@ namespace LogicUniversityStore.View
                 LUUser user = (LUUser)Session["User"];
                 if (user != null)
                 {
-                    lblUser.Text = user.FirstName + " " + user.LastName;
+                    lblEmpName.Text = lblUser.Text = user.FirstName + " " + user.LastName;
                     lblUserName.Text = String.Format("{0} - {1}", user.FirstName, user.Role.RoleName);
 
                     ShowNotifications();

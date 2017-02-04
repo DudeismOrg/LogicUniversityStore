@@ -96,20 +96,10 @@
                             <img src='<%= Page.ResolveUrl("/View/Resources/dist/img/user-160x160.jpg") %>' class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
-                            <p>User Name</p>
+                            <p><asp:Label ID="lblEmpName" runat="server"></asp:Label></p>
                             <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
                         </div>
                     </div>
-
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-
                     <ul class="sidebar-menu">
                         <asp:ContentPlaceHolder ID="sideMenuBlock" runat="server">
                             <%--<li class="header">MAIN NAVIGATION</li>
@@ -288,9 +278,11 @@
                         </li>--%>
                         </asp:ContentPlaceHolder>
                         <li class="header">Others</li>
-                        <li><a href="#"><i class="fa fa-circle-o text-green"></i><span>Documentation</span></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i><span>Contacts</span></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i><span>Info</span></a></li>
+                        <li>
+                            <asp:HyperLink ID="lblUserManDoc" runat="server" NavigateUrl="">
+                            <i class="fa fa-circle-o text-green"></i><span>User Manual</span>
+                            </asp:HyperLink>
+                        </li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->

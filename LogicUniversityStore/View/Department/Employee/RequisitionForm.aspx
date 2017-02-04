@@ -22,7 +22,7 @@
 
                 <div class="box-body">
                     <div class="col-md-12">
-                        <div class="col-md-6">
+                        <%--<div class="col-md-6">
                             <div class="pull-left">
                                 <h3>Department: CS Department</h3>
                                 <span>Department Code: CSD</span>
@@ -34,7 +34,7 @@
                                 <span>Employee Number: 123</span><br>
                                 <span>Employee Email: email@email.com</span>
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
                     <div class="col-md-12" style="height: 20px"></div>
                     <div class="col-md-12">
