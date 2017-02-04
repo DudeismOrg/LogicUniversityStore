@@ -73,6 +73,5 @@ namespace LogicUniversityStore.View.Store.Clerk
                 gvPoBySupplier.DataBind();
             }
         }
-
     }
 }

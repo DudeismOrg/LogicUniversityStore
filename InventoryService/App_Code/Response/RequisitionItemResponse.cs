@@ -21,7 +21,7 @@ public class RequisitionItemResponse
     public string ItemName { get; set; }
 
     [DataMember]
-    public int Quantity { get; set; }
+    public string Quantity { get; set; }
 
     [DataMember]
     public string DeptName { get; set; }

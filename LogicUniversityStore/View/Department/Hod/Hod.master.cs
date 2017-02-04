@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Core.Controller;
+using LogicUniversityStore.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,11 @@ namespace LogicUniversityStore.View.Department.Hod
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ShowNotifications()
+        {
+            LUUser user = (LUUser)Session["User"];
         }
     }
 }

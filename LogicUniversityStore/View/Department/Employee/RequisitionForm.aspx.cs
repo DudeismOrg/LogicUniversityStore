@@ -1,4 +1,5 @@
-﻿using LogicUniversityStore.Controller;
+﻿using Core.Controller;
+using LogicUniversityStore.Controller;
 using LogicUniversityStore.Dao;
 using LogicUniversityStore.Model;
 using LogicUniversityStore.Util;
@@ -19,6 +20,7 @@ namespace LogicUniversityStore.View.Department.Employee
         private Category category;
         private Item item;
         private ItemDao itemDao;
+        static string requisitionNum;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -30,6 +32,7 @@ namespace LogicUniversityStore.View.Department.Employee
                     gvReqItems.DataSource = items;
                     gvReqItems.DataBind();
                 }
+                lblReqNum.Text = requisitionNum = "DDS/" + DateTime.Now.Month + "/" + DateTime.Now.ToString("HHmm");
                 itemDao = new ItemDao();
                 DdlCategories.DataSource = reqController.GetCategories();
                 DdlCategories.DataValueField = "CategoryID";
@@ -37,7 +40,7 @@ namespace LogicUniversityStore.View.Department.Employee
                 DdlCategories.DataBind();
             }
 
-           
+
             if (ViewState["items"] != null)
             {
                 items = (List<CartItem>)ViewState["items"];
@@ -56,7 +59,8 @@ namespace LogicUniversityStore.View.Department.Employee
         protected void btnAddItem_Click(object sender, EventArgs e)
         {
             Item item = null;
-            if (DdlCategories.SelectedValue != null && !DdlCategories.SelectedValue.Equals("")){
+            if (DdlCategories.SelectedValue != null && !DdlCategories.SelectedValue.Equals(""))
+            {
                 int catId = Convert.ToInt32(DdlCategories.SelectedValue);
                 category = reqController.CategoryDao.GetCategory(catId);
 
@@ -67,10 +71,10 @@ namespace LogicUniversityStore.View.Department.Employee
                 }
             }
             if (item == null) throw new InvalidOperationException("Item is not selected here");
-           
+
 
             CartItem rItem = new CartItem();
-           
+
             rItem.SupplierItem = item.GetSupplierItem();
             rItem.Quantity = Convert.ToInt32(tbAmount.Text);
             rItem.Category = item.Category;
@@ -91,7 +95,7 @@ namespace LogicUniversityStore.View.Department.Employee
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            LUUser user = (LUUser) Session["User"];
+            LUUser user = (LUUser)Session["User"];
             if (user == null) throw new InvalidOperationException("User Is not valid");
             if (ViewState["items"] != null)
             {
@@ -99,11 +103,11 @@ namespace LogicUniversityStore.View.Department.Employee
                 RequisitionItemDao dao = new RequisitionItemDao();
                 Requisition requisition = new Requisition();
                 requisition.ReqDate = System.DateTime.Now;
-                requisition.ReqNumber = new Random().Next().ToString(); //Todo 
+                requisition.ReqNumber = requisitionNum; //Todo 
                 requisition.Status = RequisitionStatus.Requested.ToString();
                 requisition.RequesterID = user.UserID; // Todo: need to change later once login up
                 requisition.DepartmentID = user.DepartmentID.Value; // Todo: same
-                requisition.RecieveByID =user.Department.HodID;  //Todo: same
+                requisition.RecieveByID = user.Department.HodID;  //Todo: same
                 requisition.Remark = tbRemarks.Text;
                 dao.db.Requisitions.Add(requisition);
                 foreach (var cartItem in items)
@@ -119,13 +123,16 @@ namespace LogicUniversityStore.View.Department.Employee
                 //ViewState["items"] = new List<CartItem>();
                 //gvReqItems.DataSource = null;
                 //gvReqItems.DataBind();
+                new NotificationController().CreateNotification(
+                    user.UserID, string.Format("New approval Requisition request {0}", requisition.ReqNumber), NotificationStatus.Created, Roles.HOD
+                    );
                 reset();
             }
         }
         protected void btnCancel_Click(object sender, EventArgs e)
         {
 
-           
+
 
             reset();
         }
@@ -150,12 +157,12 @@ namespace LogicUniversityStore.View.Department.Employee
 
             // item = new ItemDao().GetItem(Convert.ToInt32(DdlItems.SelectedValue));
             // lblUnit.Text = item.UOM;
-           
+
 
             DdlItems.DataSource = category.Items;
-                DdlItems.DataTextField = "ItemName";
-                DdlItems.DataValueField = "ItemID";
-                DdlItems.DataBind();
+            DdlItems.DataTextField = "ItemName";
+            DdlItems.DataValueField = "ItemID";
+            DdlItems.DataBind();
 
             if (DdlItems.SelectedValue != null && !DdlItems.SelectedValue.Equals(""))
             {
@@ -167,12 +174,12 @@ namespace LogicUniversityStore.View.Department.Employee
 
         protected void DdlItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(DdlItems.SelectedValue != null && !DdlItems.SelectedValue.Equals(""))
+            if (DdlItems.SelectedValue != null && !DdlItems.SelectedValue.Equals(""))
             {
                 item = new ItemDao().GetItem(Convert.ToInt32(DdlItems.SelectedValue));
                 lblUnit.Text = item.UOM;
             }
-          
+
 
         }
 
@@ -196,7 +203,7 @@ namespace LogicUniversityStore.View.Department.Employee
                 DdlItems.DataBind();
             }
             tbAmount.Text = "";
-               
+
         }
     }
 }

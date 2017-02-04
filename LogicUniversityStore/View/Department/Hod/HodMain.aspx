@@ -17,7 +17,9 @@
                     <span class="info-box-icon bg-green"><i class="fa fa-star-half-full"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Approve/Reject</span>
-                        <span class="info-box-number">10</span>
+                        <span class="info-box-number">
+                            <asp:Label ID="lblAckReqs" runat="server"></asp:Label>
+                        </span>
                     </div>
                 </div>
             </div>

@@ -24,6 +24,6 @@ public class RetreivalResponse
     public string ItemName { get; set; }
 
     [DataMember]
-    public int Quantity { get; set; }
+    public string Quantity { get; set; }
 
 }

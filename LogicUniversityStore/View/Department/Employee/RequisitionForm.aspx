@@ -51,11 +51,11 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Requisition Form Number: DDS/111/99</h3>
+                    <h3 class="box-title">Requisition Form Number:<asp:Label ID="lblReqNum" runat="server"></asp:Label></h3>
                 </div>
                 <div class="box-body">
                     <div class="col-md-12">
-                        <div class="col-md-6">
+                        <%--<div class="col-md-6">
                             <div class="pull-left">
                                 <h3>Department: CS Department</h3>
                                 <span>Department Code: CSD</span>
@@ -67,7 +67,7 @@
                                 <span>Employee Number: 123</span><br>
                                 <span>Employee Email: email@email.com</span>
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
                     <div class="col-md-12" style="height: 20px"></div>
                     <div class="col-md-12">

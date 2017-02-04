@@ -45,7 +45,7 @@ public class Convertor
             modelReq.RequisitionItems.Add(
             new CoreModel.RequisitionItem()
             {
-                ItemID = item.ItemId,
+                SupplierItemID = item.ItemId,
                 NeededQuantity = item.NeededQuantity
             });
         }
@@ -74,7 +74,7 @@ public class Convertor
             DepartmentName = req.Department.DepartmentName,
             RequisitionDate = req.ReqDate.ToString("dd-MMM-yy"),
             RequisitionNum = req.ReqNumber,
-            UserId = req.RequesterID,
+            UserId = req.RequesterID.ToString(),
             RequisitionId = req.ReqID
         };
     }
@@ -84,7 +84,7 @@ public class Convertor
         return new RequisitionItemResponse()
         {
             ItemName = req.SupplierItem.Item.ItemName,
-            Quantity = req.NeededQuantity.HasValue ? req.NeededQuantity.Value : 0
+            Quantity = req.NeededQuantity.HasValue ? req.NeededQuantity.Value.ToString() : "0"
         };
     }
 }

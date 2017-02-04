@@ -23,7 +23,8 @@
             <i class="fa fa-edit"></i>
             <span>Transfer/Remove Roles</span>
             <span class="pull-right-container">
-                <span class="label label-primary pull-right" style="margin: 0px">20</span>
+                <span class="label label-primary pull-right" style="margin: 0px">
+                </span>
             </span>
         </a>
     </li>
@@ -33,7 +34,9 @@
             <i class="fa fa-share"></i>
             <span>Cancel/Update Requests</span>
             <span class="pull-right-container">
-                <span class="label label-primary pull-right" style="margin: 0px">4</span>
+                <span class="label label-primary pull-right" style="margin: 0px">
+                    <asp:Label ID="lblUpdateReqs" runat="server"></asp:Label>
+                </span>
             </span>
         </a>
     </li>

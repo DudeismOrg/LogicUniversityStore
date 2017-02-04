@@ -19,19 +19,19 @@ public class UserResponse
 
     public UserResponse(int UserID, string FirstName, string Email, string LastName, int DepartmentID, string DepartmentName, int RoleID, string RoleName, string RoleCode)
     {
-        this.UserID = UserID;
+        this.UserID = UserID.ToString();
         this.FirstName = FirstName;
         this.Email = Email;
         this.LastName = LastName;
         this.DepartmentID = DepartmentID;
         this.DepartmentName = DepartmentName;
-        this.RoleID = RoleID;
+        this.RoleID = RoleID.ToString();
         this.RoleName = RoleName;
         this.RoleCode = RoleCode;
     }
 
     [DataMember]
-    public int UserID { get; set; }
+    public string UserID { get; set; }
 
     [DataMember]
     public string FirstName { get; set; }
@@ -40,7 +40,7 @@ public class UserResponse
     public string LastName { get; set; }
 
     [DataMember]
-    public int RoleID { get; set; }
+    public string RoleID { get; set; }
 
     [DataMember]
     public string RoleName { get; set; }

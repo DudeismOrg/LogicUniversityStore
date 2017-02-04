@@ -7,51 +7,50 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="sideMenuBlock" runat="server">
     <li class="header">MAIN NAVIGATION</li>
     <li class="active treeview">
-        <a href="EmpMain.aspx">
+        <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Employee/EmpMain.aspx">
             <i class="fa fa-dashboard"></i><span>Dashboard</span>
-        </a>
+        </asp:HyperLink>
     </li>
 
     <li class="treeview">
-        <a href="RequisitionForm.aspx">
+        <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Employee/RequisitionForm.aspx">
             <i class="fa fa-laptop"></i>
             <span>Request Stationary Items</span>
-        </a>
+        </asp:HyperLink>
     </li>
 
     <li class="treeview">
-        <a href="CancelUpdatePendingApproval.aspx">
+        <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Employee/CancelUpdatePendingApproval.aspx">
             <i class="fa fa-edit"></i>
             <span>Pending Approval</span>
             <span class="pull-right-container">
                 <span class="label label-primary pull-right" style="margin: 0px">20</span>
             </span>
-        </a>
+        </asp:HyperLink>
     </li>
 
     <li class="treeview">
-        <a href="ReapplyRejected.aspx">
+        <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Employee/ReapplyRejected.aspx">
             <i class="fa fa-share"></i>
             <span>Reapply Requests</span>
             <span class="pull-right-container">
                 <span class="label label-primary pull-right" style="margin: 0px">4</span>
             </span>
-        </a>
+        </asp:HyperLink>
     </li>
 
     <li class="treeview">
-        <a href="RequestHistory.aspx">
+        <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Employee/RequestHistory.aspx">
             <i class="fa fa-pie-chart"></i>
             <span>Request History</span>
-        </a>
+        </asp:HyperLink>
     </li>
-
-    <li class="treeview">
+    <%--    <li class="treeview">
         <a href="index.html">
             <i class="fa fa-table"></i>
             <span>Track Outstanding</span>
         </a>
-    </li>
+    </li>--%>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="pageHeading" runat="server">

@@ -31,7 +31,7 @@ namespace LogicUniversityStore.Util
 
     public enum Roles
     {
-        HOD,
+        HOD = 1,
         REP,
         CLERK,
         SUPERVISOR,

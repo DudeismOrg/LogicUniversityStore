@@ -18,7 +18,7 @@ public class SupplierResponse
     }
 
     [DataMember]
-    public int SupplierId { get; set; }
+    public string SupplierId { get; set; }
 
     [DataMember]
     public string SupplierCode { get; set; }

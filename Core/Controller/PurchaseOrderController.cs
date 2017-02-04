@@ -190,6 +190,12 @@ namespace LogicUniversityStore.Controller
             return PODao.findPoBySupplierId(suplierId);
         }
 
+        public List<PurchaseOrder> FindAllPurchaseOrderByBatch(int batchId)
+        {
+            return PODao.findPoByBatchId(batchId);
+        }
+
+
         public Supplier GetSupplierById(int supplierId)
         {
             return SupplierItemDao.GetSupplierObj(supplierId);
@@ -203,6 +209,11 @@ namespace LogicUniversityStore.Controller
         public Item GetItemByItemId(int itemId)
         {
             return new ItemDao().GetItem(itemId);
+        }
+
+        public List<Supplier> GetSuppliers()
+        {
+            return new ItemDao().GetSuppliers();
         }
     }
 }
