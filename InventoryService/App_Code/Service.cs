@@ -263,7 +263,8 @@ public class Service : IService
                 {
                     DisbursementNum = dsb.DisbursementNumber,
                     ReqNum = dsb.Requisition.ReqNumber,
-                    RequestedDate = dsb.Requisition.ReqDate.ToString("dd-MMM-yy")
+                    RequestedDate = dsb.Requisition.ReqDate.ToString("dd-MMM-yy"),
+                    ReqId = dsb.Requisition.ReqID.ToString()
                 });
             }
         }
@@ -273,7 +274,7 @@ public class Service : IService
     public bool ProcessDisbursement(DisbursementRequest disReq)
     {
         List<Tuple<int, int>> items = new List<Tuple<int, int>>();
-        disReq.Items.ForEach(val => items.Add(new Tuple<int, int>(val.ItemId, val.NeededQuantity)));
+        disReq.Items.ForEach(val => items.Add(new Tuple<int, int>(val.ItemId, val.DisbursedQty)));
         return new DisbursementController().ProcessDisbursement(disReq.DisbId, disReq.Key, disReq.ReceivedBy, items);
     }
 

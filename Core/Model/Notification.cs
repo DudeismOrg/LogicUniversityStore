@@ -28,5 +28,9 @@ namespace LogicUniversityStore.Model
         public virtual LUUser LUUser { get; set; }
 
         public virtual LUUser LUUser1 { get; set; }
+
+        public int? ReceiverRoleID { get; set; }
+
+        public virtual Role ReceiverRole { get; set; }
     }
 }

@@ -11,7 +11,7 @@ using System.Web;
 public class DisbursementItemRequest
 {
     [DataMember]
-    public int NeededQuantity { get; set; }
+    public int DisbursedQty { get; set; }
 
     [DataMember]
     public int ItemId { get; set; }
