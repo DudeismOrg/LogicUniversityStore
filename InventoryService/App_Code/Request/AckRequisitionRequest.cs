@@ -25,4 +25,7 @@ public class AckRequisitionRequest
 
     [DataMember]
     public string Status { get; set; }
+
+    [DataMember]
+    public int AcknowledgedBy { get; set; }
 }

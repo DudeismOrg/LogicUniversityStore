@@ -18,6 +18,7 @@ namespace LogicUniversityStore.Util
         public int ItemId
         {
             get { return poItem.ItemID; }
+            set { this.ItemId = value; }
         }
         private string itemName;
         public string ItemName

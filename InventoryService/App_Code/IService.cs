@@ -47,10 +47,22 @@ public interface IService
     bool UpdateUserRole(ManageRoleRequest roleReq);
     #endregion
 
+    #region HOD - Approve/Reject 
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", UriTemplate = "/AckRequisition", ResponseFormat = WebMessageFormat.Json)]
+    bool AckRequisition(AckRequisitionRequest roleReq);
+
+    #endregion
+
     #region Clerk - Outstanding
     [OperationContract]
     [WebInvoke(Method = "GET", UriTemplate = "/Outstanding", ResponseFormat = WebMessageFormat.Json)]
     List<RequisitionItemResponse> GetOutstandingItems();
+
+    [OperationContract]
+    [WebInvoke(Method = "GET", UriTemplate = "/ApproveRequisition/{deptId}", ResponseFormat = WebMessageFormat.Json)]
+    List<RequisitionResponse> GetToBeApproveRequisitions(string deptId);
 
     #endregion
 
@@ -70,7 +82,7 @@ public interface IService
 
     #endregion
 
-    #region
+    #region Disbursement
 
     [OperationContract]
     [WebInvoke(Method = "GET", UriTemplate = "/Disbursement/{departmentId}", ResponseFormat = WebMessageFormat.Json)]

@@ -11,6 +11,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "InventoryService", "http://
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{ee5121f7-198d-4bb2-869b-d1f29e37cdd8}|Core.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/InventoryService"
 		Debug.AspNetCompiler.PhysicalPath = "InventoryService\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\InventoryService\"

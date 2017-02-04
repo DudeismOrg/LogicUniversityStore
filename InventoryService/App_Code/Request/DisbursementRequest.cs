@@ -25,4 +25,7 @@ public class DisbursementRequest
 
     [DataMember]
     public int ReceivedBy { get; set; }
+
+    [DataMember]
+    public List<DisbursementItemRequest> Items { get; set; }
 }

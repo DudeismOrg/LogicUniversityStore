@@ -15,16 +15,25 @@ namespace Core.Controller
             return new DisbursementDao().GetDisbursements(deptId);
         }
 
-        public bool ProcessDisbursement(int disbId, string key, int receivedBy)
+        public bool ProcessDisbursement(int disbId, string key, int receivedBy, List<Tuple<int, int>> itemQtys)
         {
             bool result = true;
-            DisbursementDao disbDao = new DisbursementDao();
-            if (disbDao.ValidateDisbKey(disbId, key))
+            LogicUniStoreModel dbContext = new LogicUniStoreModel();
+            dbContext.Database.Connection.Open();
+            using (var txn = dbContext.Database.BeginTransaction())
             {
-                disbDao.AcceptDisbursement(disbId, receivedBy);
+                DisbursementDao disbDao = new DisbursementDao(dbContext);
+
+                if (disbDao.ValidateDisbKey(disbId, key))
+                {
+                    disbDao.AcceptDisbursement(disbId, receivedBy);
+                    disbDao.UpdateDisbusedQuantity(disbId, itemQtys);
+                }
+                else
+                    result = false;
+                txn.Commit();
             }
-            else
-                result = false;
+            dbContext.Database.Connection.Close();
             return result;
         }
     }

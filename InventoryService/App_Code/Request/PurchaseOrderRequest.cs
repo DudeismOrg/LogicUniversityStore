@@ -18,10 +18,10 @@ public class PurchaseOrderRequest
     }
 
     [DataMember]
-    public int CreatedyBy { get; set; }
+    public int SupplierId { get; set; }
 
     [DataMember]
-    public string CreateDate { get; set; }
+    public int CreatedyBy { get; set; }
 
     [DataMember]
     public List<POItemRequest> Items { get; set; }

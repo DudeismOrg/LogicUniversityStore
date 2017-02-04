@@ -35,4 +35,6 @@ public class RequisitionResponse
     public string RequisitionDate { get; set; }
     [DataMember]
     public List<RequisitionItemResponse> ReqItems { get; set; }
+    [DataMember]
+    public int RequisitionId { get; set; }
 }

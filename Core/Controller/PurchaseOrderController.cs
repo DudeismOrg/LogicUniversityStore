@@ -137,6 +137,36 @@ namespace LogicUniversityStore.Controller
 
         }
 
+        public bool CreatePO(PurchaseOrderUtil poUtil)
+        {
+            bool result = false;
+            PurchaseOrderDao pdao = new PurchaseOrderDao();
+
+            PurchaseOrder po = new PurchaseOrder();
+            po.PuchaseOrderNo = poUtil.PoNumber;
+            po.OrderDate = poUtil.OrderDate;
+            po.DeliveryAddress = "";
+            po.POStatus = "Requested";
+            po.SupplierID = poUtil.Supplier != null ? poUtil.Supplier.SupplierID : poUtil.SuplierId;
+            po.DONumber = "";
+            po.PORemark = poUtil.Remark;
+            if (!string.IsNullOrEmpty(poUtil.ExpectedDeliveryDate))
+                po.ExpectedDeliveryDate = Convert.ToDateTime(poUtil.ExpectedDeliveryDate);
+            pdao.db.PurchaseOrders.Add(po);
+            pdao.db.SaveChanges();
+            PurchaseOrderItemDao poitem = new PurchaseOrderItemDao();
+            foreach (PurchaseOrderItems itm in poUtil.Items)
+            {
+                PurchaseOrderItem items = new PurchaseOrderItem();
+                items.PurchaseOrderID = po.PurchaseOrderID;
+                items.RequestedQuantity = itm.ReorderQuantity;
+                items.ItemID = itm.PoItem.GetSupplierItem().ItemID;
+                items.UnitPrice = poitem.GetUnitPrice(itm.PoItem, itm.PoSupplier);
+                poitem.db.PurchaseOrderItems.Add(items);
+                result = poitem.db.SaveChanges() > 0;
+            }
+            return result;
+        }
 
         public List<Supplier> GetSuppliers()
         {

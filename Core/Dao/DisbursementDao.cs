@@ -39,5 +39,19 @@ namespace Core.Dao
             dsb.Requisition.RecieveByID = receivedBy;
             return db.SaveChanges() > 0 ? true : false;
         }
+
+        public void UpdateDisbusedQuantity(int disbId, List<Tuple<int, int>> itemQtys)
+        {
+            List<RequisitionItem> itemList = db.RequisitionItems.Where(reqI => reqI.Requisition.Disbursement.DisbursementID == disbId).ToList();
+            foreach (RequisitionItem item in itemList)
+            {
+                var temp = itemQtys.Where(val => val.Item1 == item.ItemID).FirstOrDefault();
+                if (temp != null)
+                {
+                    item.DisbursedQuantity = temp.Item2;
+                }
+            }
+            db.SaveChanges();
+        }
     }
 }

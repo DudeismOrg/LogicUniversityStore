@@ -8,6 +8,8 @@ using Core.Controller;
 using CoreModel = LogicUniversityStore.Model;
 using CoreController = Core.Controller;
 using LogicUniversityStore.Controller;
+using Core.Util;
+using LogicUniversityStore.Util;
 
 // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service" in code, svc and config file together.
 public class Service : IService
@@ -48,6 +50,24 @@ public class Service : IService
         }
         return lstReqResponse;
     }
+
+    public List<RequisitionResponse> GetToBeApproveRequisitions(string deptId)
+    {
+        List<RequisitionResponse> lstReqResponse = null;
+        string msg = string.Empty;
+
+        List<CoreModel.Requisition> lstRequisitions = new ApplyReqController().GetToBeApproveRequisitions(Convert.ToInt32(deptId));
+        if (lstRequisitions != null && lstRequisitions.Count > 0)
+        {
+            lstReqResponse = new List<RequisitionResponse>();
+            foreach (CoreModel.Requisition req in lstRequisitions)
+            {
+                lstReqResponse.Add(Convertor.ConvertReqModelToResDC(req));
+            }
+        }
+        return lstReqResponse;
+    }
+
 
     public List<RequisitionItemResponse> GetReqItemDetailsByReqId(string reqId)
     {
@@ -190,8 +210,21 @@ public class Service : IService
 
     public bool CreatePurchaseOrder(PurchaseOrderRequest request)
     {
+        PurchaseOrderUtil poUtil = new PurchaseOrderUtil();
+        poUtil.OrderedBy = request.CreatedyBy;
+        poUtil.SuplierId = request.SupplierId;
+        poUtil.PoNumber = "PON" + new Random().Next(1000, 9999).ToString();
+        poUtil.OrderDate = DateTime.Now;
 
-        return true;
+        foreach (POItemRequest req in request.Items)
+        {
+            poUtil.Items.Add(new PurchaseOrderItems()
+            {
+                ItemId = req.ItemId,
+                ReorderQuantity = req.Quantity
+            });
+        }
+        return new PurchaseOrderController().CreatePO(poUtil);
     }
 
     public List<DisbursementResponse> GetDisbursements(string departmentId)
@@ -217,8 +250,19 @@ public class Service : IService
 
     public bool ProcessDisbursement(DisbursementRequest disReq)
     {
-        return new DisbursementController().ProcessDisbursement(disReq.DisbId, disReq.Key, disReq.ReceivedBy);
+        List<Tuple<int, int>> items = new List<Tuple<int, int>>();
+        disReq.Items.ForEach(val => items.Add(new Tuple<int, int>(val.ItemId, val.NeededQuantity)));
+        return new DisbursementController().ProcessDisbursement(disReq.DisbId, disReq.Key, disReq.ReceivedBy, items);
     }
 
+    public bool AckRequisition(AckRequisitionRequest roleReq)
+    {
+        AckRequisition reqCore = new AckRequisition();
+        reqCore.AcknowledgedBy = roleReq.AcknowledgedBy;
+        reqCore.Remarks = roleReq.Remarks;
+        reqCore.ReqId = roleReq.ReqId;
+        reqCore.Status = roleReq.Status;
+        return new ApproveRejectReqController().AckRequisition(reqCore);
+    }
     #endregion
 }

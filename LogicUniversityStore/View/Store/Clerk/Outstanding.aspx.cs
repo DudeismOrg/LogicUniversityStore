@@ -15,9 +15,13 @@ namespace LogicUniversityStore.View.Store.Clerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            new ApplyReqController().GetToBeApproveRequisitions(1);
+
             List<CoreModel.RequisitionItem> lstCoreReqItems = new ProcessReqController().GetOutstandingItems();
             gvItems.DataSource = lstCoreReqItems;
             gvItems.DataBind();
+
+            //Testing controllers code for WCF
 
             //List<CoreModel.Supplier> lstCoreSup = new PurchaseOrderController().GetSuppliers();
             //if (lstCoreSup.Count > 0)
@@ -46,9 +50,15 @@ namespace LogicUniversityStore.View.Store.Clerk
             //    }
             //}
 
-            // new DisbursementController().ProcessDisbursement(1, "vas", 1);
+            // Disbursement
 
-            List<CoreModel.LUUser> users = new UserController().GetUsersByDeptCode(3);
+            // new DisbursementController().GetDisbursements(1);
+            // List<Tuple<int, int>> items = new List<Tuple<int, int>>();
+            // items.Add(new Tuple<int, int>(5, 5));
+            // items.Add(new Tuple<int, int>(8, 6));
+            // new DisbursementController().ProcessDisbursement(1, "100", 1, items);
+
+            //List<CoreModel.LUUser> users = new UserController().GetUsersByDeptCode(3);
         }
     }
 }

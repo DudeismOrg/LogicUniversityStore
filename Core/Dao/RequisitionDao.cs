@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using LogicUniversityStore.Util;
+using Core.Util;
 
 namespace LogicUniversityStore.Dao
 {
@@ -24,13 +25,13 @@ namespace LogicUniversityStore.Dao
 
         public List<Requisition> GetApprovedRequisitionList()
         {
-            return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
-            
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
+
         }
 
         public List<Requisition> GetRequestedRequisitionList(int requesterId)
         {
-            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString())&& r.RequesterID==requesterId).ToList();
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Requested.ToString()) && r.RequesterID == requesterId).ToList();
         }
 
         public List<Requisition> GetRequestedRequisitionListHod(int depId)
@@ -40,12 +41,12 @@ namespace LogicUniversityStore.Dao
 
         public List<Requisition> GetRejectedRequisitionList(int requesterId)
         {
-            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Rejected.ToString())&& r.RequesterID==requesterId).ToList();
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Rejected.ToString()) && r.RequesterID == requesterId).ToList();
         }
 
         public List<Requisition> GetApprovedRejectedRequisitionList(int depId)
         {
-            return db.Requisitions.Where(r => ((r.Status.Equals(RequisitionStatus.Approved.ToString())) || (r.Status.Equals(RequisitionStatus.Rejected.ToString()))) && r.DepartmentID==depId).ToList();
+            return db.Requisitions.Where(r => ((r.Status.Equals(RequisitionStatus.Approved.ToString())) || (r.Status.Equals(RequisitionStatus.Rejected.ToString()))) && r.DepartmentID == depId).ToList();
         }
 
         public List<Requisition> GetRequisitionList(int requesterId)
@@ -86,20 +87,20 @@ namespace LogicUniversityStore.Dao
             return false;
         }
 
-        public void approveRequisition(int reqId,String remark)
+        public void approveRequisition(int reqId, String remark)
         {
             Requisition requisition = db.Requisitions.Find(reqId);
-            
-                requisition.Status = RequisitionStatus.Approved.ToString();
-                requisition.Remark = remark;
-                db.Requisitions.Attach(requisition);
-                var entry = db.Entry(requisition);
-                entry.Property(e => e.Status).IsModified = true;
-                entry.Property(e => e.Remark).IsModified = true;            
-                db.SaveChanges();
+
+            requisition.Status = RequisitionStatus.Approved.ToString();
+            requisition.Remark = remark;
+            db.Requisitions.Attach(requisition);
+            var entry = db.Entry(requisition);
+            entry.Property(e => e.Status).IsModified = true;
+            entry.Property(e => e.Remark).IsModified = true;
+            db.SaveChanges();
         }
 
-        public void updateRemark(int reqId,String remark)
+        public void updateRemark(int reqId, String remark)
         {
             Requisition requisition = db.Requisitions.Find(reqId);
             requisition.Remark = remark;
@@ -109,7 +110,7 @@ namespace LogicUniversityStore.Dao
             db.SaveChanges();
         }
 
-        public void rejectRequisition(int reqId,String remark)
+        public void rejectRequisition(int reqId, String remark)
         {
             Requisition requisition = db.Requisitions.Find(reqId);
 
@@ -123,12 +124,22 @@ namespace LogicUniversityStore.Dao
 
         }
 
-        public int GetApprovedRequisitionCount()
+        public bool AckRequisition(AckRequisition roleReq)
         {
-          return  db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).Count();
+            Requisition requisition = db.Requisitions.Where(req => req.ReqID == roleReq.ReqId).FirstOrDefault();
+            requisition.Status = roleReq.Status;
+            requisition.Remark = roleReq.Remarks;
+            requisition.ApprovedRejectedByID = roleReq.AcknowledgedBy;
+            requisition.ApprovedDate = DateTime.Now;
+            return db.SaveChanges() > 0 ? true : false;
         }
 
-        public void reapplyRequisition(int reqId, String remark,DateTime reqDate)
+        public int GetApprovedRequisitionCount()
+        {
+            return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).Count();
+        }
+
+        public void reapplyRequisition(int reqId, String remark, DateTime reqDate)
         {
             Requisition requisition = db.Requisitions.Find(reqId);
 
@@ -155,6 +166,12 @@ namespace LogicUniversityStore.Dao
         {
             return db.Requisitions.Where(r => r.Status == status.ToString()).ToList();
         }
+
+        public List<Requisition> GetToBeApproveRequisitions(int deptId)
+        {
+            return db.Requisitions.Where(r => r.DepartmentID == deptId && r.Status == RequisitionStatus.Requested.ToString()).ToList();
+        }
+
 
         public string GenerateRetreivalForm(Tuple<int, List<int>> retReq)
         {

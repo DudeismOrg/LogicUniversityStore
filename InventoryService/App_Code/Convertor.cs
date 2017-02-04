@@ -74,7 +74,8 @@ public class Convertor
             DepartmentName = req.Department.DepartmentName,
             RequisitionDate = req.ReqDate.ToString(),
             RequisitionNum = req.ReqNumber,
-            UserId = req.RequesterID
+            UserId = req.RequesterID,
+            RequisitionId = req.ReqID
         };
     }
 
