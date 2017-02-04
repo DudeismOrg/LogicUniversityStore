@@ -32,12 +32,12 @@ namespace LogicUniversityStore.View.Store.Clerk
                 Session["lockedItem"] = lockedItem;
                 if (ViewState["prItems"] == null)
                 {
-                    ViewState["prItems"] = processReq.GetMainProcessReqListt();
+                    ViewState["prItems"] = processReq.GetMainProcessReqList();
                 }
 
                 if (((Dictionary<Requisition, double>)ViewState["prItems"]).Count < this.processReq.GetApprovedRequistionCount())
                 {
-                    ViewState["prItems"] = processReq.GetMainProcessReqListt();
+                    ViewState["prItems"] = processReq.GetMainProcessReqList();
                 }
                 listRequests = (Dictionary<Requisition, double>)ViewState["prItems"];
                

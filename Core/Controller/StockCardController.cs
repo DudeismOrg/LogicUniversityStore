@@ -27,5 +27,10 @@ namespace LogicUniversityStore.Controller
             Item item = poItemDao.getTheItemFromPOItem(poItemId);
             stockCardDao.updateStockCardByPurchaseDelivery(item, receivedQuantity);
         }
+
+        public void UpdateStockItemOnRetreval(int itemId, int collectedQty)
+        {
+            stockCardDao.UpdateStockItemOnRetrieval(itemId, collectedQty);
+        }
     }
 }

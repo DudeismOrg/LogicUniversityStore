@@ -27,6 +27,8 @@ namespace LogicUniversityStore.View.Store.Clerk
                     DepartmentName = "-- Select One Department --"
                 });
                 depts.AddRange(disbursControl.GetAllDepartments());
+                DdlDepartment.DataValueField = "DepartmentID";
+                DdlDepartment.DataTextField = "DepartmentName";
                 DdlDepartment.DataSource = depts;
                 DdlDepartment.DataBind();
             }
@@ -38,8 +40,52 @@ namespace LogicUniversityStore.View.Store.Clerk
             if (Convert.ToInt32(DdlDepartment.SelectedValue) != 0)
             {
                 int DeptId = Convert.ToInt32(DdlDepartment.SelectedValue);
-                //requisition = disbursControl.GetAllShipedRequsitionByDept(DeptId);
+                requisition = disbursControl.GetAllShipedRequsitionByDept(DeptId);
             }
         }
+
+        public void something(object sender, CommandEventArgs e)
+        {
+            string name = Request.Form["delivered-1"];
+            string ID = e.CommandArgument.ToString();
+            int s = 9;
+        }
+
+        public string ReqIdColumnDetail()
+        {
+            string html = String.Empty;
+            foreach (Requisition req in requisition)
+            {
+                html = (html + Eval(req.ReqID.ToString()));
+            }
+            return html;
+        }
+
+        public List<RequisitionItem> getAllRequsitionByItemId(string ReqId)
+        {
+            List<RequisitionItem> reqItmList = new List<RequisitionItem>();
+            ProcessReqController ReqControl = new ProcessReqController();
+
+            string s = reqId.Text;
+
+            if (ReqId == "")
+            {
+                ReqId = "0";
+            }
+            int id = Convert.ToInt32(ReqId);
+            reqItmList = ReqControl.GetRequisitionItems(id);
+            if(reqItmList == null)
+            {
+                reqItmList = ReqControl.GetRequisitionItems(1);
+                return reqItmList;
+            }
+            else
+            {
+                return reqItmList;
+            }
+            
+        }
+
+
     }
 }

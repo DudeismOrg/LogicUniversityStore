@@ -18,9 +18,6 @@ namespace LogicUniversityStore.Controller
         public Dictionary<int, int> lockedItemsCountForProcess; // will hold SupplierItemID and Count
         public Dictionary<Requisition, double> mainList;  // will hold requisition and unfullfilItemNumbers
 
-        public int? unfullfill;
-        public double progrss;
-
         public ProcessReqController()
         {
             LogicUniStoreModel db = new LogicUniStoreModel();
@@ -33,50 +30,47 @@ namespace LogicUniversityStore.Controller
 
         public Dictionary<Requisition, double> GetMainProcessReqList()
         {
-            foreach (Requisition requisition in RequisitionDao.GetApprovedRequisitionList())
+            LogicUniStoreModel db = new LogicUniStoreModel();
+            List<Requisition> rList = db.Requisitions.Where(r => r.Status == RequisitionStatus.Approved.ToString()).ToList();
+            foreach (var requisition in rList)
             {
+
                 if (mainList.ContainsKey(requisition))
                 {
                     continue;
                 }
                 int? unfullfilledItem = 0;
                 double progrssMeter = 0.0;
-                List<RequisitionItem> reqItm = RequisitionDao.getAllRequisitionItemsFromReqId(requisition.ReqID);
-                try
+                foreach (RequisitionItem item in requisition.RequisitionItems)
                 {
-                    foreach (RequisitionItem item in reqItm)
+                    RequisitionItem rItem = RequisitionItemDao.db.RequisitionItems.Find(item.ReqItemID);
+                    if (!lockedItemsCountForProcess.ContainsKey(rItem.SupplierItem.ItemID))
                     {
-                        RequisitionItem rItem = RequisitionItemDao.db.RequisitionItems.Where(ri => ri.ReqItemID == item.ReqItemID).FirstOrDefault();
-
-                        if (!lockedItemsCountForProcess.ContainsKey(rItem.SupplierItem.ItemID))
-                        {
-                            lockedItemsCountForProcess.Add(rItem.SupplierItem.ItemID, 0);
-                        }
-                        int actualQuantityInStock = (StockCardDao.GetProductCountInStock(rItem.SupplierItem.ItemID) - lockedItemsCountForProcess[rItem.SupplierItem.ItemID]);
-
-                        if ((actualQuantityInStock - rItem.NeededQuantity) >= 0)
-                        {
-                            lockedItemsCountForProcess[rItem.SupplierItem.ItemID] += rItem.NeededQuantity.Value;
-                            RequisitionItemDao.saveApprovedQty(item.ReqItemID, rItem.NeededQuantity);
-                            progrssMeter += 1;
-                        }
-                        else
-                        {
-                            lockedItemsCountForProcess[rItem.SupplierItem.ItemID] += actualQuantityInStock;
-                            RequisitionItemDao.saveApprovedQty(item.ReqItemID, actualQuantityInStock);
-                            unfullfilledItem += 1;
-                            progrssMeter += (double)rItem.ApprovedQuantity / (double)rItem.NeededQuantity;
-                        }
+                        lockedItemsCountForProcess.Add(rItem.SupplierItem.ItemID, 0);
                     }
-                }
-                catch (Exception ex)
-                {
-                    throw;
+                    int actualQuantityInStock = (StockCardDao.GetProductCountInStock(rItem.SupplierItem.ItemID) - lockedItemsCountForProcess[rItem.SupplierItem.ItemID]);
+
+                    if ((actualQuantityInStock - rItem.NeededQuantity) >= 0)
+                    {
+                        lockedItemsCountForProcess[rItem.SupplierItem.ItemID] += rItem.NeededQuantity.Value;
+                        RequisitionItemDao.saveApprovedQty(item.ReqItemID, rItem.NeededQuantity);
+                        progrssMeter += 1;
+                    }
+                    else
+                    {
+                        lockedItemsCountForProcess[rItem.SupplierItem.ItemID] += actualQuantityInStock;
+                        RequisitionItemDao.saveApprovedQty(item.ReqItemID, actualQuantityInStock);
+                        unfullfilledItem += 1;
+                        progrssMeter += (double)rItem.ApprovedQuantity / (double)rItem.NeededQuantity;
+                    }
                 }
                 mainList.Add(requisition, (progrssMeter / requisition.RequisitionItems.Count) * 100);
             }
+
             return mainList;
+
         }
+
 
         internal Requisition GetRequisition(int requisitonID)
         {
@@ -117,7 +111,5 @@ namespace LogicUniversityStore.Controller
         {
             return new RequisitionDao().GenerateRetreivalForm(retReq);
         }
-
-
     }
 }

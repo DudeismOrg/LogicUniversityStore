@@ -39,21 +39,45 @@ namespace LogicUniversityStore.Dao
             return db.Retrievals.Where(r => r.RetrievalID == retrId).FirstOrDefault();
         }
 
-        internal void saveCollectedQuantityWithMismatch(int itemId, int retrId, int collectedQty)
+        internal void saveCollectedQuantity(int itemId, int retrId, int collectedQty)
         {
+            int currentCollectedQty = collectedQty;
             List<Requisition> reqByIdOrdred = db.RequisitionItems.Where(item => item.RetrievalID == retrId && item.SupplierItem.ItemID == itemId).Select(item => item.Requisition).Distinct().ToList();
-            reqByIdOrdred = reqByIdOrdred.OrderBy(d => d.ReqDate).ToList();
-            int x = 0;
-            throw new NotImplementedException();
+            reqByIdOrdred = reqByIdOrdred.OrderBy(d => d.ApprovedDate).ToList();
+            foreach(Requisition req in reqByIdOrdred)
+            {
+                List<RequisitionItem> reqItms = db.RequisitionItems.Where(r => r.ReqID == req.ReqID && r.SupplierItemID == itemId).ToList();
+                foreach(RequisitionItem rqitm in reqItms)
+                {
+                    if((currentCollectedQty - rqitm.ApprovedQuantity.Value) >= 0)
+                    {
+                        rqitm.RetirevedQuantity = rqitm.ApprovedQuantity;
+                        db.SaveChanges();
+                        currentCollectedQty = currentCollectedQty - rqitm.ApprovedQuantity.Value;
+                    }
+                    else
+                    {
+                        if(currentCollectedQty > 0)
+                        {
+                            rqitm.RetirevedQuantity = currentCollectedQty;
+                            db.SaveChanges();
+                            currentCollectedQty = 0;
+                        }
+                        else
+                        {
+                            rqitm.RetirevedQuantity = 0;
+                            db.SaveChanges();
+                        }
+                    }
+                }
+            }
         }
 
-        internal void saveCollectedQuantityWithoutMismatch(int itemId, int retrId, int collectedQty)
+        internal void SetRetrevalAsRetreved(int retrId)
         {
-            List<Requisition> reqByIdOrdred = db.RequisitionItems.Where(item => item.RetrievalID == retrId && item.SupplierItem.ItemID == itemId).Select(item => item.Requisition).Distinct().ToList();
-            reqByIdOrdred = reqByIdOrdred.OrderBy(d => d.ReqDate).ToList();
-            int x = 0;
-            throw new NotImplementedException();
-            throw new NotImplementedException();
+            Retrieval ret = db.Retrievals.Where(r => r.RetrievalID == retrId).FirstOrDefault();
+            ret.Retriever = 1;
+            db.SaveChanges();
         }
     }
 }

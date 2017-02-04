@@ -53,6 +53,14 @@ namespace LogicUniversityStore.Model
 
         public string DepartmentName { get { return Department.DepartmentName; } }
 
+        public int NumberOfItems
+        {
+            get
+            {
+                return RequisitionItems.Count;
+            }
+        }
+
         public bool Equals(Requisition other)
         {
             return this.ReqID.Equals(other.ReqID);

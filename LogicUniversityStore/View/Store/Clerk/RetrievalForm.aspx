@@ -53,11 +53,15 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="RetrievalNumber" HeaderText="Retrieval Number" />
-                            <asp:BoundField DataField="RetrievalDate" HeaderText="Date" />
+                            <asp:BoundField DataField="RetrievalDate" HeaderText="Generated Date" />
                             <asp:TemplateField HeaderText="Collect Items" HeaderStyle-CssClass="pull-right">
                                 <ItemTemplate>
                                     <span style="text-align:center">
-                                        <asp:Button ID="btnView" runat="server" CommandName="View" CommandArgument='<%# Eval("RetrievalID") %>' Text="Collect" CssClass="btn btn-primary pull-right" />
+                                        <asp:Button ID="btnView" runat="server" 
+                                            CommandName='<%# Eval("Retriever") == null ? "View" : "Viewed" %>'
+                                            CommandArgument='<%# Eval("RetrievalID") %>' 
+                                            Text='<%# Eval("Retriever") == null ? "Collect" : "Collected" %>'
+                                            CssClass='<%# Eval("Retriever") == null ? "btn btn-primary pull-right" : "btn btn-success pull-right" %>' />
                                     </span>
                                 </ItemTemplate>
                             </asp:TemplateField>

@@ -48,6 +48,13 @@ namespace LogicUniversityStore.Dao
           
         }
 
+        internal void UpdateStockItemOnRetrieval(int itemId, int collectedQty)
+        {
+            StockCard stock = db.StockCards.Where(s => s.ItemID == itemId).FirstOrDefault();
+            stock.OnHandQuantity = stock.OnHandQuantity - collectedQty;
+            db.SaveChanges();
+        }
+
         internal void updateStockCardByPurchaseDelivery(Item item, int receivedQuantity)
         {
             StockCard stock = db.StockCards.Where(i => i.ItemID == item.ItemID).FirstOrDefault();
