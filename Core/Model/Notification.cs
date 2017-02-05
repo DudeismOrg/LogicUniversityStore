@@ -12,10 +12,10 @@ namespace LogicUniversityStore.Model
     {
         public int NotificationID { get; set; }
 
-        [StringLength(50)]
+        [StringLength(150)]
         public string Type { get; set; }
 
-        [StringLength(50)]
+        [StringLength(150)]
         public string Description { get; set; }
 
         public int? SenderUserID { get; set; }
@@ -26,6 +26,8 @@ namespace LogicUniversityStore.Model
         public string status { get; set; }
 
         public int? ReceiverRoleID { get; set; }
+
+        public int? ReceiverDeptID { get; set; }
 
         public virtual LUUser LUUser { get; set; }
 

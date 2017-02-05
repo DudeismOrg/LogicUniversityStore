@@ -186,6 +186,7 @@
     <Content Include="View\Store\Reports\DisplaySupplierPOCat.aspx" />
     <Content Include="View\Store\Reports\DisplaySupplierPOPeriod.aspx" />
     <Content Include="View\Store\Reports\PO_Supplier_Display.aspx" />
+    <Content Include="View\Store\Supervisor\ApproveAdjustment.aspx" />
     <Content Include="View\Store\Supervisor\Supervisor.Master" />
     <Content Include="View\Store\Manager\Manager.Master" />
     <Content Include="aspnet_client" />
@@ -1086,6 +1087,7 @@
     <Content Include="View\Store\Clerk\RetrievalForm.aspx" />
     <Content Include="View\Store\Clerk\SpotAdjustment.aspx" />
     <Content Include="View\Store\Clerk\ViewRetrieval.aspx" />
+    <Content Include="View\Store\Supervisor\SupervisorMain.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1402,6 +1404,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PO_Supplier_Period.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\ApproveAdjustment.aspx.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\ApproveAdjustment.aspx.designer.cs">
+      <DependentUpon>ApproveAdjustment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.cs">
+      <DependentUpon>SupervisorMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Supervisor\SupervisorMain.aspx.designer.cs">
+      <DependentUpon>SupervisorMain.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

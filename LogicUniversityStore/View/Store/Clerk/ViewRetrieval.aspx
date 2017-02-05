@@ -54,7 +54,7 @@
                     <h4>Total Measure to collect</h4>
                 </div>
                 <div class="box-body">
-                    <asp:GridView ID="gvRetrieval" runat="server" AutoGenerateColumns="false" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AllowPaging="true" PageSize="10">
+                    <asp:GridView ID="gvRetrieval" runat="server" AutoGenerateColumns="false" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AllowPaging="true">
                         <Columns>
                             <asp:TemplateField HeaderText="#">
                                 <ItemTemplate>

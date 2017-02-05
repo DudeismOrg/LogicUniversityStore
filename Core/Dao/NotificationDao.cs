@@ -2,6 +2,7 @@
 using LogicUniversityStore.Util;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,19 @@ namespace Core.Dao
         public void CreateNotification(Notification objNot)
         {
             db.Notifications.Add(objNot);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }catch(DbEntityValidationException ex)
+            {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        string s = ("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                    }
+                }
+            }
         }
 
         public void ClearNotification(int userId, int notId, NotificationStatus status)
@@ -36,9 +49,9 @@ namespace Core.Dao
             db.SaveChanges();
         }
 
-        public List<Notification> GetNotificationsByRoleCode(string roleCode)
+        public List<Notification> GetNotificationsByRoleCode(string roleCode, int deptId)
         {
-            return db.Notifications.Where(not => not.ReceiverRole.RoleCode == roleCode && not.status == NotificationStatus.Created.ToString()).ToList();
+            return db.Notifications.Where(not => not.ReceiverRole.RoleCode == roleCode && not.ReceiverDeptID == deptId && not.status == NotificationStatus.Created.ToString()).ToList();
         }
 
         public List<Notification> GetNotificationsByRoleCodeAndType(string roleCode, string notType)

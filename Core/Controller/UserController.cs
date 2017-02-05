@@ -43,10 +43,10 @@ namespace Core.Controller
             return new UserDao().UpdateUserRole(userId, roleCode);
         }
 
-        public string GetToEmailIds(Roles role)
+        public string GetToEmailIds(Roles role, int receiverDeptId)
         {
-            var emails = new LogicUniStoreModel().LUUsers.Where(user => user.Role.RoleCode == role.ToString()).Select(val => val.Email);
-            return String.Join(";", emails);
+            var emails = new LogicUniStoreModel().LUUsers.Where(user => user.Role.RoleCode == role.ToString() && user.DepartmentID == receiverDeptId).Select(val => val.Email);
+            return String.Join(",", emails);
         }
     }
 }

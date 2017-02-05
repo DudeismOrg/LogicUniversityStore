@@ -50,7 +50,7 @@ namespace LogicUniversityStore.View.Store.Clerk
             LUUser user = (LUUser)Session["user"];
             POController.SavePurchaseOrder(newPOUlist, user);
 
-            Response.Write("<script language='javascript'> alert('Purchase order saved successfully!!!'); </script>");
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "alertBox('Purchase order saved successfully!!!')", true);
             Response.Redirect("ClrkMain.aspx");
 
         }

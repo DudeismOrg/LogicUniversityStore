@@ -17,7 +17,8 @@ namespace LogicUniversityStore.View.Store.Clerk
         {
             if (!IsPostBack)
             {
-                gvRetrievList.DataSource = controller.GetAllRetrieval();
+                //gvRetrievList.DataSource = controller.GetAllRetrieval();
+                gvRetrievList.DataSource = controller.GetAllUncollectedRetrieval();
                 gvRetrievList.DataBind();
             }
         }

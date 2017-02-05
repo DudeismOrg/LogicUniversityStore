@@ -19,6 +19,12 @@ namespace LogicUniversityStore.Controller
             RetrievalDao = new RetrievalDao();
             retReq = retrievalReq;
         }
+
+        public List<Retrieval> GetAllUncollectedRetrieval()
+        {
+            return RetrievalDao.FindAllUncollectedRetrieval();
+        }
+
         public RetreiveReqController() : this(null)  // default constructor for view the retriev list
         {
 

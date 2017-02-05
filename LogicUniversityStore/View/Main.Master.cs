@@ -43,7 +43,7 @@ namespace LogicUniversityStore.View
         private void ShowNotifications()
         {
             LUUser user = (LUUser)Session["User"];
-            notifications = new NotificationController().GetNotificationsByRoleCode(user.Role.RoleCode);
+            notifications = new NotificationController().GetNotificationsByRoleCode(user.Role.RoleCode, user.DepartmentID.Value);
             lblNotCount.Text = lblNotShortMsg.Text = notifications.Count().ToString();
             gvNots.DataSource = notifications;
             gvNots.DataBind();

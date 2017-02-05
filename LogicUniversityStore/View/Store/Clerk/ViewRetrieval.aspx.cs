@@ -69,6 +69,7 @@ namespace LogicUniversityStore.View.Store.Clerk
 
         protected void btnCollected_Click(object sender, EventArgs e)
         {
+            LUUser user = (LUUser)Session["User"];
             controller = new RetreiveReqController(GetAllRequisition());
             stockController = new StockCardController();
             disbController = new DisbursementController();
@@ -86,7 +87,7 @@ namespace LogicUniversityStore.View.Store.Clerk
                     controller.saveRetrevedQuantity(ItemId, retrId, collectedQty);
                     stockController.UpdateStockItemOnRetreval(ItemId, collectedQty);
                     controller.saveAsRetreved(retrId);
-                    disbController.GenerateDisbursement(retrId);
+                    disbController.GenerateDisbursement(retrId, user);
                 }
             }
             Response.Redirect("/View/Store/Clerk/RetrievalForm.aspx");
