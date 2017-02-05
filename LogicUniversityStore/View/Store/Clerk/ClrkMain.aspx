@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Store/Clerk/Clerk.master" AutoEventWireup="true" CodeBehind="ClrkMain.aspx.cs" Inherits="LogicUniversityStore.View.Store.Clerk.ClrkMain" %>
 
+<%@ Register Assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="clrkCssBlock" runat="server">
 </asp:Content>
 
@@ -161,39 +163,45 @@
                     <div class="row">
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
-                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i>1.7%</span>
-                                <h5 class="description-header">$5,210.43</h5>
-                                <span class="description-text">ALL DEPTS TOTAL USAGE</span>
+                                <a href="../Reports/DisplayDeptUsagePeriod.aspx">
+                                    <span class="description-text">DEPT USAGE OVER PERIOD</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
-                                <span class="description-percentage text-yellow"><i class="fa fa-caret-up"></i>3%</span>
-                                <h5 class="description-header">$8,390.90</h5>
-                                <span class="description-text">TOTAL PURCHASE ORDER VALUE</span>
+                                <a href="../Reports/DisplayDeptUsage.aspx">
+                                    <span class="description-text">DEPT USAGE COMPARISON</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
-                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i>5%</span>
-                                <h5 class="description-header">$813.53</h5>
-                                <span class="description-text">HIGHEST DEPT USAGE VARIANCE</span>
+                                <a href="../Reports/DisplaySupplierPOPeriod.aspx">
+                                    <span class="description-text">SUPPLIER POs OVER PERIOD</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-3 col-xs-6">
-                            <div class="description-block">
-                                <span class="description-percentage text-red"><i class="fa fa-caret-down"></i>0.8%</span>
-                                <h5 class="description-header">$134.90</h5>
-                                <span class="description-text">LEAST DEPT USAGE VARIANCE</span>
-                            </div>
+                            <%--<div class="description-block">
+                                <a href="../Reports/DisplaySupplierPOCat.aspx">
+                                    <span class="description-text">SUPPLIER PO Category COMPARISON</span>
+                            </div>--%>
                             <!-- /.description-block -->
                         </div>
+
+                        <!------- adi put test -------------->
+                        <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="50px" ReportSourceID="PO_Supplier" ToolbarImagesFolderUrl="" ToolPanelView="None" ToolPanelWidth="200px" Width="350px" />
+                        <CR:CrystalReportSource ID="PO_Supplier" runat="server">
+                            <Report FileName="View\Store\Reports\PO_Supplier.rpt">
+                            </Report>
+                        </CR:CrystalReportSource>
+
+                        <!------- adi put test -------------->
+
                     </div>
                     <!-- /.row -->
                 </div>

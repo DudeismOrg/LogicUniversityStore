@@ -67,7 +67,7 @@
     </li>
 
     <li class="treeview">
-        <a href="../Reports/DisplayDeptUsage.aspx">
+        <a href="../Reports/DisplayDeptUsagePeriod.aspx">
             <i class="fa fa-stack-exchange"></i>
             <span> Reports</span>
         </a>
