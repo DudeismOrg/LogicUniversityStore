@@ -65,10 +65,11 @@
             <span> On-spot Stock Adjustment</span>
         </a>
     </li>
-     <li class="treeview">
-        <a href="Outstanding.aspx">
-            <i class="fa fa-stack-overflow"></i>
-            <span>  Outstanding</span>
+
+    <li class="treeview">
+        <a href="../Reports/DisplayDeptUsagePeriod.aspx">
+            <i class="fa fa-stack-exchange"></i>
+            <span> Reports</span>
         </a>
     </li>
 </asp:Content>
