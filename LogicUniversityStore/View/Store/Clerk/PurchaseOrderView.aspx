@@ -79,6 +79,11 @@
                                     <asp:CheckBox ID="chkRow" CssClass="item-checkbox" runat="server" Checked="false" />
                                 </ItemTemplate>
                             </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:TextBox ID="tbItemId" Visible="false" runat="server" Text='<%# Bind("ItemId") %>' CssClass="form-control" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="#">
                                 <ItemTemplate>
                                     <%# Container.DataItemIndex + 1 %>

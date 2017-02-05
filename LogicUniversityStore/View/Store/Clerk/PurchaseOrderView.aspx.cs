@@ -136,7 +136,8 @@ namespace LogicUniversityStore.View.Store.Clerk
                     if (chkRow.Checked)
                     {
                         PurchaseOrderController purchaseOrder = new PurchaseOrderController();
-                        int itemId = Convert.ToInt32(row.Cells[1].Text);
+                        TextBox itemIdBox = (TextBox)row.Cells[1].FindControl("tbItemId");
+                        int itemId = Convert.ToInt32(itemIdBox.Text);
                         Item itm = ItemsToPurchase.Where(i => i.ItemID == itemId).FirstOrDefault();
                         DropDownList supp = (row.Cells[6].FindControl("ddlSupplier") as DropDownList);
                         int supId = Convert.ToInt32(supp.SelectedItem.Value);
