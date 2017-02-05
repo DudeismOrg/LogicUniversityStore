@@ -55,9 +55,6 @@ C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\L
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\AkhilJayan\Documents\Visual Studio 2015\Projects\LogicUniversityStore\LogicUniversityStore\bin\stdole.dll
-C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
-C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
-C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\ApplicationInsights.config
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\roslyn\csc.exe
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -111,3 +108,6 @@ C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.We
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.AI.WindowsServer.xml
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.ApplicationInsights.xml
 C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.dll
+C:\inetpub\wwwroot\LogicUniversityStore\LogicUniversityStore\obj\Debug\LogicUniversityStore.pdb

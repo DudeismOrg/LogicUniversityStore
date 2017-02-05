@@ -23,7 +23,9 @@
             <i class="fa fa-edit"></i>
             <span>Pending Approval</span>
             <span class="pull-right-container">
-                <span class="label label-primary pull-right" style="margin: 0px">20</span>
+                <span class="label label-primary pull-right" style="margin: 0px">
+                    <asp:Label ID="lblPendingApprovalM" runat="server"></asp:Label>
+                </span>
             </span>
         </asp:HyperLink>
     </li>
