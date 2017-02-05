@@ -4,7 +4,7 @@ namespace LogicUniversityStore.Model
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-
+    [Serializable]
     public partial class LogicUniStoreModel : DbContext
     {
         public LogicUniStoreModel()

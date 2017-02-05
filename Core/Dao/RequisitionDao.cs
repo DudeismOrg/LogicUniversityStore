@@ -8,6 +8,7 @@ using Core.Util;
 
 namespace LogicUniversityStore.Dao
 {
+    [Serializable]
     public class RequisitionDao
     {
         LogicUniStoreModel db;

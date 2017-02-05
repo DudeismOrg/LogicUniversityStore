@@ -16,51 +16,67 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
     {
         public ApplyReqController reqController { get; set; }
         public ProcessReqController processReq { get; set; }
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             processReq = new ProcessReqController();
             if (!IsPostBack)
             {
-                int requestIDq = Convert.ToInt32(Request.Form["Id"]);
-                Dictionary<int,int> lockedItems = (Dictionary<int, int>)Session["lockedItem"];
+                int reqId = Convert.ToInt32(Request.Form["Id"]);
+                ViewState["reqId"] = reqId;
+                List<Requisition> reqList =  (List<Requisition>) Session["reqList"];
                 StockCardDao sDao = new StockCardDao();
-                List<RequisitionItem> items = processReq.GetRequisitionItems(requestIDq);
-
+                Requisition req = reqList.Find(r=>r.ReqID == reqId);
                 Dictionary<RequisitionItem, int> itemsWithOnhand = new Dictionary<RequisitionItem, int>();
-                foreach (var item in items)
+                foreach (var item in req.RequisitionItems.ToList())
                 {
-                    itemsWithOnhand[item] = sDao.GetProductCountInStock(item.SupplierItem.ItemID) - lockedItems[item.SupplierItem.ItemID];
+                    itemsWithOnhand[item] = sDao.GetProductCountInStock(item.SupplierItem.ItemID);
                 }
-                //Label1.Text = requestIDq.ToString();
-                var listRequestItems = (from i in processReq.GetRequisitionItems(requestIDq)
-                                        join s in processReq.GetAllStockCard() on i.SupplierItemID equals s.ItemID
-                                        select new
-                                        {
-                                            i.SupplierItemID,
-                                            i.ReqID,
-                                            i.ReqItemID,
-                                            i.NeededQuantity,
-                                            s.StockCardID,
-                                            i.SupplierItem.Item.ItemName,
-                                            s.OnHandQuantity,
-                                            i.ApprovedQuantity
-                                        }).ToList();
 
-
-
-                //  lvItemsInReq.DataSource = listRequestItems.ToList();
-                lvItemsInReq.DataSource = itemsWithOnhand;
-                lvItemsInReq.DataBind();
+                gvAlter.DataSource = itemsWithOnhand;
+                gvAlter.DataBind();
             }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-           // Response.Redirect("~/View/Store/Clerk/ProcessRequest.aspx");
+            int reqId = (int)ViewState["reqId"];
+            List<Requisition> reqList = (List<Requisition>)Session["reqList"];
+            Dictionary<int,int> lockedItem = (Dictionary<int, int>)Session["lockedItem"];
+            if(reqList == null || lockedItem == null)
+            {
+                processReq.Reset();
+                reqList = processReq.ProcessedRequistions;
+                lockedItem = processReq.LockedItem;
+            }
+            ProcessReqAlterController controller = new ProcessReqAlterController(reqList, lockedItem);
+            Requisition req = reqList.Find(r => r.ReqID == reqId);
+            List<RequisitionItem> items = req.RequisitionItems.ToList();
+            RequisitionItem item;
+            int id , value;
+            bool IsUpdate = true;
+            for(int i =0; i < gvAlter.Rows.Count; i++)
+            {
+                GridViewRow row = gvAlter.Rows[i];
+               
+                value = Convert.ToInt32(((TextBox)row.FindControl("tbAmount")).Text);
+                item =  items[i];
+                if (item.ApprovedQuantity == value) continue;
+                bool flag = controller.updateRequistionItem(item, value);
+                if (!flag)
+                {
+                    IsUpdate = false;
+                }
+            }
+           // Response.Write("<script language='javascript'> alert('saved successfully!!!'); </script>");
+
+            Response.Redirect("~/View/Store/Clerk/ProcessRequest.aspx?IsAlter="+IsUpdate.ToString());
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+       
+        protected void btnCancell_Click(object sender, EventArgs e)
         {
+            Response.Redirect("~/View/Store/Clerk/ProcessRequest.aspx?IsAlter");
 
         }
     }
