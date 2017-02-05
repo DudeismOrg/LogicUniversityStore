@@ -24,7 +24,30 @@ namespace LogicUniversityStore.View.Store.Clerk
         {
             Session["reqListRetrieval"] = null;
 
-            if ( Request.Params.Get("IsAlter") == null)
+            //if ( Request.Params.Get("IsAlter") == null)
+            //{
+            //    processReq = new ProcessReqController();
+
+            //    listRequests = processReq.GetMainProcessReqList();
+            //    Session["mainList"] = listRequests;
+            //    Session["lockedItem"] = processReq.LockedItem;
+            //    Session["reqList"] = processReq.ProcessedRequistions;
+            //}
+            //else if (Request.Params.Get("IsAlter") != null)
+            //{
+            //    listRequests =(Dictionary<Requisition, double>)Session["mainList"];
+
+            //    if (Request.Params.Get("IsAlter").Equals("True"))
+            //    {
+            //        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "alertBox('Amount Saved  successfully!!!')", true);
+            //    }
+            //    else if (Request.Params.Get("IsAlter").Equals("False"))
+            //    {
+            //        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "alertBox('Amount Invalid !!! Please enter a valid amount.')", true);
+            //    }
+            //}
+
+            if (Request.Params.Get("IsAlter") == null)
             {
                 processReq = new ProcessReqController();
 
@@ -35,17 +58,27 @@ namespace LogicUniversityStore.View.Store.Clerk
             }
             else if (Request.Params.Get("IsAlter") != null)
             {
-                listRequests =(Dictionary<Requisition, double>)Session["mainList"];
+                if (Session["reqList"] != null)
+                {
+                    ProcessReqController alteredCon = new ProcessReqController((List<Requisition>)Session["reqList"]);
+                    listRequests = alteredCon.GetMainProcessReqListAltered();
+                }
+                else
+                {
+                    listRequests = (Dictionary<Requisition, double>)Session["mainList"];
+
+                }
 
                 if (Request.Params.Get("IsAlter").Equals("True"))
-                {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "alertBox('Amount Saved  successfully!!!')", true);
-                }
+                    Response.Write("<script language='javascript'> alert('saved successfully!!!'); </script>");
                 else if (Request.Params.Get("IsAlter").Equals("False"))
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "alertBox('Amount Invalid !!! Please enter a valid amount.')", true);
+                    Response.Write("<script language='javascript'> alert('Amount Invalid !!!'); </script>");
                 }
+
             }
+
+
             if (!IsPostBack)
             {
                 gvRequisitions.DataSource = listRequests;
@@ -57,7 +90,7 @@ namespace LogicUniversityStore.View.Store.Clerk
         [WebMethod]
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
         public static string GetInt(string id)
-        {           
+        {
             return id;
         }
 
@@ -71,9 +104,9 @@ namespace LogicUniversityStore.View.Store.Clerk
                 CheckBox check = (CheckBox)row.FindControl("cbReq");
                 if (check.Checked)
                 {
-                   TextBox reqIdText = (TextBox)row.Cells[1].FindControl("reqIdHiden");
-                   int reqId =  Convert.ToInt32(reqIdText.Text);
-                   reqList.Add(sesReq.Find(r => r.ReqID == reqId));
+                    TextBox reqIdText = (TextBox)row.Cells[1].FindControl("reqIdHiden");
+                    int reqId = Convert.ToInt32(reqIdText.Text);
+                    reqList.Add(sesReq.Find(r => r.ReqID == reqId));
                 }
             }
             Session["reqListRetrieval"] = reqList;

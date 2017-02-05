@@ -107,5 +107,14 @@ namespace LogicUniversityStore.Dao
                 throw;
             }
         }
+
+        public List<RequisitionItem> GetRequistionItemsFrom(int numOfMonth)
+        {
+          DateTime today =  DateTime.Now;
+          DateTime past = today.AddMonths(-numOfMonth);
+          return  db.RequisitionItems.Where(r => r.Requisition.ApprovedDate.Value > past).ToList();
+        
+
+        }
     }
 }
