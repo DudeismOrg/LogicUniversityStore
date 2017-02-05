@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicUniversityStore.View.Store.Clerk {
+namespace LogicUniversityStore.View.Store.Reports {
     
     
-    public partial class ClrkMain {
+    public partial class DisplaySupplierPOCat {
         
         /// <summary>
         /// CrystalReportViewer1 control.
@@ -22,12 +22,12 @@ namespace LogicUniversityStore.View.Store.Clerk {
         protected global::CrystalDecisions.Web.CrystalReportViewer CrystalReportViewer1;
         
         /// <summary>
-        /// PO_Supplier control.
+        /// SuppPOCat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CrystalDecisions.Web.CrystalReportSource PO_Supplier;
+        protected global::CrystalDecisions.Web.CrystalReportSource SuppPOCat;
     }
 }

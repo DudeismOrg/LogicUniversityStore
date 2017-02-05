@@ -7,13 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace LogicUniversityStore.View.Store.Reports
 {
-    public partial class DisplaySupplierReport : System.Web.UI.Page
+    public partial class PO_Supplier_Display : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SupplierOrder srpt = new SupplierOrder();
-            //CrystalReportViewer1.ReportSource = srpt;
-            //CrystalReportViewer1.Zoom(90);
+
         }
     }
 }

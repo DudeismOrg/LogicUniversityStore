@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicUniversityStore.View.Store.Clerk {
+namespace LogicUniversityStore.View.Store.Reports {
     
     
-    public partial class ClrkMain {
+    public partial class PO_Supplier_Display {
         
         /// <summary>
         /// CrystalReportViewer1 control.
