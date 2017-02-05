@@ -1,5 +1,42 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Department/Hod/Hod.master" AutoEventWireup="true" CodeBehind="ApproveReject.aspx.cs" Inherits="LogicUniversityStore.View.Department.Hod.WebForm2" EnableEventValidation="false" %>
 
+<asp:Content ID="Content4" ContentPlaceHolderID="empMainCss" runat="server">
+    <style type="text/css">
+        tbody {
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+            border-top-color: inherit;
+            border-right-color: inherit;
+            border-bottom-color: inherit;
+            border-left-color: inherit;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .ml-5 {
+            margin-left: 5px;
+        }
+
+        .mr-5 {
+            margin-right: 5px;
+        }
+    </style>
+</asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="empMainHeader" runat="server">
 
     <section class="content-header">
@@ -14,38 +51,35 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box">                                       
-                    <div>
-                        <asp:GridView ID="gvRequestedRequisition" runat="server"  AutoGenerateColumns="False" OnSelectedIndexChanged="gvRequestedRequisition_SelectedIndexChanged" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Height="100px" Width="665px">
-                            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                            <Columns>
-                                <asp:BoundField DataField="ReqID" HeaderText="RequisitionID" ItemStyle-Height="50px" />
-                                <asp:BoundField DataField="ReqNumber" HeaderText="RequisitionNumber" />
-                                <asp:BoundField DataField="ReqDate" HeaderText="Requisition Date" DataFormatString="{0:D}" />
-                                <asp:CommandField HeaderText="View" ButtonType="Button" ShowSelectButton="true" SelectText="View" ControlStyle-CssClass="btn btn-sm btn-primary"  />
-                            </Columns>
-                            <EditRowStyle BackColor="#999999" BorderStyle="None" />
-                            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                            <SelectedRowStyle BackColor="#999999" Font-Bold="True" ForeColor="#333333" />
-                            <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                            <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                            <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                        </asp:GridView>
-                        <!-- /.box-body -->
-                    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div>
+                    <asp:GridView ID="gvRequestedRequisition" runat="server" OnSelectedIndexChanged="gvRequestedRequisition_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" Width="100%" AllowPaging="true">
+                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                        <Columns>
+                            <asp:TemplateField HeaderText="#">
+                                <ItemTemplate>
+                                    <%# Container.DataItemIndex + 1 %>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="ReqID" HeaderText="RequisitionID" ItemStyle-Height="50px" />
+                            <asp:BoundField DataField="ReqNumber" HeaderText="RequisitionNumber" />
+                            <asp:BoundField DataField="ReqDate" HeaderText="Requisition Date" DataFormatString="{0:D}" />
+                            <asp:CommandField HeaderText="View" ButtonType="Button" ShowSelectButton="true" SelectText="View" ControlStyle-CssClass="btn btn-sm btn-primary" />
+                        </Columns>
+                    </asp:GridView>
                 </div>
             </div>
-            <!-- /.content -->
         </div>
-    <!-- /.box-body -->
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("table").addClass("table table-condensed");
+        });
+    </script>
 </asp:Content>
 
 
