@@ -16,6 +16,10 @@ namespace LogicUniversityStore.View.Store.Clerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //CoreModel.LUUser user = new UserController().ValidateUser("clerk", "clerk");
+
+            //List<CoreModel.Supplier> sup = 
+
             new ApplyReqController().GetToBeApproveRequisitions(1);
 
             List<CoreModel.RequisitionItem> lstCoreReqItems = new ProcessReqController().GetOutstandingItems();

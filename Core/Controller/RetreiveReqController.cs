@@ -87,7 +87,11 @@ namespace LogicUniversityStore.Controller
                 {
                     if (!result.ContainsKey(item))
                     {
-                        MainRow row = new MainRow(new Pair(item.NeededQuantity.Value, item.ApprovedQuantity.Value), this.GetBreakDownByDepartment(item));
+                        MainRow row = new MainRow(
+                            new Pair(
+                                item.NeededQuantity.HasValue ? item.NeededQuantity.Value:0,
+                                item.ApprovedQuantity.HasValue ? item.ApprovedQuantity.Value:0
+                                ), this.GetBreakDownByDepartment(item));
                         result.Add(item, row);
                     }
                     else
@@ -100,14 +104,14 @@ namespace LogicUniversityStore.Controller
             return result;
         }
 
-        public void saveRetrevedQuantityWithMismatch(int itemId, int retrId, int collectedQty)
+        public void saveAsRetreved(int retrId)
         {
-            RetrievalDao.saveCollectedQuantityWithMismatch(itemId, retrId, collectedQty);
+            RetrievalDao.SetRetrevalAsRetreved(retrId);
         }
 
-        public void saveRetrevedQuantityWithoutMismatch(int itemId, int retrId, int collectedQty)
+        public void saveRetrevedQuantity(int itemId, int retrId, int collectedQty)
         {
-            RetrievalDao.saveCollectedQuantityWithoutMismatch(itemId, retrId, collectedQty);
+            RetrievalDao.saveCollectedQuantity(itemId, retrId, collectedQty);
         }
 
         public List<Requisition> GetAllRequistion(Retrieval r)

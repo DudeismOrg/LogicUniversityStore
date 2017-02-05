@@ -29,7 +29,7 @@
     </li>
 
     <li class="treeview">
-        <a href="index.html">
+        <a href="DisbursementsMain.aspx">
             <i class="fa fa-share"></i>
             <span>Process Disbursement</span>
             <span class="pull-right-container">
@@ -53,7 +53,7 @@
     </li>
 
     <li class="treeview">
-        <a href="index.html">
+        <a href="WebForm2.aspx">
             <i class="fa fa-stack-overflow"></i>
             <span>  Monthly Stock Adjustment</span>
         </a>

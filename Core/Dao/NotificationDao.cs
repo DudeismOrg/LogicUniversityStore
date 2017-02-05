@@ -17,6 +17,11 @@ namespace Core.Dao
             db = new LogicUniStoreModel();
         }
 
+        public NotificationDao(LogicUniStoreModel db)
+        {
+            this.db = db;
+        }
+
         public void CreateNotification(Notification objNot)
         {
             db.Notifications.Add(objNot);

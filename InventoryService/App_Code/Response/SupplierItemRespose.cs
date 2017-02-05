@@ -26,5 +26,6 @@ public class SupplierItemResponse
     [DataMember]
     public string ItemName { get; set; }
 
+    [DataMember]
     public string Description { get; set; }
 }

@@ -63,7 +63,7 @@ namespace LogicUniversityStore.View.Department.Employee
             {
                 RequisitionItem ri = new RequisitionItem();
                 ri.ReqID = reqId;
-                String itemName = gvRequisitionDetails.Rows[i].Cells[0].Text;
+                String itemName = gvRequisitionDetails.Rows[i].Cells[1].Text;
                 Item item = reqController.GetItem(itemName);
                 int itemId = item.ItemID;
                 ri.SupplierItemID = itemId;

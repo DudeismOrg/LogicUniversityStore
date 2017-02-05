@@ -6,6 +6,7 @@ using System.Web;
 
 namespace LogicUniversityStore.Dao
 {
+    [Serializable]
     public class RequisitionItemDao
     {
         public LogicUniStoreModel db;
@@ -78,5 +79,33 @@ namespace LogicUniversityStore.Dao
             (item.RetirevedQuantity.HasValue ? item.RetirevedQuantity.Value : 0) > 0)).ToList();
         }
 
+        internal void saveApprovedQty(int reqItmId, int? neededQuantity)
+        {
+            RequisitionItem reqItm;
+            try
+            {
+                reqItm = db.RequisitionItems.Where(y => y.ReqItemID == reqItmId).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            try
+            {
+                reqItm.ApprovedQuantity = neededQuantity;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
     }
 }

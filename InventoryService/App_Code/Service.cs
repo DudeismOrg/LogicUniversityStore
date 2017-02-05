@@ -264,7 +264,8 @@ public class Service : IService
                     DisbursementNum = dsb.DisbursementNumber,
                     ReqNum = dsb.Requisition.ReqNumber,
                     RequestedDate = dsb.Requisition.ReqDate.ToString("dd-MMM-yy"),
-                    ReqId = dsb.Requisition.ReqID.ToString()
+                    ReqId = dsb.Requisition.ReqID.ToString(),
+                    DisbursementId = dsb.DisbursementID.ToString()
                 });
             }
         }
@@ -274,8 +275,8 @@ public class Service : IService
     public bool ProcessDisbursement(DisbursementRequest disReq)
     {
         List<Tuple<int, int>> items = new List<Tuple<int, int>>();
-        disReq.Items.ForEach(val => items.Add(new Tuple<int, int>(val.ItemId, val.DisbursedQty)));
-        return new DisbursementController().ProcessDisbursement(disReq.DisbId, disReq.Key, disReq.ReceivedBy, items);
+        disReq.Items.ForEach(val => items.Add(new Tuple<int, int>(Convert.ToInt32(val.ItemId), Convert.ToInt32(val.DisbursedQty))));
+        return new DisbursementController().ProcessDisbursement(Convert.ToInt32(disReq.DisbId), disReq.Key, Convert.ToInt32(disReq.ReceivedBy), items);
     }
 
     public bool AckRequisition(AckRequisitionRequest roleReq)

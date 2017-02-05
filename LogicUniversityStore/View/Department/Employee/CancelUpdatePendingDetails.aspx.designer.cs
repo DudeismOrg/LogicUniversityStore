@@ -31,15 +31,6 @@ namespace LogicUniversityStore.View.Department.Employee {
         protected global::System.Web.UI.WebControls.TextBox txtRemark;
         
         /// <summary>
-        /// btnUpdate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
-        
-        /// <summary>
         /// btnClose control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace LogicUniversityStore.View.Department.Employee {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnClose;
+        
+        /// <summary>
+        /// btnUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
         
         /// <summary>
         /// ValidationSummary1 control.

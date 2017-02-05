@@ -9,9 +9,10 @@ namespace LogicUniversityStore.View.Store.Reports
 {
     public partial class DisplayDeptUsage : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            //DeptUsage dusagerpt = new DeptUsage();
+            //DeptUsageNEW dusagerpt = new DeptUsageNEW();
             //CrystalReportViewer1.ReportSource = dusagerpt;
             //CrystalReportViewer1.Zoom(90);
         }
@@ -20,14 +21,14 @@ namespace LogicUniversityStore.View.Store.Reports
         {
             if (!IsPostBack)
             {
-                DeptUsage dusagerpt = new DeptUsage();                
+                Dept_Usage_Category dusagerpt = new Dept_Usage_Category();
                 CrystalReportViewer1.ReportSource = dusagerpt;
-                Session["DeptUsage"] = dusagerpt;
+                Session["Dept_Usage_Category"] = dusagerpt;
                 CrystalReportViewer1.Zoom(90);
             }
             else
             {
-                DeptUsage doc = (DeptUsage)Session["DeptUsage"];
+                Dept_Usage_Category doc = (Dept_Usage_Category)Session["Dept_Usage_Category"];
                 CrystalReportViewer1.ReportSource = doc;
             }
         }

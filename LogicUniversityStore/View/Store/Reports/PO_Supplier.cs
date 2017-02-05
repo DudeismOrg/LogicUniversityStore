@@ -16,14 +16,14 @@ namespace LogicUniversityStore.View.Store.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class DeptUsage : ReportClass {
+    public class PO_Supplier : ReportClass {
         
-        public DeptUsage() {
+        public PO_Supplier() {
         }
         
         public override string ResourceName {
             get {
-                return "DeptUsage.rpt";
+                return "PO_Supplier.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LogicUniversityStore.View.Store.Reports {
         
         public override string FullResourceName {
             get {
-                return "LogicUniversityStore.View.Store.Reports.DeptUsage.rpt";
+                return "LogicUniversityStore.View.Store.Reports.PO_Supplier.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace LogicUniversityStore.View.Store.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection4 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,7 +98,7 @@ namespace LogicUniversityStore.View.Store.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[6];
             }
@@ -106,7 +106,7 @@ namespace LogicUniversityStore.View.Store.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection4 {
             get {
                 return this.ReportDefinition.Sections[7];
             }
@@ -114,7 +114,7 @@ namespace LogicUniversityStore.View.Store.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection3 {
             get {
                 return this.ReportDefinition.Sections[8];
             }
@@ -122,7 +122,7 @@ namespace LogicUniversityStore.View.Store.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
             get {
                 return this.ReportDefinition.Sections[9];
             }
@@ -130,17 +130,33 @@ namespace LogicUniversityStore.View.Store.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[10];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[11];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[12];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedDeptUsage : Component, ICachedReport {
+    public class CachedPO_Supplier : Component, ICachedReport {
         
-        public CachedDeptUsage() {
+        public CachedPO_Supplier() {
         }
         
         [Browsable(false)]
@@ -177,7 +193,7 @@ namespace LogicUniversityStore.View.Store.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            DeptUsage rpt = new DeptUsage();
+            PO_Supplier rpt = new PO_Supplier();
             rpt.Site = this.Site;
             return rpt;
         }

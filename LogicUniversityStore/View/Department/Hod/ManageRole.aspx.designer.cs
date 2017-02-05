@@ -13,15 +13,6 @@ namespace LogicUniversityStore.View.Department.Hod {
     public partial class ManageRole {
         
         /// <summary>
-        /// lblMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
-        
-        /// <summary>
         /// lstEmp control.
         /// </summary>
         /// <remarks>
@@ -40,13 +31,13 @@ namespace LogicUniversityStore.View.Department.Hod {
         protected global::System.Web.UI.WebControls.ListView lstRoles;
         
         /// <summary>
-        /// btnSave control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSave;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
         /// btnCancel control.
@@ -56,5 +47,14 @@ namespace LogicUniversityStore.View.Department.Hod {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
+        
+        /// <summary>
+        /// btnSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }

@@ -180,14 +180,14 @@ namespace LogicUniversityStore.Controller
             return result;
         }
 
-        public List<PurchaseOrder> FindAllPurchaseOrderBySupplier(int suplierId)
-        {
-            return PODao.findPoBySupplierId(suplierId);
-        }
-
         public List<PurchaseOrder> FindAllPurchaseOrderByBatch(int batchId)
         {
             return PODao.findPoByBatchId(batchId);
+        }
+
+        public List<PurchaseOrder> FindAllPurchaseOrderBySupplier(int suplierId)
+        {
+            return PODao.findPoBySupplierId(suplierId);
         }
 
 

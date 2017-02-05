@@ -84,7 +84,9 @@ public class Convertor
         return new RequisitionItemResponse()
         {
             ItemName = req.SupplierItem.Item.ItemName,
-            Quantity = req.NeededQuantity.HasValue ? req.NeededQuantity.Value.ToString() : "0"
+            Quantity = req.NeededQuantity.HasValue ? req.NeededQuantity.Value.ToString() : "0",
+            ItemId = req.SupplierItemID
+
         };
     }
 }

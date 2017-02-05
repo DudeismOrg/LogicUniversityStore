@@ -21,10 +21,10 @@ public class DisbursementRequest
     public string Key { get; set; }
 
     [DataMember]
-    public int DisbId { get; set; }
+    public string DisbId { get; set; }
 
     [DataMember]
-    public int ReceivedBy { get; set; }
+    public string ReceivedBy { get; set; }
 
     [DataMember]
     public List<DisbursementItemRequest> Items { get; set; }

@@ -15,6 +15,8 @@ namespace LogicUniversityStore.View.Store.Clerk
     {
         RetreiveReqController controller;
         RetrievalDao dao = new RetrievalDao();
+        StockCardController stockController;
+        DisbursementController disbController;
         public Retrieval ret;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -68,6 +70,8 @@ namespace LogicUniversityStore.View.Store.Clerk
         protected void btnCollected_Click(object sender, EventArgs e)
         {
             controller = new RetreiveReqController(GetAllRequisition());
+            stockController = new StockCardController();
+            disbController = new DisbursementController();
             int retrId = getSession();
             foreach (GridViewRow row in gvRetrieval.Rows)
             {
@@ -79,16 +83,13 @@ namespace LogicUniversityStore.View.Store.Clerk
                     int collectedQty = Convert.ToInt32(collectedQtyTxt.Text);
                     int approvedQty = Convert.ToInt32(approvedQtyTxt.Text);
                     int ItemId = Convert.ToInt32(ItemIdTxt.Text);
-                    if (collectedQty == approvedQty)
-                    {
-                        controller.saveRetrevedQuantityWithoutMismatch(ItemId, retrId, collectedQty);
-                    }
-                    else
-                    {
-                        controller.saveRetrevedQuantityWithMismatch(ItemId, retrId, collectedQty);
-                    }
+                    controller.saveRetrevedQuantity(ItemId, retrId, collectedQty);
+                    stockController.UpdateStockItemOnRetreval(ItemId, collectedQty);
+                    controller.saveAsRetreved(retrId);
+                    disbController.GenerateDisbursement(retrId);
                 }
             }
+            Response.Redirect("/View/Store/Clerk/RetrievalForm.aspx");
         }
     }
 }

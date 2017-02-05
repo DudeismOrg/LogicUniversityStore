@@ -8,6 +8,7 @@ using Core.Util;
 
 namespace LogicUniversityStore.Dao
 {
+    [Serializable]
     public class RequisitionDao
     {
         LogicUniStoreModel db;
@@ -49,9 +50,25 @@ namespace LogicUniversityStore.Dao
             return db.Requisitions.Where(r => ((r.Status.Equals(RequisitionStatus.Approved.ToString())) || (r.Status.Equals(RequisitionStatus.Rejected.ToString()))) && r.DepartmentID == depId).ToList();
         }
 
+        public List<Requisition> GetApprovedRequisitionList(int depId)
+        {
+            return db.Requisitions.Where(r => ((r.Status.Equals(RequisitionStatus.Approved.ToString()))) && r.DepartmentID == depId).ToList();
+        }
+
         public List<Requisition> GetRequisitionList(int requesterId)
         {
             return db.Requisitions.Where(x => x.RequesterID == requesterId).ToList();
+        }
+
+        internal List<RequisitionItem> getAllRequisitionItemsFromReqId(int reqID)
+        {
+            return db.RequisitionItems.Where(u => u.ReqID == reqID).ToList();
+            throw new NotImplementedException();
+        }
+
+        public List<Requisition> test(int v)
+        {
+            return db.Requisitions.Where(f=>f.ReqID == v).ToList();
         }
 
         public List<Requisition> GetRequisitionListHod(int depId)
@@ -93,10 +110,12 @@ namespace LogicUniversityStore.Dao
 
             requisition.Status = RequisitionStatus.Approved.ToString();
             requisition.Remark = remark;
+            requisition.ApprovedDate = DateTime.Now;
             db.Requisitions.Attach(requisition);
             var entry = db.Entry(requisition);
             entry.Property(e => e.Status).IsModified = true;
             entry.Property(e => e.Remark).IsModified = true;
+            entry.Property(e => e.ApprovedDate).IsModified = true;
             db.SaveChanges();
         }
 
@@ -137,6 +156,12 @@ namespace LogicUniversityStore.Dao
         public int GetApprovedRequisitionCount()
         {
             return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).Count();
+        }
+
+        internal List<RequisitionItem> getAllApprovedRequisitionItemsFromReqId()
+        {
+            return db.RequisitionItems.Where(r => r.Requisition.Status.Equals(RequisitionStatus.Approved.ToString())).ToList();
+            //return db.Requisitions.Where(r => r.Status.Equals(RequisitionStatus.Approved.ToString())).Count();
         }
 
         public void reapplyRequisition(int reqId, String remark, DateTime reqDate)

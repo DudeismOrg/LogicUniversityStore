@@ -182,7 +182,10 @@
     <Content Include="View\Store\Manager\ManagerMain.aspx" />
     <Content Include="View\Store\Manager\ApproveAdjustment.aspx" />
     <Content Include="View\Store\Reports\DisplayDeptUsage.aspx" />
-    <Content Include="View\Store\Reports\DisplaySupplierReport.aspx" />
+    <Content Include="View\Store\Reports\DisplayDeptUsagePeriod.aspx" />
+    <Content Include="View\Store\Reports\DisplaySupplierPOCat.aspx" />
+    <Content Include="View\Store\Reports\DisplaySupplierPOPeriod.aspx" />
+    <Content Include="View\Store\Reports\PO_Supplier_Display.aspx" />
     <Content Include="View\Store\Supervisor\Supervisor.Master" />
     <Content Include="View\Store\Manager\Manager.Master" />
     <Content Include="aspnet_client" />
@@ -1335,7 +1338,16 @@
     <Compile Include="View\Store\Clerk\ViewRetrieval.aspx.designer.cs">
       <DependentUpon>ViewRetrieval.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Reports\DeptUsage.cs">
+    <Compile Include="View\Store\Reports\Dept_Reqs_Period.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dept_Reqs_Period.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Store\Reports\Dept_Usage_Category.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dept_Usage_Category.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Store\Reports\DisplayDeptUsage.aspx.cs">
@@ -1345,29 +1357,55 @@
     <Compile Include="View\Store\Reports\DisplayDeptUsage.aspx.designer.cs">
       <DependentUpon>DisplayDeptUsage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Reports\DisplaySupplierReport.aspx.cs">
-      <DependentUpon>DisplaySupplierReport.aspx</DependentUpon>
+    <Compile Include="View\Store\Reports\DisplayDeptUsagePeriod.aspx.cs">
+      <DependentUpon>DisplayDeptUsagePeriod.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Store\Reports\DisplaySupplierReport.aspx.designer.cs">
-      <DependentUpon>DisplaySupplierReport.aspx</DependentUpon>
+    <Compile Include="View\Store\Reports\DisplayDeptUsagePeriod.aspx.designer.cs">
+      <DependentUpon>DisplayDeptUsagePeriod.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Store\Reports\SupplierOrder.cs">
+    <Compile Include="View\Store\Reports\DisplaySupplierPOCat.aspx.cs">
+      <DependentUpon>DisplaySupplierPOCat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Reports\DisplaySupplierPOCat.aspx.designer.cs">
+      <DependentUpon>DisplaySupplierPOCat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Reports\DisplaySupplierPOPeriod.aspx.cs">
+      <DependentUpon>DisplaySupplierPOPeriod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Reports\DisplaySupplierPOPeriod.aspx.designer.cs">
+      <DependentUpon>DisplaySupplierPOPeriod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Reports\PO_Supplier.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PO_Supplier.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Store\Reports\PO_Supplier_Category.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PO_Supplier_Category.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Store\Reports\PO_Supplier_Display.aspx.cs">
+      <DependentUpon>PO_Supplier_Display.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Store\Reports\PO_Supplier_Display.aspx.designer.cs">
+      <DependentUpon>PO_Supplier_Display.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\Reports\PO_Supplier_Period.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PO_Supplier_Period.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\Store\Reports\DeptUsage.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DeptUsage.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Store\Reports\SupplierOrder.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>SupplierOrder.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
@@ -1377,6 +1415,28 @@
       <Project>{ee5121f7-198d-4bb2-869b-d1f29e37cdd8}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\Store\Reports\Dept_Reqs_Period.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Dept_Reqs_Period.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Store\Reports\Dept_Usage_Category.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Dept_Usage_Category.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Store\Reports\PO_Supplier.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PO_Supplier.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Store\Reports\PO_Supplier_Category.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PO_Supplier_Category.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Store\Reports\PO_Supplier_Period.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PO_Supplier_Period.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

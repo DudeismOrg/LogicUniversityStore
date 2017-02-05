@@ -6,6 +6,7 @@ using System.Web;
 
 namespace LogicUniversityStore.Dao
 {
+    [Serializable]
     public class StockCardDao
     {
         public LogicUniStoreModel db;
@@ -46,6 +47,13 @@ namespace LogicUniversityStore.Dao
             }
                 return card.OnHandQuantity.Value;
           
+        }
+
+        internal void UpdateStockItemOnRetrieval(int itemId, int collectedQty)
+        {
+            StockCard stock = db.StockCards.Where(s => s.ItemID == itemId).FirstOrDefault();
+            stock.OnHandQuantity = stock.OnHandQuantity - collectedQty;
+            db.SaveChanges();
         }
 
         internal void updateStockCardByPurchaseDelivery(Item item, int receivedQuantity)

@@ -33,13 +33,13 @@ namespace LogicUniversityStore.Model
 
         public virtual Requisition Requisition { get; set; }
 
-        public string ItemName
-        {
-            get
-            {
-                return SupplierItem.Item.ItemName;
-            }
-        }
+        //public string ItemName
+        //{
+        //    get
+        //    {
+        //        return SupplierItem.Item.ItemName;
+        //    }
+        //}
 
         public string DepartmentName
         {
@@ -77,11 +77,11 @@ namespace LogicUniversityStore.Model
 
         public bool Equals(RequisitionItem other)
         {
-            return this.SupplierItemID.Equals(other.SupplierItemID);
+            return this.ReqItemID.Equals(other.ReqItemID);
         }
         public override int GetHashCode()
         {
-            return this.SupplierItemID;
+            return this.ReqItemID.GetHashCode();
         }
         public override string ToString()
         {

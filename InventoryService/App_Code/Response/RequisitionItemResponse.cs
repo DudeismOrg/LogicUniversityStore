@@ -18,6 +18,9 @@ public class RequisitionItemResponse
     }
 
     [DataMember]
+    public int ItemId { get; set; }
+
+    [DataMember]
     public string ItemName { get; set; }
 
     [DataMember]

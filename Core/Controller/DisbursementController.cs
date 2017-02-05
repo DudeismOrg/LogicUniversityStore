@@ -55,5 +55,25 @@ namespace LogicUniversityStore.Controller
         {
             return disbDao.getShipedReqByDept(deptId);
         }
+
+        public void GenerateDisbursement(int retrId)
+        {
+            disbDao.GenerateDisbursebents(retrId);
+        }
+
+        public List<RequisitionItem> GetShipedReqItmsByReqId(int reqIdInt)
+        {
+            return disbDao.GetShipedReqItmsByReqId(reqIdInt);
+        }
+
+        public void saveDeliveredStatusToReq(int reqItemID, int deliverdQuantity)
+        {
+            disbDao.saveDeliveredStatusToReq(reqItemID, deliverdQuantity);
+        }
+
+        public void SaveRequsitionAsDelivered(int reqIdInt)
+        {
+            disbDao.SaveRequsitionAsDelivered(reqIdInt);
+        }
     }
 }

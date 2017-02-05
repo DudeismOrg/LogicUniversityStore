@@ -24,6 +24,9 @@ public class DisbursementResponse
     public string DisbursementNum { get; set; }
 
     [DataMember]
+    public String DisbursementId { get; set; }
+
+    [DataMember]
     public string RequestedDate { get; set; }
 
     [DataMember]

@@ -4,7 +4,7 @@ namespace LogicUniversityStore.Model
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-
+    [Serializable]
     public partial class LogicUniStoreModel : DbContext
     {
         public LogicUniStoreModel()
@@ -193,7 +193,7 @@ namespace LogicUniversityStore.Model
             modelBuilder.Entity<Requisition>()
                 .HasMany(e => e.RequisitionItems)
                 .WithRequired(e => e.Requisition)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Retrieval>()
                 .Property(e => e.RetrievalNumber)
