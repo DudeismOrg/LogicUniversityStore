@@ -14,9 +14,13 @@ namespace LogicUniversityStore.View.Department.Hod
         protected void Page_Load(object sender, EventArgs e)
         {
             LUUser user = (LUUser)Session["user"];
-            List<Requisition> req = new List<Requisition>();
-            req = new CancelUpdateUnallocatedController().GetApprovedRejectedRequisition(user.DepartmentID.Value);
-            lblAckReqs.Text = req.Count.ToString();
+
+            if (user != null)
+            {
+                List<Requisition> req = new List<Requisition>();
+                req = new CancelUpdateUnallocatedController().GetApprovedRejectedRequisition(user.DepartmentID.Value);
+                lblAckReqs.Text = req.Count.ToString();
+            }
         }
     }
 }

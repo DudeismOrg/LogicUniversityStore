@@ -281,9 +281,9 @@ public class Service : IService
     public bool AckRequisition(AckRequisitionRequest roleReq)
     {
         AckRequisition reqCore = new AckRequisition();
-        reqCore.AcknowledgedBy = roleReq.AcknowledgedBy;
+        reqCore.AcknowledgedBy = Convert.ToInt32(roleReq.AcknowledgedBy);
         reqCore.Remarks = roleReq.Remarks;
-        reqCore.ReqId = roleReq.ReqId;
+        reqCore.ReqId = Convert.ToInt32(roleReq.ReqId);
         reqCore.Status = roleReq.Status;
         return new ApproveRejectReqController().AckRequisition(reqCore);
     }

@@ -18,7 +18,7 @@ public class AckRequisitionRequest
     }
 
     [DataMember]
-    public int ReqId { get; set; }
+    public string ReqId { get; set; }
 
     [DataMember]
     public string Remarks { get; set; }
@@ -27,5 +27,5 @@ public class AckRequisitionRequest
     public string Status { get; set; }
 
     [DataMember]
-    public int AcknowledgedBy { get; set; }
+    public string AcknowledgedBy { get; set; }
 }

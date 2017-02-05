@@ -17,7 +17,8 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-green"><i class="fa fa-star-half-full"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Approve/Reject</span>
+                        <span class="info-box-text">
+                            <asp:HyperLink NavigateUrl="~/View/Department/Hod/ApproveReject.aspx" runat="server">Approve/Reject</asp:HyperLink></span>
                         <span class="info-box-number">
                             <asp:Label ID="lblAckReqs" runat="server"></asp:Label>
                         </span>
@@ -28,7 +29,9 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Manage Roles</span>
+                        <span class="info-box-text">
+                            <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Hod/ManageRole.aspx">Manage Roles</asp:HyperLink>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -36,7 +39,9 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-red"><i class="fa fa-thumbs-o-down"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Cancel/Update Requisition</span>
+                        <span class="info-box-text">
+                            <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Hod/CancelUpdateUnallocated.aspx">
+                            Cancel/Update Requisition</asp:HyperLink></span>
                         <span class="info-box-number">10</span>
                     </div>
                 </div>
@@ -45,7 +50,9 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-yellow"><i class="fa fa-calendar"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text" style="margin-top: 20%;">Request History</span>
+                        <span class="info-box-text" style="margin-top: 20%;">
+                            <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Hod/RequestHistory.aspx">Request History</asp:HyperLink>
+                        </span>
                     </div>
                 </div>
             </div>
