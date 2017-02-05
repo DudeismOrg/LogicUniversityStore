@@ -55,19 +55,6 @@
                 </div>
                 <div class="box-body">
                     <div class="col-md-12">
-                        <%--<div class="col-md-6">
-                            <div class="pull-left">
-                                <h3>Department: CS Department</h3>
-                                <span>Department Code: CSD</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="pull-right">
-                                <h3>Employee Name: Name</h3>
-                                <span>Employee Number: 123</span><br>
-                                <span>Employee Email: email@email.com</span>
-                            </div>
-                        </div>--%>
                     </div>
                     <div class="col-md-12" style="height: 20px"></div>
                     <div class="col-md-12">
@@ -142,7 +129,7 @@
                     <div class="col-md-12">
                         <label>Remarks</label>
                         <div class="box-body pad">
-                            <asp:textbox ID="tbRemarks" runat="server" Class="textarea form-control" placeholder="Enter Remark" ></asp:textbox>
+                            <asp:textbox ID="tbRemarks" TextMode="MultiLine" runat="server" Class="textarea form-control" placeholder="Enter Remark" ></asp:textbox>
                         </div>
                     </div>
 

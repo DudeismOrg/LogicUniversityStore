@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="box-body">
-                    <asp:GridView ID="gvRetrievList" runat="server" AutoGenerateColumns="false" OnRowCommand="gvRetrievList_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="RetrievalID" AllowPaging="true" PageSize="10">
+                    <asp:GridView ID="gvRetrievList" runat="server" AutoGenerateColumns="false" OnRowCommand="gvRetrievList_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="RetrievalID" AllowPaging="false">
                         <Columns>
                             <asp:TemplateField HeaderText="#">
                                 <ItemTemplate>
@@ -58,10 +58,10 @@
                                 <ItemTemplate>
                                     <span style="text-align:center">
                                         <asp:Button ID="btnView" runat="server" 
-                                            CommandName='<%# Eval("Retriever") == null ? "View" : "Viewed" %>'
+                                            CommandName='View'
                                             CommandArgument='<%# Eval("RetrievalID") %>' 
-                                            Text='<%# Eval("Retriever") == null ? "Collect" : "Collected" %>'
-                                            CssClass='<%# Eval("Retriever") == null ? "btn btn-primary pull-right" : "btn btn-success pull-right" %>' />
+                                            Text='Collect'
+                                            CssClass='btn btn-primary pull-right' />
                                     </span>
                                 </ItemTemplate>
                             </asp:TemplateField>

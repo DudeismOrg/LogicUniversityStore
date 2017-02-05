@@ -18,7 +18,7 @@ namespace Core.Controller
             objDao = new NotificationDao();
         }
 
-        public void CreateNotification(int senderId, string message, NotificationStatus status, Roles receiverRole)
+        public void CreateNotification(int senderId, string message, NotificationStatus status, Roles receiverRole, int receiverDeptId)
         {
             Notification objNot = new Notification()
             {
@@ -26,7 +26,8 @@ namespace Core.Controller
                 SenderUserID = senderId,
                 status = status.ToString(),
                 ReceiverRoleID = (int)receiverRole,
-                ReceiverRole = objDao.db.Roles.Where(rol => rol.RoleID == (int)receiverRole).FirstOrDefault()
+                ReceiverRole = objDao.db.Roles.Where(rol => rol.RoleID == (int)receiverRole).FirstOrDefault(),
+                ReceiverDeptID = receiverDeptId
             };
             objDao.CreateNotification(objNot);
         }
@@ -36,9 +37,9 @@ namespace Core.Controller
             objDao.ClearNotification(userId, notId, status);
         }
 
-        public List<Notification> GetNotificationsByRoleCode(string roleCode)
+        public List<Notification> GetNotificationsByRoleCode(string roleCode, int deptId)
         {
-            return objDao.GetNotificationsByRoleCode(roleCode);
+            return objDao.GetNotificationsByRoleCode(roleCode, deptId);
         }
 
         public List<Notification> GetNotificationsByRoleCodeAnd(string roleCode, string notType)
@@ -54,7 +55,7 @@ namespace Core.Controller
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
                 mail.From = new MailAddress(from);
-                mail.To.Add(to);
+                to.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).ToList().ForEach(val => mail.To.Add(new MailAddress(val)));
                 mail.Subject = subject;
                 mail.Body = body;
                 mail.IsBodyHtml = true;
@@ -65,7 +66,6 @@ namespace Core.Controller
             }
             catch (Exception ex)
             {
-
                 throw;
             }
         }

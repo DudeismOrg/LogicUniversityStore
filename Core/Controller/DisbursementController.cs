@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicUniversityStore.Dao;
+using Core.Controller;
+using LogicUniversityStore.Util;
 
 namespace LogicUniversityStore.Controller
 {
@@ -56,9 +58,25 @@ namespace LogicUniversityStore.Controller
             return disbDao.getShipedReqByDept(deptId);
         }
 
-        public void GenerateDisbursement(int retrId)
+        public void GenerateDisbursement(int retrId, LUUser user)
         {
-            disbDao.GenerateDisbursebents(retrId);
+            List<Disbursement> dibursements = disbDao.GenerateDisbursebents(retrId);
+            foreach(Disbursement dis in dibursements)
+            {
+                Core.Controller.NotificationController ctl = new NotificationController();
+                ctl.CreateNotification(
+                    user.UserID, string.Format("The Items has been Shipped {0}. Disbursement key =", dis.Key), NotificationStatus.Created, Roles.HOD, dis.DepartmentID.Value
+                    );
+                ctl.CreateNotification(
+                    user.UserID, string.Format("The Items has been Shipped {0}. Disbursement key =", dis.Key), NotificationStatus.Created, Roles.REP, dis.DepartmentID.Value
+                    );
+
+
+                string toEmailIdsHOD = new UserController().GetToEmailIds(Roles.HOD, dis.DepartmentID.Value); //To which role the email should be sent
+                string toEmailIdsREPS = new UserController().GetToEmailIds(Roles.HOD, dis.DepartmentID.Value);
+                ctl.SendEmail("vasu4dworld@gmail.com", toEmailIdsHOD, "Items for requsition has been shiped", "The disbursement key while receiving item is : " + dis.Key);
+                ctl.SendEmail("vasu4dworld@gmail.com", toEmailIdsREPS, "Items for requsition has been shiped", "The disbursement key while receiving item is : " + dis.Key);
+            }
         }
 
         public List<RequisitionItem> GetShipedReqItmsByReqId(int reqIdInt)

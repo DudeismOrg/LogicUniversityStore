@@ -68,15 +68,13 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
                     IsUpdate = false;
                 }
             }
-           // Response.Write("<script language='javascript'> alert('saved successfully!!!'); </script>");
-
             Response.Redirect("~/View/Store/Clerk/ProcessRequest.aspx?IsAlter="+IsUpdate.ToString());
         }
 
        
         protected void btnCancell_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Store/Clerk/ProcessRequest.aspx?IsAlter");
+            Response.Redirect("~/View/Store/Clerk/ProcessRequest.aspx?IsAlter=cancell");
 
         }
     }

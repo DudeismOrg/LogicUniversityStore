@@ -94,7 +94,7 @@
 
 
                                     <table class="table">
-                                        <tbody>
+                                        <thead>
                                             <tr>
                                                 <th style="width: 10px">#</th>
                                                 <th>Item Number</th>
@@ -105,7 +105,8 @@
                                                 <th>Collected Quantity</th>
                                                 <th>Delivered Quantity</th>
                                             </tr>
-
+                                        </thead>
+                                        <tbody>
                                             <% foreach (var reqItm in s.RequisitionItems)
                                                 { %>
                                             <tr>

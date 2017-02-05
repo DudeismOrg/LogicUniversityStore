@@ -27,6 +27,11 @@ namespace LogicUniversityStore.Dao
             return ret.RequisitionItems.Where(item => item.RetrievalID == ret.RetrievalID).Select(item => item.Requisition).Distinct().ToList();
         }
 
+        internal List<Retrieval> FindAllUncollectedRetrieval()
+        {
+            return db.Retrievals.Where(r => r.IsCollected == false).ToList();
+        }
+
         public List<Requisition> GetPendingRetreivalsByUserId(int userId)
         {
             return db.Retrievals.Where(ret => ((ret.Retriever.HasValue && ret.Retriever.Value == userId)
@@ -83,7 +88,7 @@ namespace LogicUniversityStore.Dao
         internal void SetRetrevalAsRetreved(int retrId)
         {
             Retrieval ret = db.Retrievals.Where(r => r.RetrievalID == retrId).FirstOrDefault();
-            ret.Retriever = 1;
+            ret.IsCollected = true;
             db.SaveChanges();
         }
     }

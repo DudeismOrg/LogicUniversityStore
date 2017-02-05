@@ -120,20 +120,25 @@ namespace LogicUniversityStore.View.Department.Employee
                     dao.db.RequisitionItems.Add(item);
                 }
                 dao.db.SaveChanges();
-                //ViewState["items"] = new List<CartItem>();
-                //gvReqItems.DataSource = null;
-                //gvReqItems.DataBind();
-                new NotificationController().CreateNotification(
-                    user.UserID, string.Format("New approval Requisition request {0}", requisition.ReqNumber), NotificationStatus.Created, Roles.HOD
+
+                #region Send Notifications
+
+                NotificationController ctl = new NotificationController();
+                ctl.CreateNotification(
+                    user.UserID, string.Format("New approval Requisition request {0}", requisition.ReqNumber), NotificationStatus.Created, Roles.HOD, user.DepartmentID.Value
                     );
+                string toEmailIds = new UserController().GetToEmailIds(Roles.HOD, user.DepartmentID.Value); //To which role the email should be sent
+                ctl.SendEmail("vasu4dworld@gmail.com", toEmailIds, "New requisition approval request", "New Requisition has been for approval : " + requisition.ReqNumber);
+
+                #endregion
+
                 reset();
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "alertRedirect('Requested Submited for Approval !!!','EmpMain.aspx')", true);
             }
         }
+
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-
-
-
             reset();
         }
 

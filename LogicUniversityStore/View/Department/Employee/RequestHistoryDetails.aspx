@@ -51,6 +51,7 @@
                 <asp:GridView ID="gvRequisitionDetails" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" Width="100%" AllowPaging="true">
                     <Columns>
                         <asp:TemplateField HeaderText="#">
+                            <HeaderStyle Width="20" />
                             <ItemTemplate>
                                 <%# Container.DataItemIndex + 1 %>
                             </ItemTemplate>

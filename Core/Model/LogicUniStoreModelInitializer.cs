@@ -13,7 +13,7 @@ namespace LogicUniversityStore.Model
             string[] fileNames = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.sql");
             foreach (string file in fileNames)
             {
-                //context.Database.ExecuteSqlCommand(File.ReadAllText(file));
+                context.Database.ExecuteSqlCommand(File.ReadAllText(file));
             }
         }
     }

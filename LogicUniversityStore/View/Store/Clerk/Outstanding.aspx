@@ -43,11 +43,8 @@
             <asp:GridView ID="gvItems" runat="server"  ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" Width="100%" AllowPaging="true" PageSize="10">
                 <Columns>
                     <asp:BoundField DataField="DepartmentName" HeaderText="Department" />
-
                     <asp:BoundField DataField="ItemName" HeaderText="Item" />
-
                     <asp:BoundField DataField="OutstandingQty" HeaderText="Quantity" />
-
                 </Columns>
             </asp:GridView>
         </div>

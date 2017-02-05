@@ -24,6 +24,11 @@ namespace LogicUniversityStore.Controller
             return RequisitionDao.GetApprovedRejectedRequisitionList(depId);
         }
 
+        public List<Requisition> GetApprovedRequisition(int depId)
+        {
+            return RequisitionDao.GetApprovedRequisitionList(depId);
+        }
+
         public List<RequisitionItem> getRequisitionItemList(int requisitionId)
         {
             return RequisitionDao.GetRequisitionItemList(requisitionId);
@@ -64,5 +69,11 @@ namespace LogicUniversityStore.Controller
         {
             riDao.addRequisitionItem(item);
         }
+
+        public List<Requisition> GetRequestedRequisitionListHod(int depId)
+        {
+            return RequisitionDao.GetRequestedRequisitionListHod(depId);
+        }
+
     }
 }

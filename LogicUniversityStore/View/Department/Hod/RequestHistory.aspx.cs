@@ -39,7 +39,7 @@ namespace LogicUniversityStore.View.Department.Hod
         }
         protected void gvRequestHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int reqId = Convert.ToInt32(gvRequestHistory.SelectedRow.Cells[0].Text);
+            int reqId = Convert.ToInt32(gvRequestHistory.SelectedRow.Cells[1].Text);
             Response.Redirect("RequestHistoryDetails.aspx?id=" + reqId + "");
         }        
     }

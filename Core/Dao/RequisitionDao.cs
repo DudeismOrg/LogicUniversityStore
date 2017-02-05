@@ -50,6 +50,11 @@ namespace LogicUniversityStore.Dao
             return db.Requisitions.Where(r => ((r.Status.Equals(RequisitionStatus.Approved.ToString())) || (r.Status.Equals(RequisitionStatus.Rejected.ToString()))) && r.DepartmentID == depId).ToList();
         }
 
+        public List<Requisition> GetApprovedRequisitionList(int depId)
+        {
+            return db.Requisitions.Where(r => ((r.Status.Equals(RequisitionStatus.Approved.ToString()))) && r.DepartmentID == depId).ToList();
+        }
+
         public List<Requisition> GetRequisitionList(int requesterId)
         {
             return db.Requisitions.Where(x => x.RequesterID == requesterId).ToList();

@@ -47,8 +47,9 @@ namespace Core.Dao
             return db.Requisitions.Where(r => r.DepartmentID == deptId && r.Status == RequisitionStatus.Shipped.ToString()).ToList();
         }
 
-        internal void GenerateDisbursebents(int retrId)
+        internal List<Disbursement> GenerateDisbursebents(int retrId)
         {
+            List<Disbursement> disbursements = new List<Disbursement>();
             List<Requisition> reqsitions = db.RequisitionItems.Where(item => item.RetrievalID == retrId).Select(item => item.Requisition).Distinct().ToList();
             foreach (Requisition req in reqsitions)
             {
@@ -61,6 +62,7 @@ namespace Core.Dao
                 dis.Receiver = req.Department.RepresentativeID;
                 dis.Key = req.ReqID.ToString() + rdm.Next(1000, 9999).ToString();
                 dis.Requisition = req;
+                disbursements.Add(dis);
                 db.Disbursements.Add(dis);
                 db.SaveChanges();
 
@@ -69,6 +71,7 @@ namespace Core.Dao
                 req.Status = RequisitionStatus.Shipped.ToString();
                 db.SaveChanges();
             }
+            return disbursements;
         }
 
         public void SaveRequsitionAsDelivered(int reqIdInt)

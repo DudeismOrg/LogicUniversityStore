@@ -13,9 +13,15 @@
     </li>
 
     <li class="treeview">
+        
         <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Hod/ApproveReject.aspx">
             <i class="fa fa-laptop"></i>
             <span>Approve/Reject</span>
+            <span class="pull-right-container">
+                <span class="label label-primary pull-right" style="margin: 0px">
+                    <asp:Label ID="lblAckReqs" runat="server"></asp:Label>
+                </span>
+            </span>
         </asp:HyperLink>
     </li>
 

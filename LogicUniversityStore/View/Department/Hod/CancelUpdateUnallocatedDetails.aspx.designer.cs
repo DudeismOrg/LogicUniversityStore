@@ -31,13 +31,13 @@ namespace LogicUniversityStore.View.Department.Hod {
         protected global::System.Web.UI.WebControls.TextBox txtRemark;
         
         /// <summary>
-        /// btnApprove control.
+        /// btnClose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApprove;
+        protected global::System.Web.UI.WebControls.Button btnClose;
         
         /// <summary>
         /// btnReject control.
@@ -49,13 +49,13 @@ namespace LogicUniversityStore.View.Department.Hod {
         protected global::System.Web.UI.WebControls.Button btnReject;
         
         /// <summary>
-        /// btnClose control.
+        /// btnApprove control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
+        protected global::System.Web.UI.WebControls.Button btnApprove;
         
         /// <summary>
         /// ValidationSummary1 control.
