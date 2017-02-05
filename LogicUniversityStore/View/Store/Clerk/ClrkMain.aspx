@@ -152,7 +152,7 @@
                                                 <span class="progress-number"><b><%#String.Format("{0:f2}", Eval("value")) %> %</b> </span>
 
                                                 <div class="progress sm">
-                                                    <div class="progress-bar progress-bar-green" style='width: <%#  Eval("value") %>%'</div>
+                                                    <div class='progress-bar  <%#  ((double)Eval("value") > 25 ? ( ((double)Eval("value") > 50 ? "progress-bar-green" : "progress-bar-yellow" )) : "progress-bar-red") %>' style='width: <%#  Eval("value") %>%'</div>
                                                 </div>
                                             </div>
                                         </ItemTemplate>
