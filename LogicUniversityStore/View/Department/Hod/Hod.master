@@ -12,25 +12,24 @@
     </li>
 
     <li class="treeview">
-       <a href="ApproveReject.aspx">
+        <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Hod/ApproveReject.aspx">
             <i class="fa fa-laptop"></i>
             <span>Approve/Reject</span>
-        </a>
+        </asp:HyperLink>
     </li>
 
     <li class="treeview">
-        <a href="ManageRole.aspx">
+        <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Hod/ManageRole.aspx">
             <i class="fa fa-edit"></i>
             <span>Transfer/Remove Roles</span>
             <span class="pull-right-container">
-                <span class="label label-primary pull-right" style="margin: 0px">
-                </span>
+                <span class="label label-primary pull-right" style="margin: 0px"></span>
             </span>
-        </a>
+        </asp:HyperLink>
     </li>
 
     <li class="treeview">
-        <a href="CancelUpdateUnallocated.aspx">
+        <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Hod/CancelUpdateUnallocated.aspx">
             <i class="fa fa-share"></i>
             <span>Cancel/Update Requests</span>
             <span class="pull-right-container">
@@ -38,27 +37,14 @@
                     <asp:Label ID="lblUpdateReqs" runat="server"></asp:Label>
                 </span>
             </span>
-        </a>
+        </asp:HyperLink>
     </li>
 
     <li class="treeview">
-        <a href="RequestHistory.aspx">
+        <asp:HyperLink runat="server" NavigateUrl="~/View/Department/Hod/RequestHistory.aspx">
             <i class="fa fa-pie-chart"></i>
             <span>Request History</span>
-        </a>
-    </li>
-
-    <li class="treeview">
-        <a href="index.html">
-            <i class="fa fa-table"></i>
-            <span>Track Outstanding</span>
-        </a>
-    </li>
-    <li class="treeview">
-        <a href="index.html">
-            <i class="fa fa-table"></i>
-            <span>Generate Report</span>
-        </a>
+        </asp:HyperLink>
     </li>
 </asp:Content>
 

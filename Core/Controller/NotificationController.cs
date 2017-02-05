@@ -26,7 +26,7 @@ namespace Core.Controller
                 SenderUserID = senderId,
                 status = status.ToString(),
                 ReceiverRoleID = (int)receiverRole,
-                ReceiverRole = new LogicUniStoreModel().Roles.Where(rol => rol.RoleID == (int)receiverRole).FirstOrDefault()
+                ReceiverRole = objDao.db.Roles.Where(rol => rol.RoleID == (int)receiverRole).FirstOrDefault()
             };
             objDao.CreateNotification(objNot);
         }

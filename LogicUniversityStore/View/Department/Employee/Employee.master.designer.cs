@@ -13,6 +13,15 @@ namespace LogicUniversityStore.View.Department.Employee {
     public partial class Employee {
         
         /// <summary>
+        /// lblPendingApprovalM control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPendingApprovalM;
+        
+        /// <summary>
         /// empCssBlk control.
         /// </summary>
         /// <remarks>
