@@ -58,6 +58,7 @@
     <Compile Include="Controller\ApproveRejectReqController.cs" />
     <Compile Include="Controller\CancelUpdatePendingApprovalController.cs" />
     <Compile Include="Controller\CancelUpdateUnallocatedController.cs" />
+    <Compile Include="Controller\ClerkMainController.cs" />
     <Compile Include="Controller\DisbursementController.cs" />
     <Compile Include="Controller\InvalidConstructorException.cs" />
     <Compile Include="Controller\ProcessReqAlterController.cs" />
