@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Core.Model;
 using LogicUniversityStore.Model;
 using LogicUniversityStore.Dao;
+using LogicUniversityStore.Util;
 
 namespace Core.Controller
 {
@@ -40,6 +41,12 @@ namespace Core.Controller
         public bool UpdateUserRole(int userId, string roleCode)
         {
             return new UserDao().UpdateUserRole(userId, roleCode);
+        }
+
+        public string GetToEmailIds(Roles role)
+        {
+            var emails = new LogicUniStoreModel().LUUsers.Where(user => user.Role.RoleCode == role.ToString()).Select(val => val.Email);
+            return String.Join(";", emails);
         }
     }
 }

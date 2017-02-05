@@ -62,7 +62,7 @@
                         <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Height="50px" ReadOnly="true" />
                         <asp:TemplateField HeaderText="Quantity">
                             <ItemTemplate>
-                                <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("NeededQuantity") %>' BorderStyle="Groove">
+                                <asp:TextBox ID="txtQty" runat="server" CssClass="form-control" Text='<%# Bind("NeededQuantity") %>' >
                                 </asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Quantity must be entered" Display="Dynamic" Text="*" ControlToValidate="txtQty" ForeColor="Red" ValidationGroup="vg"></asp:RequiredFieldValidator>
                                 <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Quantity must be a integer" Text="*" Display="Dynamic" ControlToValidate="txtQty" Type="Integer" ForeColor="Red" Operator="DataTypeCheck" ValidationGroup="vg"></asp:CompareValidator>
@@ -75,7 +75,7 @@
                 </asp:GridView>
                 <div class="col-md-12">
                     <label>Remark</label><br />
-                    <asp:TextBox ID="txtRemark" TextMode="MultiLine" CssClass="box-body pad" runat="server" Rows="5"></asp:TextBox>
+                    <asp:TextBox ID="txtRemark" TextMode="MultiLine" CssClass="box-body pad form-control" runat="server" Rows="5"></asp:TextBox>
                 </div>
             </div>
             <div class="box-footer">

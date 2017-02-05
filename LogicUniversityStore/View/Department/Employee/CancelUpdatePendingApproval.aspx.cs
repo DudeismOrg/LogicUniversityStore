@@ -40,7 +40,7 @@ namespace LogicUniversityStore.View.Department.Employee
         protected void gvPendingRequests_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int rowIndex = e.RowIndex;
-            int reqId = Convert.ToInt32(gvPendingRequests.Rows[rowIndex].Cells[0].Text);
+            int reqId = Convert.ToInt32(gvPendingRequests.Rows[rowIndex].Cells[1].Text);
             DataTable dt = (DataTable)ViewState["dt"];
             DataRow dr = dt.Rows[rowIndex];
             reqController.removeRequisitionItems(reqId);
@@ -53,7 +53,7 @@ namespace LogicUniversityStore.View.Department.Employee
 
         protected void gvPendingRequests_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int reqId = Convert.ToInt32(gvPendingRequests.SelectedRow.Cells[0].Text);
+            int reqId = Convert.ToInt32(gvPendingRequests.SelectedRow.Cells[1].Text);
             Response.Redirect("CancelUpdatePendingDetails.aspx?id=" + reqId + "");
         }
     }

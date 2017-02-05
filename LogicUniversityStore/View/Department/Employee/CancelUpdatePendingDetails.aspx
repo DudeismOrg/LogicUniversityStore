@@ -62,7 +62,7 @@
                         <asp:BoundField DataField="ItemName" HeaderText="Item Name" ReadOnly="true" />
                         <asp:TemplateField HeaderText="Quantity">
                             <ItemTemplate>
-                                <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("NeededQuantity") %>' BorderStyle="Groove">
+                                <asp:TextBox ID="txtQty" runat="server" Text='<%# Bind("NeededQuantity") %>' CssClass="form-control">
                                 </asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Quantity must be entered" Display="Dynamic" Text="*" ControlToValidate="txtQty" ForeColor="Red" ValidationGroup="vg"></asp:RequiredFieldValidator>
                                 <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Quantity must be a integer" Text="*" Display="Dynamic" ControlToValidate="txtQty" Type="Integer" ForeColor="Red" Operator="DataTypeCheck" ValidationGroup="vg"></asp:CompareValidator>

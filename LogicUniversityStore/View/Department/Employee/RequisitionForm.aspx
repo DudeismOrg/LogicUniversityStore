@@ -142,7 +142,7 @@
                     <div class="col-md-12">
                         <label>Remarks</label>
                         <div class="box-body pad">
-                            <asp:textbox ID="tbRemarks" runat="server" Class="textarea form-control" placeholder="Enter Remark" ></asp:textbox>
+                            <asp:textbox ID="tbRemarks" TextMode="MultiLine" runat="server" Class="textarea form-control" placeholder="Enter Remark" ></asp:textbox>
                         </div>
                     </div>
 
