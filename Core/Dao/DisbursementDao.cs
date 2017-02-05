@@ -104,9 +104,5 @@ namespace Core.Dao
             db.SaveChanges();
         }
 
-        public List<Requisition> getShipedReqByDept(int deptId)
-        {
-            return db.Requisitions.Where(r => r.DepartmentID == deptId && r.Status == RequisitionStatus.Shipped.ToString()).ToList();
-        }
     }
 }

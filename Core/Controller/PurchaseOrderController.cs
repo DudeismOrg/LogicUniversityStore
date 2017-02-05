@@ -190,11 +190,6 @@ namespace LogicUniversityStore.Controller
             return PODao.findPoBySupplierId(suplierId);
         }
 
-        public List<PurchaseOrder> FindAllPurchaseOrderByBatch(int batchId)
-        {
-            return PODao.findPoByBatchId(batchId);
-        }
-
 
         public Supplier GetSupplierById(int supplierId)
         {

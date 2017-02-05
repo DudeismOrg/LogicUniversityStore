@@ -55,16 +55,6 @@
                     </div>
                 </div>
             </div>
-            <%--            <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="fa fa-battery-empty"></i></span>
-                    <div class="info-box-content">
-                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/View/Department/Employee/">
-                        <span class="info-box-text" style="margin-top: 20%;">Track Outstanding</span>
-                        </asp:HyperLink>
-                    </div>
-                </div>
-            </div>--%>
         </div>
 
     </div>
