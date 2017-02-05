@@ -190,6 +190,8 @@
     <Content Include="View\Store\Supervisor\Supervisor.Master" />
     <Content Include="View\Store\Manager\Manager.Master" />
     <Content Include="aspnet_client" />
+    <Content Include="View\Store\Store.pdf" />
+    <Content Include="View\Department\Department.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

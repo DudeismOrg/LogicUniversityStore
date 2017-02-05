@@ -52,12 +52,12 @@
         </a>
     </li>
 
-    <li class="treeview">
+    <%--<li class="treeview">
         <a href="WebForm2.aspx">
             <i class="fa fa-stack-overflow"></i>
             <span>  Monthly Stock Adjustment</span>
         </a>
-    </li>
+    </li>--%>
 
     <li class="treeview">
         <a href="SpotAdjustment.aspx">
