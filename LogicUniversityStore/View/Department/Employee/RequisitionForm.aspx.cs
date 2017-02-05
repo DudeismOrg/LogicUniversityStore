@@ -120,9 +120,6 @@ namespace LogicUniversityStore.View.Department.Employee
                     dao.db.RequisitionItems.Add(item);
                 }
                 dao.db.SaveChanges();
-                //ViewState["items"] = new List<CartItem>();
-                //gvReqItems.DataSource = null;
-                //gvReqItems.DataBind();
 
                 #region Send Notifications
 
@@ -130,8 +127,8 @@ namespace LogicUniversityStore.View.Department.Employee
                 ctl.CreateNotification(
                     user.UserID, string.Format("New approval Requisition request {0}", requisition.ReqNumber), NotificationStatus.Created, Roles.HOD
                     );
-                string toEmailIds = new UserController().GetToEmailIds(Roles.HOD); //To which role the email should be sent
-                ctl.SendEmail("vasu4dworld@gmail.com", toEmailIds, "New requisition approval request", "New Requisition has been for approval : " + requisition.ReqNumber);
+                //string toEmailIds = new UserController().GetToEmailIds(Roles.HOD); //To which role the email should be sent
+                //ctl.SendEmail("vasu4dworld@gmail.com", toEmailIds, "New requisition approval request", "New Requisition has been for approval : " + requisition.ReqNumber);
 
                 #endregion
 

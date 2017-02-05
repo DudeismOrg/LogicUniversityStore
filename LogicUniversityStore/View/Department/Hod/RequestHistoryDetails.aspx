@@ -1,94 +1,85 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Department/Hod/Hod.master" AutoEventWireup="true" CodeBehind="RequestHistoryDetails.aspx.cs" Inherits="LogicUniversityStore.View.Department.Hod.WebForm5" %>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="empMainCss" runat="server">
+    <style type="text/css">
+        tbody {
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+            border-top-color: inherit;
+            border-right-color: inherit;
+            border-bottom-color: inherit;
+            border-left-color: inherit;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .ml-5 {
+            margin-left: 5px;
+        }
+
+        .mr-5 {
+            margin-right: 5px;
+        }
+    </style>
+</asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="empMainHeader" runat="server">
     <h1>Requisition Details</h1>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="empMainContentBlock" runat="server">
     <div class="col-md-12">
-
-                                    <div class="col-md-6">
-
-                                        <div class="pull-left" style="text-align: left">
-
-                                            <h5><u>Request form Number</u>: #Numb</h5>
-
-                                            <h5><u>Created Date</u>: dd-mm-yyyy</h5>
-
-                                            <h5><u>Created By</u>: Name</h5>
-
-                                            <h5><u>Status</u>: Approved/Rejected/Delivered</h5>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="pull-right" style="text-align: right">
-
-                                            <h5><u>Department</u>: Dept </h5><small>Dept code</small>
-
-                                            <h5><u>Approved by</u>: HOD Name</h5>
-
-                                            <h5><u>Approved Date</u>: dd-mm-yyyy</h5>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-12" style="height:10px"></div>
-
-                                <div class="col-md-12">
-
-                                    <div class="box">
-
-                                        <div class="box-header">
-
-                                            <h3 class="box-title">Requested Items</h3>
-
-                                        </div>
-
-                                        <!-- /.box-header -->
-
-                                        <div class="box-body no-padding">
-                                            <asp:GridView ID="gvRequisitionDetails" runat="server" AutoGenerateColumns="False" CellPadding="10" CellSpacing="5" ForeColor="#333333" GridLines="None" Width="665px" Height="100px">
-                                                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                                                <Columns>
-                                                    <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Height="50px" >
-                                                   
-                                                    </asp:BoundField>
-                                                    <asp:BoundField DataField="NeededQuantity" HeaderText="Quantity">
-                                                    
-                                                    </asp:BoundField>
-                                                    <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure" >
-                                                    
-                                                    </asp:BoundField>
-                                                </Columns>
-                                                <EditRowStyle BackColor="#999999" />
-                                                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                                                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                                                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                                                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                                                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                                                <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                                                <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                                                <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                                                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                                            </asp:GridView>
-                                            
-
-                                        </div>
-
-                                        <!-- /.box-body -->
-
-                                    </div>
-
-                                </div>
-                                <div class="modal-footer">
-                                    <asp:Button ID="btnClose" CssClass="btn btn-default" runat="server" Text="Close" OnClick="btnClose_Click" />                                
-                                </div>
-                            
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Requested Items</h3>
+            </div>
+            <div class="box-body">
+                <asp:GridView ID="gvRequisitionDetails" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" Width="100%" AllowPaging="true">
+                    <Columns>
+                        <asp:TemplateField HeaderText="#">
+                            <HeaderStyle Width="20" />
+                            <ItemTemplate>
+                                <%# Container.DataItemIndex + 1 %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="ItemName" HeaderText="Item Name" ItemStyle-Height="50px">
+                            <ItemStyle Width="150px"></ItemStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="NeededQuantity" HeaderText="Quantity">
+                            <ItemStyle Width="150px"></ItemStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="UOM" HeaderText="Unit Of Measure">
+                            <ItemStyle Width="150px"></ItemStyle>
+                        </asp:BoundField>
+                    </Columns>
+                </asp:GridView>
+            </div>
+            <div class="box-footer">
+                <asp:Button ID="btnClose" CssClass="btn btn-danger pull-right" runat="server" Text="Close" OnClick="btnClose_Click" />
+            </div>
+        </div>
+    </div>
 </asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="empMainJs" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("table").addClass("table table-condensed");
+        });
+    </script>
 </asp:Content>
+

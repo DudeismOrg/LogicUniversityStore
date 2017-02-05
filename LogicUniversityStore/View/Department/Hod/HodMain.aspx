@@ -37,7 +37,7 @@
                     <span class="info-box-icon bg-red"><i class="fa fa-thumbs-o-down"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Cancel/Update Requisition</span>
-                        <span class="info-box-number">10</span>
+                        <asp:Label ID="lblUpdateReqs" runat="server"></asp:Label>
                     </div>
                 </div>
             </div>
