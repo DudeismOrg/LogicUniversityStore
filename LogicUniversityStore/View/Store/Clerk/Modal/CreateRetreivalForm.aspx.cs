@@ -94,7 +94,7 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Session["reqListRetrieval"] = null;
-            Response.Redirect("/View/Store/Clerk/ProcessRequest.aspx");
+            Response.Redirect("/View/Store/Clerk/ProcessRequest.aspx?IsAlter=cancell");
         }
     }
 }

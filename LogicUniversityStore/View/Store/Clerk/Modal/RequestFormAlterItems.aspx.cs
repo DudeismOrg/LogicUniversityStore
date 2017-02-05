@@ -76,7 +76,7 @@ namespace LogicUniversityStore.View.Store.Clerk.Modal
        
         protected void btnCancell_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Store/Clerk/ProcessRequest.aspx?IsAlter");
+            Response.Redirect("~/View/Store/Clerk/ProcessRequest.aspx?IsAlter=cancell");
 
         }
     }

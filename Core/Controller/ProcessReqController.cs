@@ -25,7 +25,7 @@ namespace LogicUniversityStore.Controller
             get
             {
                 if (_reqs == null)
-                    _reqs =  GetReqItemForProcess();
+                    _reqs =  GetReqItemForProcess(null);
                 return _reqs;
             }
             
@@ -41,6 +41,37 @@ namespace LogicUniversityStore.Controller
             RequisitionItemDao = new RequisitionItemDao(db);
             mainList = new Dictionary<Requisition, double>();
             LockedItem = new Dictionary<int, int>();
+        }
+
+        public ProcessReqController(List<Requisition> Reqs ) : this()   // this instance to deal with altered requisitions
+        {
+            this._reqs = Reqs;
+        }
+
+
+
+        public Dictionary<Requisition, double> GetMainProcessReqListAltered()
+        {
+            if (this._reqs == null) throw new InvalidConstructorException("Object instruction is not correct, use another constructor");
+            mainList = new Dictionary<Requisition, double>();
+            foreach (var req in this._reqs)
+            {
+                double progrssMeter = 0;
+                foreach (var item in req.RequisitionItems)
+                {
+                    if (item.ApprovedQuantity == item.NeededQuantity)
+                    {
+                        progrssMeter += 1; // add 1 on scale of item.count()
+                    }
+                    else
+                    {
+                        progrssMeter += (double)item.ApprovedQuantity / (double)item.NeededQuantity; // add fraction on scale of item.count()
+
+                    }
+                }
+                mainList.Add(req, (progrssMeter / req.RequisitionItems.Count) * 100);
+            }
+            return mainList;
         }
 
         public Dictionary<Requisition, double> GetMainProcessReqList()
@@ -153,12 +184,13 @@ namespace LogicUniversityStore.Controller
             return new RequisitionDao().GenerateRetreivalForm(retReq);
         }
 
-        public List<Requisition> GetReqItemForProcess()
+        public List<Requisition> GetReqItemForProcess(List<Requisition> reqs)
         {
             LogicUniStoreModel db = new LogicUniStoreModel();
-            List<Requisition> reqs = db.Requisitions.Where(r => r.Status == RequisitionStatus.Approved.ToString()).ToList();
+            if(reqs == null) reqs = db.Requisitions.Where(r => r.Status == RequisitionStatus.Approved.ToString()).ToList();
             int pId, stockCount,approveQnty;
             double progrssMeter;
+            List<Requisition> reqList = new List<Requisition>();
             foreach (var req in reqs.ToList())
             {
                 progrssMeter = 0.0;
@@ -198,10 +230,10 @@ namespace LogicUniversityStore.Controller
                    
                 }
                 meter[req.ReqID] = (progrssMeter / req.RequisitionItems.Count) * 100;
-                reqs.Add(req);
+                reqList.Add(req);
 
             }
-            return reqs;
+            return reqList;
         }
 
         public void Reset()

@@ -38,9 +38,18 @@ namespace LogicUniversityStore.View.Store.Clerk
             }
             else if (Request.Params.Get("IsAlter") != null)
             {
-                listRequests =(Dictionary<Requisition, double>)Session["mainList"];
-                
-                if(Request.Params.Get("IsAlter").Equals("True"))
+                if (Session["reqList"] != null )
+                {
+                    ProcessReqController alteredCon = new ProcessReqController((List<Requisition>)Session["reqList"]);
+                    listRequests = alteredCon.GetMainProcessReqListAltered();
+                }
+                else
+                {
+                    listRequests = (Dictionary<Requisition, double>)Session["mainList"];
+
+                }
+
+                if (Request.Params.Get("IsAlter").Equals("True"))
                     Response.Write("<script language='javascript'> alert('saved successfully!!!'); </script>");
                 else if(Request.Params.Get("IsAlter").Equals("False"))
                 {

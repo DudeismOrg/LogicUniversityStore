@@ -65,7 +65,7 @@ namespace Core.Controller
             }
             catch (Exception ex)
             {
-
+                return;
                 throw;
             }
         }
