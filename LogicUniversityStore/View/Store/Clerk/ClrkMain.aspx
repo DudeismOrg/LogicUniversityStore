@@ -84,17 +84,11 @@
                     <div class="row">
                         <div class="col-md-8">
 
-                            <%------------------------ PUT Thing-------------------%>
-                            <p class="text-center">
-                                <strong>Requisitions for period: 1 Jan, 2015 - 30 Dec, 2016</strong>
-                            </p>
-
-                            <div class="chart">
-                                <!-- Sales Chart Canvas -->
-                                <canvas id="salesChart" style="height: 180px;"></canvas>
-                            </div>
-                            <%------------------------ PUT Thing-------------------%>
-
+                            <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="50px" ReportSourceID="PO_Supplier" ToolbarImagesFolderUrl="" ToolPanelView="None" ToolPanelWidth="200px" Width="350px" />
+                            <CR:CrystalReportSource ID="PO_Supplier" runat="server">
+                                <Report FileName="View\Store\Reports\PO_Supplier.rpt">
+                                </Report>
+                            </CR:CrystalReportSource>
                         </div>
                         <div class="col-md-4">
                             <p class="text-center">
@@ -141,36 +135,26 @@
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
                                 <a href="../Reports/DisplayDeptUsagePeriod.aspx">
-                                    <span class="description-text">DEPT USAGE OVER PERIOD</span>
-                                    </a>
+                                    <span class="description-text">REQUISITIONS OVER PERIOD</span>
+                                </a>
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
                                 <a href="../Reports/DisplayDeptUsage.aspx">
                                     <span class="description-text">DEPT USAGE COMPARISON</span>
-                                    </a>
+                                </a>
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
                                 <a href="../Reports/DisplaySupplierPOPeriod.aspx">
                                     <span class="description-text">SUPPLIER POs OVER PERIOD</span>
-                                    </a>
+                                </a>
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6">
-
                         </div>
-
-                        <!------- adi put test -------------->
-                        <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="50px" ReportSourceID="PO_Supplier" ToolbarImagesFolderUrl="" ToolPanelView="None" ToolPanelWidth="200px" Width="350px" />
-                        <CR:CrystalReportSource ID="PO_Supplier" runat="server">
-                            <Report FileName="View\Store\Reports\PO_Supplier.rpt">
-                            </Report>
-                        </CR:CrystalReportSource>
-
-                        <!------- adi put test -------------->
                     </div>
                 </div>
             </div>
