@@ -186,6 +186,10 @@
     <Content Include="View\Store\Reports\DisplaySupplierPOCat.aspx" />
     <Content Include="View\Store\Reports\DisplaySupplierPOPeriod.aspx" />
     <Content Include="View\Store\Reports\PO_Supplier_Display.aspx" />
+    <Content Include="View\Store\Reports\DisplayDeptUsagePeriod.aspx" />
+    <Content Include="View\Store\Reports\DisplaySupplierPOCat.aspx" />
+    <Content Include="View\Store\Reports\DisplaySupplierPOPeriod.aspx" />
+    <Content Include="View\Store\Reports\PO_Supplier_Display.aspx" />
     <Content Include="View\Store\Supervisor\ApproveAdjustment.aspx" />
     <Content Include="View\Store\Supervisor\Supervisor.Master" />
     <Content Include="View\Store\Manager\Manager.Master" />
