@@ -51,7 +51,7 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Requisition Form Number:<asp:Label ID="lblReqNum" runat="server"></asp:Label></h3>
+                    <h3 class="box-title">Requisition Form Number: <asp:Label ID="lblReqNum" runat="server"></asp:Label></h3>
                 </div>
                 <div class="box-body">
                     <div class="col-md-12">
@@ -79,7 +79,6 @@
                                     </div>
                                     <div class="col-md-8">
                                         <asp:DropDownList ID="DdlCategories" runat="server" AutoPostBack="true" CssClass="form-control select2" OnSelectedIndexChanged="DdlCategories_SelectedIndexChanged"></asp:DropDownList>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Category must be selected" Display="Dynamic" Text="*" ControlToValidate="DdlCategories" ForeColor="Red" ValidationGroup="vg"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
                                 <div class="col-md-12" style="height: 10px"></div>
@@ -89,7 +88,6 @@
                                     </div>
                                     <div class="col-md-8">
                                         <asp:DropDownList ID="DdlItems" runat="server" CssClass="form-control select2" AutoPostBack="true" OnSelectedIndexChanged="DdlItems_SelectedIndexChanged"></asp:DropDownList>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Item must be selected" Display="Dynamic" Text="*" ControlToValidate="DdlItems" ForeColor="Red" ValidationGroup="vg"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
                                 <div class="col-md-12" style="height: 10px"></div>
@@ -100,9 +98,6 @@
                                     <div class="col-md-8">
                                         <div class="input-group">
                                             <asp:TextBox ID="tbAmount" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Quantity must be entered" Display="Dynamic" Text="*" ControlToValidate="tbAmount" ForeColor="Red" ValidationGroup="vg"></asp:RequiredFieldValidator>
-                                            <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Quantity must be a integer" Text="*" Display="Dynamic" ControlToValidate="tbAmount" Type="Integer" ForeColor="Red" Operator="DataTypeCheck" ValidationGroup="vg"></asp:CompareValidator>
-                                            <asp:CompareValidator ID="CompareValidator3" runat="server" ErrorMessage="Quantity must be greater than 0" Text="*" Display="Dynamic" ControlToValidate="tbAmount" ForeColor="Red" Operator="GreaterThan" ValueToCompare="0" ValidationGroup="vg"></asp:CompareValidator>
                                             <span class="input-group-addon">
                                                 <span>Unit: </span>
                                                 <asp:Label ID="lblUnit" runat="server" Text=" "></asp:Label>
@@ -111,41 +106,31 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="panel-footer" style="height: 50px">
-                                <asp:Button ID="btnAddItem" runat="server" Text="Add Item" CssClass="pull-right btn btn-success" OnClick="btnAddItem_Click" ValidationGroup="vg" />
+                                <asp:Button ID="btnAddItem" runat="server" Text="Add Item" CssClass="pull-right btn btn-success" OnClick="btnAddItem_Click" />
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12" style="height: 20px"></div>
-                    <asp:ValidationSummary ID="ValidationSummary1" ForeColor="Red" runat="server" ShowSummary="true" DisplayMode="BulletList" ShowMessageBox="True" ValidationGroup="vg" />
                     <div class="col-md-12">
                         <div class="box">
                             <div class="box-header">
                                 <h3 class="box-title">Selected Items</h3>
                             </div>
-                            <div class="box-body">
-                                <asp:GridView ID="gvReqItems" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" Width="100%" AllowPaging="true" OnRowCommand="gvReqItems_RowCommand">
-                                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                            <div class="box-body no-padding">
+
+                                <asp:GridView ID="gvReqItems" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"  OnRowCommand="gvReqItems_RowCommand">
                                     <Columns>
-                                        <asp:TemplateField HeaderText="#">
-                                            <ItemTemplate>
-                                                <%# Container.DataItemIndex + 1 %>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
                                         <asp:BoundField DataField="Category" HeaderText="Category" />
                                         <asp:BoundField DataField="SupplierItem" HeaderText="Description" />
                                         <asp:TemplateField HeaderText="Quantity">
                                             <ItemTemplate>
-                                                <asp:TextBox ID="tbQuantity" runat="server" Text='<%# Eval("Quantity") %>'> </asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Quantity must be entered" Display="Dynamic" Text="*" ControlToValidate="tbQuantity" ForeColor="Red" ValidationGroup="vg1"></asp:RequiredFieldValidator>
-                                                <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Quantity must be a integer" Text="*" Display="Dynamic" ControlToValidate="tbQuantity" Type="Integer" ForeColor="Red" ValidationGroup="vg1" Operator="DataTypeCheck"></asp:CompareValidator>
-                                                <asp:CompareValidator ID="CompareValidator4" runat="server" ErrorMessage="Quantity must be greater than 0" Text="*" Display="Dynamic" ControlToValidate="tbQuantity" ForeColor="Red" ValidationGroup="vg1" Operator="GreaterThan" ValueToCompare="0"></asp:CompareValidator>
+                                                <asp:TextBox ID="tbQuantity" CssClass="form-control" runat="server" Text='<%# Eval("Quantity") %>'> </asp:TextBox>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:Button runat="server" ID="btnModify" Text="Remove" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
+                                                <asp:Button runat="server" ID="btnModify" Text="Remove" CssClass="btn btn-sm btn-danger pull-right" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>
@@ -157,15 +142,19 @@
                     <div class="col-md-12">
                         <label>Remarks</label>
                         <div class="box-body pad">
-                            <asp:TextBox ID="tbRemarks" runat="server" CssClass="textarea" placeholder="Place some text here" Style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></asp:TextBox>
+                            <asp:textbox ID="tbRemarks" runat="server" Class="textarea form-control" placeholder="Enter Remark" ></asp:textbox>
                         </div>
                     </div>
+
+
                 </div>
+
+
                 <div class="box-footer">
                     <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="pull-right btn btn-danger ml-5" OnClick="btnCancel_Click" />
-                    <asp:Button ID="btnSubmit" runat="server" Text="Place Request" CssClass="pull-right btn btn-primary mr-5" OnClick="btnSubmit_Click" ValidationGroup="vg1" />
+                    <asp:Button ID="btnSubmit" runat="server" Text="Place Request" CssClass="pull-right btn btn-primary mr-5" OnClick="btnSubmit_Click" />
                 </div>
-                <asp:ValidationSummary ID="ValidationSummary2" ForeColor="Red" runat="server" ShowSummary="true" DisplayMode="BulletList" ShowMessageBox="True" ValidationGroup="vg1" />
+
             </div>
         </div>
     </div>
