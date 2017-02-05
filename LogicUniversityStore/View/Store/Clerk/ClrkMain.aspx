@@ -94,16 +94,17 @@
                             <p class="text-center">
                                 <strong>Frequently Requested Items (Monthly)</strong>
                             </p>
-
-                            <%--<div class="progress-group">
-                                <span class="progress-text">Paper A4</span>
-                                <span class="progress-number"><b>600</b>/box</span>
+                            <% foreach (var freq in freqCount) {%>
+                            <div class="progress-group">
+                                <span class="progress-text"><%= freq.Key.ItemDesc %></span>
+                                <span class="progress-number"><b><%= freq.Value %>%</b>/box</span>
 
                                 <div class="progress sm">
-                                    <div class="progress-bar progress-bar-aqua" style="width: 60%"></div>
+                                    <div class="progress-bar <%=  (freq.Value > 25 ? ( (freq.Value > 50 ? "progress-bar-green" : "progress-bar-yellow" )) : "progress-bar-red") %>'" style='width: <%= freq.Value %>'></div>
                                 </div>
                             </div>
-                            <div class="progress-group">
+                            <%} %>
+                            <%--<div class="progress-group">
                                 <span class="progress-text">Exercise Book - 100pg</span>
                                 <span class="progress-number"><b>310</b>/each</span>
 
@@ -128,19 +129,10 @@
                                 </div>
                             </div>--%>
 
-                            <asp:GridView ID="gvFrequent" runat="server" CssClass="table-condensed" AutoGenerateColumns="false" BorderStyle="None" RowStyle-BorderStyle="None">
+                            <%--<asp:GridView ID="gvFrequent" runat="server" CssClass="table-condensed" AutoGenerateColumns="false" BorderStyle="None" RowStyle-BorderStyle="None">
                                 <Columns>
-                                  <%--  <asp:BoundField DataField="key.ItemName" />--%>
                                     <asp:TemplateField>
                                         <ItemTemplate>
-                                            <%--<div class="progress">
-                                                <div class="progress-bar" role="progressbar" aria-valuenow='<%# Eval("value") %>'
-                                                    aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                                    <span class="sr-only">'<%# Eval("value") %>'% Complete</span>
-                                                </div>
-                                            </div>--%>
-
-
                                             <div class="progress-group">
                                                 <span class="progress-text">'<%# Eval("key.ItemName") %>'</span>
                                                 <span class="progress-number"><b><%#String.Format("{0:f2}", Eval("value")) %> %</b> </span>
@@ -152,7 +144,7 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
-                            </asp:GridView>
+                            </asp:GridView>--%>
                         </div>
                     </div>
                 </div>
