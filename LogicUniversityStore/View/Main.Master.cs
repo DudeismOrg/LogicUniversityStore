@@ -1,5 +1,6 @@
 ﻿using Core.Controller;
 using LogicUniversityStore.Model;
+using LogicUniversityStore.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,14 @@ namespace LogicUniversityStore.View
                 {
                     lblEmpName.Text = lblUser.Text = user.FirstName + " " + user.LastName;
                     lblUserName.Text = String.Format("{0} - {1}", user.FirstName, user.Role.RoleName);
-
+                    if (user.Role.RoleCode == Roles.EMP.ToString() || user.Role.RoleCode == Roles.HOD.ToString() || user.Role.RoleCode == Roles.REP.ToString())
+                    {
+                        lblUserManDoc.NavigateUrl = "~/View/Store/Department.pdf";
+                    }
+                    else if (user.Role.RoleCode == Roles.CLERK.ToString() || user.Role.RoleCode == Roles.SUPERVISOR.ToString() || user.Role.RoleCode == Roles.MANAGER.ToString())
+                    {
+                        lblUserManDoc.NavigateUrl = "~/View/Store/Store.pdf";
+                    }
                     ShowNotifications();
 
                 }

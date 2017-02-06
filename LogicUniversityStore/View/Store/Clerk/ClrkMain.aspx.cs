@@ -1,4 +1,5 @@
 ﻿using LogicUniversityStore.Controller;
+using LogicUniversityStore.Dao;
 using LogicUniversityStore.Model;
 using LogicUniversityStore.View.Store.Reports;
 using System;
@@ -17,6 +18,11 @@ namespace LogicUniversityStore.View.Store.Clerk
         public Dictionary<Item, double> freqCount;
         protected void Page_Load(object sender, EventArgs e)
         {
+            LUUser user = (LUUser)Session["user"];
+            
+            lblReqsCount.Text = new RequisitionDao().GetApprovedRequisitionCount().ToString();
+
+
             //PO_Supplier posupp = new PO_Supplier();
             //CrystalReportViewer1.ReportSource = posupp;
             //CrystalReportViewer1.Zoom(50);

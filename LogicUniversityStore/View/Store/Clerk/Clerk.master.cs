@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LogicUniversityStore.Controller;
+using LogicUniversityStore.Dao;
+using LogicUniversityStore.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +14,9 @@ namespace LogicUniversityStore.View.Store.Clerk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LUUser user = (LUUser)Session["user"];
+
+            lblReqsCount.Text = new RequisitionDao().GetApprovedRequisitionCount().ToString();
 
         }
     }

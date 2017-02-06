@@ -281,7 +281,7 @@
                         </asp:ContentPlaceHolder>
                         <li class="header">Others</li>
                         <li>
-                            <asp:HyperLink ID="lblUserManDoc" runat="server" NavigateUrl="">
+                            <asp:HyperLink ID="lblUserManDoc" Target="_blank" NavigateUrl="" runat="server">
                             <i class="fa fa-circle-o text-green"></i><span>User Manual</span>
                             </asp:HyperLink>
                         </li>
