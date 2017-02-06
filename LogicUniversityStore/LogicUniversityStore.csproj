@@ -111,7 +111,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LogicUniversitySQLQuery.sql" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -186,6 +185,11 @@
     <Content Include="View\Store\Reports\DisplaySupplierPOCat.aspx" />
     <Content Include="View\Store\Reports\DisplaySupplierPOPeriod.aspx" />
     <Content Include="View\Store\Reports\PO_Supplier_Display.aspx" />
+    <Content Include="View\Store\Reports\DisplayDeptUsagePeriod.aspx" />
+    <Content Include="View\Store\Reports\DisplaySupplierPOCat.aspx" />
+    <Content Include="View\Store\Reports\DisplaySupplierPOPeriod.aspx" />
+    <Content Include="View\Store\Reports\PO_Supplier_Display.aspx" />
+    <Content Include="View\Store\Supervisor\ApproveAdjustment.aspx" />
     <Content Include="View\Store\Supervisor\Supervisor.Master" />
     <Content Include="View\Store\Manager\Manager.Master" />
     <Content Include="aspnet_client" />
