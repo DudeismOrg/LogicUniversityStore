@@ -82,18 +82,13 @@
                 </div>
                 <div class="box-body">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-8" >
 
-                            <%------------------------ PUT Thing-------------------%>
-                            <p class="text-center">
-                                <strong>Requisitions for period: 1 Jan, 2015 - 30 Dec, 2016</strong>
-                            </p>
-
-                            <div class="chart">
-                                <!-- Sales Chart Canvas -->
-                                <canvas id="salesChart" style="height: 180px;"></canvas>
-                            </div>
-                            <%------------------------ PUT Thing-------------------%>
+                           <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="50px" ReportSourceID="PO_Supplier" ToolbarImagesFolderUrl="" ToolPanelView="None" ToolPanelWidth="200px" Width="100px" />
+                         <CR:CrystalReportSource ID="PO_Supplier" runat="server">
+                            <Report FileName="View\Store\Reports\PO_Supplier.rpt">
+                            </Report>
+                        </CR:CrystalReportSource>
 
                         </div>
                         <div class="col-md-4">
@@ -190,11 +185,7 @@
                         </div>
 
                         <!------- adi put test -------------->
-                        <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="50px" ReportSourceID="PO_Supplier" ToolbarImagesFolderUrl="" ToolPanelView="None" ToolPanelWidth="200px" Width="350px" />
-                        <CR:CrystalReportSource ID="PO_Supplier" runat="server">
-                            <Report FileName="View\Store\Reports\PO_Supplier.rpt">
-                            </Report>
-                        </CR:CrystalReportSource>
+                       
 
                         <!------- adi put test -------------->
                     </div>
